@@ -2,36 +2,36 @@
     "about": {
         "title": "About This Course",
         "color": "#636687",
-        "icon": ""
+        "icon": "question"
     },
     "technique": {
         "title": "Technique",
         "color": "#d12424",
-        "icon": ""
+        "icon": "idea"
     },
     "song": {
         "title": "Song",
         "color": "#8a2556",
-        "icon": ""
+        "icon": "music"
     },
     "instrument": {
         "title": "Instrument Knowledge",
         "color": "#e0e336",
-        "icon": ""
+        "icon": "gears"
     },
     "theory": {
         "title": "Music Theory",
         "color": "#4fa870",
-        "icon": ""
+        "icon": "notebook"
     },
     "challenge": {
         "title": "Challenge",
         "color": "#de6d2c",
-        "icon": ""
+        "icon": "medal"
     },
     "misc": {
         "title": "Miscellaneous",
         "color": "#1a1a1a",
-        "icon": ""
+        "icon": "star"
     }
 }
