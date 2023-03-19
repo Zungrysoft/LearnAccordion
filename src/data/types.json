@@ -1,8 +1,8 @@
 {
     "about": {
         "title": "About This Course",
-        "color": "#636687",
-        "icon": "question"
+        "color": "#3491bf",
+        "icon": "star"
     },
     "technique": {
         "title": "Technique",
@@ -26,12 +26,12 @@
     },
     "challenge": {
         "title": "Challenge",
-        "color": "#de6d2c",
+        "color": "#1a1a1a",
         "icon": "medal"
     },
     "misc": {
         "title": "Miscellaneous",
-        "color": "#1a1a1a",
-        "icon": "star"
+        "color": "#de6d2c",
+        "icon": "question"
     }
 }
