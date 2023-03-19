@@ -2,7 +2,7 @@ import '../App.css';
 import Lesson from './Lesson.js'
 import Connector from './Connector.js';
 
-function Board({ lessons, state, onChange }) {
+function Board({ lessons, state, onChange, onSetPage }) {
     return (
         <div>
             {Object.keys(lessons).map((key) => (
@@ -15,6 +15,7 @@ function Board({ lessons, state, onChange }) {
                             [key]: newState
                         })
                     )}
+                    onSetPage={() => {onSetPage(key)}}
                 />
 
             ))}

@@ -82,30 +82,79 @@ a {
 }
 
 h2 {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 10px;
     margin-top: 25px;
     user-select: none;
+    color: black;
+    text-align: center;
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 40px;
     margin-bottom: 10px;
     margin-top: 25px;
     margin: 10px;
-    color: #d4ddec;
+    color: black;
     user-select: none;
+    text-align: center;
+}
+
+img {
+    pointer-events: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .bounding-box-lesson {
     border: 2px solid black;
     margin: 3px;
-    background-color: #21252c;
+    background-color: var(--background-color);
     border-radius: 30%;
     position: absolute;
     left: 50vw;
     top: 100px;
     transform: translate(-50%, 0%);
+}
+
+.bounding-box-page {
+    border: 2px solid black;
+    margin: 3px;
+    background-color: var(--background-color);
+    border-radius: 1vw;
+    position: fixed;
+    width: 40vw;
+    height: 105vh;
+    left: 50vw;
+    top: 2vh;
+    transform: translate(-50%, 0%);
+    text-align: center;
+    transition: top 0.1s;
+    transition-timing-function: ease-out;
+}
+
+.page-close {
+    position: fixed;
+    left: 38vw;
+    top: 4vh;
+    font-size: 70;
+    background-color: red;
+    color: black;
+    border: 2px solid black;
+    width: 2vw;
+    height: 2vw;
+    transform: translate(-50%, -50%);
+}
+
+.page-close:hover {
+    background-color: white;
+}
+
+.bounding-box-lesson:hover {
+    background-color: var(--background-color2);
 }
 
 .lesson-icon {
@@ -116,4 +165,45 @@ h4 {
 
 .connector {
     position: absolute;
+}
+
+.embed {
+    width:35vw;
+    height:20vw;
+    border: 0px;
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
+    transition: background-color 0.1s;
+    z-index: 2;
+}
+
+.backdrop-none {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.1s;
+    z-index: 2;
+    pointer-events: none
 }

@@ -1,8 +1,8 @@
 {
     "intro": {
         "title": "Welcome!",
-        "video_url": "",
-        "description": "",
+        "video_url": "https://www.youtube.com/embed/_Lw7d5TTkJ0",
+        "description": "Welcome to this Accordion tutorial series!",
         "x": 0,
         "y": 0,
         "type": "about",

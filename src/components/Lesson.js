@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
 
-function Lesson({ lesson, data, onChange }) {
+function Lesson({ lesson, data, onChange, onSetPage }) {
     const xPos = (lesson.x *45) + 50
     const yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing
     const iconWidth = settingsData.icon_width * settingsData.icon_scale
@@ -15,10 +15,11 @@ function Lesson({ lesson, data, onChange }) {
     // }
 
     return (
-        <div className="bounding-box-lesson" style={{
+        <div className="bounding-box-lesson" onClick={onSetPage} style={{
             left: xPos+"vw",
             top: yPos+"vw",
-            backgroundColor: backgroundColor,
+            "--background-color": backgroundColor,
+            "--background-color2": settingsData.hover_color,
         }}>
             <img
                 src={`${process.env.PUBLIC_URL}/icon/${typeData[lesson.type].icon}.png`}
@@ -33,7 +34,5 @@ function Lesson({ lesson, data, onChange }) {
         </div>
     )
 }
-
-//
 
 export default Lesson;

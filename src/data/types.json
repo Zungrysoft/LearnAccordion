@@ -11,12 +11,12 @@
     },
     "song": {
         "title": "Song",
-        "color": "#8a2556",
+        "color": "#8f2b67",
         "icon": "disc"
     },
     "instrument": {
         "title": "Instrument Knowledge",
-        "color": "#e0e336",
+        "color": "#c7c714",
         "icon": "gears"
     },
     "theory": {
