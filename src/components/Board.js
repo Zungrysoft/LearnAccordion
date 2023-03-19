@@ -3,6 +3,7 @@ import React,{useState} from 'react';
 import Lesson from './Lesson.js'
 import Connector from './Connector.js';
 import LessonPage from './LessonPage.js';
+import LessonCounter from './LessonCounter.js';
 
 function isCompleted(lesson, state) {
     if (state[lesson]) {
@@ -101,6 +102,7 @@ function Board({ lessons, state, onChange }) {
                 onClose={() => {setPageOpen(false)}}
                 isOpen={pageOpen}
             />
+            <LessonCounter lessonStates={builtLessons}/>
         </div>
     )
 }

@@ -15,7 +15,4 @@ function Embed({ url }) {
     )
 }
 
-
-
-
 export default Embed;

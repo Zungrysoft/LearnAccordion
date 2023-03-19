@@ -1,121 +1,55 @@
 {
     "intro": {
-        "title": "Welcome!",
-        "video_url": "https://www.youtube.com/embed/_Lw7d5TTkJ0",
-        "description": "Welcome to this Accordion tutorial series!",
+        "title": "Intro and First Lesson",
+        "video_url": "",
+        "description": "How to wear the accordion and how to play Mary had a Little Lamb.",
         "x": 0,
         "y": 0,
-        "type": "about",
-        "auto_complete": true,
+        "type": "technique",
         "prerequisites": []
     },
-    "buying_guide": {
-        "title": "Accordion Buyer's Guide",
+    "about": {
+        "title": "How to Use This Course",
         "video_url": "",
-        "description": "Accordions come in all shapes, sizes, and prices! Hopefully I can help you figure out what to buy.",
-        "x": 0.9,
+        "description": "",
+        "x": 0,
         "y": 1,
-        "type": "instrument",
-        "auto_complete": true,
+        "type": "general",
         "prerequisites": [
             ["intro"]
         ]
     },
-    "buying_guide_advanced": {
-        "title": "Advanced Accordion Buyer's Guide",
+    "major_scale": {
+        "title": "The Major Scale",
         "video_url": "",
-        "description": "Watch this video if you're looking to upgrade to a higher-tier instrument.",
-        "x": 0.9,
+        "description": "Learn the C major scale and how to spider-walk.",
+        "x": 0.5,
         "y": 2,
-        "type": "instrument",
-        "auto_complete": true,
+        "type": "technique",
         "prerequisites": [
-            ["buying_guide"]
+            ["about"]
         ]
     },
-    "about_me": {
-        "title": "About Me",
+    "bass_buttons": {
+        "title": "Intro to the Bass Buttons",
         "video_url": "",
-        "description": "About the creator of this tutorial series.",
+        "description": "Start learning the bass buttons",
         "x": -0.5,
-        "y": 1,
-        "type": "about",
-        "auto_complete": true,
-        "prerequisites": [
-            ["intro"]
-        ]
-    },
-    "first_lesson": {
-        "title": "Start Playing!",
-        "video_url": "",
-        "description": "",
-        "x": 0,
-        "y": 1,
-        "type": "technique",
-        "auto_complete": false,
-        "prerequisites": [
-            ["intro"]
-        ]
-    },
-    "second_lesson": {
-        "title": "Second Lesson",
-        "video_url": "",
-        "description": "",
-        "x": -0.3,
         "y": 2,
         "type": "technique",
-        "auto_complete": false,
         "prerequisites": [
-            ["first_lesson"]
+            ["about"]
         ]
     },
-    "song_heart_to_heart": {
-        "title": "A Little Heart to Heart",
+    "bass_buttons_2": {
+        "title": "Bass Buttons #2",
         "video_url": "",
-        "description": "Learn to play \"A Little Heart to Heart\" from the video game Team Fortress 2.",
-        "x": 0.2,
-        "y": 2,
-        "type": "song",
-        "auto_complete": false,
-        "prerequisites": [
-            ["first_lesson"]
-        ]
-    },
-    "song_big_mamou": {
-        "title": "Big Mamou",
-        "video_url": "",
-        "description": "Learn a Zydeco favorite of mine, Big Mamou by Fernest Arceneaux. This is the song Huell Babineaux was listening to when he beat a police officer over the head with a bag of sandwiches in Better Call Saul.",
-        "x": 0.4,
-        "y": 2,
-        "type": "song",
-        "auto_complete": false,
-        "prerequisites": [
-            ["first_lesson"]
-        ]
-    },
-    "stradella_bass": {
-        "title": "The Stradella Bass System",
-        "video_url": "",
-        "description": "Introducing the accordion's better half.",
-        "x": 0,
+        "description": "Learn some more bass button patterns",
+        "x": -0.5,
         "y": 3,
-        "type": "instrument",
-        "auto_complete": false,
+        "type": "technique",
         "prerequisites": [
-            ["second_lesson"],
-            ["song_heart_to_heart", "song_big_mamou"]
-        ]
-    },
-    "super_challenge": {
-        "title": "Challenge",
-        "video_url": "",
-        "description": "",
-        "x": 0,
-        "y": 20,
-        "type": "challenge",
-        "auto_complete": false,
-        "prerequisites": [
-            ["stradella_bass"]
+            ["bass_buttons"]
         ]
     }
 }

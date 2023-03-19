@@ -1,6 +1,6 @@
 {
-    "about": {
-        "title": "About This Course",
+    "general": {
+        "title": "General Info",
         "color": "#3491bf",
         "icon": "star"
     },

@@ -134,10 +134,17 @@ img {
     transform: translate(-50%, 0%);
 }
 
-.bottom-item {
+.bottom-right {
     position:fixed;
     bottom:0;
     right:0;
+    margin:20px;
+}
+
+.bottom-left {
+    position:fixed;
+    bottom:0;
+    left:0;
     margin:20px;
 }
 

@@ -3,7 +3,7 @@ function CheckBox({ text, checked, onChange, textColor="black" }) {
     return (
         <div className="align">
             <label
-                for={"cbLabel_" + rnum}
+                htmlFor={"cbLabel_" + rnum}
                 style={{
                     color: textColor
                 }}

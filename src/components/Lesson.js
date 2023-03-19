@@ -1,5 +1,5 @@
 import '../App.css';
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
 
@@ -35,6 +35,7 @@ function Lesson({ lesson, state, onSetPage }) {
                     src={`${process.env.PUBLIC_URL}/icon/${typeData[lesson.type].icon}.png`}
                     fill="currentColor"
                     className="lesson-icon"
+                    alt=""
                     style={{
                         width: iconWidth+"vw",
                         height: iconWidth+"vw",
@@ -45,6 +46,7 @@ function Lesson({ lesson, state, onSetPage }) {
             {state.completed?<img
                 src={`${process.env.PUBLIC_URL}/icon/complete.png`}
                 className="check-mark"
+                alt=""
                 style={{
                     left: xPos+"vw",
                     top: yPos+"vw",
