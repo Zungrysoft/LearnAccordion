@@ -4,7 +4,7 @@ import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
 
 function Lesson({ lesson, state, onSetPage }) {
-    // Don't show at all if we're no close to unlocking it
+    // Don't show at all if we're not close to unlocking it
     if (!state.threshold) {
         return <div/>
     }
@@ -18,12 +18,14 @@ function Lesson({ lesson, state, onSetPage }) {
     let backgroundColor2 = settingsData.locked_color
     if (state.unlocked) {
         backgroundColor = typeData[lesson.type].color
+    }
+    if (state.selectable) {
         backgroundColor2 = settingsData.hover_color
     }
 
     return (
         <div>
-            <div className="bounding-box-lesson" onClick={state.unlocked?onSetPage:null} style={{
+            <div className="bounding-box-lesson" onClick={state.selectable?onSetPage:null} style={{
                 left: xPos+"vw",
                 top: yPos+"vw",
                 "--background-color": backgroundColor,

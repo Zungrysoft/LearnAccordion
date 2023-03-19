@@ -44,15 +44,18 @@ function isThreshold(lesson, state, lessons) {
 }
 
 function buildLessonStates(state, lessons) {
+    let showLater = state._show_later?true:false
     let ret = {}
     for (let lesson in lessons) {
         let c = isCompleted(lesson, state, lessons)
-        let u = isUnlocked(lesson, state, lessons) || c
-        let t = isThreshold(lesson, state, lessons) || c || u
+        let u = c || isUnlocked(lesson, state, lessons)
+        let t =  c || u || isThreshold(lesson, state, lessons) || showLater
+        let s = u || showLater
         ret[lesson] = {
             completed: c,
             unlocked: u,
             threshold: t,
+            selectable: s,
         }
     }
     return ret

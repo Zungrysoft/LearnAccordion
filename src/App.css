@@ -125,6 +125,13 @@ img {
     transform: translate(-50%, 0%);
 }
 
+.bottom-item {
+    position:fixed;
+    bottom:0;
+    right:0;
+    margin:20px;
+}
+
 .bounding-box-page {
     border: 2px solid black;
     margin: 3px;
