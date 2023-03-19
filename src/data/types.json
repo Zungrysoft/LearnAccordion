@@ -7,12 +7,12 @@
     "technique": {
         "title": "Technique",
         "color": "#d12424",
-        "icon": "idea"
+        "icon": "piano"
     },
     "song": {
         "title": "Song",
         "color": "#8a2556",
-        "icon": "music"
+        "icon": "disc"
     },
     "instrument": {
         "title": "Instrument Knowledge",
