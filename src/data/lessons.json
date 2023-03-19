@@ -1,0 +1,97 @@
+{
+    "intro": {
+        "title": "Welcome!",
+        "video_url": "",
+        "description": "",
+        "x": 0.5,
+        "y": 0,
+        "type": "about",
+        "auto_complete": true,
+        "prerequisites": []
+    },
+    "buying_guide": {
+        "title": "Accordion Buyer's Guide",
+        "video_url": "",
+        "description": "Accordions come in all shapes, sizes, and prices! Hopefully I can help you figure out what to buy.",
+        "x": 1,
+        "y": 1,
+        "type": "instrument",
+        "auto_complete": true,
+        "prerequisites": [
+            ["intro"]
+        ]
+    },
+    "about_me": {
+        "title": "About Me",
+        "video_url": "",
+        "description": "About the creator of this tutorial series.",
+        "x": -1,
+        "y": 1,
+        "type": "about",
+        "auto_complete": true,
+        "prerequisites": [
+            ["intro"]
+        ]
+    },
+    "first_lesson": {
+        "title": "Start Playing!",
+        "video_url": "",
+        "description": "",
+        "x": 0,
+        "y": 1,
+        "type": "technique",
+        "auto_complete": false,
+        "prerequisites": [
+            ["intro"]
+        ]
+    },
+    "second_lesson": {
+        "title": "Second Lesson",
+        "video_url": "",
+        "description": "",
+        "x": -1,
+        "y": 2,
+        "type": "technique",
+        "auto_complete": false,
+        "prerequisites": [
+            ["first_lesson"]
+        ]
+    },
+    "song_heart_to_heart": {
+        "title": "A Little Heart to Heart",
+        "video_url": "",
+        "description": "Learn to play \"A Little Heart to Heart\" from the video game Team Fortress 2.",
+        "x": 0.5,
+        "y": 2,
+        "type": "song",
+        "auto_complete": false,
+        "prerequisites": [
+            ["first_lesson"]
+        ]
+    },
+    "song_big_mamou": {
+        "title": "Big Mamou",
+        "video_url": "",
+        "description": "Learn a Zydeco favorite of mine, Big Mamou by Fernest Arceneaux. This is the song Huell Babineaux was listening to when he beat a police officer over the head with a bag of sandwiches in Better Call Saul.",
+        "x": 1,
+        "y": 2,
+        "type": "song",
+        "auto_complete": false,
+        "prerequisites": [
+            ["first_lesson"]
+        ]
+    },
+    "stradella_bass": {
+        "title": "The Stradella Bass System",
+        "video_url": "",
+        "description": "Introducing the accordion's better half.",
+        "x": 0,
+        "y": 3,
+        "type": "instrument",
+        "auto_complete": false,
+        "prerequisites": [
+            ["second_lesson"],
+            ["song_heart_to_heart", "song_big_mamou"]
+        ]
+    }
+}

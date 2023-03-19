@@ -1,0 +1,105 @@
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin: 8px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.icon-button {
+    color:white;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.icon-button:hover {
+    fill:gray;
+}
+
+.centered-button {
+    color:white;
+}
+
+.centered-button:hover {
+    fill:gray;
+}
+
+.label {
+    user-select: none;
+    margin: 0px;
+    margin-left: 5px;
+}
+
+.input-item {
+    margin: 5px;
+    margin-top: -3px;
+}
+
+.input-box-long {
+    width: 280px
+}
+
+.input-box-lore {
+    width: 300px;
+    height: 80px;
+}
+
+.input-checkbox {
+    height: 20px;
+    width: 20px;
+}
+
+option:disabled{
+    background-color:#39414d;
+    color:#556074;
+}
+
+.command-output {
+    display: inline-flex;
+    border: 2px solid black;
+    margin: 3px;
+}
+
+.command-text {
+    margin-top: 0px;
+    float:left;
+}
+
+p {
+    font-size: 18px;
+    white-space: pre-line;
+}
+
+a {
+    font-size: 18px;
+    color: #bebdb2;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    user-select: none;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    margin: 10px;
+    color: #d4ddec;
+    user-select: none;
+}
+
+.bounding-box-lesson {
+    display: inline-flex;
+    border: 2px solid black;
+    margin: 3px;
+    background-color: #21252c;
+}
