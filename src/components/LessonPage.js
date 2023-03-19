@@ -1,6 +1,5 @@
 import '../App.css';
-import React, {useState, useEffect} from 'react';
-import settingsData from '../data/settings.json';
+import React from 'react';
 import typeData from '../data/types.json';
 import Embed from './Embed';
 import CheckBox from './CheckBox';
