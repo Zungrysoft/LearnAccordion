@@ -6,9 +6,11 @@ function Embed({ url }) {
     }
 
     return (
+
         <iframe className="embed"
-            src={url}>
-        </iframe>
+            src={url}
+            allowfullscreen
+        />
     )
 }
 
