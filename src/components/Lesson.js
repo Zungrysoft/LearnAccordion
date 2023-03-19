@@ -3,23 +3,30 @@ import React, {useState, useEffect} from 'react';
 import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
 
-function Lesson({ lesson, data, onChange, onSetPage }) {
+function Lesson({ lesson, state, onSetPage }) {
+    // Don't show at all if we're no close to unlocking it
+    if (!state.threshold) {
+        return <div/>
+    }
+
     const xPos = (lesson.x *45) + 50
     const yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing
     const iconWidth = settingsData.icon_width * settingsData.icon_scale
     const iconMargin = (settingsData.icon_width - iconWidth) / 2
 
     let backgroundColor = settingsData.locked_color
-    // if (data && data.unlocked == true) {
+    let backgroundColor2 = settingsData.locked_color
+    if (state.unlocked) {
         backgroundColor = typeData[lesson.type].color
-    // }
+        backgroundColor2 = settingsData.hover_color
+    }
 
     return (
-        <div className="bounding-box-lesson" onClick={onSetPage} style={{
+        <div className="bounding-box-lesson" onClick={state.unlocked?onSetPage:null} style={{
             left: xPos+"vw",
             top: yPos+"vw",
             "--background-color": backgroundColor,
-            "--background-color2": settingsData.hover_color,
+            "--background-color2": backgroundColor2,
         }}>
             <img
                 src={`${process.env.PUBLIC_URL}/icon/${typeData[lesson.type].icon}.png`}

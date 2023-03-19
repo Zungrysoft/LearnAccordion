@@ -4,7 +4,7 @@ import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
 import Embed from './Embed';
 
-function LessonPage({ lesson, data, onChange, onClose, isOpen }) {
+function LessonPage({ lesson, state, onChange, onClose, isOpen }) {
     if (!lesson) {
         return <div/>
     }
@@ -23,6 +23,11 @@ function LessonPage({ lesson, data, onChange, onClose, isOpen }) {
                 <h4>{lesson.title}</h4>
                 <Embed url={lesson.video_url}/>
                 <p>{lesson.description}</p>
+                <div className="align">
+                    <h2>Mark as completed:</h2>
+                    <input type="checkbox" checked={state.completed?true:null} className="checkbox" onChange={(e) => {onChange(e.target.checked)}}></input>
+                </div>
+
             </div>
         </div>
     )

@@ -6,7 +6,18 @@ function curvePoint(p) {
     return (Math.tanh((p - 0.5) * settingsData.connector_bendiness) * 0.5) + 0.5
 }
 
-function Connector({ lesson1, lesson2 }) {
+function Connector({ lesson1, lesson2, state1, state2 }) {
+    // Don't draw if either of the lessons won't show up
+    if (!state1.threshold || !state2.threshold) {
+        return <div/>
+    }
+
+    // Draw in a different color if one of the lessons is completed
+    let color = settingsData.connector_color
+    if (state1.completed) {
+        color = settingsData.connector_color_completed
+    }
+
     // Get positions of the two lessons
     const x1 = (lesson1.x *45) + 50
     const y1 = lesson1.y * settingsData.icon_width * settingsData.vertical_spacing
@@ -26,7 +37,7 @@ function Connector({ lesson1, lesson2 }) {
                 top: Math.min(y1, y2)+h+"vw",
                 transform: "translate(-50%, 0%)",
             }}>
-                <line x1="50%" y1="0%" x2="50%" y2="100%" stroke="black" strokeWidth="2" />
+                <line x1="50%" y1="0%" x2="50%" y2="100%" stroke={color} strokeWidth="2" />
             </svg>
         )
     }
@@ -67,7 +78,7 @@ function Connector({ lesson1, lesson2 }) {
                     left: Math.min(x1, x2)+"vw",
                     top: Math.min(y1, y2)+h+"vw",
                 }}>
-                    <line x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} stroke="black" strokeWidth="2" />
+                    <line x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} stroke={color} strokeWidth="2" />
                 </svg>
             ))}
         </div>
