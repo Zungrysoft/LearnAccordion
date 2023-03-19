@@ -98,8 +98,22 @@ h4 {
 }
 
 .bounding-box-lesson {
-    display: inline-flex;
     border: 2px solid black;
     margin: 3px;
     background-color: #21252c;
+    border-radius: 100%;
+    position: absolute;
+    left: 50vw;
+    top: 100px;
+    transform: translate(-50%, 0%);
+}
+
+.lesson-icon {
+    margin: 1vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+.connector {
+    position: absolute;
 }

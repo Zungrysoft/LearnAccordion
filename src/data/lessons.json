@@ -3,7 +3,7 @@
         "title": "Welcome!",
         "video_url": "",
         "description": "",
-        "x": 0.5,
+        "x": 0,
         "y": 0,
         "type": "about",
         "auto_complete": true,
@@ -13,7 +13,7 @@
         "title": "Accordion Buyer's Guide",
         "video_url": "",
         "description": "Accordions come in all shapes, sizes, and prices! Hopefully I can help you figure out what to buy.",
-        "x": 1,
+        "x": 0.9,
         "y": 1,
         "type": "instrument",
         "auto_complete": true,
@@ -21,11 +21,23 @@
             ["intro"]
         ]
     },
+    "buying_guide_advanced": {
+        "title": "Advanced Accordion Buyer's Guide",
+        "video_url": "",
+        "description": "Watch this video if you're looking to upgrade to a higher-tier instrument.",
+        "x": 0.9,
+        "y": 2,
+        "type": "instrument",
+        "auto_complete": true,
+        "prerequisites": [
+            ["buying_guide"]
+        ]
+    },
     "about_me": {
         "title": "About Me",
         "video_url": "",
         "description": "About the creator of this tutorial series.",
-        "x": -1,
+        "x": -0.5,
         "y": 1,
         "type": "about",
         "auto_complete": true,
@@ -49,7 +61,7 @@
         "title": "Second Lesson",
         "video_url": "",
         "description": "",
-        "x": -1,
+        "x": -0.3,
         "y": 2,
         "type": "technique",
         "auto_complete": false,
@@ -61,7 +73,7 @@
         "title": "A Little Heart to Heart",
         "video_url": "",
         "description": "Learn to play \"A Little Heart to Heart\" from the video game Team Fortress 2.",
-        "x": 0.5,
+        "x": 0.2,
         "y": 2,
         "type": "song",
         "auto_complete": false,
@@ -73,7 +85,7 @@
         "title": "Big Mamou",
         "video_url": "",
         "description": "Learn a Zydeco favorite of mine, Big Mamou by Fernest Arceneaux. This is the song Huell Babineaux was listening to when he beat a police officer over the head with a bag of sandwiches in Better Call Saul.",
-        "x": 1,
+        "x": 0.4,
         "y": 2,
         "type": "song",
         "auto_complete": false,
@@ -92,6 +104,18 @@
         "prerequisites": [
             ["second_lesson"],
             ["song_heart_to_heart", "song_big_mamou"]
+        ]
+    },
+    "super_challenge": {
+        "title": "Challenge",
+        "video_url": "",
+        "description": "",
+        "x": 0,
+        "y": 20,
+        "type": "challenge",
+        "auto_complete": false,
+        "prerequisites": [
+            ["stradella_bass"]
         ]
     }
 }
