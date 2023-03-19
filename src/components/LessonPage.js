@@ -25,7 +25,7 @@ function LessonPage({ lesson, state, onChange, onClose, isOpen }) {
                 <p>{lesson.description}</p>
                 <div className="align">
                     <h2>Mark as completed:</h2>
-                    <input type="checkbox" checked={state.completed?true:null} className="checkbox" onChange={(e) => {onChange(e.target.checked)}}></input>
+                    <input type="checkbox" checked={state.completed?true:false} className="checkbox" onChange={(e) => {onChange(e.target.checked)}}></input>
                 </div>
 
             </div>

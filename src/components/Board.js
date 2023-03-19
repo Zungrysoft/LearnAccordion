@@ -46,10 +46,13 @@ function isThreshold(lesson, state, lessons) {
 function buildLessonStates(state, lessons) {
     let ret = {}
     for (let lesson in lessons) {
+        let c = isCompleted(lesson, state, lessons)
+        let u = isUnlocked(lesson, state, lessons) || c
+        let t = isThreshold(lesson, state, lessons) || c || u
         ret[lesson] = {
-            completed: isCompleted(lesson, state, lessons),
-            unlocked: isUnlocked(lesson, state, lessons),
-            threshold: isThreshold(lesson, state, lessons),
+            completed: c,
+            unlocked: u,
+            threshold: t,
         }
     }
     return ret

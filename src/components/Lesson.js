@@ -22,22 +22,34 @@ function Lesson({ lesson, state, onSetPage }) {
     }
 
     return (
-        <div className="bounding-box-lesson" onClick={state.unlocked?onSetPage:null} style={{
-            left: xPos+"vw",
-            top: yPos+"vw",
-            "--background-color": backgroundColor,
-            "--background-color2": backgroundColor2,
-        }}>
-            <img
-                src={`${process.env.PUBLIC_URL}/icon/${typeData[lesson.type].icon}.png`}
-                fill="currentColor"
-                className="lesson-icon"
+        <div>
+            <div className="bounding-box-lesson" onClick={state.unlocked?onSetPage:null} style={{
+                left: xPos+"vw",
+                top: yPos+"vw",
+                "--background-color": backgroundColor,
+                "--background-color2": backgroundColor2,
+            }}>
+                <img
+                    src={`${process.env.PUBLIC_URL}/icon/${typeData[lesson.type].icon}.png`}
+                    fill="currentColor"
+                    className="lesson-icon"
+                    style={{
+                        width: iconWidth+"vw",
+                        height: iconWidth+"vw",
+                        margin: iconMargin+"vw"
+                    }}
+                />
+            </div>
+            {state.completed?<img
+                src={`${process.env.PUBLIC_URL}/icon/complete.png`}
+                className="check-mark"
                 style={{
-                    width: iconWidth+"vw",
-                    height: iconWidth+"vw",
-                    margin: iconMargin+"vw"
+                    left: xPos+"vw",
+                    top: yPos+"vw",
+                    width: settingsData.icon_width+"vw",
+                    height: settingsData.icon_width+"vw",
                 }}
-            />
+            />:<div/>}
         </div>
     )
 }
