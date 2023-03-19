@@ -4,6 +4,7 @@ import './App.css';
 import Board from './components/Board.js';
 import CheckBox from './components/CheckBox';
 import lessonData from './data/lessons.json';
+import settingsData from './data/settings.json';
 
 function getDefaultStorage() {
     try {
@@ -42,6 +43,7 @@ function App() {
                         localStorage.setItem("lessonState", JSON.stringify(newOverallState))
                     }}
                     checked={lessonState._show_later}
+                    textColor={settingsData.connector_color_completed}
                 />
             </div>
         </div>

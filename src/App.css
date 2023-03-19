@@ -100,6 +100,15 @@ h4 {
     text-align: center;
 }
 
+label {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    user-select: none;
+    color: black;
+    text-align: center;
+}
+
 img {
     pointer-events: none;
     -webkit-user-drag: none;
