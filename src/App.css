@@ -116,6 +116,7 @@ img {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    margin: 0;
 }
 
 .bounding-box-lesson {

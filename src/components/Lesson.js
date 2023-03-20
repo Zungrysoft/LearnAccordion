@@ -9,19 +9,27 @@ function Lesson({ lesson, state, onSetPage }) {
         return <div/>
     }
 
-    const xPos = (lesson.x *45) + 50
-    const yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing
-    const iconWidth = settingsData.icon_width * settingsData.icon_scale
-    const iconMargin = (settingsData.icon_width - iconWidth) / 2
+    let xPos = (lesson.x *45) + 50
+    let yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing
+    let iconWidth = settingsData.icon_width * settingsData.icon_scale
+    let iconMargin = (settingsData.icon_width - iconWidth) / 2
+    if (lesson.is_checkpoint) {
+        iconWidth *= 0.3
+        iconMargin *= 0.3
+        yPos += iconWidth
+    }
 
     let backgroundColor = settingsData.locked_color
     let backgroundColor2 = settingsData.locked_color
     if (state.unlocked) {
         backgroundColor = typeData[lesson.type].color
+        backgroundColor2 = typeData[lesson.type].color
     }
     if (state.selectable) {
         backgroundColor2 = settingsData.hover_color
     }
+
+    let iconImage = typeData[lesson.type].icon
 
     return (
         <div>
@@ -32,7 +40,7 @@ function Lesson({ lesson, state, onSetPage }) {
                 "--background-color2": backgroundColor2,
             }}>
                 <img
-                    src={`${process.env.PUBLIC_URL}/icon/${typeData[lesson.type].icon}.png`}
+                    src={`${process.env.PUBLIC_URL}/icon/${iconImage}.png`}
                     fill="currentColor"
                     className="lesson-icon"
                     alt=""
@@ -43,7 +51,7 @@ function Lesson({ lesson, state, onSetPage }) {
                     }}
                 />
             </div>
-            {state.completed?<img
+            {(state.completed && !lesson.is_checkpoint)?<img
                 src={`${process.env.PUBLIC_URL}/icon/complete.png`}
                 className="check-mark"
                 alt=""

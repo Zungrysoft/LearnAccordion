@@ -141,11 +141,22 @@
     },
 
 
+    "transposition_practice": {
+        "title": "Transposition Practice",
+        "video_url": "",
+        "description": "",
+        "x": 0.4,
+        "y": 6,
+        "type": "technique",
+        "prerequisites": [
+            ["scale_theory"]
+        ]
+    },
     "dynamics": {
         "title": "Dynamics",
         "video_url": "",
         "description": "",
-        "x": 0.5,
+        "x": 0.6,
         "y": 6,
         "type": "technique",
         "prerequisites": [
@@ -156,7 +167,7 @@
         "title": "Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.7,
+        "x": 0.8,
         "y": 6,
         "type": "technique",
         "prerequisites": [
@@ -167,21 +178,20 @@
         "title": "Introduction to Improvisation",
         "video_url": "",
         "description": "",
-        "x": 0.9,
+        "x": 1.0,
         "y": 6,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
         ]
     },
-    "transposition_practice": {
-        "title": "Transposition Practice",
-        "video_url": "",
-        "description": "",
+    "checkpoint_1": {
+        "is_checkpoint": true,
         "x": 0.7,
         "y": 7,
-        "type": "technique",
+        "type": "checkpoint",
         "prerequisites": [
+            ["transposition_practice"],
             ["dynamics"],
             ["right_hand_chords"],
             ["improvisation"]
@@ -195,7 +205,7 @@
         "y": 8,
         "type": "song",
         "prerequisites": [
-            ["transposition_practice"]
+            ["checkpoint_1"]
         ]
     },
     "song_keelhauled": {
@@ -206,7 +216,7 @@
         "y": 8,
         "type": "song",
         "prerequisites": [
-            ["transposition_practice"]
+            ["checkpoint_1"]
         ]
     }
 }

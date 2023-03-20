@@ -54,15 +54,27 @@ function buildLessonStates(state, lessons) {
     let showLater = state._show_later?true:false
     let ret = {}
     for (let lesson in lessons) {
-        let c = isCompleted(lesson, state, lessons)
-        let u = c || isUnlocked(lesson, state, lessons)
-        let t =  c || u || isThreshold(lesson, state, lessons) || showLater
-        let s = u || showLater
-        ret[lesson] = {
-            completed: c,
-            unlocked: u,
-            threshold: t,
-            selectable: s,
+        if (lessons[lesson].is_checkpoint) {
+            let u = isUnlocked(lesson, state, lessons)
+            let t = u || showLater
+            ret[lesson] = {
+                completed: u,
+                unlocked: u,
+                threshold: t,
+                selectable: false,
+            }
+        }
+        else {
+            let c = isCompleted(lesson, state, lessons)
+            let u = c || isUnlocked(lesson, state, lessons)
+            let t =  c || u || isThreshold(lesson, state, lessons) || showLater
+            let s = u || showLater
+            ret[lesson] = {
+                completed: c,
+                unlocked: u,
+                threshold: t,
+                selectable: s,
+            }
         }
     }
     return ret

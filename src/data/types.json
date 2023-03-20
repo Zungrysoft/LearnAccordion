@@ -33,5 +33,10 @@
         "title": "Miscellaneous",
         "color": "#de6d2c",
         "icon": "question"
+    },
+    "checkpoint": {
+        "title": "",
+        "color": "#d3edb9",
+        "icon": "circle"
     }
 }
