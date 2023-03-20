@@ -24,7 +24,7 @@
     "bass_buttons": {
         "title": "Intro to the Bass Buttons",
         "video_url": "",
-        "description": "Learn your first bass pattern.",
+        "description": "Learn your first bass pattern.\nSimple 4/4 oompah in C major.",
         "x": -0.5,
         "y": 2,
         "type": "technique",
@@ -35,7 +35,7 @@
     "bass_buttons_2": {
         "title": "Bass Buttons #2",
         "video_url": "",
-        "description": "Learn some more bass button patterns.",
+        "description": "Learn some more bass button patterns.\n6/8 oompah, other keys",
         "x": -0.3,
         "y": 3,
         "type": "technique",
@@ -57,7 +57,7 @@
     "bass_buttons_3": {
         "title": "Bass Buttons #3",
         "video_url": "",
-        "description": "Even more bass button patterns.",
+        "description": "Even more bass button patterns.\nMoving to the IV and V, minor and 7th.",
         "x": -0.5,
         "y": 4,
         "type": "technique",
@@ -117,12 +117,34 @@
     "bass_jumps": {
         "title": "Bass Button Jumps",
         "video_url": "",
-        "description": "",
+        "description": "Two-buttons jumps and chord progressions that use them.",
         "x": -0.7,
         "y": 5,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_3"]
+        ]
+    },
+    "simple_chord_progressions": {
+        "title": "Simple Chord Progressions",
+        "video_url": "",
+        "description": "Going back around the circle of fifths.",
+        "x": -0.8,
+        "y": 6,
+        "type": "theory",
+        "prerequisites": [
+            ["bass_jumps"]
+        ]
+    },
+    "multiple_buttons": {
+        "title": "Multiple-Button Exercises",
+        "video_url": "",
+        "description": "Bass patterns that involve pressing the bass button and chord button at the same time.",
+        "x": -0.6,
+        "y": 6,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_jumps"]
         ]
     },
 
@@ -148,6 +170,28 @@
         "type": "technique",
         "prerequisites": [
             ["two_handed_playing"]
+        ]
+    },
+    "song_road_movie_to_berlin": {
+        "title": "Road Movie to Berlin",
+        "video_url": "",
+        "description": "",
+        "x": -0.1,
+        "y": 8,
+        "type": "song",
+        "prerequisites": [
+            ["two_handed_playing_2"]
+        ]
+    },
+    "song_papers_please": {
+        "title": "Papers Please Theme",
+        "video_url": "",
+        "description": "",
+        "x": 0.1,
+        "y": 8,
+        "type": "song",
+        "prerequisites": [
+            ["two_handed_playing_2"]
         ]
     },
 
