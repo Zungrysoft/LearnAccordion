@@ -8,7 +8,7 @@ function curvePoint(p) {
 
 function Connector({ lesson1, lesson2, state1, state2 }) {
     // Don't draw if either of the lessons won't show up
-    if (!state1.threshold || !state2.threshold) {
+    if (!state1 || !state1.threshold || !state2 || !state2.threshold) {
         return <div/>
     }
 

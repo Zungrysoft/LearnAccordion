@@ -13,6 +13,9 @@ function isCompleted(lesson, state) {
 }
 
 function isUnlocked(lesson, state, lessons) {
+    if (!lesson || !lessons[lesson]) {
+        return false
+    }
     for (let prerequisite of lessons[lesson].prerequisites) {
         let found_option = false
         for (let option of prerequisite) {
@@ -29,6 +32,9 @@ function isUnlocked(lesson, state, lessons) {
 }
 
 function isThreshold(lesson, state, lessons) {
+    if (!lesson || !lessons[lesson]) {
+        return false
+    }
     for (let prerequisite of lessons[lesson].prerequisites) {
         let found_option = false
         for (let option of prerequisite) {

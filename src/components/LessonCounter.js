@@ -3,7 +3,6 @@ import '../App.css';
 import settingsData from '../data/settings.json';
 
 function LessonCounter({ lessonStates }) {
-    console.log(lessonStates)
     let total = 0
     let completed = 0
     for (let lesson of Object.values(lessonStates)) {
