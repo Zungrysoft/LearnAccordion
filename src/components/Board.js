@@ -82,7 +82,6 @@ function buildGraph(state, lessons) {
 function buildLessonStates(state, lessons) {
     // Build a map from each lesson to its distance from the nearest completed lesson
     let gMap = buildGraph(state, lessons)
-    console.log(gMap)
 
     // If all nodes should be shown
     let showLater = state._show_later?true:false
