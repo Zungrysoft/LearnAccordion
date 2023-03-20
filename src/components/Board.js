@@ -5,26 +5,6 @@ import Connector from './Connector.js';
 import LessonPage from './LessonPage.js';
 import LessonCounter from './LessonCounter.js';
 
-function minList(l) {
-    let min = l[0]
-    for (let elem of l) {
-        if (elem.distance < min.distance) {
-            min = elem
-        }
-    }
-    return min
-}
-
-function maxList(l) {
-    let max = l[0]
-    for (let elem of l) {
-        if (elem.distance > max.distance) {
-            max = elem
-        }
-    }
-    return max
-}
-
 function markGraph(key, state, lessons, gMap) {
     // Early out if this node has already been marked in the gMap
     if (key in gMap) {
@@ -50,20 +30,16 @@ function markGraph(key, state, lessons, gMap) {
         let optionDistances = []
         for (let option of prerequisite) {
             markGraph(option, state, lessons, gMap)
-            optionDistances.push({
-                distance: gMap[option],
-                lessonKey: option
-            })
+            let distance = gMap[option]
+            if (!lessons[option].is_connector) {
+                distance ++
+            }
+            optionDistances.push(distance)
         }
-        prereqDistances.push(minList(optionDistances))
+        prereqDistances.push(Math.min(...optionDistances))
     }
 
-    // Cal
-    let results = maxList(prereqDistances)
-    if (!lessons[results.lessonKey].is_connector) {
-        results.distance ++
-    }
-    gMap[key] = results.distance
+    gMap[key] = Math.max(...prereqDistances)
 }
 
 // Recursive DFS search that marks each lesson in gMap by its distance from the nearest completed lesson
