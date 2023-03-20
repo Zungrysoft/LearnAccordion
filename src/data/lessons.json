@@ -139,6 +139,17 @@
             ["bass_buttons_3"]
         ]
     },
+    "two_handed_playing_2": {
+        "title": "Two-Handed Playing #2",
+        "video_url": "",
+        "description": "",
+        "x": 0,
+        "y": 7,
+        "type": "technique",
+        "prerequisites": [
+            ["two_handed_playing"]
+        ]
+    },
 
 
     "transposition_practice": {
@@ -185,11 +196,11 @@
             ["scale_theory"]
         ]
     },
-    "checkpoint_1": {
-        "is_checkpoint": true,
+    "connector_1": {
+        "is_connector": true,
         "x": 0.7,
         "y": 7,
-        "type": "checkpoint",
+        "type": "connector",
         "prerequisites": [
             ["transposition_practice"],
             ["dynamics"],
@@ -205,7 +216,7 @@
         "y": 8,
         "type": "song",
         "prerequisites": [
-            ["checkpoint_1"]
+            ["connector_1"]
         ]
     },
     "song_keelhauled": {
@@ -216,7 +227,7 @@
         "y": 8,
         "type": "song",
         "prerequisites": [
-            ["checkpoint_1"]
+            ["connector_1"]
         ]
     }
 }

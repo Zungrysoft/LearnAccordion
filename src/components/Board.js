@@ -5,79 +5,137 @@ import Connector from './Connector.js';
 import LessonPage from './LessonPage.js';
 import LessonCounter from './LessonCounter.js';
 
-function isCompleted(lesson, state) {
-    if (state[lesson]) {
-        return true
+function minList(l) {
+    let min = l[0]
+    for (let elem of l) {
+        if (elem.distance < min.distance) {
+            min = elem
+        }
     }
-    return false
+    return min
 }
 
-function isUnlocked(lesson, state, lessons) {
-    if (!lesson || !lessons[lesson]) {
-        return false
+function maxList(l) {
+    let max = l[0]
+    for (let elem of l) {
+        if (elem.distance > max.distance) {
+            max = elem
+        }
     }
-    for (let prerequisite of lessons[lesson].prerequisites) {
-        let found_option = false
+    return max
+}
+
+function markGraph(key, state, lessons, gMap) {
+    // Early out if this node has already been marked in the gMap
+    if (key in gMap) {
+        return
+    }
+    // Early out if this node is marked as completed
+    if (state[key] === true) {
+        gMap[key] = 0
+        return
+    }
+    // Early out if we have no prerequisites
+    if (lessons[key].prerequisites.length === 0) {
+        gMap[key] = 1
+        return
+    }
+
+    // Mark as found so we don't end up with recursion
+    gMap[key] = 999
+
+    let lesson = lessons[key]
+    let prereqDistances = []
+    for (let prerequisite of lesson.prerequisites) {
+        let optionDistances = []
         for (let option of prerequisite) {
-            if (isCompleted(option, state, lessons)) {
-                found_option = true
-                break
-            }
+            markGraph(option, state, lessons, gMap)
+            optionDistances.push({
+                distance: gMap[option],
+                lessonKey: option
+            })
         }
-        if (!found_option) {
-            return false
-        }
+        prereqDistances.push(minList(optionDistances))
     }
-    return true
+
+    // Cal
+    let results = maxList(prereqDistances)
+    if (!lessons[results.lessonKey].is_connector) {
+        results.distance ++
+    }
+    gMap[key] = results.distance
 }
 
-function isThreshold(lesson, state, lessons) {
-    if (!lesson || !lessons[lesson]) {
-        return false
-    }
-    for (let prerequisite of lessons[lesson].prerequisites) {
-        let found_option = false
-        for (let option of prerequisite) {
-            if (isUnlocked(option, state, lessons)) {
-                found_option = true
-                break
-            }
-        }
-        if (!found_option) {
-            return false
+// Recursive DFS search that marks each lesson in gMap by its distance from the nearest completed lesson
+function buildGraph(state, lessons) {
+    let gMap = {}
+    for (let key in lessons) {
+        let lesson = lessons[key]
+        if (!(lesson in gMap)) {
+            markGraph(key, state, lessons, gMap)
         }
     }
-    return true
+    return gMap
 }
 
+// Build a map of each lesson and its completion status
 function buildLessonStates(state, lessons) {
+    // Build a map from each lesson to its distance from the nearest completed lesson
+    let gMap = buildGraph(state, lessons)
+    console.log(gMap)
+
+    // If all nodes should be shown
     let showLater = state._show_later?true:false
+
     let ret = {}
-    for (let lesson in lessons) {
-        if (lessons[lesson].is_checkpoint) {
-            let u = isUnlocked(lesson, state, lessons)
-            let t = u || showLater
-            ret[lesson] = {
-                completed: u,
-                unlocked: u,
-                threshold: t,
+    for (let key in lessons) {
+        if (lessons[key].is_connector) {
+            ret[key] = {
+                completed: gMap[key] <= 1,
+                unlocked: gMap[key] <= 1,
+                threshold: gMap[key] <= 2 || showLater,
                 selectable: false,
             }
         }
         else {
-            let c = isCompleted(lesson, state, lessons)
-            let u = c || isUnlocked(lesson, state, lessons)
-            let t =  c || u || isThreshold(lesson, state, lessons) || showLater
-            let s = u || showLater
-            ret[lesson] = {
-                completed: c,
-                unlocked: u,
-                threshold: t,
-                selectable: s,
+            ret[key] = {
+                completed: gMap[key] <= 0,
+                unlocked: gMap[key] <= 1,
+                threshold: gMap[key] <= 2 || showLater,
+                selectable: gMap[key] <= 1 || showLater,
             }
         }
     }
     return ret
+
+
+    // let showLater = state._show_later?true:false
+    // let ret = {}
+    // for (let lesson in lessons) {
+    //     if (lessons[lesson].is_connector) {
+    //         let u = isUnlocked(lesson, state, lessons)
+    //         let t = u || showLater
+    //         ret[lesson] = {
+    //             completed: u,
+    //             unlocked: u,
+    //             threshold: t,
+    //             selectable: false,
+    //         }
+    //     }
+    //     else {
+    //         let c = isCompleted(lesson, state, lessons)
+    //         let u = c || isUnlocked(lesson, state, lessons)
+    //         let t =  c || u || showLater || isThreshold(lesson, state, lessons)
+    //         let s = u || showLater
+    //         ret[lesson] = {
+    //             completed: c,
+    //             unlocked: u,
+    //             threshold: t,
+    //             selectable: s,
+    //         }
+    //     }
+    // }
+    // return ret
 }
 
 function Board({ lessons, state, onChange }) {

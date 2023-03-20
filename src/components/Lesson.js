@@ -13,7 +13,7 @@ function Lesson({ lesson, state, onSetPage }) {
     let yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing
     let iconWidth = settingsData.icon_width * settingsData.icon_scale
     let iconMargin = (settingsData.icon_width - iconWidth) / 2
-    if (lesson.is_checkpoint) {
+    if (lesson.is_connector) {
         iconWidth *= 0.3
         iconMargin *= 0.3
         yPos += iconWidth
@@ -51,7 +51,7 @@ function Lesson({ lesson, state, onSetPage }) {
                     }}
                 />
             </div>
-            {(state.completed && !lesson.is_checkpoint)?<img
+            {(state.completed && !lesson.is_connector)?<img
                 src={`${process.env.PUBLIC_URL}/icon/complete.png`}
                 className="check-mark"
                 alt=""
