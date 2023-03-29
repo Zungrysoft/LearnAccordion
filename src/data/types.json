@@ -26,7 +26,7 @@
     },
     "challenge": {
         "title": "Challenge",
-        "color": "#1a1a1a",
+        "color": "#666666",
         "icon": "medal"
     },
     "misc": {

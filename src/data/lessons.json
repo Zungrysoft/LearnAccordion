@@ -117,7 +117,7 @@
     "bass_jumps": {
         "title": "Bass Button Jumps",
         "video_url": "",
-        "description": "Two-buttons jumps and chord progressions that use them.",
+        "description": "Two-buttons jumps and more bass patterns.",
         "x": -0.7,
         "y": 5,
         "type": "technique",
@@ -129,7 +129,7 @@
         "title": "Simple Chord Progressions",
         "video_url": "",
         "description": "Going back around the circle of fifths.",
-        "x": -0.8,
+        "x": -0.9,
         "y": 6,
         "type": "theory",
         "prerequisites": [
@@ -140,11 +140,23 @@
         "title": "Multiple-Button Exercises",
         "video_url": "",
         "description": "Bass patterns that involve pressing the bass button and chord button at the same time.",
-        "x": -0.6,
+        "x": -0.7,
         "y": 6,
         "type": "technique",
         "prerequisites": [
             ["bass_jumps"]
+        ]
+    },
+    "more_bass": {
+        "title": "Beginner Bass Capstone",
+        "video_url": "",
+        "description": "Bass pattern challenges that test your abilities.",
+        "x": -0.7,
+        "y": 7,
+        "type": "challenge",
+        "prerequisites": [
+            ["simple_chord_progressions"],
+            ["multiple_buttons"]
         ]
     },
 
@@ -196,8 +208,8 @@
     },
 
 
-    "transposition_practice": {
-        "title": "Transposition Practice",
+    "dynamics": {
+        "title": "Dynamics",
         "video_url": "",
         "description": "",
         "x": 0.4,
@@ -207,8 +219,19 @@
             ["scale_theory"]
         ]
     },
-    "dynamics": {
-        "title": "Dynamics",
+    "register_switches": {
+        "title": "Register Switches",
+        "video_url": "",
+        "description": "",
+        "x": 0.4,
+        "y": 7,
+        "type": "instrument",
+        "prerequisites": [
+            ["dynamics"]
+        ]
+    },
+    "transposition_practice": {
+        "title": "Transposition Practice",
         "video_url": "",
         "description": "",
         "x": 0.6,

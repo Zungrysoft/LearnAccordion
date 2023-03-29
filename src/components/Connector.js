@@ -1,6 +1,7 @@
 import '../App.css';
 import settingsData from '../data/settings.json';
 import lessonData from '../data/settings.json';
+import { BezierCurveEditor } from 'react-bezier-curve-editor';
 
 function curvePoint(p) {
     return (Math.tanh((p - 0.5) * settingsData.connector_bendiness) * 0.5) + 0.5
