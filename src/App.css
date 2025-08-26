@@ -83,8 +83,6 @@ a {
 
 h2 {
     font-size: 20px;
-    margin-bottom: 10px;
-    margin-top: 25px;
     user-select: none;
     color: black;
     text-align: center;
@@ -117,6 +115,7 @@ img {
     -webkit-user-select: none;
     -ms-user-select: none;
     margin: 0;
+    display: block;
 }
 
 .bounding-box-lesson {

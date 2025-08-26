@@ -13,7 +13,7 @@
         "video_url": "",
         "description": "",
         "x": 0,
-        "y": 1,
+        "y": 100,
         "type": "general",
         "prerequisites": [
             ["intro"]
@@ -26,7 +26,7 @@
         "video_url": "",
         "description": "Learn your first bass pattern.\nSimple 4/4 oompah in C major.",
         "x": -0.5,
-        "y": 2,
+        "y": 200,
         "type": "technique",
         "prerequisites": [
             ["about"]
@@ -37,7 +37,7 @@
         "video_url": "",
         "description": "Learn some more bass button patterns.\n6/8 oompah, other keys",
         "x": -0.3,
-        "y": 3,
+        "y": 300,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons"]
@@ -48,7 +48,7 @@
         "video_url": "",
         "description": "Learn how the bass buttons are arranged and why.",
         "x": -0.7,
-        "y": 3,
+        "y": 300,
         "type": "instrument",
         "prerequisites": [
             ["bass_buttons"]
@@ -59,7 +59,7 @@
         "video_url": "",
         "description": "Even more bass button patterns.\nMoving to the IV and V, minor and 7th.",
         "x": -0.5,
-        "y": 4,
+        "y": 400,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_2"],
@@ -73,18 +73,29 @@
         "video_url": "",
         "description": "Learn the C major scale and how to spider-walk.",
         "x": 0.5,
-        "y": 2,
+        "y": 200,
         "type": "technique",
         "prerequisites": [
             ["about"]
+        ]
+    },
+    "c_system": {
+        "title": "The C System",
+        "video_url": "",
+        "description": "Learn how the buttons are arranged on the right side of the instrument.",
+        "x": 0.4,
+        "y": 300,
+        "type": "instrument",
+        "prerequisites": [
+            ["major_scale"]
         ]
     },
     "about_songs": {
         "title": "Song Choice",
         "video_url": "",
         "description": "",
-        "x": 0.5,
-        "y": 3,
+        "x": 0.6,
+        "y": 300,
         "type": "general",
         "prerequisites": [
             ["major_scale"]
@@ -94,8 +105,8 @@
         "title": "She'll be Comin' Round the Mountain",
         "video_url": "",
         "description": "",
-        "x": 0.5,
-        "y": 4,
+        "x": 0.6,
+        "y": 400,
         "type": "song",
         "prerequisites": [
             ["about_songs"]
@@ -106,9 +117,10 @@
         "video_url": "",
         "description": "",
         "x": 0.5,
-        "y": 5,
+        "y": 500,
         "type": "theory",
         "prerequisites": [
+            ["c_system"],
             ["song_round_the_mountain"]
         ]
     },
@@ -119,7 +131,7 @@
         "video_url": "",
         "description": "Two-buttons jumps and more bass patterns.",
         "x": -0.7,
-        "y": 5,
+        "y": 500,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_3"]
@@ -130,7 +142,7 @@
         "video_url": "",
         "description": "Going back around the circle of fifths.",
         "x": -0.9,
-        "y": 6,
+        "y": 600,
         "type": "theory",
         "prerequisites": [
             ["bass_jumps"]
@@ -141,7 +153,7 @@
         "video_url": "",
         "description": "Bass patterns that involve pressing the bass button and chord button at the same time.",
         "x": -0.7,
-        "y": 6,
+        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["bass_jumps"]
@@ -152,7 +164,7 @@
         "video_url": "",
         "description": "Bass pattern challenges that test your abilities.",
         "x": -0.7,
-        "y": 7,
+        "y": 700,
         "type": "challenge",
         "prerequisites": [
             ["simple_chord_progressions"],
@@ -164,9 +176,9 @@
     "two_handed_playing": {
         "title": "Intro to Two-Handed Playing",
         "video_url": "",
-        "description": "",
+        "description": "Very simple melody while tapping a bass note exercise.",
         "x": 0,
-        "y": 6,
+        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"],
@@ -176,31 +188,35 @@
     "two_handed_playing_2": {
         "title": "Two-Handed Playing #2",
         "video_url": "",
-        "description": "",
+        "description": "Sliding up and down the bass strap while maintaining loudness exercise.\nTwo-hand exercise with moving bass note.",
         "x": 0,
-        "y": 7,
+        "y": 700,
         "type": "technique",
         "prerequisites": [
             ["two_handed_playing"]
         ]
     },
-    "song_road_movie_to_berlin": {
-        "title": "Road Movie to Berlin",
+    "songs_two_handed_1": {
+        "title": "Two Handed Songs #1",
         "video_url": "",
         "description": "",
-        "x": -0.1,
-        "y": 8,
-        "type": "song",
-        "prerequisites": [
-            ["two_handed_playing_2"]
-        ]
-    },
-    "song_papers_please": {
-        "title": "Papers Please Theme",
-        "video_url": "",
-        "description": "",
-        "x": 0.1,
-        "y": 8,
+        "subtasks_required": 2,
+        "subtasks": {
+          "road_movie_to_berlin": {
+            "title": "Road Movie To Berlin",
+            "artist": "They Might Be Giants",
+            "video_url": "",
+            "genre": "Alternative"
+          },
+          "papers_please_theme": {
+            "title": "Papers Please Title Theme",
+            "artist": "Lucas Pope",
+            "video_url": "",
+            "genre": "Video Game Music"
+          } 
+        },
+        "x": 0,
+        "y": 800,
         "type": "song",
         "prerequisites": [
             ["two_handed_playing_2"]
@@ -213,7 +229,7 @@
         "video_url": "",
         "description": "",
         "x": 0.4,
-        "y": 6,
+        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -224,7 +240,7 @@
         "video_url": "",
         "description": "",
         "x": 0.4,
-        "y": 7,
+        "y": 700,
         "type": "instrument",
         "prerequisites": [
             ["dynamics"]
@@ -235,7 +251,7 @@
         "video_url": "",
         "description": "",
         "x": 0.6,
-        "y": 6,
+        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -246,7 +262,7 @@
         "video_url": "",
         "description": "",
         "x": 0.8,
-        "y": 6,
+        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -257,7 +273,7 @@
         "video_url": "",
         "description": "",
         "x": 1.0,
-        "y": 6,
+        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -266,7 +282,7 @@
     "connector_1": {
         "is_connector": true,
         "x": 0.7,
-        "y": 7,
+        "y": 700,
         "type": "connector",
         "prerequisites": [
             ["transposition_practice"],
@@ -280,7 +296,7 @@
         "video_url": "",
         "description": "",
         "x": 0.6,
-        "y": 8,
+        "y": 800,
         "type": "song",
         "prerequisites": [
             ["connector_1"]
@@ -291,7 +307,7 @@
         "video_url": "",
         "description": "",
         "x": 0.8,
-        "y": 8,
+        "y": 800,
         "type": "song",
         "prerequisites": [
             ["connector_1"]

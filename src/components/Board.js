@@ -11,7 +11,7 @@ function markGraph(key, state, lessons, gMap) {
         return
     }
     // Early out if this node is marked as completed
-    if (state[key] === true) {
+    if (state[key]?.completed === true || Object.values(state[key]?.subtasks ?? {}).filter((x) => x).length >= lessons[key].subtasks_required) {
         gMap[key] = 0
         return
     }
@@ -143,11 +143,26 @@ function Board({ lessons, state, onChange }) {
             ))}
             <LessonPage
                 lesson={lessons[currentPage]}
-                state={builtLessons[currentPage]}
-                onChange={(newState) => (
+                completionState={state[currentPage]}
+                onChangeCompleted={(newState) => (
                     onChange({
                         ...state,
-                        [currentPage]: newState
+                        [currentPage]: {
+                            ...state[currentPage] ?? {},
+                            completed: newState,
+                        }
+                    })
+                )}
+                onChangeSubtask={(subtask, newState) => (
+                    onChange({
+                        ...state,
+                        [currentPage]: {
+                            ...state[currentPage] ?? {},
+                            subtasks: {
+                                ...state[currentPage]?.subtasks ?? {},
+                                [subtask]: newState,
+                            },
+                        }
                     })
                 )}
                 onClose={() => {setPageOpen(false)}}

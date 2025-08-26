@@ -12,6 +12,7 @@
     "song": {
         "title": "Song",
         "color": "#bf0b68",
+        "color2": "#e6539f",
         "icon": "disc"
     },
     "instrument": {
