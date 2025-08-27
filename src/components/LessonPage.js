@@ -73,10 +73,6 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
         subtaskCompletionText = `Learn ${completedSubtasks > 0 ? '' : 'any'} ${moreNeeded} ${completedSubtasks > 0 ? 'more' : ''} song${moreNeeded === 1 ? '' : 's'} to advance`;
     }
 
-    if (!isOpen) {
-        return null;
-    }
-
     return (
         <div className={isOpen?"backdrop":"backdrop-none"}>
             <div
