@@ -160,8 +160,8 @@ img {
     top: 2vh;
     transform: translate(-50%, 0%);
     text-align: center;
-    transition: top 0.1s;
-    transition-timing-function: ease-out;
+    /* transition: top 0.1s;
+    transition-timing-function: ease-out; */
 }
 
 .page-close {
@@ -233,7 +233,6 @@ img {
     align-items: center;
     text-align: center;
     background-color: rgba(0,0,0,0.6);
-    transition: background-color 0.1s;
     z-index: 2;
 }
 
@@ -250,7 +249,6 @@ img {
     align-items: center;
     text-align: center;
     background-color: rgba(0,0,0,0);
-    transition: background-color 0.1s;
     z-index: 2;
     pointer-events: none
 }

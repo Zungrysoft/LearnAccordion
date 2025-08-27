@@ -213,7 +213,25 @@
             "artist": "Lucas Pope",
             "video_url": "",
             "genre": "Video Game Music"
-          } 
+          },
+          "beer_barrel_polka": {
+            "title": "The Beer Barrel Polka",
+            "artist": "",
+            "video_url": "",
+            "genre": "Polka"
+          },
+          "south_australia": {
+            "title": "South Australia",
+            "artist": "",
+            "video_url": "",
+            "genre": "Sea Shanty"
+          },
+          "big_mamou": {
+            "title": "Big Mamou",
+            "artist": "Fernest Arceneaux",
+            "video_url": "",
+            "genre": "Zydeco"
+          }
         },
         "x": 0,
         "y": 800,

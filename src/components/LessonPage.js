@@ -28,6 +28,15 @@ function GenreIndicator({ genre }) {
     else if (['zydeco'].includes(genre.toLowerCase())) {
         genreIcon = 'washboard'
     }
+    else if (['polka'].includes(genre.toLowerCase())) {
+        genreIcon = 'accordion'
+    }
+    else if (['sea shanty'].includes(genre.toLowerCase())) {
+        genreIcon = 'anchor'
+    }
+    else if (['latin'].includes(genre.toLowerCase())) {
+        genreIcon = 'maracas'
+    }
     else if (['video game music'].includes(genre.toLowerCase())) {
         genreIcon = 'controller'
     }
@@ -64,6 +73,10 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
         subtaskCompletionText = `Learn ${completedSubtasks > 0 ? '' : 'any'} ${moreNeeded} ${completedSubtasks > 0 ? 'more' : ''} song${moreNeeded === 1 ? '' : 's'} to advance`;
     }
 
+    if (!isOpen) {
+        return null;
+    }
+
     return (
         <div className={isOpen?"backdrop":"backdrop-none"}>
             <div
@@ -98,7 +111,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                                                 textAlign: "left",
                                                 border: "solid",
                                                 backgroundColor: typeData[lesson.type].color2,
-                                                borderRadius: "8px 8px 0 0",
+                                                borderRadius: openSubtask === subtaskKey ? "8px 8px 0 0" : "8px",
                                                 cursor: "pointer",
                                             }}
                                             onClick={() => setOpenSubtask((prev) => {return prev === subtaskKey ? null : subtaskKey})}
@@ -118,13 +131,13 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                                                     borderRadius: "0 0 8px 8px",
                                                 }}
                                             >
-                                                <p>{`by ${subtask.artist}`}</p>
+                                                {subtask.artist && <p>{`by ${subtask.artist}`}</p>}
                                                 <p>{subtask.description}</p>
                                                 <Embed url={subtask.video_url}/>
                                                 <CheckBox
                                                     text="Mark as completed:"
                                                     onChange={(newState) => onChangeSubtask(subtaskKey, newState)}
-                                                    checked={completionState.subtasks?.[subtaskKey]}
+                                                    checked={completionState?.subtasks?.[subtaskKey]}
                                                 />
                                             </div>
                                         )}
@@ -135,7 +148,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                     </div>
                 )}
                 {!lesson.subtasks && (
-                    <CheckBox text="Mark as completed:" onChange={onChangeCompleted} checked={completionState.completed}/>
+                    <CheckBox text="Mark as completed:" onChange={onChangeCompleted} checked={completionState?.completed}/>
                 )}
                 
 

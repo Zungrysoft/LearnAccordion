@@ -2,8 +2,11 @@ import '../App.css';
 import React from 'react';
 import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
+import { useIsMobile } from '../helpers/breakpoints';
 
 function Lesson({ lesson, state, onSetPage }) {
+    const isMobile = useIsMobile();
+
     // Don't show at all if we're not close to unlocking it
     if (!state.threshold) {
         return <div/>
@@ -34,8 +37,8 @@ function Lesson({ lesson, state, onSetPage }) {
     return (
         <div>
             <div className="bounding-box-lesson" onClick={state.selectable?onSetPage:null} style={{
-                left: xPos+"vw",
-                top: yPos+"vw",
+                left: isMobile ? yPos+"vh" : xPos+"vw",
+                top: isMobile ? (100-xPos)+"vh" : yPos+"vw",
                 "--background-color": backgroundColor,
                 "--background-color2": backgroundColor2,
             }}>
@@ -45,8 +48,8 @@ function Lesson({ lesson, state, onSetPage }) {
                     className="lesson-icon"
                     alt=""
                     style={{
-                        width: iconWidth+"vw",
-                        height: iconWidth+"vw",
+                        width: isMobile ? iconWidth+"vh" : iconWidth+"vw",
+                        height: isMobile ? iconWidth+"vh" : iconWidth+"vw",
                         margin: iconMargin+"vw"
                     }}
                 />
@@ -56,10 +59,10 @@ function Lesson({ lesson, state, onSetPage }) {
                 className="check-mark"
                 alt=""
                 style={{
-                    left: xPos+"vw",
-                    top: yPos+"vw",
-                    width: settingsData.icon_width+"vw",
-                    height: settingsData.icon_width+"vw",
+                    left: isMobile ? yPos+"vh" : xPos+"vw",
+                    top: isMobile ? (100-xPos)+"vh" : yPos+"vw",
+                    width: isMobile ? settingsData.icon_width+"vh" : settingsData.icon_width+"vw",
+                    height: isMobile ? settingsData.icon_width+"vh" : settingsData.icon_width+"vw",
                 }}
             />:<div/>}
         </div>

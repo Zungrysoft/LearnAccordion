@@ -46,7 +46,7 @@ function App() {
     }, [lessonData])
 
     return (
-        <div className="App">
+        <div className="App" style={{ overflow: 'clip' }}>
             <Board
                 lessons={processedLessonData}
                 state={lessonState}
