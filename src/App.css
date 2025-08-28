@@ -134,16 +134,16 @@ img {
     transform: translate(-50%, 0%);
 }
 
-.bottom-right {
+.top-right {
     position:fixed;
-    bottom:0;
+    top:0;
     right:0;
     margin:20px;
 }
 
-.bottom-left {
+.top-left {
     position:fixed;
-    bottom:0;
+    top:0;
     left:0;
     margin:20px;
 }
@@ -166,14 +166,14 @@ img {
 
 .page-close {
     position: fixed;
-    left: 68vw;
-    top: 4vh;
+    right: 8px;
+    top: calc(2vh + 16px);
     font-size: 70;
     background-color: red;
     color: black;
     border: 2px solid black;
-    width: 2vw;
-    height: 2vw;
+    width: 32px;
+    height: 32px;
     transform: translate(-50%, -50%);
 }
 

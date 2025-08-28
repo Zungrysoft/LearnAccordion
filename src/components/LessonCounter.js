@@ -13,7 +13,7 @@ function LessonCounter({ lessonStates }) {
     }
 
     return (
-        <div className="bottom-left">
+        <div className="top-left">
             <h2 style={{color: settingsData.connector_color_completed}}>{completed + "/" + total}</h2>
         </div>
     )

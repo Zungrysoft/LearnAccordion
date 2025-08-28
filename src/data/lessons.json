@@ -21,6 +21,19 @@
     },
 
 
+    "types_of_accordions": {
+        "title": "Types of Accordions",
+        "video_url": "",
+        "description": "",
+        "x": 0,
+        "y": 200,
+        "type": "instrument",
+        "prerequisites": [
+            ["about"]
+        ]
+    },
+
+
     "bass_buttons": {
         "title": "Intro to the Bass Buttons",
         "video_url": "",
@@ -206,31 +219,49 @@
             "title": "Road Movie To Berlin",
             "artist": "They Might Be Giants",
             "video_url": "",
+            "has_lyrics": true,
+            "has_backing_track": false,
             "genre": "Alternative"
           },
           "papers_please_theme": {
-            "title": "Papers Please Title Theme",
-            "artist": "Lucas Pope",
+            "title": "Title Theme",
+            "artist": "Papers Please",
             "video_url": "",
+            "has_lyrics": false,
+            "has_backing_track": false,
             "genre": "Video Game Music"
           },
           "beer_barrel_polka": {
             "title": "The Beer Barrel Polka",
             "artist": "",
             "video_url": "",
+            "has_lyrics": true,
+            "has_backing_track": false,
             "genre": "Polka"
           },
           "south_australia": {
             "title": "South Australia",
             "artist": "",
             "video_url": "",
+            "has_lyrics": true,
+            "has_backing_track": false,
             "genre": "Sea Shanty"
           },
           "big_mamou": {
             "title": "Big Mamou",
             "artist": "Fernest Arceneaux",
             "video_url": "",
+            "has_lyrics": true,
+            "has_backing_track": false,
             "genre": "Zydeco"
+          },
+          "simpsons_theme": {
+            "title": "Main Theme",
+            "artist": "The Simpsons",
+            "video_url": "",
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "Soundtrack"
           }
         },
         "x": 0,

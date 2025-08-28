@@ -13,7 +13,7 @@ function Lesson({ lesson, state, onSetPage }) {
     }
 
     let xPos = (lesson.x *45) + 50
-    let yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing
+    let yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing + 1.5
     let iconWidth = settingsData.icon_width * settingsData.icon_scale
     let iconMargin = (settingsData.icon_width - iconWidth) / 2
     if (lesson.is_connector) {
@@ -50,7 +50,7 @@ function Lesson({ lesson, state, onSetPage }) {
                     style={{
                         width: isMobile ? iconWidth+"vh" : iconWidth+"vw",
                         height: isMobile ? iconWidth+"vh" : iconWidth+"vw",
-                        margin: iconMargin+"vw"
+                        margin: iconMargin+"vw",
                     }}
                 />
             </div>

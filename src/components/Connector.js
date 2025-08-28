@@ -28,9 +28,9 @@ function Connector({ lesson1, lesson2, state1, state2 }) {
 
     // Get positions of the two lessons
     let x1 = (lesson1.x *45) + 50
-    let y1 = lesson1.y * settingsData.icon_width * settingsData.vertical_spacing
+    let y1 = lesson1.y * settingsData.icon_width * settingsData.vertical_spacing + 1.5
     let x2 = (lesson2.x *45) + 50
-    let y2 = lesson2.y * settingsData.icon_width * settingsData.vertical_spacing
+    let y2 = lesson2.y * settingsData.icon_width * settingsData.vertical_spacing + 1.5
     const h = (settingsData.icon_width/2)
 
     // Special early exit case for if the line is completely vertical

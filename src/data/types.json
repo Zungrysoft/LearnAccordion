@@ -25,6 +25,11 @@
         "color": "#4fa870",
         "icon": "notebook"
     },
+    "history": {
+        "title": "Music History",
+        "color": "#bd9973",
+        "icon": "scroll"
+    },
     "challenge": {
         "title": "Challenge",
         "color": "#666666",

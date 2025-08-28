@@ -55,7 +55,7 @@ function App() {
                     localStorage.setItem("lessonState", JSON.stringify(newState))
                 }}
             />
-            <div className="bottom-right">
+            <div className="top-right">
                 <CheckBox
                     text="Show later lessons:"
                     onChange={(newState) => {

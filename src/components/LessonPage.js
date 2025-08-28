@@ -4,17 +4,55 @@ import typeData from '../data/types.json';
 import Embed from './Embed';
 import CheckBox from './CheckBox';
 
+function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack }) {
+    let titleText = artist ?
+        `${artist} - ${title}` :
+        title;
+
+    return (
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            <h2 style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+                {titleText}
+            </h2>
+            {hasLyrics && (
+                <img
+                    src={`${process.env.PUBLIC_URL}/icon/microphone2.png`}
+                    alt=""
+                    style={{
+                        width: '24px',
+                        height: '24px',
+                    }}
+                />
+            )}
+            {hasBackingTrack && (
+                <img
+                    src={`${process.env.PUBLIC_URL}/icon/music.png`}
+                    alt=""
+                    style={{
+                        width: '24px',
+                        height: '24px',
+                    }}
+                />
+            )}
+        </div>
+    );
+    
+}
+
 function GenreIndicator({ genre }) {
     if (!genre) {
         return null;
     }
 
     let genreIcon = null;
-    if (['rock', 'metal', 'alternative'].includes(genre.toLowerCase())) {
+    if (['rock', 'metal', 'alternative', 'blues', 'rhythm and blues'].includes(genre.toLowerCase())) {
         genreIcon = 'guitar';
     }
-    else if (['classical', 'orchestra', 'soundtrack'].includes(genre.toLowerCase())) {
+    else if (['classical', 'orchestra'].includes(genre.toLowerCase())) {
         genreIcon = 'piano2'
+    }
+    else if (['soundtrack'].includes(genre.toLowerCase())) {
+        genreIcon = 'television'
     }
     else if (['folk'].includes(genre.toLowerCase())) {
         genreIcon = 'clap'
@@ -22,7 +60,7 @@ function GenreIndicator({ genre }) {
     else if (['pop'].includes(genre.toLowerCase())) {
         genreIcon = 'microphone'
     }
-    else if (['jazz'].includes(genre.toLowerCase())) {
+    else if (['jazz', 'ska'].includes(genre.toLowerCase())) {
         genreIcon = 'saxophone'
     }
     else if (['zydeco'].includes(genre.toLowerCase())) {
@@ -37,7 +75,7 @@ function GenreIndicator({ genre }) {
     else if (['latin'].includes(genre.toLowerCase())) {
         genreIcon = 'maracas'
     }
-    else if (['video game music'].includes(genre.toLowerCase())) {
+    else if (['video game music', 'chiptune'].includes(genre.toLowerCase())) {
         genreIcon = 'controller'
     }
 
@@ -113,9 +151,13 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                                             onClick={() => setOpenSubtask((prev) => {return prev === subtaskKey ? null : subtaskKey})}
                                         >
                                             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '8px', justifyContent: 'space-between' }}>
-                                                <h2 style={{ textDecoration: completionState.subtasks?.[subtaskKey] ? 'line-through' : 'none' }}>
-                                                    {subtask.title}
-                                                </h2>
+                                                <SubtaskTitle
+                                                    title={subtask.title}
+                                                    artist={subtask.artist}
+                                                    completed={completionState?.subtasks?.[subtaskKey]}
+                                                    hasLyrics={subtask.has_lyrics}
+                                                    hasBackingTrack={subtask.has_backing_track}
+                                                />
                                                 <GenreIndicator genre={subtask.genre} />
                                             </div>
                                         </button>
@@ -127,7 +169,6 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                                                     borderRadius: "0 0 8px 8px",
                                                 }}
                                             >
-                                                {subtask.artist && <p>{`by ${subtask.artist}`}</p>}
                                                 <p>{subtask.description}</p>
                                                 <Embed url={subtask.video_url}/>
                                                 <CheckBox
