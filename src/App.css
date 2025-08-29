@@ -149,13 +149,11 @@ img {
 }
 
 .bounding-box-page {
-    border: 2px solid black;
-    margin: 3px;
     background-color: var(--background-color);
-    border-radius: 1vw;
+    border-radius: 16px 16px 0 0;
     position: fixed;
     width: 70vw;
-    height: 105vh;
+    height: 98vh;
     left: 50vw;
     top: 2vh;
     transform: translate(-50%, 0%);

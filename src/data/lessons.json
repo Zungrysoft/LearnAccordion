@@ -32,6 +32,17 @@
             ["about"]
         ]
     },
+    "buying_used_accordions": {
+        "title": "Buying a Used Accordion",
+        "video_url": "",
+        "description": "",
+        "x": 0,
+        "y": 300,
+        "type": "instrument",
+        "prerequisites": [
+            ["types_of_accordions"]
+        ]
+    },
 
 
     "bass_buttons": {

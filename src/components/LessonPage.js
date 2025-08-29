@@ -3,98 +3,7 @@ import React, { useState } from 'react';
 import typeData from '../data/types.json';
 import Embed from './Embed';
 import CheckBox from './CheckBox';
-
-function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack }) {
-    let titleText = artist ?
-        `${artist} - ${title}` :
-        title;
-
-    return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-            <h2 style={{ textDecoration: completed ? 'line-through' : 'none' }}>
-                {titleText}
-            </h2>
-            {hasLyrics && (
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/microphone2.png`}
-                    alt=""
-                    style={{
-                        width: '24px',
-                        height: '24px',
-                    }}
-                />
-            )}
-            {hasBackingTrack && (
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/music.png`}
-                    alt=""
-                    style={{
-                        width: '24px',
-                        height: '24px',
-                    }}
-                />
-            )}
-        </div>
-    );
-    
-}
-
-function GenreIndicator({ genre }) {
-    if (!genre) {
-        return null;
-    }
-
-    let genreIcon = null;
-    if (['rock', 'metal', 'alternative', 'blues', 'rhythm and blues'].includes(genre.toLowerCase())) {
-        genreIcon = 'guitar';
-    }
-    else if (['classical', 'orchestra'].includes(genre.toLowerCase())) {
-        genreIcon = 'piano2'
-    }
-    else if (['soundtrack'].includes(genre.toLowerCase())) {
-        genreIcon = 'television'
-    }
-    else if (['folk'].includes(genre.toLowerCase())) {
-        genreIcon = 'clap'
-    }
-    else if (['pop'].includes(genre.toLowerCase())) {
-        genreIcon = 'microphone'
-    }
-    else if (['jazz', 'ska'].includes(genre.toLowerCase())) {
-        genreIcon = 'saxophone'
-    }
-    else if (['zydeco'].includes(genre.toLowerCase())) {
-        genreIcon = 'washboard'
-    }
-    else if (['polka'].includes(genre.toLowerCase())) {
-        genreIcon = 'accordion'
-    }
-    else if (['sea shanty'].includes(genre.toLowerCase())) {
-        genreIcon = 'anchor'
-    }
-    else if (['latin'].includes(genre.toLowerCase())) {
-        genreIcon = 'maracas'
-    }
-    else if (['video game music', 'chiptune'].includes(genre.toLowerCase())) {
-        genreIcon = 'controller'
-    }
-
-    return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
-            <h2 style={{ fontSize: 16, fontWeight: 'normal', fontStyle: 'italic' }}>{genre}</h2>
-            {genreIcon && (
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/${genreIcon}.png`}
-                    alt=""
-                    style={{
-                        width: '48px',
-                        height: '48px',
-                    }}
-                />
-            )}
-        </div>
-    );
-}
+import LessonSubtask from './LessonSubtask';
 
 function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtask, onClose, isOpen }) {
     const [openSubtask, setOpenSubtask] = useState(null);
@@ -118,7 +27,9 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                 style={{
                     "--background-color": typeData[lesson.type].color,
                     top: isOpen?"2vh":"105vh",
+                    overflowY: 'auto',
                 }}
+                
             >
                 <button className="page-close" onClick={onClose}>X</button>
                 <h2>{typeData[lesson.type].title}</h2>
@@ -127,59 +38,20 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                 <Embed url={lesson.video_url}/>
                 <p>{lesson.description}</p>
                 {lesson.subtasks && (
-                    <div style={{ width: "auto", padding: "16px" }}>
+                    <div style={{ width: "auto", padding: "16px", height: 'auto' }}>
                         {
                             Object.keys(lesson.subtasks).map((subtaskKey) => {
                                 const subtask = lesson.subtasks[subtaskKey];
 
-                                return (
-                                    <div
-                                        key={subtaskKey}
-                                        style={{
-                                            marginBottom: "8px",
-                                        }}
-                                    >
-                                        <button
-                                            style={{
-                                                width: "100%",
-                                                textAlign: "left",
-                                                border: "solid",
-                                                backgroundColor: typeData[lesson.type].color2,
-                                                borderRadius: openSubtask === subtaskKey ? "8px 8px 0 0" : "8px",
-                                                cursor: "pointer",
-                                            }}
-                                            onClick={() => setOpenSubtask((prev) => {return prev === subtaskKey ? null : subtaskKey})}
-                                        >
-                                            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', padding: '8px', justifyContent: 'space-between' }}>
-                                                <SubtaskTitle
-                                                    title={subtask.title}
-                                                    artist={subtask.artist}
-                                                    completed={completionState?.subtasks?.[subtaskKey]}
-                                                    hasLyrics={subtask.has_lyrics}
-                                                    hasBackingTrack={subtask.has_backing_track}
-                                                />
-                                                <GenreIndicator genre={subtask.genre} />
-                                            </div>
-                                        </button>
-                                        {openSubtask === subtaskKey && (
-                                            <div
-                                                style={{
-                                                    padding: "12px",
-                                                    backgroundColor: typeData[lesson.type].color2,
-                                                    borderRadius: "0 0 8px 8px",
-                                                }}
-                                            >
-                                                <p>{subtask.description}</p>
-                                                <Embed url={subtask.video_url}/>
-                                                <CheckBox
-                                                    text="Mark as completed:"
-                                                    onChange={(newState) => onChangeSubtask(subtaskKey, newState)}
-                                                    checked={completionState?.subtasks?.[subtaskKey]}
-                                                />
-                                            </div>
-                                        )}
-                                    </div>
-                                );
+                                return <LessonSubtask
+                                    lesson={lesson}
+                                    subtask={subtask}
+                                    subtaskKey={subtaskKey}
+                                    toggleCompletion={(newState) => onChangeSubtask(subtaskKey, newState)}
+                                    onClickTitle={() => setOpenSubtask((prev) => {return prev === subtaskKey ? null : subtaskKey})}
+                                    isOpen={openSubtask === subtaskKey}
+                                    completed={completionState?.subtasks?.[subtaskKey]}
+                                />;
                             })
                         }
                     </div>
