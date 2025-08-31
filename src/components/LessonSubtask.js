@@ -3,17 +3,30 @@ import React, { useRef, useState } from 'react';
 import typeData from '../data/types.json';
 import Embed from './Embed';
 import CheckBox from './CheckBox';
+import genreData from '../data/genres.json';
 
-function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack }) {
+function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, difficulty }) {
     let titleText = artist ?
         `${artist} - ${title}` :
         title;
+    
+    const hasDifficulty = !!(difficulty && difficulty >= 1 && difficulty <= 4);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
             <h2 style={{ textDecoration: completed ? 'line-through' : 'none' }}>
                 {titleText}
             </h2>
+            {hasDifficulty && (
+                <img
+                    src={`${process.env.PUBLIC_URL}/icon/stars_${difficulty}.png`}
+                    alt=""
+                    style={{
+                        width: '24px',
+                        height: '24px',
+                    }}
+                />
+            )}
             {hasLyrics && (
                 <img
                     src={`${process.env.PUBLIC_URL}/icon/microphone2.png`}
@@ -44,53 +57,18 @@ function GenreIndicator({ genre }) {
         return null;
     }
 
-    let genreIcon = null;
-    if (['rock', 'metal', 'alternative', 'blues', 'rhythm and blues'].includes(genre.toLowerCase())) {
-        genreIcon = 'guitar';
-    }
-    else if (['classical'].includes(genre.toLowerCase())) {
-        genreIcon = 'piano2'
-    }
-    else if (['orchestra'].includes(genre.toLowerCase())) {
-        genreIcon = 'violin'
-    }
-    else if (['soundtrack'].includes(genre.toLowerCase())) {
-        genreIcon = 'television'
-    }
-    else if (['showtune'].includes(genre.toLowerCase())) {
-        genreIcon = 'theater'
-    }
-    else if (['folk'].includes(genre.toLowerCase())) {
-        genreIcon = 'clap'
-    }
-    else if (['pop'].includes(genre.toLowerCase())) {
-        genreIcon = 'microphone'
-    }
-    else if (['jazz', 'ska', 'swing'].includes(genre.toLowerCase())) {
-        genreIcon = 'saxophone'
-    }
-    else if (['zydeco'].includes(genre.toLowerCase())) {
-        genreIcon = 'washboard'
-    }
-    else if (['polka'].includes(genre.toLowerCase())) {
-        genreIcon = 'accordion'
-    }
-    else if (['sea shanty'].includes(genre.toLowerCase())) {
-        genreIcon = 'anchor'
-    }
-    else if (['latin'].includes(genre.toLowerCase())) {
-        genreIcon = 'maracas'
-    }
-    else if (['video game music', 'chiptune'].includes(genre.toLowerCase())) {
-        genreIcon = 'controller'
+    let { display, icon } = genreData[genre?.toLowerCase()];
+
+    if (!display) {
+        return null;
     }
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
-            <h2 style={{ fontSize: 16, fontWeight: 'normal', fontStyle: 'italic' }}>{genre}</h2>
-            {genreIcon && (
+            <h2 style={{ fontSize: 16, fontWeight: 'normal', fontStyle: 'italic' }}>{display}</h2>
+            {icon && (
                 <img
-                    src={`${process.env.PUBLIC_URL}/icon/${genreIcon}.png`}
+                    src={`${process.env.PUBLIC_URL}/icon/${icon}.png`}
                     alt=""
                     style={{
                         width: '48px',
@@ -123,9 +101,9 @@ function LessonSubtask({ lesson, subtaskKey, subtask, onClickTitle, toggleComple
                     cursor: "pointer",
                 }}
                 onClick={() => {
-                    if (!isOpen) {
-                        mainRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
+                    // if (!isOpen) {
+                    //     mainRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // }
                     onClickTitle();
                 }}
             >
@@ -135,6 +113,7 @@ function LessonSubtask({ lesson, subtaskKey, subtask, onClickTitle, toggleComple
                         artist={subtask.artist}
                         completed={completed}
                         hasLyrics={subtask.has_lyrics}
+                        difficulty={subtask.difficulty}
                         hasBackingTrack={subtask.has_backing_track}
                     />
                     <GenreIndicator genre={subtask.genre} />

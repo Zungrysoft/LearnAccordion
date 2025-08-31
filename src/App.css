@@ -179,6 +179,14 @@ img {
     background-color: white;
 }
 
+.button {
+    font-size: 70;
+    background-color: var(--background-color);
+    color: black;
+    border: 2px solid black;
+    margin: 16px;
+}
+
 .checkbox {
     background-color: red;
     color: black;

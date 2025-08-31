@@ -4,7 +4,6 @@
         "video_url": "",
         "description": "How to wear the accordion and how to play Mary had a Little Lamb.",
         "x": 0,
-        "y": 0,
         "type": "technique",
         "prerequisites": []
     },
@@ -13,7 +12,6 @@
         "video_url": "",
         "description": "",
         "x": 0,
-        "y": 100,
         "type": "general",
         "prerequisites": [
             ["intro"]
@@ -26,7 +24,6 @@
         "video_url": "",
         "description": "",
         "x": 0,
-        "y": 200,
         "type": "instrument",
         "prerequisites": [
             ["about"]
@@ -37,7 +34,6 @@
         "video_url": "",
         "description": "",
         "x": 0,
-        "y": 300,
         "type": "instrument",
         "prerequisites": [
             ["types_of_accordions"]
@@ -50,7 +46,6 @@
         "video_url": "",
         "description": "Learn your first bass pattern.\nSimple 4/4 oompah in C major.",
         "x": -0.5,
-        "y": 200,
         "type": "technique",
         "prerequisites": [
             ["about"]
@@ -61,7 +56,6 @@
         "video_url": "",
         "description": "Learn some more bass button patterns.\n6/8 oompah, other keys",
         "x": -0.3,
-        "y": 300,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons"]
@@ -72,7 +66,6 @@
         "video_url": "",
         "description": "Learn how the bass buttons are arranged and why.",
         "x": -0.7,
-        "y": 300,
         "type": "instrument",
         "prerequisites": [
             ["bass_buttons"]
@@ -83,7 +76,6 @@
         "video_url": "",
         "description": "Even more bass button patterns.\nMoving to the IV and V, minor and 7th.",
         "x": -0.5,
-        "y": 400,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_2"],
@@ -97,7 +89,6 @@
         "video_url": "",
         "description": "Learn the C major scale and how to spider-walk.",
         "x": 0.5,
-        "y": 200,
         "type": "technique",
         "prerequisites": [
             ["about"]
@@ -108,7 +99,6 @@
         "video_url": "",
         "description": "Learn how the buttons are arranged on the right side of the instrument.",
         "x": 0.4,
-        "y": 300,
         "type": "instrument",
         "prerequisites": [
             ["major_scale"]
@@ -119,18 +109,16 @@
         "video_url": "",
         "description": "",
         "x": 0.6,
-        "y": 300,
         "type": "general",
         "prerequisites": [
             ["major_scale"]
         ]
     },
-    "song_round_the_mountain": {
-        "title": "She'll be Comin' Round the Mountain",
+    "songs_one_handed_1": {
+        "title": "One-Handed Songs #1",
         "video_url": "",
         "description": "",
         "x": 0.6,
-        "y": 400,
         "type": "song",
         "prerequisites": [
             ["about_songs"]
@@ -141,11 +129,10 @@
         "video_url": "",
         "description": "",
         "x": 0.5,
-        "y": 500,
         "type": "theory",
         "prerequisites": [
             ["c_system"],
-            ["song_round_the_mountain"]
+            ["songs_one_handed_1"]
         ]
     },
 
@@ -155,7 +142,6 @@
         "video_url": "",
         "description": "Two-buttons jumps and more bass patterns.",
         "x": -0.7,
-        "y": 500,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_3"]
@@ -166,7 +152,6 @@
         "video_url": "",
         "description": "Going back around the circle of fifths.",
         "x": -0.9,
-        "y": 600,
         "type": "theory",
         "prerequisites": [
             ["bass_jumps"]
@@ -177,18 +162,16 @@
         "video_url": "",
         "description": "Bass patterns that involve pressing the bass button and chord button at the same time.",
         "x": -0.7,
-        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["bass_jumps"]
         ]
     },
-    "more_bass": {
+    "bass_capstone_1": {
         "title": "Beginner Bass Capstone",
         "video_url": "",
         "description": "Bass pattern challenges that test your abilities.",
         "x": -0.7,
-        "y": 700,
         "type": "challenge",
         "prerequisites": [
             ["simple_chord_progressions"],
@@ -202,7 +185,6 @@
         "video_url": "",
         "description": "Very simple melody while tapping a bass note exercise.",
         "x": 0,
-        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"],
@@ -214,82 +196,27 @@
         "video_url": "",
         "description": "Sliding up and down the bass strap while maintaining loudness exercise.\nTwo-hand exercise with moving bass note.",
         "x": 0,
-        "y": 700,
         "type": "technique",
         "prerequisites": [
             ["two_handed_playing"]
         ]
     },
-    "songs_two_handed_1": {
-        "title": "Two Handed Songs #1",
+    "two_handed_playing_3": {
+        "title": "Two-Handed Playing #3",
         "video_url": "",
-        "description": "",
-        "subtasks_required": 2,
-        "subtasks": {
-          "road_movie_to_berlin": {
-            "title": "Road Movie To Berlin",
-            "artist": "They Might Be Giants",
-            "video_url": "",
-            "has_lyrics": true,
-            "has_backing_track": false,
-            "genre": "Alternative"
-          },
-          "papers_please_theme": {
-            "title": "Title Theme",
-            "artist": "Papers Please",
-            "video_url": "",
-            "has_lyrics": false,
-            "has_backing_track": false,
-            "genre": "Video Game Music"
-          },
-          "beer_barrel_polka": {
-            "title": "The Beer Barrel Polka",
-            "artist": "",
-            "video_url": "",
-            "has_lyrics": true,
-            "has_backing_track": false,
-            "genre": "Polka"
-          },
-          "south_australia": {
-            "title": "South Australia",
-            "artist": "",
-            "video_url": "",
-            "has_lyrics": true,
-            "has_backing_track": false,
-            "genre": "Sea Shanty"
-          },
-          "big_mamou": {
-            "title": "Big Mamou",
-            "artist": "Fernest Arceneaux",
-            "video_url": "",
-            "has_lyrics": true,
-            "has_backing_track": false,
-            "genre": "Zydeco"
-          },
-          "simpsons_theme": {
-            "title": "Main Theme",
-            "artist": "The Simpsons",
-            "video_url": "",
-            "has_lyrics": false,
-            "has_backing_track": false,
-            "genre": "Soundtrack"
-          }
-        },
+        "description": "Mary Had a Little Lamb: Two-handed version.",
         "x": 0,
-        "y": 800,
-        "type": "song",
+        "type": "technique",
         "prerequisites": [
             ["two_handed_playing_2"]
         ]
     },
-
 
     "dynamics": {
         "title": "Dynamics",
         "video_url": "",
         "description": "",
         "x": 0.4,
-        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -300,7 +227,6 @@
         "video_url": "",
         "description": "",
         "x": 0.4,
-        "y": 700,
         "type": "instrument",
         "prerequisites": [
             ["dynamics"]
@@ -311,7 +237,6 @@
         "video_url": "",
         "description": "",
         "x": 0.6,
-        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -322,7 +247,6 @@
         "video_url": "",
         "description": "",
         "x": 0.8,
-        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
@@ -333,17 +257,17 @@
         "video_url": "",
         "description": "",
         "x": 1.0,
-        "y": 600,
         "type": "technique",
         "prerequisites": [
             ["scale_theory"]
         ]
     },
-    "connector_1": {
-        "is_connector": true,
-        "x": 0.7,
-        "y": 700,
-        "type": "connector",
+    "songs_one_handed_2": {
+        "title": "One-Handed Songs #2",
+        "video_url": "",
+        "description": "",
+        "x": 0.6,
+        "type": "song",
         "prerequisites": [
             ["transposition_practice"],
             ["dynamics"],
@@ -351,26 +275,232 @@
             ["improvisation"]
         ]
     },
-    "song_big_mamou": {
-        "title": "Big Mamou",
+
+
+    "songs_two_handed_1": {
+        "title": "Two-Handed Songs #1",
         "video_url": "",
         "description": "",
-        "x": 0.6,
-        "y": 800,
+        "subtasks_required": 2,
+        "subtasks": {
+          "mario_64_merry_go_round": {
+            "title": "Merry-Go-Round",
+            "artist": "Super Mario 64",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "video_game"
+          },
+          "kazotsky_kick": {
+            "title": "The Kazotsky Kick",
+            "artist": "Team Fortress 2",
+            "video_url": "",
+            "difficulty": 3,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "video_game"
+          },
+          "beer_barrel_polka": {
+            "title": "The Beer Barrel Polka",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "polka"
+          },
+          "tetris_theme": {
+            "title": "Korobeiniki (Tetris Theme A)",
+            "artist": "",
+            "description": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "folk"
+          },
+          "a_little_heart_to_heart": {
+            "title": "A Little Heart to Heart",
+            "artist": "Team Fortress 2",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "video_game"
+          },
+          "off_to_california": {
+            "title": "Off To California",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "hornpipe"
+          },
+          "long_tall_sally": {
+            "title": "Long Tall Sally",
+            "artist": "Little Richard",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": true,
+            "has_backing_track": false,
+            "genre": "rock"
+          },
+          "gimme_some_lovin": {
+            "title": "Gimme Some Lovin'",
+            "artist": "The Spencer Davis Group",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": true,
+            "has_backing_track": false,
+            "genre": "rock"
+          },
+          "south_australia": {
+            "title": "South Australia",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 1,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "sea_shanty"
+          },
+          "drunken_sailor": {
+            "title": "Drunken Sailor",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "sea_shanty"
+          },
+          "clarinet_polka": {
+            "title": "The Clarinet Polka",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "polka"
+          },
+          "banquet": {
+            "title": "Banquet",
+            "artist": "Yann Tiersen",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "waltz"
+          }
+        },
+        "x": 0,
         "type": "song",
         "prerequisites": [
-            ["connector_1"]
+            ["two_handed_playing_3"],
+            ["bass_capstone_1"]
         ]
     },
-    "song_keelhauled": {
-        "title": "Keelhauled",
+    "songs_two_handed_2": {
+        "title": "Two-Handed Songs #2",
         "video_url": "",
         "description": "",
-        "x": 0.8,
-        "y": 800,
+        "subtasks_required": 3,
+        "subtasks": {
+          "fell_in_love_with_a_girl": {
+            "title": "Fell In Love With a Girl",
+            "artist": "The White Stripes",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": true,
+            "has_backing_track": false,
+            "genre": "rock"
+          },
+          "scarborough_fair": {
+            "title": "Scarborough Fair",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "folk"
+          },
+          "take_five": {
+            "title": "Take Five",
+            "artist": "The Dave Brubeck Quartet",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "jazz"
+          },
+          "papers_please_theme": {
+            "title": "Title Theme",
+            "artist": "Papers Please",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "video_game"
+          },
+          "love_potion_number_9": {
+            "title": "Love Potion No. 9",
+            "artist": "The Searchers",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": true,
+            "has_backing_track": false,
+            "genre": "rock"
+          },
+          "sailors_hornpipe": {
+            "title": "The Sailor's Hornpipe",
+            "artist": "",
+            "video_url": "",
+            "difficulty": 0,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "hornpipe"
+          }
+        },
+        "x": 0,
         "type": "song",
         "prerequisites": [
-            ["connector_1"]
+            ["songs_two_handed_1"]
+        ]
+    },
+    "songs_two_handed_3": {
+        "title": "Two-Handed Songs #3",
+        "video_url": "",
+        "description": "",
+        "subtasks_required": 2,
+        "subtasks": {
+          
+        },
+        "x": 0,
+        "type": "song",
+        "prerequisites": [
+            ["songs_two_handed_2"]
+        ]
+    },
+    "songs_two_handed_4": {
+        "title": "Two-Handed Songs #4",
+        "video_url": "",
+        "description": "",
+        "subtasks_required": 2,
+        "subtasks": {
+          "zomby_woof": {
+            "title": "Zomby Woof",
+            "artist": "Frank Zappa",
+            "video_url": "",
+            "difficulty": 4,
+            "has_lyrics": false,
+            "has_backing_track": false,
+            "genre": "video_game"
+          }
+        },
+        "x": 0,
+        "type": "song",
+        "prerequisites": [
+            ["songs_two_handed_3"]
         ]
     }
 }

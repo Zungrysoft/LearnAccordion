@@ -1,0 +1,128 @@
+{
+    "polka": {
+        "display": "Polka",
+        "icon": "accordion",
+        "priority": 100
+    },
+    "waltz": {
+        "display": "Waltz",
+        "icon": "accordion",
+        "priority": 101
+    },
+    "folk": {
+        "display": "Folk",
+        "icon": "clap",
+        "priority": 150
+    },
+    "hornpipe": {
+        "display": "Hornpipe",
+        "icon": "clap",
+        "priority": 151
+    },
+
+
+
+    "sea_shanty": {
+        "display": "Sea Shanty",
+        "icon": "anchor",
+        "priority": 200
+    },
+
+
+
+    "latin": {
+        "display": "Latin",
+        "icon": "maracas",
+        "priority": 300
+    },
+
+
+
+    "zydeco": {
+        "display": "Zydeco",
+        "icon": "washboard",
+        "priority": 400
+    },
+
+
+
+    "classical": {
+        "display": "Classical",
+        "icon": "piano2",
+        "priority": 500
+    },
+    "orchestra": {
+        "display": "Orchestra",
+        "icon": "violin",
+        "priority": 510
+    },
+
+
+
+    "jazz": {
+        "display": "Jazz",
+        "icon": "saxophone",
+        "priority": 600
+    },
+    "swing": {
+        "display": "Swing",
+        "icon": "saxophone",
+        "priority": 610
+    },
+    "ska": {
+        "display": "Ska",
+        "icon": "saxophone",
+        "priority": 620
+    },
+
+
+
+    "pop": {
+        "display": "Pop",
+        "icon": "microphone",
+        "priority": 700
+    },
+    "rock": {
+        "display": "Rock",
+        "icon": "guitar",
+        "priority": 710
+    },
+    "blues": {
+        "display": "Blues",
+        "icon": "guitar",
+        "priority": 720
+    },
+    "rhythm_and_blues": {
+        "display": "Rhythm and Blues",
+        "icon": "guitar",
+        "priority": 730
+    },
+    "alternative": {
+        "display": "Alternative",
+        "icon": "guitar",
+        "priority": 740
+    },
+    "metal": {
+        "display": "Metal",
+        "icon": "guitar",
+        "priority": 750
+    },
+
+
+
+    "showtune": {
+        "display": "Showtune",
+        "icon": "theater",
+        "priority": 800
+    },
+    "soundtrack": {
+        "display": "Soundtrack",
+        "icon": "television",
+        "priority": 810
+    },
+    "video_game": {
+        "display": "Video Game Music",
+        "icon": "controller",
+        "priority": 820
+    }
+}

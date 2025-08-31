@@ -1,10 +1,11 @@
-import React,{useMemo, useState} from 'react';
+import React,{useCallback, useEffect, useMemo, useState} from 'react';
 import './App.css';
 
 import Board from './components/Board.js';
 import CheckBox from './components/CheckBox';
 import lessonData from './data/lessons.json';
 import settingsData from './data/settings.json';
+import LessonPage from './components/LessonPage.js';
 
 function getDefaultStorage() {
     try {
@@ -19,41 +20,121 @@ function getDefaultStorage() {
     }
 }
 
+function dfsLessonHeights(lessonData, lesson, height) {
+    if (!lesson.y || lesson.y < height) {
+        lesson.y = height;
+    }
+
+    for (const childLessonKey of lesson.childLessons) {
+        const childLesson = lessonData[childLessonKey];
+        dfsLessonHeights(lessonData, childLesson, height+1)
+    }
+}
+
 function App() {
-    const [lessonState, setLessonState] = useState(getDefaultStorage())
-
     const processedLessonData = useMemo(() => {
-        let ret = {};
-        let heightMapping = {};
-        let availableHeights = new Set();
+        let procLessonData = {};
 
+        // Add parent lesson keys
         for (const lessonKey in lessonData) {
             const lesson = lessonData[lessonKey];
-            availableHeights.add(lesson.y);
-        }
 
-        Array.from(availableHeights).sort((a, b) => a - b).forEach((val, i) => { heightMapping[val] = i });
+            const parentLessonKeys = new Set();
+            if (lesson.prerequisites) {
+                for (const prerequisite of lesson.prerequisites) {
+                    for (const option of prerequisite) {
+                        parentLessonKeys.add(option)
+                    }
+                }
+            }
 
-        for (const lessonKey in lessonData) {
-            const lesson = lessonData[lessonKey];
-            ret[lessonKey] = {
+            procLessonData[lessonKey] = {
                 ...lesson,
-                y: heightMapping[lesson.y] ?? 1
+                parentLessons: Array.from(parentLessonKeys),
+                childLessons: [],
             }
         }
 
-        return ret;
+        // Add child lesson keys
+        for (const lessonKey in procLessonData) {
+            const lesson = procLessonData[lessonKey];
+
+            for (const parentLessonKey of lesson.parentLessons) {
+                const parentLesson = procLessonData[parentLessonKey];
+
+                parentLesson.childLessons.push(lessonKey)
+            }
+        }
+
+        // Determine y positions for lessons
+        for (const lessonKey in procLessonData) {
+            const lesson = procLessonData[lessonKey];
+            if (!lesson.prerequisites || lesson.prerequisites.length === 0) {
+                dfsLessonHeights(procLessonData, lesson, 0);
+            }
+        }
+
+        return procLessonData;
+
     }, [lessonData])
 
+    const [lessonState, setLessonState] = useState(getDefaultStorage());
+    const [currentPage, setCurrentPage] = useState(Object.keys(processedLessonData)[0]);
+    const [pageOpen, setPageOpen] = useState(false);
+
+    const saveLessonState = useCallback((newState) => {
+        setLessonState(newState);
+        localStorage.setItem("lessonState", JSON.stringify(newState))
+    })
+
+    useEffect(() => {
+        if (pageOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [pageOpen]);
+
     return (
-        <div className="App" style={{ overflow: 'clip' }}>
+        <div className="App">
             <Board
                 lessons={processedLessonData}
                 state={lessonState}
-                onChange={(newState) => {
-                    setLessonState(newState)
-                    localStorage.setItem("lessonState", JSON.stringify(newState))
+                onOpenPage={(lessonKey) => {
+                    setCurrentPage(lessonKey);
+                    setPageOpen(true);
                 }}
+            />
+            <LessonPage
+                lesson={processedLessonData[currentPage]}
+                completionState={lessonState[currentPage]}
+                onChangeCompleted={(newState) => (
+                    saveLessonState({
+                        ...lessonState,
+                        [currentPage]: {
+                            ...lessonState[currentPage] ?? {},
+                            completed: newState,
+                        }
+                    })
+                )}
+                onChangeSubtask={(subtask, newState) => (
+                    saveLessonState({
+                        ...lessonState,
+                        [currentPage]: {
+                            ...lessonState[currentPage] ?? {},
+                            subtasks: {
+                                ...lessonState[currentPage]?.subtasks ?? {},
+                                [subtask]: newState,
+                            },
+                        }
+                    })
+                )}
+                onClose={() => {setPageOpen(false)}}
+                isOpen={pageOpen}
             />
             <div className="top-right">
                 <CheckBox

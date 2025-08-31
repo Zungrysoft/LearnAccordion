@@ -113,19 +113,17 @@ function buildLessonStates(state, lessons) {
     // return ret
 }
 
-function Board({ lessons, state, onChange }) {
-    const [currentPage, setCurrentPage] = useState(Object.keys(lessons)[0])
-    const [pageOpen, setPageOpen] = useState(false)
+function Board({ lessons, state, onOpenPage }) {
     const builtLessons = buildLessonStates(state, lessons)
     return (
         <div>
             {Object.keys(lessons).map((key) => (
                 <Lesson
+                    key={key}
                     lesson={lessons[key]}
                     state={builtLessons[key]}
                     onSetPage={() => {
-                        setCurrentPage(key)
-                        setPageOpen(true)
+                        onOpenPage(key)
                     }}
                 />
             ))}
@@ -133,6 +131,7 @@ function Board({ lessons, state, onChange }) {
                 lessons[key].prerequisites.map((options) => (
                     options.map((option) => (
                         <Connector
+                            key={`${option}-${key}`}
                             lesson1={lessons[option]}
                             lesson2={lessons[key]}
                             state1={builtLessons[option]}
@@ -141,33 +140,6 @@ function Board({ lessons, state, onChange }) {
                     ))
                 ))
             ))}
-            <LessonPage
-                lesson={lessons[currentPage]}
-                completionState={state[currentPage]}
-                onChangeCompleted={(newState) => (
-                    onChange({
-                        ...state,
-                        [currentPage]: {
-                            ...state[currentPage] ?? {},
-                            completed: newState,
-                        }
-                    })
-                )}
-                onChangeSubtask={(subtask, newState) => (
-                    onChange({
-                        ...state,
-                        [currentPage]: {
-                            ...state[currentPage] ?? {},
-                            subtasks: {
-                                ...state[currentPage]?.subtasks ?? {},
-                                [subtask]: newState,
-                            },
-                        }
-                    })
-                )}
-                onClose={() => {setPageOpen(false)}}
-                isOpen={pageOpen}
-            />
             <LessonCounter lessonStates={builtLessons}/>
         </div>
     )
