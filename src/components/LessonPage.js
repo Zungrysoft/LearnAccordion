@@ -139,7 +139,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                                 gridColumn: 3,
                                 whiteSpace: 'nowrap',
                                 padding: '8px',
-                                width: '192px',
+                                width: '160px',
                                 justifySelf: 'end',
                                 "--background-color": typeData[lesson.type].color2,
                             }}
@@ -149,7 +149,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                     </div>
                 )}
                 {lesson.subtasks && (
-                    <div style={{ width: "auto", height: 'auto', paddingBottom: '24px' }}>
+                    <div style={{ width: "auto", height: 'auto' }}>
                         {
                             lessonSubtaskList.map((subtaskKey) => {
                                 const subtask = lesson.subtasks[subtaskKey];

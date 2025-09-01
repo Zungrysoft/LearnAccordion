@@ -153,7 +153,7 @@ img {
     border-radius: 16px 16px 0 0;
     position: fixed;
     width: 70vw;
-    height: 98vh;
+    height: calc(98vh - 32px);
     left: 50vw;
     top: 2vh;
     transform: translate(-50%, 0%);
@@ -183,6 +183,7 @@ img {
     font-size: 70;
     background-color: var(--background-color);
     color: black;
+    border-radius: 8px;
     border: 2px solid black;
     margin: 16px;
 }
