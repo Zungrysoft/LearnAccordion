@@ -99,9 +99,6 @@
     "is_two_handed": true,
     "genre": "video_game"
   },
-
-
-
   "fell_in_love_with_a_girl": {
     "title": "Fell In Love With a Girl",
     "artist": "The White Stripes",
@@ -337,5 +334,50 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "norteno"
+  },
+  "amelie": {
+    "title": "La valse d'Amélie",
+    "artist": "Amélie",
+    "video_url": "",
+    "points": 4,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "film"
+  },
+  "trollhammaren": {
+    "title": "Trollhammaren",
+    "artist": "Finntroll",
+    "video_url": "",
+    "points": 4,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "metal"
+  },
+  "simpsons_theme": {
+    "title": "Main Theme",
+    "artist": "The Simpsons",
+    "video_url": "",
+    "points": 19,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "television"
+  },
+  "on_the_border": {
+    "title": "On the Border",
+    "artist": "Eagles",
+    "video_url": "",
+    "points": 10,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "the_state_of_massachusetts": {
+    "title": "The State of Massachusetts",
+    "artist": "Dropkick Murphys",
+    "video_url": "",
+    "points": 20,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
   }
 }

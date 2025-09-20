@@ -1,6 +1,9 @@
 import React from "react";
+import { useTheme } from "../helpers/theme";
 
-export default function Tabs({ tabHeaders = [], activeTab, onTabChange }) {
+export default function Tabs({ tabs = [], activeTab, onTabChange }) {
+  const { colorBackgroundDark, filterIcon, colorText } = useTheme();
+
   const styles = {
     container: {
       display: "flex",
@@ -16,24 +19,40 @@ export default function Tabs({ tabHeaders = [], activeTab, onTabChange }) {
     tab: (isActive) => ({
       flex: 1,
       textAlign: "center",
-      padding: "20px",
-      fontSize: "20px",
+      alignContent: "center",
+      justifyItems: "center",
+      padding: "12px",
+      fontSize: "12px",
       fontWeight: "bold",
       cursor: isActive ? "auto" : "pointer",
-      backgroundColor: isActive ? "#757f92ff" : "inherit",
+      backgroundColor: isActive ? "inherit" : colorBackgroundDark,
     }),
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.tabBar}>
-        {tabHeaders.map((header) => (
+        {tabs.map(({ title, icon, value, style }) => (
           <div
-            key={header}
-            style={styles.tab(activeTab === header)}
-            onClick={() => onTabChange(header)}
+            key={value}
+            style={{...styles.tab(activeTab === value), ...style}}
+            onClick={() => onTabChange(value)}
           >
-            <h2 style={{ margin: '0px', color: "white" }}>{header}</h2>
+            {icon && (
+              <img
+                src={`${process.env.PUBLIC_URL}/icon/${icon}.png`}
+                alt=""
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  margin: '0px',
+                  filter: filterIcon,
+                }}
+              />
+            )}
+            {title && (
+              <h2 style={{ margin: '8px', color: colorText }}>{title}</h2>
+            )}
           </div>
         ))}
       </div>

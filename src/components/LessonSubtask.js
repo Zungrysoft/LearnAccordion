@@ -35,8 +35,6 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
 function LessonSubtask({ lesson, subtask, onClickTitle, toggleCompletion, isOpen, completed }) {
     const mainRef = useRef(null);
 
-    console.log(subtask)
-
     return (
         <div
             key={subtask.id}

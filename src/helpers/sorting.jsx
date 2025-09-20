@@ -75,29 +75,16 @@ function sortLessonSubtasksArtist(a, b) {
 }
 
 function getSortModeFunc(sortMode) {
-    if (sortMode === 1) {
+    if (sortMode === 'points') {
         return sortLessonSubtasksPoints;
     }
-    if (sortMode === 2) {
+    if (sortMode === 'artist') {
         return sortLessonSubtasksArtist;
     }
-    if (sortMode === 3) {
+    if (sortMode === 'title') {
         return sortLessonSubtasksTitle;
     }
     return sortLessonSubtasksGenre;
-}
-
-export function getSortModeDisplay(sortMode) {
-    if (sortMode === 1) {
-        return 'Points';
-    }
-    if (sortMode === 2) {
-        return 'Artist/Origin';
-    }
-    if (sortMode === 3) {
-        return 'Title';
-    }
-    return 'Genre';
 }
 
 export function sortSongs(songs, sortMode) {

@@ -1,7 +1,32 @@
 {
   "dark": {
     "colorBackground": "#282c34",
-    "colorBackgroundLocked": "#131b2b",
-    "colorBackgroundCompleted": "#566073"
+    "colorBackgroundDark": "#131b2b",
+    "colorBackgroundLight": "#566073",
+
+    "colorText": "#ffffff",
+    "colorTextAlt": "#bdbdbd",
+    "colorTextOnColor": "#000000",
+
+    "colorConnector": "#000000",
+    "colorConnectorCompleted": "#d3edb9",
+
+    "filterIcon": "invert(1)",
+    "filterIconOnColor": ""
+  },
+  "light": {
+    "colorBackground": "#c2c5cc",
+    "colorBackgroundDark": "#90959e",
+    "colorBackgroundLight": "#f7f7f7",
+
+    "colorText": "#000000",
+    "colorTextAlt": "#bdbdbd",
+    "colorTextOnColor": "#000000",
+
+    "colorConnector": "#90959e",
+    "colorConnectorCompleted": "#ffffff",
+
+    "filterIcon": "",
+    "filterIconOnColor": ""
   }
 }

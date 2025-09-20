@@ -4,12 +4,14 @@ import lessonData from '../data/settings.json';
 import { BezierCurveEditor } from 'react-bezier-curve-editor';
 import { useIsMobile } from '../helpers/breakpoints';
 import { useCallback } from 'react';
+import { useTheme } from '../helpers/theme';
 
 function curvePoint(p) {
     return (Math.tanh((p - 0.5) * settingsData.connector_bendiness) * 0.5) + 0.5
 }
 
 function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
+    const { colorConnector, colorConnectorCompleted } = useTheme();
     const isMobile = useIsMobile();
 
     const v = useCallback((val) => {
@@ -22,10 +24,7 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
     }
 
     // Draw in a different color if one of the lessons is completed
-    let color = settingsData.connector_color
-    if (state1.completed) {
-        color = settingsData.connector_color_completed
-    }
+    let color = state1.completed ? colorConnectorCompleted : colorConnector;
 
     // Get positions of the two lessons
     let x1 = (lesson1.x *45) + 50
@@ -39,7 +38,7 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
         const size = Math.abs(y1-y2);
         return (
             <svg style={{
-                zIndex: -1,
+                zIndex: 3,
                 position: "absolute",
                 width: v(size),
                 height: v(size),
@@ -91,7 +90,7 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
         <div>
             {lines.map((l, idx) => (
                 <svg key={idx} style={{
-                    zIndex: -1,
+                    zIndex: 3,
                     position: "absolute",
                     width: v(Math.abs(x1-x2)),
                     height: v(Math.abs(y1-y2)),

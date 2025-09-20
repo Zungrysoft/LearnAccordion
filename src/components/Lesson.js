@@ -43,6 +43,7 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
             <div className="bounding-box-lesson" onClick={state.selectable?onSetPage:null} style={{
                 left: isMobile ? yPos+"vh" : vwToPx(xPos),
                 top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
+                zIndex: 4,
                 "--background-color": backgroundColor,
                 "--background-color2": backgroundColor2,
             }}>
@@ -63,6 +64,7 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
                 className="check-mark"
                 alt=""
                 style={{
+                    zIndex: 5,
                     left: isMobile ? yPos+"vh" :  vwToPx(xPos),
                     top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
                     width: isMobile ? settingsData.icon_width+"vh" :  vwToPx(settingsData.icon_width),

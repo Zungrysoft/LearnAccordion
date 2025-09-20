@@ -241,7 +241,7 @@ img {
     text-align: center;
     background-color: rgba(0,0,0,0.6);
     transition: background-color 0.1s;
-    z-index: 2;
+    z-index: 50;
 }
 
 .backdrop-none {
@@ -258,6 +258,6 @@ img {
     text-align: center;
     background-color: rgba(0,0,0,0);
     transition: background-color 0.1s;
-    z-index: 2;
+    z-index: 50;
     pointer-events: none
 }

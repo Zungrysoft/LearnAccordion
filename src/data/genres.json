@@ -135,14 +135,19 @@
         "icon": "theater",
         "priority": 800
     },
-    "soundtrack": {
-        "display": "Soundtrack",
-        "icon": "television",
+    "film": {
+        "display": "Film",
+        "icon": "clapperboard",
         "priority": 810
+    },
+    "television": {
+        "display": "Television",
+        "icon": "television",
+        "priority": 820
     },
     "video_game": {
         "display": "Video Game Music",
         "icon": "controller",
-        "priority": 820
+        "priority": 830
     }
 }
