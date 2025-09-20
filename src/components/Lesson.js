@@ -1,11 +1,15 @@
 import '../App.css';
-import React from 'react';
+import React, { useCallback } from 'react';
 import settingsData from '../data/settings.json';
 import typeData from '../data/types.json';
 import { useIsMobile } from '../helpers/breakpoints';
 
-function Lesson({ lesson, state, onSetPage }) {
+function Lesson({ lesson, state, onSetPage, boardSize }) {
     const isMobile = useIsMobile();
+
+    const vwToPx = useCallback((vw) => {
+        return `${(vw / 100) * boardSize.width}px`;
+    }, [boardSize.width]) 
 
     // Don't show at all if we're not close to unlocking it
     if (!state.threshold) {
@@ -35,10 +39,10 @@ function Lesson({ lesson, state, onSetPage }) {
     let iconImage = typeData[lesson.type].icon
 
     return (
-        <div>
+        <>
             <div className="bounding-box-lesson" onClick={state.selectable?onSetPage:null} style={{
-                left: isMobile ? yPos+"vh" : xPos+"vw",
-                top: isMobile ? (100-xPos)+"vh" : yPos+"vw",
+                left: isMobile ? yPos+"vh" : vwToPx(xPos),
+                top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
                 "--background-color": backgroundColor,
                 "--background-color2": backgroundColor2,
             }}>
@@ -48,9 +52,9 @@ function Lesson({ lesson, state, onSetPage }) {
                     className="lesson-icon"
                     alt=""
                     style={{
-                        width: isMobile ? iconWidth+"vh" : iconWidth+"vw",
-                        height: isMobile ? iconWidth+"vh" : iconWidth+"vw",
-                        margin: iconMargin+"vw",
+                        width: isMobile ? iconWidth+"vh" : vwToPx(iconWidth),
+                        height: isMobile ? iconWidth+"vh" : vwToPx(iconWidth),
+                        margin: vwToPx(iconMargin),
                     }}
                 />
             </div>
@@ -59,13 +63,13 @@ function Lesson({ lesson, state, onSetPage }) {
                 className="check-mark"
                 alt=""
                 style={{
-                    left: isMobile ? yPos+"vh" : xPos+"vw",
-                    top: isMobile ? (100-xPos)+"vh" : yPos+"vw",
-                    width: isMobile ? settingsData.icon_width+"vh" : settingsData.icon_width+"vw",
-                    height: isMobile ? settingsData.icon_width+"vh" : settingsData.icon_width+"vw",
+                    left: isMobile ? yPos+"vh" :  vwToPx(xPos),
+                    top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
+                    width: isMobile ? settingsData.icon_width+"vh" :  vwToPx(settingsData.icon_width),
+                    height: isMobile ? settingsData.icon_width+"vh" :  vwToPx(settingsData.icon_width),
                 }}
             />:<div/>}
-        </div>
+        </>
     )
 }
 

@@ -3,17 +3,18 @@ import settingsData from '../data/settings.json';
 import lessonData from '../data/settings.json';
 import { BezierCurveEditor } from 'react-bezier-curve-editor';
 import { useIsMobile } from '../helpers/breakpoints';
+import { useCallback } from 'react';
 
 function curvePoint(p) {
     return (Math.tanh((p - 0.5) * settingsData.connector_bendiness) * 0.5) + 0.5
 }
 
-function v(isMobile) {
-    return isMobile ? 'vh' : 'vw';
-}
-
-function Connector({ lesson1, lesson2, state1, state2 }) {
+function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
     const isMobile = useIsMobile();
+
+    const v = useCallback((val) => {
+        return `${(val / 100) * boardSize.width}px`
+    }, [isMobile, boardSize.width])
 
     // Don't draw if either of the lessons won't show up
     if (!state1 || !state1.threshold || !state2 || !state2.threshold) {
@@ -40,10 +41,10 @@ function Connector({ lesson1, lesson2, state1, state2 }) {
             <svg style={{
                 zIndex: -1,
                 position: "absolute",
-                width: size+v(isMobile),
-                height: size+v(isMobile),
-                left: isMobile ? Math.min(y1, y2)+h+v(isMobile) : x1-(size/2)+v(isMobile),
-                top: isMobile ? 100-x1-(size/2)+v(isMobile) : Math.min(y1, y2)+h+v(isMobile),
+                width: v(size),
+                height: v(size),
+                left: isMobile ? Math.min(y1, y2)+h+v(isMobile) : v(x1-(size/2)),
+                top: isMobile ? 100-x1-(size/2)+v(isMobile) : v(Math.min(y1, y2)+h),
                 transform: isMobile ? 'rotate(90deg) translate(25%, 25%)' : '',
             }}>
                 <line x1="50%" y1="0%" x2="50%" y2="100%" stroke={color} strokeWidth="2" />
@@ -92,10 +93,10 @@ function Connector({ lesson1, lesson2, state1, state2 }) {
                 <svg key={idx} style={{
                     zIndex: -1,
                     position: "absolute",
-                    width: Math.abs(x1-x2)+v(isMobile),
-                    height: Math.abs(y1-y2)+v(isMobile),
-                    left: Math.min(x1, x2)+v(isMobile),
-                    top: Math.min(y1, y2)+h+v(isMobile),
+                    width: v(Math.abs(x1-x2)),
+                    height: v(Math.abs(y1-y2)),
+                    left: v(Math.min(x1, x2)),
+                    top: v(Math.min(y1, y2)+h),
                 }}>
                     <line x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2} stroke={color} strokeWidth="2" />
                 </svg>
@@ -103,9 +104,5 @@ function Connector({ lesson1, lesson2, state1, state2 }) {
         </div>
     )
 }
-
-
-// width: Math.abs(x1-x2)+"vw",
-// height: Math.abs(y1-y2)+"vw"
 
 export default Connector;

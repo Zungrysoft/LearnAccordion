@@ -10,7 +10,7 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
         `${artist} - ${title}` :
         title;
     
-    const hasDifficulty = !!(difficulty && difficulty >= 1 && difficulty <= 4);
+    const hasDifficulty = !!(difficulty && difficulty >= 1 && difficulty < 5);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
@@ -19,7 +19,7 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
             </h2>
             {hasDifficulty && (
                 <img
-                    src={`${process.env.PUBLIC_URL}/icon/stars_${difficulty}.png`}
+                    src={`${process.env.PUBLIC_URL}/icon/stars_${Math.floor(difficulty)}.png`}
                     alt=""
                     style={{
                         width: '24px',
@@ -112,7 +112,7 @@ function LessonSubtask({ lesson, subtaskKey, subtask, onClickTitle, toggleComple
                         title={subtask.title}
                         artist={subtask.artist}
                         completed={completed}
-                        hasLyrics={subtask.has_lyrics}
+                        hasLyrics={subtask.has_vocals}
                         difficulty={subtask.difficulty}
                         hasBackingTrack={subtask.has_backing_track}
                     />

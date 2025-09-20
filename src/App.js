@@ -4,8 +4,11 @@ import './App.css';
 import Board from './components/Board.js';
 import CheckBox from './components/CheckBox';
 import lessonData from './data/lessons.json';
+import songData from './data/songs.json';
 import settingsData from './data/settings.json';
 import LessonPage from './components/LessonPage.js';
+import Tabs from './components/Tabs.js';
+import SongTable from './components/SongTable.js';
 
 function getDefaultStorage() {
     try {
@@ -32,6 +35,8 @@ function dfsLessonHeights(lessonData, lesson, height) {
 }
 
 function App() {
+    const [activeTab, setActiveTab] = useState('Lessons');
+
     const processedLessonData = useMemo(() => {
         let procLessonData = {};
 
@@ -88,67 +93,87 @@ function App() {
     })
 
     useEffect(() => {
-        if (pageOpen) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "";
-        }
-
-        return () => {
-            document.body.style.overflow = "";
-        };
-    }, [pageOpen]);
+        document.body.style.overflow = "hidden";
+    }, []);
 
     return (
         <div className="App">
-            <Board
-                lessons={processedLessonData}
-                state={lessonState}
-                onOpenPage={(lessonKey) => {
-                    setCurrentPage(lessonKey);
-                    setPageOpen(true);
-                }}
-            />
-            <LessonPage
-                lesson={processedLessonData[currentPage]}
-                completionState={lessonState[currentPage]}
-                onChangeCompleted={(newState) => (
-                    saveLessonState({
-                        ...lessonState,
-                        [currentPage]: {
-                            ...lessonState[currentPage] ?? {},
-                            completed: newState,
-                        }
-                    })
+            <div style={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+                <Tabs tabHeaders={['Lessons', 'Songs']} activeTab={activeTab} onTabChange={setActiveTab}/>
+                {activeTab === 'Lessons' && (
+                    <div style={{ flex: 1, overflowY: 'scroll', minHeight: 0 }}>
+                        <Board
+                            lessons={processedLessonData}
+                            state={lessonState} 
+                            onOpenPage={(lessonKey) => {
+                                setCurrentPage(lessonKey);
+                                setPageOpen(true);
+                            }}
+                        />
+                        <div className="top-right">
+                            <CheckBox
+                                text="Show later lessons:"
+                                onChange={(newState) => {
+                                    let newOverallState = {
+                                        ...lessonState,
+                                        _show_later: newState
+                                    }
+                                    setLessonState(newOverallState)
+                                    localStorage.setItem("lessonState", JSON.stringify(newOverallState))
+                                }}
+                                checked={lessonState._show_later}
+                                textColor={settingsData.connector_color_completed}
+                            />
+                        </div>
+                    </div>
                 )}
-                onChangeSubtask={(subtask, newState) => (
-                    saveLessonState({
-                        ...lessonState,
-                        [currentPage]: {
-                            ...lessonState[currentPage] ?? {},
-                            subtasks: {
-                                ...lessonState[currentPage]?.subtasks ?? {},
-                                [subtask]: newState,
-                            },
-                        }
-                    })
+                {activeTab === 'Songs' && (
+                    <div style={{ flex: 1, minHeight: 0 }}>
+                        <SongTable
+                            lessons={processedLessonData}
+                            state={lessonState} 
+                            onOpenPage={(lessonKey) => {
+                                setCurrentPage(lessonKey);
+                                setPageOpen(true);
+                            }}/>
+                    </div>
                 )}
-                onClose={() => {setPageOpen(false)}}
-                isOpen={pageOpen}
-            />
-            <div className="top-right">
-                <CheckBox
-                    text="Show later lessons:"
-                    onChange={(newState) => {
-                        let newOverallState = {
+
+                <LessonPage
+                    lesson={processedLessonData[currentPage] ?? songData[currentPage]}
+                    completionState={lessonState[currentPage]}
+                    onChangeCompleted={(newState) => (
+                        saveLessonState({
                             ...lessonState,
-                            _show_later: newState
-                        }
-                        setLessonState(newOverallState)
-                        localStorage.setItem("lessonState", JSON.stringify(newOverallState))
-                    }}
-                    checked={lessonState._show_later}
-                    textColor={settingsData.connector_color_completed}
+                            [currentPage]: {
+                                ...lessonState[currentPage] ?? {},
+                                completed: newState,
+                            }
+                        })
+                    )}
+                    onChangePinned={(newState) => (
+                        saveLessonState({
+                            ...lessonState,
+                            [currentPage]: {
+                                ...lessonState[currentPage] ?? {},
+                                pinned: newState,
+                            }
+                        })
+                    )}
+                    onChangeSubtask={(subtask, newState) => (
+                        saveLessonState({
+                            ...lessonState,
+                            [currentPage]: {
+                                ...lessonState[currentPage] ?? {},
+                                subtasks: {
+                                    ...lessonState[currentPage]?.subtasks ?? {},
+                                    [subtask]: newState,
+                                },
+                            }
+                        })
+                    )}
+                    onClose={() => {setPageOpen(false)}}
+                    isOpen={pageOpen}
                 />
             </div>
         </div>

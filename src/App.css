@@ -135,15 +135,15 @@ img {
 }
 
 .top-right {
-    position:fixed;
-    top:0;
+    position: absolute;
+    top:36px;
     right:0;
     margin:20px;
 }
 
 .top-left {
     position:fixed;
-    top:0;
+    top:36px;
     left:0;
     margin:20px;
 }

@@ -94,11 +94,16 @@ function sortLessonSubtasks(subtasks, sortMode) {
     return sortedSubtasks.map(l => l.key);
 }
 
-function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtask, onClose, isOpen }) {
+function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned, onChangeSubtask, onClose, isOpen }) {
     const [openSubtask, setOpenSubtask] = useState(null);
     const [sortMode, setSortMode] = useState(0);
 
     const lessonSubtaskList = useMemo(() => sortLessonSubtasks(lesson.subtasks || [], sortMode), [lesson, sortMode]);
+
+    let description = lesson.description
+    if (!description && lesson.type === 'gate') {
+        description = `Earn ${lesson.points_required ?? 0} stars to unlock this path. You can earn stars by learning songs in the 'Songs' tab.`;
+    }
 
     if (!lesson) {
         return <div/>
@@ -112,12 +117,14 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
         subtaskCompletionText = `Learn ${completedSubtasks > 0 ? '' : 'any'} ${moreNeeded} ${completedSubtasks > 0 ? 'more' : ''} song${moreNeeded === 1 ? '' : 's'} to complete this lesson`;
     }
 
+    const lessonType = lesson.type ?? 'song';
+
     return (
         <div className={isOpen?"backdrop":"backdrop-none"}>
             <div
                 className="bounding-box-page"
                 style={{
-                    "--background-color": typeData[lesson.type].color,
+                    "--background-color": typeData[lessonType].color,
                     top: isOpen?"2vh":"105vh",
                     overflowY: 'auto',
                     padding: '16px',
@@ -125,9 +132,9 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                 
             >
                 <button className="page-close" onClick={onClose}>X</button>
-                <h2>{typeData[lesson.type].title}</h2>
+                <h2>{typeData[lessonType].title}</h2>
                 <h4>{lesson.title}</h4>
-                <p>{lesson.description}</p>
+                <p>{description}</p>
                 <Embed url={lesson.video_url}/>
                 {lesson.subtasks && (
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}>
@@ -141,7 +148,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                                 padding: '8px',
                                 width: '160px',
                                 justifySelf: 'end',
-                                "--background-color": typeData[lesson.type].color2,
+                                "--background-color": typeData[lessonType].color2,
                             }}
                         >
                             Sort by {getSortModeDisplay(sortMode)}
@@ -168,11 +175,12 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangeSubtas
                         }
                     </div>
                 )}
-                {!lesson.subtasks && (
+                {lessonType === 'song' && (
+                    <CheckBox text="Pin lesson:" onChange={onChangePinned} checked={completionState?.pinned}/>
+                )}
+                {!(lesson.subtasks) && !(lesson.type === 'gate') && (
                     <CheckBox text="Mark as completed:" onChange={onChangeCompleted} checked={completionState?.completed}/>
                 )}
-                
-
             </div>
         </div>
     )

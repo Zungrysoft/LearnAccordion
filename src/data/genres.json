@@ -9,6 +9,11 @@
         "icon": "accordion",
         "priority": 101
     },
+    "tango": {
+        "display": "Tango",
+        "icon": "accordion",
+        "priority": 102
+    },
     "folk": {
         "display": "Folk",
         "icon": "clap",
@@ -27,6 +32,11 @@
         "icon": "anchor",
         "priority": 200
     },
+    "nautical": {
+        "display": "Nautical Tune",
+        "icon": "anchor",
+        "priority": 201
+    },
 
 
 
@@ -43,12 +53,17 @@
         "icon": "washboard",
         "priority": 400
     },
+    "cajun": {
+        "display": "Cajun",
+        "icon": "washboard",
+        "priority": 401
+    },
 
 
 
     "classical": {
         "display": "Classical",
-        "icon": "piano2",
+        "icon": "piano",
         "priority": 500
     },
     "orchestra": {
@@ -67,11 +82,11 @@
     "swing": {
         "display": "Swing",
         "icon": "saxophone",
-        "priority": 610
+        "priority": 601
     },
     "ska": {
         "display": "Ska",
-        "icon": "saxophone",
+        "icon": "trombone",
         "priority": 620
     },
 
@@ -85,27 +100,27 @@
     "rock": {
         "display": "Rock",
         "icon": "guitar",
-        "priority": 710
+        "priority": 750
     },
     "blues": {
         "display": "Blues",
         "icon": "guitar",
-        "priority": 720
+        "priority": 751
     },
     "rhythm_and_blues": {
         "display": "Rhythm and Blues",
         "icon": "guitar",
-        "priority": 730
+        "priority": 752
     },
     "alternative": {
         "display": "Alternative",
         "icon": "guitar",
-        "priority": 740
+        "priority": 753
     },
     "metal": {
         "display": "Metal",
         "icon": "guitar",
-        "priority": 750
+        "priority": 754
     },
 
 

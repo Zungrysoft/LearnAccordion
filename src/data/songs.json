@@ -1,0 +1,323 @@
+{
+  "mario_64_merry_go_round": {
+    "title": "Merry-Go-Round",
+    "artist": "Super Mario 64",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "kazotsky_kick": {
+    "title": "The Kazotsky Kick",
+    "artist": "Team Fortress 2",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "beer_barrel_polka": {
+    "title": "The Beer Barrel Polka",
+    "artist": "",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "polka"
+  },
+  "tetris_theme": {
+    "title": "Korobeiniki (Tetris Theme A)",
+    "artist": "",
+    "description": "",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "folk"
+  },
+  "a_little_heart_to_heart": {
+    "title": "A Little Heart to Heart",
+    "artist": "Team Fortress 2",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "long_tall_sally": {
+    "title": "Long Tall Sally",
+    "artist": "Little Richard",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "south_australia": {
+    "title": "South Australia",
+    "artist": "",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "sea_shanty"
+  },
+  "drunken_sailor": {
+    "title": "Drunken Sailor",
+    "artist": "",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "sea_shanty"
+  },
+  "clarinet_polka": {
+    "title": "The Clarinet Polka",
+    "artist": "",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "polka"
+  },
+  "banquet": {
+    "title": "Banquet",
+    "artist": "Yann Tiersen",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "waltz"
+  },
+  "dog_song": {
+    "title": "Dogsong",
+    "artist": "Undertale",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+
+
+
+  "fell_in_love_with_a_girl": {
+    "title": "Fell In Love With a Girl",
+    "artist": "The White Stripes",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+    "scarborough_fair": {
+    "title": "Scarborough Fair",
+    "artist": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "folk"
+  },
+    "take_five": {
+    "title": "Take Five",
+    "artist": "The Dave Brubeck Quartet",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz"
+  },
+    "papers_please_theme": {
+    "title": "Title Theme",
+    "artist": "Papers Please",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+    "love_potion_number_9": {
+    "title": "Love Potion No. 9",
+    "artist": "The Searchers",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+    "sailors_hornpipe": {
+    "title": "The Sailor's Hornpipe",
+    "artist": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "hornpipe"
+  },
+    "off_to_california": {
+    "title": "Off To California",
+    "artist": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "hornpipe"
+  },
+
+  "you_got_to_lose": {
+    "title": "You Got To Lose",
+    "artist": "George Thorogood & The Destroyers",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "jerk_it_out": {
+    "title": "Jerk It Out",
+    "artist": "Caesars",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "sixteen_tons": {
+    "title": "Sixteen Tons",
+    "artist": "Tennessee Ernie Ford",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "blues"
+  },
+  "keelhauled": {
+    "title": "Keelhauled",
+    "artist": "Alestorm",
+    "video_url": "",
+    "points": 10,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "nautical"
+  },
+  "coffee_cold": {
+    "title": "Coffee Cold",
+    "artist": "Galt MacDermot",
+    "video_url": "",
+    "points": 5,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz"
+  },
+  "misty": {
+    "title": "Misty",
+    "artist": "Erroll Garner",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz"
+  },
+  "none_of_your_doing": {
+    "title": "None of Your Doing",
+    "artist": "Steppenwolf",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "total_eclipse_of_the_heart": {
+    "title": "Total Eclipse of the Heart",
+    "artist": "Bonnie Tyler",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop"
+  },
+  "gimme_some_money": {
+    "title": "Gimme Some Money",
+    "artist": "The Thamesmen",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "somebody_to_love": {
+    "title": "Somebody to Love",
+    "artist": "Jefferson Airplane",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+
+  "zomby_woof": {
+    "title": "Zomby Woof",
+    "artist": "Frank Zappa",
+    "video_url": "",
+    "points": 38,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "nobody_but_me": {
+    "title": "Nobody But Me",
+    "artist": "Save Ferris",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "ska"
+  },
+  "what_ever_happened_to_saturday_night": {
+    "title": "What Ever Happened To Saturday Night",
+    "artist": "The Rocky Horror Show",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "showtune"
+  },
+  "through_the_fire_and_the_flames": {
+    "title": "Through the Fire and the Flames",
+    "artist": "DragonForce",
+    "video_url": "",
+    "points": 999,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "metal"
+  },
+  "big_mamou": {
+    "title": "Big Mamou",
+    "artist": "Fernest Arceneaux",
+    "video_url": "",
+    "points": 6,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "zydeco"
+  },
+  "ill_be_mellow_when_im_dead": {
+    "title": "I'll Be Mellow When I'm Dead",
+    "artist": "Weird Al Yankovic",
+    "video_url": "",
+    "points": 8,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "mr_frump_in_the_iron_lung": {
+    "title": "Mr. Frump in the Iron Lung",
+    "artist": "Weird Al Yankovic",
+    "video_url": "",
+    "points": 4,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  }
+}

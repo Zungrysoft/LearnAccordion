@@ -2,12 +2,12 @@
     "general": {
         "title": "General Info",
         "color": "#3491bf",
-        "icon": "star"
+        "icon": "question"
     },
     "technique": {
         "title": "Technique",
         "color": "#d12424",
-        "icon": "piano"
+        "icon": "buttons"
     },
     "song": {
         "title": "Song",
@@ -18,7 +18,7 @@
     "instrument": {
         "title": "Instrument Knowledge",
         "color": "#c7c714",
-        "icon": "gears"
+        "icon": "gear"
     },
     "theory": {
         "title": "Music Theory",
@@ -34,6 +34,11 @@
         "title": "Challenge",
         "color": "#666666",
         "icon": "medal"
+    },
+    "gate": {
+        "title": "Star Gate",
+        "color": "#bf0b68",
+        "icon": "star"
     },
     "misc": {
         "title": "Miscellaneous",
