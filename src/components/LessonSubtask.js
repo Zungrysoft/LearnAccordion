@@ -27,65 +27,19 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
                     }}
                 />
             )}
-            {hasLyrics && (
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/microphone2.png`}
-                    alt=""
-                    style={{
-                        width: '24px',
-                        height: '24px',
-                    }}
-                />
-            )}
-            {hasBackingTrack && (
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/music.png`}
-                    alt=""
-                    style={{
-                        width: '24px',
-                        height: '24px',
-                    }}
-                />
-            )}
         </div>
     );
     
 }
 
-function GenreIndicator({ genre }) {
-    if (!genre) {
-        return null;
-    }
-
-    let { display, icon } = genreData[genre?.toLowerCase()];
-
-    if (!display) {
-        return null;
-    }
-
-    return (
-        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '16px' }}>
-            <h2 style={{ fontSize: 16, fontWeight: 'normal', fontStyle: 'italic' }}>{display}</h2>
-            {icon && (
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/${icon}.png`}
-                    alt=""
-                    style={{
-                        width: '48px',
-                        height: '48px',
-                    }}
-                />
-            )}
-        </div>
-    );
-}
-
-function LessonSubtask({ lesson, subtaskKey, subtask, onClickTitle, toggleCompletion, isOpen, completed }) {
+function LessonSubtask({ lesson, subtask, onClickTitle, toggleCompletion, isOpen, completed }) {
     const mainRef = useRef(null);
+
+    console.log(subtask)
 
     return (
         <div
-            key={subtaskKey}
+            key={subtask.id}
             style={{
                 marginBottom: "8px",
             }}
@@ -116,7 +70,6 @@ function LessonSubtask({ lesson, subtaskKey, subtask, onClickTitle, toggleComple
                         difficulty={subtask.difficulty}
                         hasBackingTrack={subtask.has_backing_track}
                     />
-                    <GenreIndicator genre={subtask.genre} />
                 </div>
             </button>
             {isOpen && (

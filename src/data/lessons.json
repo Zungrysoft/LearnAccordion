@@ -173,6 +173,21 @@
         "description": "Bass pattern challenges that test your abilities.",
         "x": -0.7,
         "type": "challenge",
+        "subtasks": {
+            "speed_demon": {
+                "title": "Speed Demon",
+                "difficulty": 1
+            },
+            "2_jumps": {
+                "title": "Back and Forth Jumps",
+                "difficulty": 2
+            },
+            "up_and_down": {
+                "title": "Up and Down",
+                "difficulty": 3
+            }
+        },
+        "subtasks_required": 2,
         "prerequisites": [
             ["simple_chord_progressions"],
             ["multiple_buttons"]

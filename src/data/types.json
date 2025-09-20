@@ -33,6 +33,7 @@
     "challenge": {
         "title": "Challenge",
         "color": "#666666",
+        "color2": "#828282",
         "icon": "medal"
     },
     "gate": {
