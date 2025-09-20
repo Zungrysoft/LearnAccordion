@@ -45,6 +45,11 @@
         "icon": "maracas",
         "priority": 300
     },
+    "norteno": {
+        "display": "Norteño",
+        "icon": "maracas",
+        "priority": 301
+    },
 
 
 

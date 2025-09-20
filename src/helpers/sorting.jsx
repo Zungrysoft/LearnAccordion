@@ -1,11 +1,17 @@
 import genreData from '../data/genres.json';
 
 function removeThe(title) {
-    const lower = title.toLowerCase();
-    if (lower.startsWith('the ')) {
-        return lower.substring(4);
+    let ret = title.toLowerCase();
+    if (ret.startsWith('the ')) {
+        ret = ret.substring(4);
     }
-    return lower;
+    while (
+        ret.startsWith('¡') ||
+        ret.startsWith('¿')
+    ) {
+        ret = ret.substring(1);
+    }
+    return ret;
 }
 
 function sortLessonSubtasksCompareEntry(a, b, sortOrderEntry) {

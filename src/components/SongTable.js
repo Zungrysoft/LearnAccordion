@@ -60,20 +60,20 @@ const SongTable = ({ state, onOpenPage }) => {
 
   // Then sort again by pinned
   sortedSongs.sort((a, b) => {
-    // Sort completed lessons at the end
-    if (state[a.id]?.completed && !state[b.id]?.completed) {
-      return 1;
-    }
-    if (state[b.id]?.completed && !state[a.id]?.completed) {
-      return -1;
-    }
-
     // Sort pinned lessons at the top
     if (state[a.id]?.pinned && !state[b.id]?.pinned) {
       return -1;
     }
     if (state[b.id]?.pinned && !state[a.id]?.pinned) {
       return 1;
+    }
+
+    // Sort completed lessons at the end
+    if (state[a.id]?.completed && !state[b.id]?.completed) {
+      return 1;
+    }
+    if (state[b.id]?.completed && !state[a.id]?.completed) {
+      return -1;
     }
 
     // Keep the same sort order otherwise

@@ -319,5 +319,23 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "alternative"
+  },
+  "goin_loco": {
+    "title": "Goin' Loco",
+    "artist": "Flaco Jimenez, Major Dundee",
+    "video_url": "",
+    "points": 4,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "norteno"
+  },
+  "en_san_antonio": {
+    "title": "¡Ay Te Dejo en San Antonio!",
+    "artist": "Flaco Jimenez",
+    "video_url": "",
+    "points": 3,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "norteno"
   }
 }
