@@ -1,13 +1,11 @@
 import '../App.css';
-import settingsData from '../data/settings.json';
-import lessonData from '../data/settings.json';
-import { BezierCurveEditor } from 'react-bezier-curve-editor';
+import configData from '../data/config.json';
 import { useIsMobile } from '../helpers/breakpoints';
 import { useCallback } from 'react';
 import { useTheme } from '../helpers/theme';
 
 function curvePoint(p) {
-    return (Math.tanh((p - 0.5) * settingsData.connector_bendiness) * 0.5) + 0.5
+    return (Math.tanh((p - 0.5) * configData.connector_bendiness) * 0.5) + 0.5
 }
 
 function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
@@ -28,10 +26,10 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
 
     // Get positions of the two lessons
     let x1 = (lesson1.x *45) + 50
-    let y1 = lesson1.y * settingsData.icon_width * settingsData.vertical_spacing + 1.5
+    let y1 = lesson1.y * configData.icon_width * configData.vertical_spacing + 1.5
     let x2 = (lesson2.x *45) + 50
-    let y2 = lesson2.y * settingsData.icon_width * settingsData.vertical_spacing + 1.5
-    const h = (settingsData.icon_width/2)
+    let y2 = lesson2.y * configData.icon_width * configData.vertical_spacing + 1.5
+    const h = (configData.icon_width/2)
 
     // Special early exit case for if the line is completely vertical
     if (x1 === x2) {
@@ -63,7 +61,7 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
     if (y1 > y2) {flip = !flip}
 
     // Calculate lines
-    const seg = settingsData.connector_segments
+    const seg = configData.connector_segments
     let lines = []
     for (let i = 0; i < seg; i ++) {
         let yf1 = i/seg

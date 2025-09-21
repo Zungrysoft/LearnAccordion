@@ -122,10 +122,15 @@
         "icon": "guitar",
         "priority": 753
     },
+    "folk_rock": {
+        "display": "Folk Rock",
+        "icon": "guitar",
+        "priority": 754
+    },
     "metal": {
         "display": "Metal",
         "icon": "guitar",
-        "priority": 754
+        "priority": 755
     },
 
 

@@ -5,7 +5,6 @@ import Board from './components/Board.js';
 import CheckBox from './components/CheckBox';
 import lessonData from './data/lessons.json';
 import songData from './data/songs.json';
-import settingsData from './data/settings.json';
 import LessonPage from './components/LessonPage.js';
 import Tabs from './components/Tabs.js';
 import SongTable from './components/SongTable.js';

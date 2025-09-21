@@ -19,13 +19,16 @@ export default function Tabs({ tabs = [], activeTab, onTabChange }) {
     tab: (isActive) => ({
       flex: 1,
       textAlign: "center",
-      alignContent: "center",
-      justifyItems: "center",
       padding: "12px",
       fontSize: "12px",
       fontWeight: "bold",
       cursor: isActive ? "auto" : "pointer",
       backgroundColor: isActive ? "inherit" : colorBackgroundDark,
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '8px',
     }),
   };
 

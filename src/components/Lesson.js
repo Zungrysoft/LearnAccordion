@@ -1,6 +1,6 @@
 import '../App.css';
 import React, { useCallback } from 'react';
-import settingsData from '../data/settings.json';
+import configData from '../data/config.json';
 import typeData from '../data/types.json';
 import { useIsMobile } from '../helpers/breakpoints';
 
@@ -17,23 +17,23 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
     }
 
     let xPos = (lesson.x *45) + 50
-    let yPos = lesson.y * settingsData.icon_width * settingsData.vertical_spacing + 1.5
-    let iconWidth = settingsData.icon_width * settingsData.icon_scale
-    let iconMargin = (settingsData.icon_width - iconWidth) / 2
+    let yPos = lesson.y * configData.icon_width * configData.vertical_spacing + 1.5
+    let iconWidth = configData.icon_width * configData.icon_scale
+    let iconMargin = (configData.icon_width - iconWidth) / 2
     if (lesson.is_connector) {
         iconWidth *= 0.3
         iconMargin *= 0.3
         yPos += iconWidth
     }
 
-    let backgroundColor = settingsData.locked_color
-    let backgroundColor2 = settingsData.locked_color
+    let backgroundColor = configData.locked_color
+    let backgroundColor2 = configData.locked_color
     if (state.unlocked) {
         backgroundColor = typeData[lesson.type].color
         backgroundColor2 = typeData[lesson.type].color
     }
     if (state.selectable) {
-        backgroundColor2 = settingsData.hover_color
+        backgroundColor2 = configData.hover_color
     }
 
     let iconImage = typeData[lesson.type].icon
@@ -67,8 +67,8 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
                     zIndex: 5,
                     left: isMobile ? yPos+"vh" :  vwToPx(xPos),
                     top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
-                    width: isMobile ? settingsData.icon_width+"vh" :  vwToPx(settingsData.icon_width),
-                    height: isMobile ? settingsData.icon_width+"vh" :  vwToPx(settingsData.icon_width),
+                    width: isMobile ? configData.icon_width+"vh" :  vwToPx(configData.icon_width),
+                    height: isMobile ? configData.icon_width+"vh" :  vwToPx(configData.icon_width),
                 }}
             />:<div/>}
         </>

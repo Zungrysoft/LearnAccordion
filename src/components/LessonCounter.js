@@ -1,6 +1,5 @@
 import '../App.css';
 
-import settingsData from '../data/settings.json';
 import songData from '../data/songs.json';
 import { useTheme } from '../helpers/theme';
 
