@@ -45,6 +45,15 @@
     "is_two_handed": true,
     "genre": "folk"
   },
+  "loch_lommond": {
+    "title": "The Bonnie Banks o' Loch Lomond",
+    "artist": "",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "folk"
+  },
   "a_little_heart_to_heart": {
     "title": "A Little Heart to Heart",
     "artist": "Team Fortress 2",
@@ -235,6 +244,69 @@
     "is_two_handed": false,
     "genre": "metal"
   },
+  "ill_sink_manhattan": {
+    "title": "I'll Sink Manhattan",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "we_want_a_rock": {
+    "title": "We Want a Rock",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "lucky_ball_and_chain": {
+    "title": "Lucky Ball and Chain",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "road_movie_to_berlin": {
+    "title": "Road Movie to Berlin",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "32_footsteps": {
+    "title": "32 Footsteps",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "shes_an_angel": {
+    "title": "She's an Angel",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative"
+  },
+  "twisting": {
+    "title": "Twisting",
+    "artist": "They Might Be Giants",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "alternative"
+  },
   "coffee_cold": {
     "title": "Coffee Cold",
     "artist": "Galt MacDermot",
@@ -247,6 +319,78 @@
   "bone": {
     "title": "Bone",
     "artist": "King Gizzard and the Lizard Wizard",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "magenta_mountain": {
+    "title": "Magenta Mountain",
+    "artist": "King Gizzard and the Lizard Wizard",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "april_part_1": {
+    "title": "April - Part 1",
+    "artist": "Deep Purple",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
+  "april_part_2": {
+    "title": "April - Part 2",
+    "artist": "Deep Purple",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
+  "april_part_3": {
+    "title": "April - Part 3",
+    "artist": "Deep Purple",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
+  "time": {
+    "title": "Time",
+    "artist": "Pink Floyd",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "temple_of_the_king": {
+    "title": "Temple of the King",
+    "artist": "Rainbow",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "the_caves_of_altamira": {
+    "title": "The Caves of Altamira",
+    "artist": "Steely Dan",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "here_comes_the_sun": {
+    "title": "Here Comes the Sun",
+    "artist": "The Beatles",
     "video_url": "",
     "points": 1,
     "has_vocals": true,
@@ -461,6 +605,15 @@
     "is_two_handed": true,
     "genre": "norteno"
   },
+  "soy_de_tejas": {
+    "title": "Soy De Tejas",
+    "artist": "Steve Jordan",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "norteno"
+  },
   "amelie": {
     "title": "La valse d'Amélie",
     "artist": "Amélie",
@@ -540,6 +693,33 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
+    "genre": "rock"
+  },
+  "mr_crowley": {
+    "title": "Mr. Crowley",
+    "artist": "Ozzy Osbourne",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "metal"
+  },
+  "wonderwall": {
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "refugee": {
+    "title": "Refugee",
+    "artist": "Tom Petty and the Heartbreakers",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
     "genre": "rock"
   },
   "two_out_of_three_aint_bad": {
@@ -742,7 +922,16 @@
   },
   "nsmb_athletic_theme": {
     "title": "Athletic Theme",
-    "artist": "New Super Mario Bros.",
+    "artist": "New Super Mario Bros. Wii",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "smw_castle": {
+    "title": "Castle",
+    "artist": "Super Mario World",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
@@ -797,6 +986,33 @@
   "the_world_revolving": {
     "title": "The World Revolving",
     "artist": "Deltarune",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "bloody_tears": {
+    "title": "Bloody Tears",
+    "artist": "Castlevania II",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "mario_64_slide": {
+    "title": "Slide Theme",
+    "artist": "Super Mario 64",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "shadow_of_the_ninja_stage_2": {
+    "title": "Stage 2",
+    "artist": "Shadow of the Ninja",
     "video_url": "",
     "points": 1,
     "has_vocals": false,

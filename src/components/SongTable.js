@@ -7,6 +7,17 @@ import RadioButtons from './RadioButtons.jsx';
 import { useTheme } from '../helpers/theme.jsx';
 import SettingsGroup from './SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
+import TextInput from './TextInput.js';
+
+function processForFilter(text) {
+  return text.toLowerCase()
+    .replace('ä', 'a')
+    .replace('é', 'e')
+    .replace('è', 'e')
+    .replace('ñ', 'n')
+    .replace(',', '')
+  ;
+}
 
 const SongTable = ({ state, onOpenPage }) => {
   const songs = Object.entries(songData).map(([key, value]) => ({ ...value, id: key }));
@@ -14,6 +25,7 @@ const SongTable = ({ state, onOpenPage }) => {
   const [filterHandsMode, setFilterHandsMode] = useState('any');
   const [filterVocalsMode, setFilterVocalsMode] = useState('any');
   const [filterLockedSongsMode, setFilterLockedSongsMode] = useState('hide-locked');
+  const [filterText, setFilterText] = useState("");
   const { colorBackground, colorBackgroundLocked, colorBackgroundLight, colorText } = useTheme();
 
   let filteredSongs = songs;
@@ -28,6 +40,22 @@ const SongTable = ({ state, onOpenPage }) => {
   }
   if (filterVocalsMode === 'no-vocals') {
     filteredSongs = filteredSongs.filter((song) => !song.has_vocals)
+  }
+  if (filterText.length > 0) {
+    filteredSongs = filteredSongs.filter((song) => {
+      for (const filterWord of filterText.split(" ")) {
+        const fw = processForFilter(filterWord);
+
+        if (!(
+          processForFilter(song.title).includes(fw) ||
+          processForFilter(song.artist).includes(fw) ||
+          processForFilter(genreData[song.genre].display).includes(fw)
+        )) {
+          return false;
+        }
+      }
+      return true;
+    })
   }
 
   const sortedSongs = sortSongs(filteredSongs, songSortMode);
@@ -109,6 +137,12 @@ const SongTable = ({ state, onOpenPage }) => {
             ]}
             selectedOption={filterLockedSongsMode}
             onChange={setFilterLockedSongsMode}
+          />
+          <TextInput
+            value={filterText}
+            onChange={setFilterText}
+            onClear={() => setFilterText("")}
+            placeholder="Search"
           />
         </SettingsGroup>
         <SettingsGroup title="Sort Songs" scale={1}>
