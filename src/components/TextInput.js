@@ -24,7 +24,7 @@ function TextInput({ value, onChange, onClear, placeholder }) {
         }}
       />
       <div style={{
-        width: "64px"
+        width: "24px"
       }}>
         {value && (
           <button

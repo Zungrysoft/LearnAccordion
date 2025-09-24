@@ -1,6 +1,6 @@
 import { useTheme } from "../helpers/theme";
 
-const RadioButtons = ({ options, selectedOption, onChange }) => {
+const RadioButtons = ({ options, selectedOption, onChange, isCheckbox }) => {
   const { colorText } = useTheme();
 
   const handleChange = (event) => {
@@ -12,7 +12,7 @@ const RadioButtons = ({ options, selectedOption, onChange }) => {
       {options.map((option) => (
         <label key={option.value} style={{ cursor: "pointer", color: colorText, margin: 0, padding: 0, fontSize: '18px' }}>
           <input
-            type="radio"
+            type={isCheckbox ? "checkbox" : "radio"}
             value={option.value}
             checked={selectedOption === option.value}
             onChange={handleChange}

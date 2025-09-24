@@ -11,20 +11,28 @@ import TextInput from './TextInput.js';
 
 function processForFilter(text) {
   return text.toLowerCase()
-    .replace('ä', 'a')
-    .replace('é', 'e')
-    .replace('è', 'e')
-    .replace('ñ', 'n')
-    .replace(',', '')
+    .replaceAll('ä', 'a')
+    .replaceAll('é', 'e')
+    .replaceAll('è', 'e')
+    .replaceAll('ñ', 'n')
+    .replaceAll('-', '')
+    .replaceAll('\'', '')
+    .replaceAll(',', '')
   ;
 }
 
 const SongTable = ({ state, onOpenPage }) => {
   const songs = Object.entries(songData).map(([key, value]) => ({ ...value, id: key }));
-  const { songSortMode, setSongSortMode } = useSettings();
-  const [filterHandsMode, setFilterHandsMode] = useState('any');
-  const [filterVocalsMode, setFilterVocalsMode] = useState('any');
-  const [filterLockedSongsMode, setFilterLockedSongsMode] = useState('hide-locked');
+  const {
+    songSortMode,
+    setSongSortMode,
+    filterHandsMode,
+    setFilterHandsMode,
+    filterVocalsMode,
+    setFilterVocalsMode,
+    filterLockedMode,
+    setFilterLockedMode,
+  } = useSettings();
   const [filterText, setFilterText] = useState("");
   const { colorBackground, colorBackgroundLocked, colorBackgroundLight, colorText } = useTheme();
 
@@ -48,7 +56,7 @@ const SongTable = ({ state, onOpenPage }) => {
 
         if (!(
           processForFilter(song.title).includes(fw) ||
-          processForFilter(song.artist).includes(fw) ||
+          processForFilter(song.artist || "Traditional").includes(fw) ||
           processForFilter(genreData[song.genre].display).includes(fw)
         )) {
           return false;
@@ -116,27 +124,27 @@ const SongTable = ({ state, onOpenPage }) => {
             options={[
               { value: 'one-handed', label: 'One-handed songs only' },
               { value: 'two-handed', label: 'Two-handed songs only' },
-              { value: 'any', label: 'Show both' },
             ]}
             selectedOption={filterHandsMode}
-            onChange={setFilterHandsMode}
+            onChange={(value) => setFilterHandsMode((prev) => prev === value ? null : value)}
+            isCheckbox
           />
           <RadioButtons
             options={[
-              { value: 'only-vocals', label: 'Songs with vocals' },
-              { value: 'no-vocals', label: 'Songs without vocals' },
-              { value: 'any', label: 'Show both' },
+              { value: 'only-vocals', label: 'Songs with vocals only' },
+              { value: 'no-vocals', label: 'Songs without vocals only' },
             ]}
             selectedOption={filterVocalsMode}
-            onChange={setFilterVocalsMode}
+            onChange={(value) => setFilterVocalsMode((prev) => prev === value ? null : value)}
+            isCheckbox
           />
           <RadioButtons
             options={[
-              { value: 'hide-locked', label: 'Hide locked songs' },
-              { value: 'show-locked', label: 'Show locked songs' },
+              { value: true, label: 'Hide locked songs' },
             ]}
-            selectedOption={filterLockedSongsMode}
-            onChange={setFilterLockedSongsMode}
+            selectedOption={filterLockedMode}
+            onChange={() => setFilterLockedMode((prev) => !prev)}
+            isCheckbox
           />
           <TextInput
             value={filterText}

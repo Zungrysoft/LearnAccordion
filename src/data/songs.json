@@ -117,6 +117,15 @@
     "is_two_handed": true,
     "genre": "video_game"
   },
+  "bonetrousle": {
+    "title": "Bonetrousle",
+    "artist": "Undertale",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
   "fell_in_love_with_a_girl": {
     "title": "Fell In Love With a Girl",
     "artist": "The White Stripes",
@@ -370,6 +379,42 @@
     "is_two_handed": true,
     "genre": "rock"
   },
+  "money": {
+    "title": "Money",
+    "artist": "Pink Floyd",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "good_times_bad_times": {
+    "title": "Good Times Bad Times",
+    "artist": "Led Zeppelin",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "stairway_to_heaven": {
+    "title": "Stairway to Heaven",
+    "artist": "Led Zeppelin",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "thank_you": {
+    "title": "Thank You",
+    "artist": "Led Zeppelin",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
   "temple_of_the_king": {
     "title": "Temple of the King",
     "artist": "Rainbow",
@@ -442,6 +487,15 @@
     "is_two_handed": true,
     "genre": "rock"
   },
+  "icarus": {
+    "title": "Icarus - Borne on Wings of Steel",
+    "artist": "Kansas",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
   "total_eclipse_of_the_heart": {
     "title": "Total Eclipse of the Heart",
     "artist": "Bonnie Tyler",
@@ -487,15 +541,6 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "ska"
-  },
-  "what_ever_happened_to_saturday_night": {
-    "title": "What Ever Happened To Saturday Night",
-    "artist": "The Rocky Horror Show",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "showtune"
   },
   "through_the_fire_and_the_flames": {
     "title": "Through the Fire and the Flames",
@@ -641,15 +686,6 @@
     "is_two_handed": false,
     "genre": "metal"
   },
-  "simpsons_theme": {
-    "title": "Main Theme",
-    "artist": "The Simpsons",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "television"
-  },
   "on_the_border": {
     "title": "On the Border",
     "artist": "Eagles",
@@ -704,6 +740,15 @@
     "is_two_handed": true,
     "genre": "metal"
   },
+  "cross_eyed_mary": {
+    "title": "Cross-Eyed Mary",
+    "artist": "Jethro Tull",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
   "wonderwall": {
     "title": "Wonderwall",
     "artist": "Oasis",
@@ -750,13 +795,85 @@
     "genre": "rock"
   },
   "mozart_sonata_11": {
-    "title": "Piano Sonata No. 11 in A Major",
+    "title": "Piano Sonata No. 11 in A Major, K. 331: III",
     "artist": "Wolfgang Amadeus Mozart",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "classical"
+  },
+  "canon_in_d": {
+    "title": "Canon in D",
+    "artist": "Johann Pachelbel",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "classical"
+  },
+  "simpsons_theme": {
+    "title": "Main Theme",
+    "artist": "The Simpsons",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "television"
+  },
+  "it_crowd_theme": {
+    "title": "Main Theme",
+    "artist": "The IT Crowd",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "television"
+  },
+  "always_sunny_theme": {
+    "title": "Main Theme",
+    "artist": "It's Always Sunny in Philadelphia",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "television"
+  },
+  "paddys_pub_theme": {
+    "title": "I Like Life at Paddy's Pub",
+    "artist": "It's Always Sunny in Philadelphia",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television"
+  },
+  "what_ever_happened_to_saturday_night": {
+    "title": "What Ever Happened To Saturday Night",
+    "artist": "The Rocky Horror Show",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "showtune"
+  },
+  "brother_can_you_spare_a_dime": {
+    "title": "Brother, Can You Spare a Dime?",
+    "artist": "Bing Crosby",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "showtune"
+  },
+  "lukes_theme": {
+    "title": "Luke's Theme",
+    "artist": "Star Wars",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "film"
   },
   "song_of_storms": {
     "title": "Song of Storms",
@@ -986,6 +1103,15 @@
   "the_world_revolving": {
     "title": "The World Revolving",
     "artist": "Deltarune",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
+  "vampire_killer": {
+    "title": "Vampire Killer",
+    "artist": "Castlevania",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
