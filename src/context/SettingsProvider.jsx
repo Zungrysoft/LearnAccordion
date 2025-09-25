@@ -12,6 +12,8 @@ const defaultContext = {
     setFilterVocalsMode: () => {},
     filterLockedMode: true,
     setFilterLockedMode: () => {},
+    showHiddenLessons: false,
+    setShowHiddenLessons: () => {},
 }
 
 const SettingsContext = createContext(defaultContext);
@@ -53,6 +55,9 @@ export function SettingsProvider({ children }) {
     const filterLockedMode = settings?.filterLockedMode ?? defaultContext.filterLockedMode;
     const setFilterLockedMode = useCallback((value) => changeSetting('filterLockedMode', value), [changeSetting]);
 
+    const showHiddenLessons = settings?.showHiddenLessons ?? defaultContext.showHiddenLessons;
+    const setShowHiddenLessons = useCallback((value) => changeSetting('showHiddenLessons', value), [changeSetting]);
+
     return (
         <SettingsContext.Provider
             value={useMemo(
@@ -67,6 +72,8 @@ export function SettingsProvider({ children }) {
                     setFilterVocalsMode,
                     filterLockedMode,
                     setFilterLockedMode,
+                    showHiddenLessons,
+                    setShowHiddenLessons,
                 }),
                 [
                     theme,
@@ -79,6 +86,8 @@ export function SettingsProvider({ children }) {
                     setFilterVocalsMode,
                     filterLockedMode,
                     setFilterLockedMode,
+                    showHiddenLessons,
+                    setShowHiddenLessons,
                 ]
             )}
         >

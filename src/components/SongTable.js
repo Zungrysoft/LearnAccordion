@@ -14,10 +14,13 @@ function processForFilter(text) {
     .replaceAll('ä', 'a')
     .replaceAll('é', 'e')
     .replaceAll('è', 'e')
+    .replaceAll('í', 'i')
+    .replaceAll('ó', 'o')
     .replaceAll('ñ', 'n')
     .replaceAll('-', '')
     .replaceAll('\'', '')
     .replaceAll(',', '')
+    .replaceAll('.', '')
   ;
 }
 
@@ -187,7 +190,7 @@ const SongTable = ({ state, onOpenPage }) => {
                 onClick={() => onOpenPage(song.id)}
               >
                 <td style={tdStyle}>
-                  <SongTitle title={song.title} pinned={state[song.id]?.pinned} />
+                  <SongTitle title={song.title} pinned={state[song.id]?.pinned} completed={state[song.id]?.completed} />
                 </td>
                 <td style={tdStyle}>
                   <SongArtist artist={song.artist} />
@@ -212,7 +215,7 @@ const SongTable = ({ state, onOpenPage }) => {
 export default SongTable;
 
 
-function SongTitle({ title, pinned }) {
+function SongTitle({ title, pinned, completed }) {
   const { colorText, filterIcon } = useTheme();
 
   return (
@@ -220,6 +223,17 @@ function SongTitle({ title, pinned }) {
       {pinned && (
         <img
           src={`${process.env.PUBLIC_URL}/icon/pin.png`}
+          alt=""
+          style={{
+            width: '16px',
+            height: '16px',
+            filter: filterIcon,
+          }}
+        />
+      )}
+      {completed && (
+        <img
+          src={`${process.env.PUBLIC_URL}/icon/check.png`}
           alt=""
           style={{
             width: '16px',

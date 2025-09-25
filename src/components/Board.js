@@ -4,6 +4,7 @@ import Lesson from './Lesson.js'
 import Connector from './Connector.js';
 import songData from '../data/songs.json';
 import LessonCounter from './LessonCounter.js';
+import { useSettings } from '../context/SettingsProvider.jsx';
 
 function markGraph(key, state, lessons, points, gMap) {
     // Early out if this node has already been marked in the gMap
@@ -63,12 +64,9 @@ function buildGraph(state, lessons, points) {
 }
 
 // Build a map of each lesson and its completion status
-function buildLessonStates(state, lessons, points) {
+function buildLessonStates(state, lessons, points, showHiddenLessons) {
     // Build a map from each lesson to its distance from the nearest completed lesson
     let gMap = buildGraph(state, lessons, points)
-
-    // If all nodes should be shown
-    let showLater = state._show_later?true:false
 
     let ret = {}
     for (let key in lessons) {
@@ -76,7 +74,7 @@ function buildLessonStates(state, lessons, points) {
             ret[key] = {
                 completed: gMap[key] <= 1,
                 unlocked: gMap[key] <= 1,
-                threshold: gMap[key] <= 2 || showLater,
+                threshold: gMap[key] <= 2 || showHiddenLessons,
                 selectable: false,
             }
         }
@@ -84,8 +82,8 @@ function buildLessonStates(state, lessons, points) {
             ret[key] = {
                 completed: gMap[key] <= 0,
                 unlocked: gMap[key] <= 1,
-                threshold: gMap[key] <= 2 || showLater,
-                selectable: gMap[key] <= 1 || showLater,
+                threshold: gMap[key] <= 2 || showHiddenLessons,
+                selectable: gMap[key] <= 1 || showHiddenLessons,
             }
         }
     }
@@ -99,7 +97,8 @@ function Board({ lessons, state, onOpenPage }) {
             points += song.points ?? 0;
         }
     })
-    const builtLessons = buildLessonStates(state, lessons, points);
+    const { showHiddenLessons } = useSettings();
+    const builtLessons = buildLessonStates(state, lessons, points, showHiddenLessons);
     const divRef = useRef(null);
     const [boardSize, setBoardSize] = useState({ width: 0, height: 0 });
 

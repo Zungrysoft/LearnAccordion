@@ -3,9 +3,11 @@ import React, { useCallback } from 'react';
 import configData from '../data/config.json';
 import typeData from '../data/types.json';
 import { useIsMobile } from '../helpers/breakpoints';
+import { useTheme } from '../helpers/theme';
 
 function Lesson({ lesson, state, onSetPage, boardSize }) {
     const isMobile = useIsMobile();
+    const { colorBackgroundDark } = useTheme();
 
     const vwToPx = useCallback((vw) => {
         return `${(vw / 100) * boardSize.width}px`;
@@ -26,8 +28,8 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
         yPos += iconWidth
     }
 
-    let backgroundColor = configData.locked_color
-    let backgroundColor2 = configData.locked_color
+    let backgroundColor = colorBackgroundDark
+    let backgroundColor2 = colorBackgroundDark
     if (state.unlocked) {
         backgroundColor = typeData[lesson.type].color
         backgroundColor2 = typeData[lesson.type].color
@@ -44,6 +46,7 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
                 left: isMobile ? yPos+"vh" : vwToPx(xPos),
                 top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
                 zIndex: 4,
+                borderStyle: state.selectable ? "solid" : "dashed",
                 "--background-color": backgroundColor,
                 "--background-color2": backgroundColor2,
             }}>

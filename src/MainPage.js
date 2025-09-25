@@ -10,6 +10,7 @@ import Tabs from './components/Tabs.js';
 import SongTable from './components/SongTable.js';
 import { useTheme } from './helpers/theme.jsx';
 import SettingsPage from './components/SettingsPage.js';
+import { useSettings } from './context/SettingsProvider.jsx';
 
 function getDefaultStorage() {
     try {
@@ -38,6 +39,7 @@ function dfsLessonHeights(lessonData, lesson, height) {
 function MainPage() {
     const { colorBackground, colorText } = useTheme();
     const [activeTab, setActiveTab] = useState('lessons');
+    const { showHiddenLessons, setShowHiddenLessons } = useSettings();
 
     const processedLessonData = useMemo(() => {
         let procLessonData = {};
@@ -124,15 +126,8 @@ function MainPage() {
                     <div className="top-right">
                         <CheckBox
                             text="Show later lessons:"
-                            onChange={(newState) => {
-                                let newOverallState = {
-                                    ...lessonState,
-                                    _show_later: newState
-                                }
-                                setLessonState(newOverallState)
-                                localStorage.setItem("lessonState", JSON.stringify(newOverallState))
-                            }}
-                            checked={lessonState._show_later}
+                            onChange={() => setShowHiddenLessons((prev) => !prev)}
+                            checked={showHiddenLessons}
                             textColor={colorText}
                         />
                     </div>

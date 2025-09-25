@@ -19,7 +19,7 @@
   },
   "beer_barrel_polka": {
     "title": "The Beer Barrel Polka",
-    "artist": "",
+    "artist": "Jaromír Vejvoda",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
@@ -340,6 +340,15 @@
     "video_url": "",
     "points": 1,
     "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock"
+  },
+  "mars_for_the_rich": {
+    "title": "Mars For The Rich",
+    "artist": "King Gizzard and the Lizard Wizard",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
     "is_two_handed": true,
     "genre": "rock"
   },
@@ -523,10 +532,45 @@
     "is_two_handed": true,
     "genre": "rock"
   },
-
+  "spectrum": {
+    "title": "Spectrum",
+    "artist": "R.M.F.C.",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "25_or_6_to_4": {
+    "title": "26 or 6 to 4",
+    "artist": "Chicago",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "pop"
+  },
+  "if_you_leave_me_now": {
+    "title": "If You Leave Me Now",
+    "artist": "Chicago",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop"
+  },
   "zomby_woof": {
     "title": "Zomby Woof",
     "artist": "Frank Zappa",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock"
+  },
+  "suzy_creamcheese": {
+    "title": "Son of Suzy Creamcheese",
+    "artist": "Frank Zappa and the Mothers of Invention",
     "video_url": "",
     "points": 1,
     "has_vocals": true,
@@ -648,6 +692,15 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
+    "genre": "norteno"
+  },
+  "ingratos_ojos_mios": {
+    "title": "Ingratos Ojos Míos",
+    "artist": "Ramón Ayala",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
     "genre": "norteno"
   },
   "soy_de_tejas": {
@@ -848,6 +901,15 @@
     "is_two_handed": true,
     "genre": "television"
   },
+  "my_robot_friend": {
+    "title": "My Robot Friend",
+    "artist": "South Park",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television"
+  },
   "what_ever_happened_to_saturday_night": {
     "title": "What Ever Happened To Saturday Night",
     "artist": "The Rocky Horror Show",
@@ -859,7 +921,7 @@
   },
   "brother_can_you_spare_a_dime": {
     "title": "Brother, Can You Spare a Dime?",
-    "artist": "Bing Crosby",
+    "artist": "Americana",
     "video_url": "",
     "points": 1,
     "has_vocals": true,
@@ -869,6 +931,15 @@
   "lukes_theme": {
     "title": "Luke's Theme",
     "artist": "Star Wars",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "film"
+  },
+  "duel_of_fates": {
+    "title": "Duel of Fates",
+    "artist": "Star Wars: Episode III",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
@@ -956,8 +1027,17 @@
     "is_two_handed": true,
     "genre": "video_game"
   },
+  "mario_main_theme": {
+    "title": "Overworld",
+    "artist": "Super Mario Bros.",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
   "mario_3_athletic_theme": {
-    "title": "Athletic Theme",
+    "title": "Athletic",
     "artist": "Super Mario Bros. 3",
     "video_url": "",
     "points": 1,
@@ -1038,7 +1118,7 @@
     "genre": "video_game"
   },
   "nsmb_athletic_theme": {
-    "title": "Athletic Theme",
+    "title": "Athletic",
     "artist": "New Super Mario Bros. Wii",
     "video_url": "",
     "points": 1,
@@ -1127,8 +1207,17 @@
     "is_two_handed": true,
     "genre": "video_game"
   },
+  "guiles_theme": {
+    "title": "Guile's Theme",
+    "artist": "Street Fighter II",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game"
+  },
   "mario_64_slide": {
-    "title": "Slide Theme",
+    "title": "Slide",
     "artist": "Super Mario 64",
     "video_url": "",
     "points": 1,
