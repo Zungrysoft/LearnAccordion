@@ -1,8 +1,9 @@
 {
   "dark": {
     "colorBackground": "#282c34",
-    "colorBackgroundDark": "#131b2b",
     "colorBackgroundLight": "#566073",
+    "colorBackgroundDark": "#131b2b",
+    "colorBackgroundDarker": "#0a0f1a",
 
     "colorText": "#ffffff",
     "colorTextAlt": "#bdbdbd",
@@ -16,8 +17,9 @@
   },
   "light": {
     "colorBackground": "#c2c5cc",
-    "colorBackgroundDark": "#90959e",
     "colorBackgroundLight": "#f7f7f7",
+    "colorBackgroundDark": "#90959e",
+    "colorBackgroundDarker": "#6b6f78",
 
     "colorText": "#000000",
     "colorTextAlt": "#bdbdbd",

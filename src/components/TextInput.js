@@ -1,4 +1,8 @@
+import { useTheme } from "../helpers/theme";
+
 function TextInput({ value, onChange, onClear, placeholder }) {
+  const { colorText } = useTheme();
+
   return (
     <div
       style={{
@@ -34,6 +38,7 @@ function TextInput({ value, onChange, onClear, placeholder }) {
               background: "transparent",
               cursor: "pointer",
               fontSize: "20px",
+              color: colorText,
             }}
           >
             ×

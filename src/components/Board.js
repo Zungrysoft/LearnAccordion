@@ -9,38 +9,48 @@ import { useSettings } from '../context/SettingsProvider.jsx';
 function markGraph(key, state, lessons, points, gMap) {
     // Early out if this node has already been marked in the gMap
     if (key in gMap) {
-        return
+        return;
     }
     // Early out if this node is marked as completed
     if (state[key]?.completed === true || Object.values(state[key]?.subtasks ?? {}).filter((x) => x).length >= lessons[key].subtasks_required) {
-        gMap[key] = 0
-        return
+        gMap[key] = 0;
+        return;
     }
     // Early out if we have no prerequisites
     if (lessons[key].prerequisites.length === 0) {
-        gMap[key] = 1
-        return
+        gMap[key] = 1;
+        return;
     }
 
     // Mark as found so we don't end up with recursion
-    gMap[key] = 999
+    gMap[key] = 9999;
 
-    let lesson = lessons[key]
-    let prereqDistances = []
+    let lesson = lessons[key];
+    let prereqDistances = [];
+    let closestParentDistance = 9999;
     for (let prerequisite of lesson.prerequisites) {
-        let optionDistances = []
+        let optionDistances = [];
         for (let option of prerequisite) {
             markGraph(option, state, lessons, points, gMap)
-            let distance = gMap[option]
+            let distance = gMap[option];
+            closestParentDistance = Math.min(closestParentDistance, distance)
             if (!lessons[option].is_connector) {
-                distance ++
+                distance ++;
             }
-            optionDistances.push(distance)
+            optionDistances.push(distance);
         }
-        prereqDistances.push(Math.min(...optionDistances))
+        prereqDistances.push(Math.min(...optionDistances));
     }
 
-    gMap[key] = Math.max(...prereqDistances)
+    gMap[key] = Math.max(...prereqDistances);
+
+    // If one of the parents is selectable (<= 1), then this should be threshold
+    // at minimum. This helps prevent the user from not realizing the next
+    // lesson isn't showing up because it has some other prerequisite on a
+    // less-completed branch of the tree
+    if (closestParentDistance <= 1 && gMap[key] > 1) {
+        gMap[key] = 2;
+    }
 
     // If this is a star gate, mark it as completed if user has enough stars and is unlocked
     if (lesson.type === 'gate') {
@@ -49,6 +59,35 @@ function markGraph(key, state, lessons, points, gMap) {
         }
     }
     
+}
+
+// If a lesson is at threshold (not unlocked, but previewed), make sure all of
+// its parents are at threshold as well so the user knows what will be required
+// to unlock it
+function traceGraphBackUp(key, state, lessons, gMap, visitedMap) {
+    if (visitedMap[key]) {
+        return;
+    }
+
+    if (lessons[key].prerequisites.length === 0) {
+        return;
+    }
+
+    if (gMap[key] > 2) {
+        return;
+    }
+
+    visitedMap[key] = true;
+
+    let lesson = lessons[key];
+    for (let prerequisite of lesson.prerequisites) {
+        for (let option of prerequisite) {
+            if (gMap[option] > 2) {
+                gMap[option] = 2;
+                traceGraphBackUp(option, state, lessons, gMap, visitedMap);
+            }
+        }
+    }
 }
 
 // Recursive DFS search that marks each lesson in gMap by its distance from the nearest completed lesson
@@ -60,11 +99,18 @@ function buildGraph(state, lessons, points) {
             markGraph(key, state, lessons, points, gMap)
         }
     }
+    let visitedMap = {};
+    for (let key in lessons) {
+        let lesson = lessons[key]
+        if (!(lesson in visitedMap)) {
+            traceGraphBackUp(key, state, lessons, gMap, visitedMap)
+        }
+    }
     return gMap
 }
 
 // Build a map of each lesson and its completion status
-function buildLessonStates(state, lessons, points, showHiddenLessons) {
+function buildLessonStates(state, lessons, points, showLockedLessons) {
     // Build a map from each lesson to its distance from the nearest completed lesson
     let gMap = buildGraph(state, lessons, points)
 
@@ -74,7 +120,7 @@ function buildLessonStates(state, lessons, points, showHiddenLessons) {
             ret[key] = {
                 completed: gMap[key] <= 1,
                 unlocked: gMap[key] <= 1,
-                threshold: gMap[key] <= 2 || showHiddenLessons,
+                threshold: gMap[key] <= 2 || showLockedLessons,
                 selectable: false,
             }
         }
@@ -82,8 +128,8 @@ function buildLessonStates(state, lessons, points, showHiddenLessons) {
             ret[key] = {
                 completed: gMap[key] <= 0,
                 unlocked: gMap[key] <= 1,
-                threshold: gMap[key] <= 2 || showHiddenLessons,
-                selectable: gMap[key] <= 1 || showHiddenLessons,
+                threshold: gMap[key] <= 2 || showLockedLessons,
+                selectable: gMap[key] <= 1 || showLockedLessons,
             }
         }
     }
@@ -97,8 +143,8 @@ function Board({ lessons, state, onOpenPage }) {
             points += song.points ?? 0;
         }
     })
-    const { showHiddenLessons } = useSettings();
-    const builtLessons = buildLessonStates(state, lessons, points, showHiddenLessons);
+    const { showLockedLessons } = useSettings();
+    const builtLessons = buildLessonStates(state, lessons, points, showLockedLessons);
     const divRef = useRef(null);
     const [boardSize, setBoardSize] = useState({ width: 0, height: 0 });
 
@@ -146,8 +192,6 @@ function Board({ lessons, state, onOpenPage }) {
                     ))
                 ))}
             </div>
-            
-            
             <LessonCounter state={state}/>
         </div>
     )

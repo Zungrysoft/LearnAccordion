@@ -71,8 +71,13 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
                 {lessonType === 'song' && (
                     <CheckBox text="Pin lesson:" onChange={onChangePinned} checked={completionState?.pinned} textColor={colorText}/>
                 )}
-                {!(lesson.subtasks) && !(lesson.type === 'gate') && (
-                    <CheckBox text="Mark as completed:" onChange={onChangeCompleted} checked={completionState?.completed} textColor={colorText}/>
+                {!(lesson.subtasks) && (
+                    <CheckBox
+                        text={lesson.type === 'gate' ? "Bypass gate:" : "Mark as completed:"}
+                        onChange={onChangeCompleted}
+                        checked={completionState?.completed}
+                        textColor={colorText}
+                    />
                 )}
             </div>
         </div>

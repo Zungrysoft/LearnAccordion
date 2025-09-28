@@ -1,22 +1,4 @@
 {
-  "mario_64_merry_go_round": {
-    "title": "Merry-Go-Round",
-    "artist": "Super Mario 64",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game"
-  },
-  "kazotsky_kick": {
-    "title": "The Kazotsky Kick",
-    "artist": "Team Fortress 2",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game"
-  },
   "beer_barrel_polka": {
     "title": "The Beer Barrel Polka",
     "artist": "Jaromír Vejvoda",
@@ -24,7 +6,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "polka"
+    "genre": "polka",
+    "is_hidden": true,
+    "requirements": []
   },
   "sakkijarven_polkka": {
     "title": "Säkkijärven Polkka",
@@ -33,7 +17,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "polka"
+    "genre": "polka",
+    "is_hidden": true,
+    "requirements": []
   },
   "tetris_theme": {
     "title": "Korobeiniki (Tetris Theme A)",
@@ -43,7 +29,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "folk"
+    "genre": "folk",
+    "is_hidden": true,
+    "requirements": []
   },
   "loch_lommond": {
     "title": "The Bonnie Banks o' Loch Lomond",
@@ -52,43 +40,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "folk"
-  },
-  "a_little_heart_to_heart": {
-    "title": "A Little Heart to Heart",
-    "artist": "Team Fortress 2",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game"
-  },
-  "long_tall_sally": {
-    "title": "Long Tall Sally",
-    "artist": "Little Richard",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "south_australia": {
-    "title": "South Australia",
-    "artist": "",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "sea_shanty"
-  },
-  "drunken_sailor": {
-    "title": "Drunken Sailor",
-    "artist": "",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "sea_shanty"
+    "genre": "folk",
+    "is_hidden": true,
+    "requirements": []
   },
   "clarinet_polka": {
     "title": "The Clarinet Polka",
@@ -97,7 +51,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "polka"
+    "genre": "polka",
+    "is_hidden": true,
+    "requirements": []
   },
   "banquet": {
     "title": "Banquet",
@@ -106,117 +62,57 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "waltz"
+    "genre": "waltz",
+    "is_hidden": true,
+    "requirements": []
   },
-  "dog_song": {
-    "title": "Dogsong",
-    "artist": "Undertale",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game"
-  },
-  "bonetrousle": {
-    "title": "Bonetrousle",
-    "artist": "Undertale",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game"
-  },
-  "fell_in_love_with_a_girl": {
-    "title": "Fell In Love With a Girl",
-    "artist": "The White Stripes",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-    "scarborough_fair": {
+  "scarborough_fair": {
     "title": "Scarborough Fair",
     "artist": "",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "folk"
+    "genre": "folk",
+    "is_hidden": true,
+    "requirements": []
   },
-    "take_five": {
-    "title": "Take Five",
-    "artist": "The Dave Brubeck Quartet",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "jazz"
-  },
-    "papers_please_theme": {
-    "title": "Title Theme",
-    "artist": "Papers Please",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game"
-  },
-    "love_potion_number_9": {
-    "title": "Love Potion No. 9",
-    "artist": "The Searchers",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-    "sailors_hornpipe": {
+  "sailors_hornpipe": {
     "title": "The Sailor's Hornpipe",
     "artist": "",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "hornpipe"
+    "genre": "hornpipe",
+    "is_hidden": true,
+    "requirements": []
   },
-    "off_to_california": {
+  "cronins_hornpipe": {
+    "title": "Cronin's Hornpipe",
+    "artist": "",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "hornpipe",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "off_to_california": {
     "title": "Off To California",
     "artist": "",
     "video_url": "",
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "hornpipe"
+    "genre": "hornpipe",
+    "is_hidden": true,
+    "requirements": []
   },
 
-  "you_got_to_lose": {
-    "title": "You Got To Lose",
-    "artist": "George Thorogood & The Destroyers",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "jerk_it_out": {
-    "title": "Jerk It Out",
-    "artist": "Caesars",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "sixteen_tons": {
-    "title": "Sixteen Tons",
-    "artist": "Tennessee Ernie Ford",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "blues"
-  },
+  
+
   "keelhauled": {
     "title": "Keelhauled",
     "artist": "Alestorm",
@@ -224,7 +120,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "nautical"
+    "genre": "nautical",
+    "is_hidden": true,
+    "requirements": []
   },
   "the_sunkn_norwegian": {
     "title": "The Sunk'n Norwegian",
@@ -233,7 +131,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "nautical"
+    "genre": "nautical",
+    "is_hidden": true,
+    "requirements": []
   },
   "nancy_the_tavern_wench": {
     "title": "Nancy the Tavern Wench",
@@ -242,7 +142,89 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "nautical"
+    "genre": "nautical",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "south_australia": {
+    "title": "South Australia",
+    "artist": "",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "sea_shanty",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "drunken_sailor": {
+    "title": "Drunken Sailor",
+    "artist": "",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "sea_shanty",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+  
+  "fell_in_love_with_a_girl": {
+    "title": "Fell In Love With a Girl",
+    "artist": "The White Stripes",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "love_potion_number_9": {
+    "title": "Love Potion No. 9",
+    "artist": "The Searchers",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "you_got_to_lose": {
+    "title": "You Got To Lose",
+    "artist": "George Thorogood & The Destroyers",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "jerk_it_out": {
+    "title": "Jerk It Out",
+    "artist": "Caesars",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "sixteen_tons": {
+    "title": "Sixteen Tons",
+    "artist": "Tennessee Ernie Ford",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "blues",
+    "is_hidden": true,
+    "requirements": []
   },
   "the_huntmaster": {
     "title": "The Huntmaster",
@@ -251,7 +233,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
-    "genre": "metal"
+    "genre": "metal",
+    "is_hidden": true,
+    "requirements": []
   },
   "ill_sink_manhattan": {
     "title": "I'll Sink Manhattan",
@@ -260,7 +244,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "alternative"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "we_want_a_rock": {
     "title": "We Want a Rock",
@@ -269,7 +255,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "alternative"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "lucky_ball_and_chain": {
     "title": "Lucky Ball and Chain",
@@ -278,7 +266,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "alternative"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "road_movie_to_berlin": {
     "title": "Road Movie to Berlin",
@@ -287,7 +277,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "alternative"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "32_footsteps": {
     "title": "32 Footsteps",
@@ -296,7 +288,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "alternative"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "shes_an_angel": {
     "title": "She's an Angel",
@@ -305,7 +299,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "alternative"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "twisting": {
     "title": "Twisting",
@@ -314,16 +310,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
-    "genre": "alternative"
-  },
-  "coffee_cold": {
-    "title": "Coffee Cold",
-    "artist": "Galt MacDermot",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "jazz"
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
   },
   "bone": {
     "title": "Bone",
@@ -332,7 +321,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "magenta_mountain": {
     "title": "Magenta Mountain",
@@ -341,7 +332,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "mars_for_the_rich": {
     "title": "Mars For The Rich",
@@ -350,7 +343,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "april_part_1": {
     "title": "April - Part 1",
@@ -359,7 +354,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "april_part_2": {
     "title": "April - Part 2",
@@ -368,7 +365,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "april_part_3": {
     "title": "April - Part 3",
@@ -377,7 +376,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "time": {
     "title": "Time",
@@ -386,7 +387,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "money": {
     "title": "Money",
@@ -395,7 +398,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "good_times_bad_times": {
     "title": "Good Times Bad Times",
@@ -404,7 +409,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "stairway_to_heaven": {
     "title": "Stairway to Heaven",
@@ -413,7 +420,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "thank_you": {
     "title": "Thank You",
@@ -422,7 +431,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "temple_of_the_king": {
     "title": "Temple of the King",
@@ -431,7 +442,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "the_caves_of_altamira": {
     "title": "The Caves of Altamira",
@@ -440,7 +453,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "here_comes_the_sun": {
     "title": "Here Comes the Sun",
@@ -449,7 +464,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "friend_of_the_devil": {
     "title": "Friend of the Devil",
@@ -458,7 +475,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "wish_you_were_here": {
     "title": "Wish You Were Here",
@@ -467,8 +486,24 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
+  "long_tall_sally": {
+    "title": "Long Tall Sally",
+    "artist": "Little Richard",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+
   "come_on_eileen": {
     "title": "Come on Eileen",
     "artist": "Dexys Midnight Runners",
@@ -476,349 +511,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "pop"
-  },
-  "misty": {
-    "title": "Misty",
-    "artist": "Erroll Garner",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "jazz"
-  },
-  "none_of_your_doing": {
-    "title": "None of Your Doing",
-    "artist": "Steppenwolf",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "icarus": {
-    "title": "Icarus - Borne on Wings of Steel",
-    "artist": "Kansas",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "rock"
-  },
-  "total_eclipse_of_the_heart": {
-    "title": "Total Eclipse of the Heart",
-    "artist": "Bonnie Tyler",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "pop"
-  },
-  "gimme_some_money": {
-    "title": "Gimme Some Money",
-    "artist": "The Thamesmen",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "somebody_to_love": {
-    "title": "Somebody to Love",
-    "artist": "Jefferson Airplane",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "spectrum": {
-    "title": "Spectrum",
-    "artist": "R.M.F.C.",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "25_or_6_to_4": {
-    "title": "26 or 6 to 4",
-    "artist": "Chicago",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "pop"
-  },
-  "if_you_leave_me_now": {
-    "title": "If You Leave Me Now",
-    "artist": "Chicago",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "pop"
-  },
-  "zomby_woof": {
-    "title": "Zomby Woof",
-    "artist": "Frank Zappa",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "suzy_creamcheese": {
-    "title": "Son of Suzy Creamcheese",
-    "artist": "Frank Zappa and the Mothers of Invention",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "nobody_but_me": {
-    "title": "Nobody But Me",
-    "artist": "Save Ferris",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "ska"
-  },
-  "through_the_fire_and_the_flames": {
-    "title": "Through the Fire and the Flames",
-    "artist": "DragonForce",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "metal"
-  },
-  "big_mamou": {
-    "title": "Big Mamou",
-    "artist": "Fernest Arceneaux",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "zydeco"
-  },
-  "au_contraire_mon_frere": {
-    "title": "Au Contraire, Mon Frere",
-    "artist": "C.J. Chenier",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "zydeco"
-  },
-  "zydeco_mardi_gras": {
-    "title": "Zydeco Mardi Gras",
-    "artist": "C.J. Chenier",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "zydeco"
-  },
-  "old_times_la_la": {
-    "title": "Old Times La La",
-    "artist": "Buckwheat Zydeco",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": false,
-    "genre": "zydeco"
-  },
-  "whiskey_cest_mon_ami": {
-    "title": "Whiskey C'est Mon Ami",
-    "artist": "Pine Leaf Boys",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "cajun"
-  },
-  "la_creve_de_faim": {
-    "title": "La Crève De Faim",
-    "artist": "Steve Riley & The Mamou Playboys",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "cajun"
-  },
-  "ill_be_mellow_when_im_dead": {
-    "title": "I'll Be Mellow When I'm Dead",
-    "artist": "Weird Al Yankovic",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "alternative"
-  },
-  "mr_frump_in_the_iron_lung": {
-    "title": "Mr. Frump in the Iron Lung",
-    "artist": "Weird Al Yankovic",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "alternative"
-  },
-  "goin_loco": {
-    "title": "Goin' Loco",
-    "artist": "Flaco Jimenez, Major Dundee",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "norteno"
-  },
-  "carmelita": {
-    "title": "Carmelita",
-    "artist": "Flaco Jimenez",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "norteno"
-  },
-  "en_san_antonio": {
-    "title": "¡Ay Te Dejo en San Antonio!",
-    "artist": "Flaco Jimenez",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "norteno"
-  },
-  "ingratos_ojos_mios": {
-    "title": "Ingratos Ojos Míos",
-    "artist": "Ramón Ayala",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "norteno"
-  },
-  "soy_de_tejas": {
-    "title": "Soy De Tejas",
-    "artist": "Steve Jordan",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "norteno"
-  },
-  "amelie": {
-    "title": "La valse d'Amélie",
-    "artist": "Amélie",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "film"
-  },
-  "pirates_of_the_caribbean_theme": {
-    "title": "Main Theme",
-    "artist": "Pirates of the Caribbean",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "film"
-  },
-  "trollhammaren": {
-    "title": "Trollhammaren",
-    "artist": "Finntroll",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": false,
-    "is_two_handed": false,
-    "genre": "metal"
-  },
-  "on_the_border": {
-    "title": "On the Border",
-    "artist": "Eagles",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "take_it_easy": {
-    "title": "Take it Easy",
-    "artist": "Eagles",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "help": {
-    "title": "Help",
-    "artist": "The Beatles",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "hello_i_love_you": {
-    "title": "Hello, I Love You",
-    "artist": "The Doors",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "riders_on_the_storm": {
-    "title": "Riders on the Storm",
-    "artist": "The Doors",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "rock"
-  },
-  "mr_crowley": {
-    "title": "Mr. Crowley",
-    "artist": "Ozzy Osbourne",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "metal"
-  },
-  "cross_eyed_mary": {
-    "title": "Cross-Eyed Mary",
-    "artist": "Jethro Tull",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": false,
-    "genre": "rock"
-  },
-  "wonderwall": {
-    "title": "Wonderwall",
-    "artist": "Oasis",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
-  },
-  "refugee": {
-    "title": "Refugee",
-    "artist": "Tom Petty and the Heartbreakers",
-    "video_url": "",
-    "points": 1,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock"
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
   },
   "two_out_of_three_aint_bad": {
     "title": "Two Out of Three Ain't Bad",
@@ -827,7 +522,414 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "pop"
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "25_or_6_to_4": {
+    "title": "26 or 6 to 4",
+    "artist": "Chicago",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "if_you_leave_me_now": {
+    "title": "If You Leave Me Now",
+    "artist": "Chicago",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "total_eclipse_of_the_heart": {
+    "title": "Total Eclipse of the Heart",
+    "artist": "Bonnie Tyler",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "oh_what_a_night": {
+    "title": "December, 1963 (Oh What a Night!)",
+    "artist": "Frankie Valli, The Four Seasons",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+
+  "big_mamou": {
+    "title": "Big Mamou",
+    "artist": "Fernest Arceneaux",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "zydeco",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "au_contraire_mon_frere": {
+    "title": "Au Contraire, Mon Frere",
+    "artist": "C.J. Chenier",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "zydeco",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "zydeco_mardi_gras": {
+    "title": "Zydeco Mardi Gras",
+    "artist": "C.J. Chenier",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "zydeco",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "old_times_la_la": {
+    "title": "Old Times La La",
+    "artist": "Buckwheat Zydeco",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "zydeco",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "whiskey_cest_mon_ami": {
+    "title": "Whiskey C'est Mon Ami",
+    "artist": "Pine Leaf Boys",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "cajun",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "la_creve_de_faim": {
+    "title": "La Crève De Faim",
+    "artist": "Steve Riley & The Mamou Playboys",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "cajun",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+
+  "goin_loco": {
+    "title": "Goin' Loco",
+    "artist": "Flaco Jimenez, Major Dundee",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "norteno",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "carmelita": {
+    "title": "Carmelita",
+    "artist": "Flaco Jimenez",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "norteno",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "en_san_antonio": {
+    "title": "¡Ay Te Dejo en San Antonio!",
+    "artist": "Flaco Jimenez",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "norteno",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "ingratos_ojos_mios": {
+    "title": "Ingratos Ojos Míos",
+    "artist": "Ramón Ayala",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "norteno",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "soy_de_tejas": {
+    "title": "Soy De Tejas",
+    "artist": "Steve Jordan",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "norteno",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+
+  "none_of_your_doing": {
+    "title": "None of Your Doing",
+    "artist": "Steppenwolf",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "icarus": {
+    "title": "Icarus - Borne on Wings of Steel",
+    "artist": "Kansas",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "gimme_some_money": {
+    "title": "Gimme Some Money",
+    "artist": "The Thamesmen",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "somebody_to_love": {
+    "title": "Somebody to Love",
+    "artist": "Jefferson Airplane",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "spectrum": {
+    "title": "Spectrum",
+    "artist": "R.M.F.C.",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "zomby_woof": {
+    "title": "Zomby Woof",
+    "artist": "Frank Zappa",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "suzy_creamcheese": {
+    "title": "Son of Suzy Creamcheese",
+    "artist": "Frank Zappa and the Mothers of Invention",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "nobody_but_me": {
+    "title": "Nobody But Me",
+    "artist": "Save Ferris",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "ska",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "through_the_fire_and_the_flames": {
+    "title": "Through the Fire and the Flames",
+    "artist": "DragonForce",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "metal",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "ill_be_mellow_when_im_dead": {
+    "title": "I'll Be Mellow When I'm Dead",
+    "artist": "Weird Al Yankovic",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "mr_frump_in_the_iron_lung": {
+    "title": "Mr. Frump in the Iron Lung",
+    "artist": "Weird Al Yankovic",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "trollhammaren": {
+    "title": "Trollhammaren",
+    "artist": "Finntroll",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "metal",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "on_the_border": {
+    "title": "On the Border",
+    "artist": "Eagles",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "take_it_easy": {
+    "title": "Take it Easy",
+    "artist": "Eagles",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "help": {
+    "title": "Help",
+    "artist": "The Beatles",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "hello_i_love_you": {
+    "title": "Hello, I Love You",
+    "artist": "The Doors",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "riders_on_the_storm": {
+    "title": "Riders on the Storm",
+    "artist": "The Doors",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "mr_crowley": {
+    "title": "Mr. Crowley",
+    "artist": "Ozzy Osbourne",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "metal",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "cross_eyed_mary": {
+    "title": "Cross-Eyed Mary",
+    "artist": "Jethro Tull",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "wonderwall": {
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "refugee": {
+    "title": "Refugee",
+    "artist": "Tom Petty and the Heartbreakers",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "the_state_of_massachusetts": {
     "title": "The State of Massachusetts",
@@ -836,7 +938,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
   "uncle_remus": {
     "title": "Uncle Remus",
@@ -845,8 +949,37 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock"
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
   },
+  "never_going_back_again": {
+    "title": "Never Going Back Again",
+    "artist": "Fleetwood Mac",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "outside": {
+    "title": "Outside",
+    "artist": "Staind",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": [
+      ["two_handed_playing"]
+    ]
+  },
+
+
+
   "mozart_sonata_11": {
     "title": "Piano Sonata No. 11 in A Major, K. 331: III",
     "artist": "Wolfgang Amadeus Mozart",
@@ -854,7 +987,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "classical"
+    "genre": "classical",
+    "is_hidden": true,
+    "requirements": []
   },
   "canon_in_d": {
     "title": "Canon in D",
@@ -863,8 +998,60 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "classical"
+    "genre": "classical",
+    "is_hidden": true,
+    "requirements": []
   },
+
+
+
+  "misty": {
+    "title": "Misty",
+    "artist": "Erroll Garner",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "coffee_cold": {
+    "title": "Coffee Cold",
+    "artist": "Galt MacDermot",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "take_five": {
+    "title": "Take Five",
+    "artist": "The Dave Brubeck Quartet",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "petite_fleur": {
+    "title": "Petite Fleur",
+    "artist": "Sidney Bechet",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+
   "simpsons_theme": {
     "title": "Main Theme",
     "artist": "The Simpsons",
@@ -872,7 +1059,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "television"
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
   },
   "it_crowd_theme": {
     "title": "Main Theme",
@@ -881,7 +1070,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "television"
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
   },
   "always_sunny_theme": {
     "title": "Main Theme",
@@ -890,7 +1081,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "television"
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
   },
   "paddys_pub_theme": {
     "title": "I Like Life at Paddy's Pub",
@@ -899,7 +1092,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "television"
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
   },
   "my_robot_friend": {
     "title": "My Robot Friend",
@@ -908,8 +1103,13 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "television"
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
   },
+
+
+
   "what_ever_happened_to_saturday_night": {
     "title": "What Ever Happened To Saturday Night",
     "artist": "The Rocky Horror Show",
@@ -917,7 +1117,9 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "showtune"
+    "genre": "showtune",
+    "is_hidden": true,
+    "requirements": []
   },
   "brother_can_you_spare_a_dime": {
     "title": "Brother, Can You Spare a Dime?",
@@ -926,8 +1128,13 @@
     "points": 1,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "showtune"
+    "genre": "showtune",
+    "is_hidden": true,
+    "requirements": []
   },
+
+
+
   "lukes_theme": {
     "title": "Luke's Theme",
     "artist": "Star Wars",
@@ -935,7 +1142,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "film"
+    "genre": "film",
+    "is_hidden": true,
+    "requirements": []
   },
   "duel_of_fates": {
     "title": "Duel of Fates",
@@ -944,7 +1153,56 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "film"
+    "genre": "film",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "amelie": {
+    "title": "La valse d'Amélie",
+    "artist": "Amélie",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "film",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "pirates_of_the_caribbean_theme": {
+    "title": "Main Theme",
+    "artist": "Pirates of the Caribbean",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "film",
+    "is_hidden": true,
+    "requirements": []
+  },
+
+
+
+  "mario_64_merry_go_round": {
+    "title": "Merry-Go-Round",
+    "artist": "Super Mario 64",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "kazotsky_kick": {
+    "title": "The Kazotsky Kick",
+    "artist": "Team Fortress 2",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "song_of_storms": {
     "title": "Song of Storms",
@@ -953,7 +1211,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "casino_night_zone": {
     "title": "Casino Night Zone",
@@ -962,7 +1222,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "running_from_evil": {
     "title": "Running From Evil",
@@ -971,7 +1233,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "into_sandys_city": {
     "title": "Into Sandy's City",
@@ -980,7 +1244,20 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "sign_of_evil": {
+    "title": "Sign of Evil",
+    "artist": "Doom",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "death_by_glamour": {
     "title": "Death By Glamour",
@@ -989,7 +1266,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "home_undertale": {
     "title": "Home",
@@ -998,7 +1277,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "super_mario_world_end_credits": {
     "title": "End Credits",
@@ -1007,7 +1288,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "terraria_corruption": {
     "title": "Corruption",
@@ -1016,7 +1299,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "minecraft_far": {
     "title": "Far",
@@ -1025,7 +1310,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "mario_main_theme": {
     "title": "Overworld",
@@ -1034,7 +1321,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "mario_3_athletic_theme": {
     "title": "Athletic",
@@ -1043,7 +1332,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "melee_title_theme": {
     "title": "Menu",
@@ -1052,7 +1343,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "gates_of_fort_firestorm": {
     "title": "Gates of Fort Firestorm",
@@ -1061,7 +1354,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "contra_4_stage_1": {
     "title": "Area 1",
@@ -1070,7 +1365,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "hydrocity_zone": {
     "title": "Hydrocity Zone Act 1",
@@ -1079,7 +1376,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "carnival_night_zone": {
     "title": "Carnival Night Zone Act 1",
@@ -1088,7 +1387,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "sonic_3_mini_boss": {
     "title": "Mini Boss",
@@ -1097,7 +1398,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "green_hill_zone": {
     "title": "Green Hill Zone",
@@ -1106,7 +1409,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "emerald_hill_zone": {
     "title": "Emerald Hill Zone",
@@ -1115,7 +1420,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": false,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "nsmb_athletic_theme": {
     "title": "Athletic",
@@ -1124,7 +1431,31 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "nsmb_castle": {
+    "title": "Castle",
+    "artist": "New Super Mario Bros.",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "nsmb_boss": {
+    "title": "Boss Fight",
+    "artist": "New Super Mario Bros.",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "smw_castle": {
     "title": "Castle",
@@ -1133,7 +1464,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "kraids_lair": {
     "title": "Kraid's Lair",
@@ -1142,7 +1475,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "dark_world": {
     "title": "Dark World",
@@ -1151,7 +1486,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "tloz_dungeon": {
     "title": "Dungeon",
@@ -1160,7 +1497,20 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "wild_korok_forest_day": {
+    "title": "Wild Korok Forest",
+    "artist": "The Legend of Zelda: Breath of the Wild",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "red_brinstar": {
     "title": "Red Brinstar",
@@ -1169,7 +1519,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "brinstar": {
     "title": "Brinstar",
@@ -1178,7 +1530,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "the_world_revolving": {
     "title": "The World Revolving",
@@ -1187,7 +1541,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "vampire_killer": {
     "title": "Vampire Killer",
@@ -1196,7 +1552,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "bloody_tears": {
     "title": "Bloody Tears",
@@ -1205,7 +1563,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "guiles_theme": {
     "title": "Guile's Theme",
@@ -1214,7 +1574,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "mario_64_slide": {
     "title": "Slide",
@@ -1223,7 +1585,9 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "shadow_of_the_ninja_stage_2": {
     "title": "Stage 2",
@@ -1232,6 +1596,63 @@
     "points": 1,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "video_game"
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "a_little_heart_to_heart": {
+    "title": "A Little Heart to Heart",
+    "artist": "Team Fortress 2",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "dog_song": {
+    "title": "Dogsong",
+    "artist": "Undertale",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "bonetrousle": {
+    "title": "Bonetrousle",
+    "artist": "Undertale",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "papers_please_theme": {
+    "title": "Title Theme",
+    "artist": "Papers Please",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "wii_shop_theme": {
+    "title": "Shop Theme",
+    "artist": "Nintendo Wii",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   }
 }

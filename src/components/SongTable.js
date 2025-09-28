@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import songData from '../data/songs.json';
 import { sortSongs } from '../helpers/sorting.jsx';
 import genreData from '../data/genres.json';
@@ -33,13 +33,55 @@ const SongTable = ({ state, onOpenPage }) => {
     setFilterHandsMode,
     filterVocalsMode,
     setFilterVocalsMode,
-    filterLockedMode,
-    setFilterLockedMode,
+    showLockedSongs,
+    setShowLockedSongs,
+    showHiddenSongs,
+    setShowHiddenSongs,
   } = useSettings();
   const [filterText, setFilterText] = useState("");
-  const { colorBackground, colorBackgroundLocked, colorBackgroundLight, colorText } = useTheme();
+  const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+
+  const isSongUnlocked = useCallback((song) => {
+    if (!song.requirements) {
+      return true;
+    }
+
+    for (const requirement of song.requirements) {
+      let satisfied = false
+      for (const option of requirement) {
+        if (state[option]?.completed) {
+          satisfied = true;
+          break;
+        }
+      }
+      if (!satisfied) {
+        return false;
+      }
+    }
+    return true;
+  }, [state])
+
+  const getSongBackgroundColor = useCallback((song) => {
+    if (song.is_hidden) {
+      return colorBackgroundDarker;
+    }
+    if (state[song.id]?.completed) {
+      return colorBackgroundLight;
+    }
+    if (isSongUnlocked(song)) {
+      return colorBackground;
+    }
+    return colorBackgroundDark;
+  }, [state, isSongUnlocked, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
 
   let filteredSongs = songs;
+  if (!showHiddenSongs) {
+    filteredSongs = filteredSongs.filter((song) => !song.is_hidden)
+  }
+  if (!showLockedSongs) {
+    filteredSongs = filteredSongs.filter((song) => isSongUnlocked(song))
+  }
+  const noSongsUnlocked = filteredSongs.length === 0;
   if (filterHandsMode === 'one-handed') {
     filteredSongs = filteredSongs.filter((song) => !song.is_two_handed)
   }
@@ -143,10 +185,10 @@ const SongTable = ({ state, onOpenPage }) => {
           />
           <RadioButtons
             options={[
-              { value: true, label: 'Hide locked songs' },
+              { value: true, label: 'Show locked songs' },
             ]}
-            selectedOption={filterLockedMode}
-            onChange={() => setFilterLockedMode((prev) => !prev)}
+            selectedOption={showLockedSongs}
+            onChange={() => setShowLockedSongs((prev) => !prev)}
             isCheckbox
           />
           <TextInput
@@ -177,37 +219,46 @@ const SongTable = ({ state, onOpenPage }) => {
 
       </div>
 
-      <div style={tableContainerStyle}>
-        <table style={tableStyle}>
-          <tbody>
-            {sortedSongs.map((song, index) => (
-              <tr
-                key={index}
-                style={{
-                  cursor: 'pointer',
-                  backgroundColor: state[song.id]?.completed ? colorBackgroundLight : colorBackground,
-                }}
-                onClick={() => onOpenPage(song.id)}
-              >
-                <td style={tdStyle}>
-                  <SongTitle title={song.title} pinned={state[song.id]?.pinned} completed={state[song.id]?.completed} />
-                </td>
-                <td style={tdStyle}>
-                  <SongArtist artist={song.artist} />
-                </td>
-                <td style={tdStyle}>
-                  <SongDetails
-                    hasLyrics={song.has_vocals}
-                    points={song.points}
-                    isTwoHanded={song.is_two_handed}
-                  />
-                </td>
-                <td style={tdStyle}><GenreIndicator genre={song.genre} /></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {
+        sortedSongs.length > 0 ?
+          <div style={tableContainerStyle}>
+            <table style={tableStyle}>
+              <tbody>
+                {sortedSongs.map((song, index) => (
+                  <tr
+                    key={index}
+                    style={{
+                      cursor: 'pointer',
+                      backgroundColor: getSongBackgroundColor(song),
+                    }}
+                    onClick={() => onOpenPage(song.id)}
+                  >
+                    <td style={tdStyle}>
+                      <SongTitle title={song.title} pinned={state[song.id]?.pinned} completed={state[song.id]?.completed} />
+                    </td>
+                    <td style={tdStyle}>
+                      <SongArtist artist={song.artist} />
+                    </td>
+                    <td style={tdStyle}>
+                      <SongDetails
+                        hasLyrics={song.has_vocals}
+                        points={song.points}
+                        isTwoHanded={song.is_two_handed}
+                      />
+                    </td>
+                    <td style={tdStyle}><GenreIndicator genre={song.genre} /></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          :
+          <div style={tableContainerStyle}>
+            <p style={{ textAlign: "center", verticalAlign: "center" }}>{noSongsUnlocked ? "You have not unlocked any songs yet. Mark lessons as complete in the 'Lessons' tab to unlock more songs." : "There are no songs that match your filters."}</p>
+          </div>
+
+      }
+      
     </div>
   );
 };

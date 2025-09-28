@@ -139,6 +139,7 @@ img {
     top:36px;
     right:0;
     margin:20px;
+    z-index: 20;
 }
 
 .top-left {
@@ -146,6 +147,7 @@ img {
     top:36px;
     left:0;
     margin:20px;
+    z-index: 20;
 }
 
 .bounding-box-page {

@@ -18,7 +18,7 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
 
     // Don't draw if either of the lessons won't show up
     if (!state1 || !state1.threshold || !state2 || !state2.threshold) {
-        return <div/>
+        return null;
     }
 
     // Draw in a different color if one of the lessons is completed

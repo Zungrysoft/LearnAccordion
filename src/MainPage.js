@@ -27,7 +27,7 @@ function getDefaultStorage() {
 
 function dfsLessonHeights(lessonData, lesson, height) {
     if (!lesson.y || lesson.y < height) {
-        lesson.y = height;
+        lesson.y = height + (lesson.y_offset ?? 0);
     }
 
     for (const childLessonKey of lesson.childLessons) {
@@ -39,7 +39,7 @@ function dfsLessonHeights(lessonData, lesson, height) {
 function MainPage() {
     const { colorBackground, colorText } = useTheme();
     const [activeTab, setActiveTab] = useState('lessons');
-    const { showHiddenLessons, setShowHiddenLessons } = useSettings();
+    const { showLockedLessons, setShowLockedLessons } = useSettings();
 
     const processedLessonData = useMemo(() => {
         let procLessonData = {};
@@ -126,8 +126,8 @@ function MainPage() {
                     <div className="top-right">
                         <CheckBox
                             text="Show later lessons:"
-                            onChange={() => setShowHiddenLessons((prev) => !prev)}
-                            checked={showHiddenLessons}
+                            onChange={() => setShowLockedLessons((prev) => !prev)}
+                            checked={showLockedLessons}
                             textColor={colorText}
                         />
                     </div>

@@ -10,10 +10,12 @@ const defaultContext = {
     setFilterHandsMode: () => {},
     filterVocalsMode: null,
     setFilterVocalsMode: () => {},
-    filterLockedMode: true,
-    setFilterLockedMode: () => {},
-    showHiddenLessons: false,
-    setShowHiddenLessons: () => {},
+    showLockedSongs: true,
+    setShowLockedSongs: () => {},
+    showHiddenSongs: true,
+    setShowHiddenSongs: () => {},
+    showLockedLessons: false,
+    setShowLockedLessons: () => {},
 }
 
 const SettingsContext = createContext(defaultContext);
@@ -52,11 +54,14 @@ export function SettingsProvider({ children }) {
     const filterVocalsMode = settings?.filterVocalsMode ?? defaultContext.filterVocalsMode;
     const setFilterVocalsMode = useCallback((value) => changeSetting('filterVocalsMode', value), [changeSetting]);
 
-    const filterLockedMode = settings?.filterLockedMode ?? defaultContext.filterLockedMode;
-    const setFilterLockedMode = useCallback((value) => changeSetting('filterLockedMode', value), [changeSetting]);
+    const showLockedSongs = settings?.showLockedSongs ?? defaultContext.showLockedSongs;
+    const setShowLockedSongs = useCallback((value) => changeSetting('showLockedSongs', value), [changeSetting]);
 
-    const showHiddenLessons = settings?.showHiddenLessons ?? defaultContext.showHiddenLessons;
-    const setShowHiddenLessons = useCallback((value) => changeSetting('showHiddenLessons', value), [changeSetting]);
+    const showHiddenSongs = settings?.showHiddenSongs ?? defaultContext.showHiddenSongs;
+    const setShowHiddenSongs = useCallback((value) => changeSetting('showHiddenSongs', value), [changeSetting]);
+
+    const showLockedLessons = settings?.showLockedLessons ?? defaultContext.showLockedLessons;
+    const setShowLockedLessons = useCallback((value) => changeSetting('showLockedLessons', value), [changeSetting]);
 
     return (
         <SettingsContext.Provider
@@ -70,10 +75,12 @@ export function SettingsProvider({ children }) {
                     setFilterHandsMode,
                     filterVocalsMode,
                     setFilterVocalsMode,
-                    filterLockedMode,
-                    setFilterLockedMode,
-                    showHiddenLessons,
-                    setShowHiddenLessons,
+                    showLockedSongs,
+                    setShowLockedSongs,
+                    showHiddenSongs,
+                    setShowHiddenSongs,
+                    showLockedLessons,
+                    setShowLockedLessons,
                 }),
                 [
                     theme,
@@ -84,10 +91,12 @@ export function SettingsProvider({ children }) {
                     setFilterHandsMode,
                     filterVocalsMode,
                     setFilterVocalsMode,
-                    filterLockedMode,
-                    setFilterLockedMode,
-                    showHiddenLessons,
-                    setShowHiddenLessons,
+                    showLockedSongs,
+                    setShowLockedSongs,
+                    showHiddenSongs,
+                    setShowHiddenSongs,
+                    showLockedLessons,
+                    setShowLockedLessons,
                 ]
             )}
         >
