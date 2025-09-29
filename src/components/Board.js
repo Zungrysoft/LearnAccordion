@@ -61,35 +61,6 @@ function markGraph(key, state, lessons, points, gMap) {
     
 }
 
-// If a lesson is at threshold (not unlocked, but previewed), make sure all of
-// its parents are at threshold as well so the user knows what will be required
-// to unlock it
-function traceGraphBackUp(key, state, lessons, gMap, visitedMap) {
-    if (visitedMap[key]) {
-        return;
-    }
-
-    if (lessons[key].prerequisites.length === 0) {
-        return;
-    }
-
-    if (gMap[key] > 2) {
-        return;
-    }
-
-    visitedMap[key] = true;
-
-    let lesson = lessons[key];
-    for (let prerequisite of lesson.prerequisites) {
-        for (let option of prerequisite) {
-            if (gMap[option] > 2) {
-                gMap[option] = 2;
-                traceGraphBackUp(option, state, lessons, gMap, visitedMap);
-            }
-        }
-    }
-}
-
 // Recursive DFS search that marks each lesson in gMap by its distance from the nearest completed lesson
 function buildGraph(state, lessons, points) {
     let gMap = {}
@@ -99,13 +70,28 @@ function buildGraph(state, lessons, points) {
             markGraph(key, state, lessons, points, gMap)
         }
     }
-    let visitedMap = {};
-    for (let key in lessons) {
-        let lesson = lessons[key]
-        if (!(lesson in visitedMap)) {
-            traceGraphBackUp(key, state, lessons, gMap, visitedMap)
+
+    // If a lesson is at threshold (not unlocked, but previewed), make sure all
+    // of its parents are at threshold as well so the user knows that there are
+    // other requirements to unlock it as well
+    let atThreshold = [];
+    for (const key in lessons) {
+        if (gMap[key] <= 2 /* && gMap[key] > 0 */) {
+            atThreshold.push(key)
         }
     }
+    for (const key of atThreshold) {
+        let lesson = lessons[key]
+        for (let prerequisite of lesson.prerequisites) {
+            for (let option of prerequisite) {
+                if (gMap[option] > 2) {
+                    gMap[option] = 2;
+                }
+            }
+        }
+    }
+
+
     return gMap
 }
 

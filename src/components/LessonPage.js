@@ -48,7 +48,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
                 <Embed url={lesson.video_url}/>
                 {lesson.subtasks && (
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}>
-                        <h2 style={{ gridColumn: 2 }}>{subtaskCompletionText}</h2>
+                        <h2 style={{ gridColumn: 2, color: colorText }}>{subtaskCompletionText}</h2>
                     </div>
                 )}
                 {lesson.subtasks && (

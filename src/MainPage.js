@@ -32,7 +32,7 @@ function dfsLessonHeights(lessonData, lesson, height) {
 
     for (const childLessonKey of lesson.childLessons) {
         const childLesson = lessonData[childLessonKey];
-        dfsLessonHeights(lessonData, childLesson, height+1)
+        dfsLessonHeights(lessonData, childLesson, height + 1 + (lesson.y_offset ?? 0))
     }
 }
 

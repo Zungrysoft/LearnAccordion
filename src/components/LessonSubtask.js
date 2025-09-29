@@ -4,8 +4,11 @@ import typeData from '../data/types.json';
 import Embed from './Embed';
 import CheckBox from './CheckBox';
 import genreData from '../data/genres.json';
+import { useTheme } from '../helpers/theme';
 
 function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, difficulty }) {
+    const { colorText, filterIcon } = useTheme();
+
     let titleText = artist ?
         `${artist} - ${title}` :
         title;
@@ -14,7 +17,7 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
 
     return (
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
-            <h2 style={{ textDecoration: completed ? 'line-through' : 'none' }}>
+            <h2 style={{ textDecoration: completed ? 'line-through' : 'none', color: colorText }}>
                 {titleText}
             </h2>
             {hasDifficulty && (
@@ -24,6 +27,7 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
                     style={{
                         width: '24px',
                         height: '24px',
+                        filter: filterIcon,
                     }}
                 />
             )}
@@ -34,6 +38,7 @@ function SubtaskTitle({ title, artist, completed, hasLyrics, hasBackingTrack, di
 
 function LessonSubtask({ lesson, subtask, onClickTitle, toggleCompletion, isOpen, completed }) {
     const mainRef = useRef(null);
+    const { colorBackgroundLight, colorText } = useTheme();
 
     return (
         <div
@@ -48,9 +53,10 @@ function LessonSubtask({ lesson, subtask, onClickTitle, toggleCompletion, isOpen
                     width: "100%",
                     textAlign: "left",
                     border: "solid",
-                    backgroundColor: typeData[lesson.type].color2,
+                    backgroundColor: colorBackgroundLight,
                     borderRadius: isOpen ? "8px 8px 0 0" : "8px",
                     cursor: "pointer",
+                    color: colorText,
                 }}
                 onClick={() => {
                     // if (!isOpen) {
@@ -74,7 +80,7 @@ function LessonSubtask({ lesson, subtask, onClickTitle, toggleCompletion, isOpen
                 <div
                     style={{
                         padding: "12px",
-                        backgroundColor: typeData[lesson.type].color2,
+                        backgroundColor: colorBackgroundLight,
                         borderRadius: "0 0 8px 8px",
                     }}
                 >
@@ -84,6 +90,7 @@ function LessonSubtask({ lesson, subtask, onClickTitle, toggleCompletion, isOpen
                         text="Mark as completed:"
                         onChange={toggleCompletion}
                         checked={completed}
+                        textColor={colorText}
                     />
                 </div>
             )}

@@ -54,7 +54,17 @@
     "bass_buttons_2": {
         "title": "Bass Buttons #2",
         "video_url": "",
-        "description": "Learn some more bass button patterns.\n6/8 oompah, other keys",
+        "description": "6/8 oompah.\nOther keys.\nPressing the bass and chord button at the same time.",
+        "x": -0.5,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_buttons"]
+        ]
+    },
+    "bass_button_movement": {
+        "title": "The I IV and V Chords",
+        "video_url": "",
+        "description": "Moving to the IV and V on the bass buttons.",
         "x": -0.3,
         "type": "technique",
         "prerequisites": [
@@ -74,11 +84,12 @@
     "bass_buttons_3": {
         "title": "Bass Buttons #3",
         "video_url": "",
-        "description": "Even more bass button patterns.\nMoving to the IV and V, minor and 7th.\nJumping two columns over.",
+        "description": "Minor and 7th chords.\nJumping two columns.\nCounterbass.",
         "x": -0.5,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_2"],
+            ["bass_button_movement"],
             ["stradella_system"]
         ]
     },
@@ -110,8 +121,8 @@
     "bass_buttons_4": {
         "title": "Bass Buttons #4",
         "video_url": "",
-        "description": "Three-buttons jumps.\nMore chord progressions.\nPressing the bass and chord button at the same time.",
-        "x": -0.2,
+        "description": "Three-buttons jumps.\nMore chord progressions.",
+        "x": -0.6,
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
@@ -122,7 +133,7 @@
         "title": "Bass Scales",
         "video_url": "",
         "description": "Learn your major and minor scales on the bass buttons.",
-        "x": -0.6,
+        "x": -0.8,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_3"]
@@ -132,7 +143,7 @@
         "title": "Basslines",
         "video_url": "",
         "description": "Play basslines with the bass buttons.",
-        "x": -0.6,
+        "x": -1.0,
         "type": "technique",
         "prerequisites": [
             ["bass_button_bass_scales"]
@@ -143,35 +154,22 @@
 
 
 
-    "chord_theory": {
-        "title": "Chord Theory",
-        "video_url": "",
-        "description": "Chord progressions, harmony",
-        "x": 0,
-        "y_offset": 1,
-        "type": "theory",
-        "prerequisites": [
-            ["scale_theory"]
-        ]
-    },
-
-
     "two_handed_playing": {
         "title": "Intro to Two-Handed Playing",
         "video_url": "",
         "description": "Very simple melody while tapping a bass note exercise.",
-        "x": 0,
+        "x": -0.2,
         "type": "technique",
         "prerequisites": [
-            ["gate_1a"],
-            ["bass_buttons_3"]
+            ["about_song_choice"],
+            ["bass_button_movement"]
         ]
     },
     "two_handed_playing_2": {
         "title": "Two-Handed Playing #2",
         "video_url": "",
         "description": "Sliding up and down the bass strap while maintaining loudness exercise.\nTwo-hand exercise with moving bass note.",
-        "x": 0,
+        "x": -0.2,
         "type": "technique",
         "prerequisites": [
             ["two_handed_playing"]
@@ -181,18 +179,19 @@
         "title": "Two-Handed Playing #3",
         "video_url": "",
         "description": "Mary Had a Little Lamb: Two-handed version.",
-        "x": 0,
+        "x": -0.2,
         "type": "technique",
         "prerequisites": [
             ["two_handed_playing_2"]
         ]
     },
     "gate_1b": {
-        "x": 0,
+        "x": -0.3,
         "points_required": 15,
         "type": "gate",
         "prerequisites": [
-            ["two_handed_playing_3"]
+            ["two_handed_playing_3"],
+            ["bass_buttons_3"]
         ]
     },
 
@@ -204,18 +203,8 @@
         "title": "The Major Scale",
         "video_url": "",
         "description": "Learn the C major scale and how to spider-walk.",
-        "x": 0.6,
+        "x": 0.8,
         "type": "technique",
-        "prerequisites": [
-            ["about"]
-        ]
-    },
-    "scale_theory": {
-        "title": "Scale Theory",
-        "video_url": "",
-        "description": "",
-        "x": 0.4,
-        "type": "theory",
         "prerequisites": [
             ["about"]
         ]
@@ -224,15 +213,13 @@
         "title": "The C System",
         "video_url": "",
         "description": "Learn how the buttons are arranged on the right side of the instrument.",
-        "x": 0.5,
+        "x": 0.6,
         "type": "instrument",
         "prerequisites": [
             ["scale_theory"],
             ["major_scale"]
         ]
     },
-    
-
     "scale_intervals_practice": {
         "title": "Scale Interval Practice",
         "video_url": "",
@@ -244,9 +231,9 @@
         ]
     },
     "minor_scale": {
-        "title": "Minor Scales",
+        "title": "Minor Scales and Chromatic Scale",
         "video_url": "",
-        "description": "",
+        "description": "Practice the minor scale and its variants.\nWalk up and down the chromatic scale.",
         "x": 0.8,
         "type": "technique",
         "prerequisites": [
@@ -281,16 +268,6 @@
         "type": "instrument",
         "prerequisites": [
             ["c_system"]
-        ]
-    },
-    "history_of_the_accordion": {
-        "title": "History of the Accordion",
-        "video_url": "",
-        "description": "",
-        "x": 0.2,
-        "type": "history",
-        "prerequisites": [
-            ["register_switches"]
         ]
     },
     "about_song_choice": {
@@ -345,11 +322,21 @@
             ["gate_1a"]
         ]
     },
-    "faster_playing": {
-        "title": "Faster Playing",
+    "syncopation": {
+        "title": "Syncopated Grooves",
         "video_url": "",
         "description": "",
         "x": 0.5,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_1a"]
+        ]
+    },
+    "big_right_hand_jumps": {
+        "title": "Big Right Hand Jumps",
+        "video_url": "",
+        "description": "",
+        "x": 0.3,
         "type": "technique",
         "prerequisites": [
             ["gate_1a"]
@@ -359,11 +346,63 @@
         "title": "Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.3,
+        "x": 0.1,
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
             ["gate_1a"]
+        ]
+    },
+
+
+
+
+
+    "scale_theory": {
+        "title": "Scale Theory",
+        "video_url": "",
+        "description": "",
+        "x": 0.4,
+        "type": "theory",
+        "prerequisites": [
+            ["about"]
+        ]
+    },
+    "chord_theory": {
+        "title": "Chord Theory",
+        "video_url": "",
+        "description": "Chord progressions, harmony",
+        "x": 0,
+        "y_offset": 1,
+        "type": "theory",
+        "prerequisites": [
+            ["scale_theory"]
+        ]
+    },
+    "advanced_chord_theory": {
+        "title": "Advanced Chord Theory",
+        "video_url": "",
+        "description": "Seventh Chords\nAdvanced Chord Progressions",
+        "x": 0,
+        "y_offset": 3,
+        "type": "theory",
+        "prerequisites": [
+            ["chord_theory"]
+        ]
+    },
+
+
+
+
+
+    "history_of_the_accordion": {
+        "title": "History of the Accordion",
+        "video_url": "",
+        "description": "",
+        "x": 0.2,
+        "type": "history",
+        "prerequisites": [
+            ["register_switches"]
         ]
     }
 }

@@ -7,8 +7,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "polka",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["major_scale_in_thirds"],
+      ["bass_buttons_3"]
+    ]
   },
   "sakkijarven_polkka": {
     "title": "Säkkijärven Polkka",
@@ -18,8 +21,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "polka",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "tetris_theme": {
     "title": "Korobeiniki (Tetris Theme A)",
@@ -30,8 +36,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "folk",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "loch_lommond": {
     "title": "The Bonnie Banks o' Loch Lomond",
@@ -52,8 +61,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "polka",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["big_right_hand_jumps"],
+      ["bass_buttons_3"]
+    ]
   },
   "banquet": {
     "title": "Banquet",
@@ -74,8 +86,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "folk",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["common_scales"],
+      ["bass_buttons_4"]
+    ]
   },
   "sailors_hornpipe": {
     "title": "The Sailor's Hornpipe",
@@ -96,8 +111,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "hornpipe",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["major_scale"],
+      ["bass_buttons_4"]
+    ]
   },
   "off_to_california": {
     "title": "Off To California",
@@ -154,8 +172,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "sea_shanty",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["major_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "drunken_sailor": {
     "title": "Drunken Sailor",
@@ -165,8 +186,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "sea_shanty",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["common_scales"],
+      ["bass_buttons_3"]
+    ]
   },
 
 
@@ -179,8 +203,10 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "rock",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_chords"],
+      ["bass_buttons_4"]
+    ]
   },
   "love_potion_number_9": {
     "title": "Love Potion No. 9",
@@ -190,8 +216,10 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "rock",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["bass_buttons_4"]
+    ]
   },
   "you_got_to_lose": {
     "title": "You Got To Lose",
@@ -212,8 +240,10 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "rock",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_chords"],
+      ["bass_buttons_4"]
+    ]
   },
   "sixteen_tons": {
     "title": "Sixteen Tons",
@@ -570,6 +600,28 @@
     "is_hidden": true,
     "requirements": []
   },
+  "you_take_me_up": {
+    "title": "You Take Me Up",
+    "artist": "Thompson Twins",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "hold_me_now": {
+    "title": "Hold Me Now",
+    "artist": "Thompson Twins",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
@@ -777,6 +829,17 @@
     "is_hidden": true,
     "requirements": []
   },
+  "peaches_en_regalia": {
+    "title": "Peaches En Regalia",
+    "artist": "Frank Zappa",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
   "nobody_but_me": {
     "title": "Nobody But Me",
     "artist": "Save Ferris",
@@ -973,9 +1036,7 @@
     "is_two_handed": true,
     "genre": "rock",
     "is_hidden": true,
-    "requirements": [
-      ["two_handed_playing"]
-    ]
+    "requirements": []
   },
 
 
@@ -1190,8 +1251,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["major_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "kazotsky_kick": {
     "title": "The Kazotsky Kick",
@@ -1201,8 +1265,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "song_of_storms": {
     "title": "Song of Storms",
@@ -1608,8 +1675,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "dog_song": {
     "title": "Dogsong",
@@ -1619,8 +1689,11 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["syncopation"],
+      ["bass_buttons_3"]
+    ]
   },
   "bonetrousle": {
     "title": "Bonetrousle",
@@ -1631,7 +1704,12 @@
     "is_two_handed": true,
     "genre": "video_game",
     "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["big_right_hand_jumps"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
   },
   "papers_please_theme": {
     "title": "Title Theme",

@@ -12,7 +12,6 @@
     "song": {
         "title": "Song",
         "color": "#bf0b68",
-        "color2": "#e6539f",
         "icon": "disc"
     },
     "instrument": {
@@ -32,8 +31,7 @@
     },
     "challenge": {
         "title": "Challenge",
-        "color": "#666666",
-        "color2": "#828282",
+        "color": "#bc49c4",
         "icon": "medal"
     },
     "gate": {
