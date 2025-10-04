@@ -79,7 +79,7 @@ const SongTable = ({ state, onOpenPage }) => {
     filteredSongs = filteredSongs.filter((song) => !song.is_hidden)
   }
   if (!showLockedSongs) {
-    filteredSongs = filteredSongs.filter((song) => isSongUnlocked(song))
+    filteredSongs = filteredSongs.filter((song) => state[song.id]?.pinned || isSongUnlocked(song))
   }
   const noSongsUnlocked = filteredSongs.length === 0;
   if (filterHandsMode === 'one-handed') {
@@ -102,6 +102,7 @@ const SongTable = ({ state, onOpenPage }) => {
         if (!(
           processForFilter(song.title).includes(fw) ||
           processForFilter(song.artist || "Traditional").includes(fw) ||
+          processForFilter(song.search_text || "").includes(fw) ||
           processForFilter(genreData[song.genre].display).includes(fw)
         )) {
           return false;
@@ -202,7 +203,7 @@ const SongTable = ({ state, onOpenPage }) => {
           <RadioButtons
             options={[
               { value: 'genre', label: 'Genre' },
-              { value: 'points', label: 'Points' },
+              { value: 'points', label: 'Stars' },
             ]}
             selectedOption={songSortMode}
             onChange={setSongSortMode}
@@ -234,7 +235,13 @@ const SongTable = ({ state, onOpenPage }) => {
                     onClick={() => onOpenPage(song.id)}
                   >
                     <td style={tdStyle}>
-                      <SongTitle title={song.title} pinned={state[song.id]?.pinned} completed={state[song.id]?.completed} />
+                      <SongTitle
+                        title={song.title}
+                        pinned={state[song.id]?.pinned}
+                        completed={state[song.id]?.completed}
+                        hidden={song.is_hidden}
+                        locked={!isSongUnlocked(song)}
+                      />
                     </td>
                     <td style={tdStyle}>
                       <SongArtist artist={song.artist} />
@@ -266,7 +273,7 @@ const SongTable = ({ state, onOpenPage }) => {
 export default SongTable;
 
 
-function SongTitle({ title, pinned, completed }) {
+function SongTitle({ title, pinned, completed, locked, hidden }) {
   const { colorText, filterIcon } = useTheme();
 
   return (
@@ -285,6 +292,28 @@ function SongTitle({ title, pinned, completed }) {
       {completed && (
         <img
           src={`${process.env.PUBLIC_URL}/icon/check.png`}
+          alt=""
+          style={{
+            width: '16px',
+            height: '16px',
+            filter: filterIcon,
+          }}
+        />
+      )}
+      {locked && (!hidden) && (!completed) && (
+        <img
+          src={`${process.env.PUBLIC_URL}/icon/lock.png`}
+          alt=""
+          style={{
+            width: '16px',
+            height: '16px',
+            filter: filterIcon,
+          }}
+        />
+      )}
+      {hidden && (
+        <img
+          src={`${process.env.PUBLIC_URL}/icon/warning.png`}
           alt=""
           style={{
             width: '16px',
@@ -337,17 +366,15 @@ function SongDetails({ hasLyrics, points, isTwoHanded }) {
         )}
       </div>
       <div style={{ ...detailsBoxStyle, width: '30px' }}>
-        {isTwoHanded && (
-          <img
-            src={`${process.env.PUBLIC_URL}/icon/two_hands.png`}
-            alt=""
-            style={{
-              width: '24px',
-              height: '24px',
-              filter: filterIcon,
-            }}
-          />
-        )}
+        <img
+          src={`${process.env.PUBLIC_URL}/icon/${isTwoHanded ? 'two_hands' : 'one_hand'}.png`}
+          alt=""
+          style={{
+            width: '24px',
+            height: '24px',
+            filter: filterIcon,
+          }}
+        />
       </div>
       <div style={{ ...detailsBoxStyle, width: '30px' }}>
         {hasLyrics && (

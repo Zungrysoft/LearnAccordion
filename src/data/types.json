@@ -26,7 +26,7 @@
     },
     "history": {
         "title": "Music History",
-        "color": "#c9b9a7",
+        "color": "#c78a1a",
         "icon": "scroll"
     },
     "challenge": {
@@ -38,6 +38,11 @@
         "title": "Star Gate",
         "color": "#bf0b68",
         "icon": "star"
+    },
+    "sight_reading_vs_ear_training": {
+        "title": "General Info",
+        "color": "#dddddd",
+        "icon": "sight_reading_vs_ear_training"
     },
     "misc": {
         "title": "Miscellaneous",

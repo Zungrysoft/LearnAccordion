@@ -129,6 +129,10 @@ img {
     transform: translate(-50%, 0%);
 }
 
+.bounding-box-lesson:hover {
+    background-color: var(--background-color2);
+}
+
 .check-mark {
     position: absolute;
     transform: translate(-50%, 0%);
@@ -207,10 +211,6 @@ img {
 
 .checkbox:hover {
     background-color: white;
-}
-
-.bounding-box-lesson:hover {
-    background-color: var(--background-color2);
 }
 
 .lesson-icon {

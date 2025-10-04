@@ -7,7 +7,7 @@ import { useTheme } from '../helpers/theme';
 
 function Lesson({ lesson, state, onSetPage, boardSize }) {
     const isMobile = useIsMobile();
-    const { colorBackgroundDark } = useTheme();
+    const { colorLockedLesson, colorConnectorCompleted } = useTheme();
 
     const vwToPx = useCallback((vw) => {
         return `${(vw / 100) * boardSize.width}px`;
@@ -28,14 +28,14 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
         yPos += iconWidth
     }
 
-    let backgroundColor = colorBackgroundDark
-    let backgroundColor2 = colorBackgroundDark
+    let backgroundColor = colorLockedLesson
+    let backgroundColor2 = colorLockedLesson
     if (state.unlocked) {
         backgroundColor = typeData[lesson.type].color
         backgroundColor2 = typeData[lesson.type].color
     }
     if (state.selectable) {
-        backgroundColor2 = configData.hover_color
+        backgroundColor2 = colorConnectorCompleted
     }
 
     let iconImage = typeData[lesson.type].icon
@@ -46,6 +46,7 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
                 left: isMobile ? yPos+"vh" : vwToPx(xPos),
                 top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
                 zIndex: 4,
+                outline: state.unlocked && !state.completed ? `${colorConnectorCompleted} solid 6px` : null,
                 borderStyle: state.selectable ? "solid" : "dashed",
                 "--background-color": backgroundColor,
                 "--background-color2": backgroundColor2,

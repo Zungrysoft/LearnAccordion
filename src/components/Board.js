@@ -33,7 +33,15 @@ function markGraph(key, state, lessons, points, gMap) {
         for (let option of prerequisite) {
             markGraph(option, state, lessons, points, gMap)
             let distance = gMap[option];
-            closestParentDistance = Math.min(closestParentDistance, distance)
+
+            // Limit preview on some lessons prevents them from always revealing
+            // their children. This helps prevent the tree from cluttering too
+            // much from the music theory lessons
+            if (!lessons[option].limit_preview) {
+                closestParentDistance = Math.min(closestParentDistance, distance)
+            }
+
+            // Connectors are passthrough, so don't increment distance through them
             if (!lessons[option].is_connector) {
                 distance ++;
             }

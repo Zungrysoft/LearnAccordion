@@ -26,7 +26,7 @@ function getDefaultStorage() {
 }
 
 function dfsLessonHeights(lessonData, lesson, height) {
-    if (!lesson.y || lesson.y < height) {
+    if (!lesson.y || lesson.y < height + (lesson.y_offset ?? 0)) {
         lesson.y = height + (lesson.y_offset ?? 0);
     }
 
@@ -61,6 +61,7 @@ function MainPage() {
                 ...lesson,
                 parentLessons: Array.from(parentLessonKeys),
                 childLessons: [],
+                id: lessonKey,
             }
         }
 
@@ -151,6 +152,7 @@ function MainPage() {
             <LessonPage
                 lesson={processedLessonData[currentPage] ?? songData[currentPage]}
                 completionState={lessonState[currentPage]}
+                state={lessonState}
                 onChangeCompleted={(newState) => (
                     saveLessonState({
                         ...lessonState,

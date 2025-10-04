@@ -23,7 +23,7 @@
         "title": "Types of Accordions",
         "video_url": "",
         "description": "",
-        "x": 0,
+        "x": -0.1,
         "type": "instrument",
         "prerequisites": [
             ["about"]
@@ -33,7 +33,7 @@
         "title": "Buying a Used Accordion",
         "video_url": "",
         "description": "",
-        "x": 0,
+        "x": -0.1,
         "type": "instrument",
         "prerequisites": [
             ["types_of_accordions"]
@@ -45,7 +45,7 @@
         "title": "Intro to the Bass Buttons",
         "video_url": "",
         "description": "Learn your first bass pattern.\nSimple 4/4 oompah in C major.",
-        "x": -0.5,
+        "x": -0.6,
         "type": "technique",
         "prerequisites": [
             ["about"]
@@ -55,7 +55,7 @@
         "title": "Bass Buttons #2",
         "video_url": "",
         "description": "6/8 oompah.\nOther keys.\nPressing the bass and chord button at the same time.",
-        "x": -0.5,
+        "x": -0.6,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons"]
@@ -65,7 +65,7 @@
         "title": "The I IV and V Chords",
         "video_url": "",
         "description": "Moving to the IV and V on the bass buttons.",
-        "x": -0.3,
+        "x": -0.4,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons"]
@@ -75,17 +75,27 @@
         "title": "The Stradella Bass System",
         "video_url": "",
         "description": "Learn how the bass buttons are arranged and why.",
-        "x": -0.7,
+        "x": -0.8,
         "type": "instrument",
         "prerequisites": [
             ["bass_buttons"]
+        ]
+    },
+    "accordion_internals": {
+        "title": "How The Accordion Works",
+        "video_url": "",
+        "description": "Learn your instrument inside as well as outside.",
+        "x": -0.9,
+        "type": "instrument",
+        "prerequisites": [
+            ["stradella_system"]
         ]
     },
     "bass_buttons_3": {
         "title": "Bass Buttons #3",
         "video_url": "",
         "description": "Minor and 7th chords.\nJumping two columns.\nCounterbass.",
-        "x": -0.5,
+        "x": -0.6,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_2"],
@@ -122,31 +132,104 @@
         "title": "Bass Buttons #4",
         "video_url": "",
         "description": "Three-buttons jumps.\nMore chord progressions.",
-        "x": -0.6,
+        "x": -0.7,
+        "y_offset": 0,
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
             ["bass_buttons_3"]
         ]
     },
+    "gate_1c": {
+        "x": -0.8,
+        "points_required": 30,
+        "type": "gate",
+        "prerequisites": [
+            ["bass_buttons_4"]
+        ]
+    },
+    "bass_button_chord_combos": {
+        "title": "Bass Button Chord Combos",
+        "video_url": "",
+        "description": "Combining buttons from different columns to create new chords.\nMaj7 Chord, Ninth Chords, Suspended Chords,",
+        "x": -0.7,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_1c"],
+            ["advanced_chord_theory"]
+        ]
+    },
+    "irregular_time_signatures": {
+        "title": "Irregular Time Signatures",
+        "video_url": "",
+        "description": "5/4, 7/8, and 9/8 aksak",
+        "x": -1.0,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_1c"]
+        ]
+    },
+    "bass_buttons_5": {
+        "title": "Bass Buttons #5",
+        "video_url": "",
+        "description": "Four-buttons jumps.\nMore chord progressions.\nCombining basslines with oompah.",
+        "x": -0.9,
+        "y_offset": 1,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_button_basslines"],
+            ["gate_1c"]
+        ]
+    },
+    "bass_buttons_6": {
+        "title": "Bass Buttons #6",
+        "video_url": "",
+        "description": "Five-buttons jumps.\nMore chord progressions.",
+        "x": -0.9,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_buttons_5"]
+        ]
+    },
     "bass_button_bass_scales": {
         "title": "Bass Scales",
         "video_url": "",
         "description": "Learn your major and minor scales on the bass buttons.",
-        "x": -0.8,
+        "x": -0.4,
         "type": "technique",
         "prerequisites": [
-            ["bass_buttons_3"]
+            ["bass_buttons_3"],
+            ["scale_theory"]
         ]
     },
     "bass_button_basslines": {
-        "title": "Basslines",
+        "title": "Simple Basslines",
         "video_url": "",
         "description": "Play basslines with the bass buttons.",
-        "x": -1.0,
+        "x": -0.6,
+        "y_offset": 1,
         "type": "technique",
         "prerequisites": [
             ["bass_button_bass_scales"]
+        ]
+    },
+    "bass_button_basslines_2": {
+        "title": "Intermediate Basslines",
+        "video_url": "",
+        "description": "Play more complex basslines.",
+        "x": -0.45,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_button_basslines"]
+        ]
+    },
+    "gate_2c": {
+        "x": -0.8,
+        "points_required": 50,
+        "type": "gate",
+        "prerequisites": [
+            ["bass_buttons_6"],
+            ["bass_button_chord_combos"]
         ]
     },
 
@@ -178,8 +261,18 @@
     "two_handed_playing_3": {
         "title": "Two-Handed Playing #3",
         "video_url": "",
-        "description": "Mary Had a Little Lamb: Two-handed version.",
+        "description": "Playing the oom-pah pattern with a melody on top.\nMary Had a Little Lamb: Two-handed version.",
         "x": -0.2,
+        "type": "technique",
+        "prerequisites": [
+            ["two_handed_playing_2"]
+        ]
+    },
+    "syncopation": {
+        "title": "Syncopated Grooves",
+        "video_url": "",
+        "description": "",
+        "x": 0,
         "type": "technique",
         "prerequisites": [
             ["two_handed_playing_2"]
@@ -187,13 +280,92 @@
     },
     "gate_1b": {
         "x": -0.3,
-        "points_required": 15,
+        "points_required": 25,
         "type": "gate",
         "prerequisites": [
             ["two_handed_playing_3"],
             ["bass_buttons_3"]
         ]
     },
+    "augmenting_left_hand_chords": {
+        "title": "Augmenting Left Hand Chords",
+        "video_url": "",
+        "description": "",
+        "x": -0.2,
+        "y_offset": 1,
+        "type": "technique",
+        "prerequisites": [
+            ["advanced_right_hand_chords"],
+            ["gate_1b"]
+        ]
+    },
+    "walking_bass": {
+        "title": "Walking Bass",
+        "video_url": "",
+        "description": "",
+        "x": -0.4,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_button_basslines"],
+            ["advanced_right_hand_chords"],
+            ["gate_1b"]
+        ]
+    },
+    "two_handed_chords": {
+        "title": "Two-Handed Chords",
+        "video_url": "",
+        "description": "",
+        "x": 0,
+        "y_offset": 1,
+        "type": "technique",
+        "prerequisites": [
+            ["advanced_right_hand_chords"],
+            ["gate_1b"]
+        ]
+    },
+    "two_handed_exercises_1": {
+        "title": "Intermediate Two-Handed Exercises #1",
+        "video_url": "",
+        "description": "",
+        "x": -0.6,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_1b"]
+        ]
+    },
+    "two_handed_exercises_2": {
+        "title": "Intermediate Two-Handed Exercises #2",
+        "video_url": "",
+        "description": "",
+        "x": -0.6,
+        "y_offset": 1,
+        "type": "technique",
+        "prerequisites": [
+            ["two_handed_exercises_1"]
+        ]
+    },
+    "two_handed_exercises_3": {
+        "title": "Intermediate Two-Handed Exercises #3",
+        "video_url": "",
+        "description": "",
+        "x": -0.6,
+        "type": "technique",
+        "prerequisites": [
+            ["two_handed_exercises_2"]
+        ]
+    },
+    "gate_2b": {
+        "x": -0.3,
+        "points_required": 60,
+        "type": "gate",
+        "prerequisites": [
+            ["two_handed_exercises_3"],
+            ["augmenting_left_hand_chords"],
+            ["two_handed_chords"],
+            ["walking_bass"]
+        ]
+    },
+    
 
 
 
@@ -202,7 +374,7 @@
     "major_scale": {
         "title": "The Major Scale",
         "video_url": "",
-        "description": "Learn the C major scale and how to spider-walk.",
+        "description": "Learn the C major scale and how to walk up and down the scale.",
         "x": 0.8,
         "type": "technique",
         "prerequisites": [
@@ -216,7 +388,7 @@
         "x": 0.6,
         "type": "instrument",
         "prerequisites": [
-            ["scale_theory"],
+            ["intro_to_music_theory"],
             ["major_scale"]
         ]
     },
@@ -231,40 +403,51 @@
         ]
     },
     "minor_scale": {
-        "title": "Minor Scales and Chromatic Scale",
+        "title": "Minor Scales and The Chromatic Scale",
         "video_url": "",
         "description": "Practice the minor scale and its variants.\nWalk up and down the chromatic scale.",
-        "x": 0.8,
-        "type": "technique",
-        "prerequisites": [
-            ["c_system"]
-        ]
-    },
-    "improvisation": {
-        "title": "Introduction to Improvisation",
-        "video_url": "",
-        "description": "",
         "x": 0.4,
         "type": "technique",
         "prerequisites": [
-            ["c_system"]
+            ["c_system"],
+            ["scale_theory"]
+        ]
+    },
+    "improvisation": {
+        "title": "Improvisation",
+        "video_url": "",
+        "description": "",
+        "x": 0.3,
+        "type": "technique",
+        "prerequisites": [
+            ["minor_scale"]
         ]
     },
     "dynamics": {
         "title": "Dynamics",
         "video_url": "",
         "description": "",
-        "x": 1.0,
+        "x": 0.8,
         "type": "technique",
         "prerequisites": [
             ["c_system"]
+        ]
+    },
+    "advanced_dynamics": {
+        "title": "Advanced Dynamics",
+        "video_url": "",
+        "description": "Greater precision, Bellows shake",
+        "x": 0.8,
+        "type": "technique",
+        "prerequisites": [
+            ["dynamics"]
         ]
     },
     "register_switches": {
         "title": "Register Switches",
         "video_url": "",
         "description": "",
-        "x": 0.2,
+        "x": 1.0,
         "type": "instrument",
         "prerequisites": [
             ["c_system"]
@@ -278,16 +461,25 @@
         "type": "general",
         "prerequisites": [
             ["scale_intervals_practice"],
-            ["dynamics"],
-            ["register_switches"],
             ["minor_scale"],
-            ["improvisation"]
+            ["dynamics"]
         ]
     },
+    
     "gate_1a": {
         "x": 0.6,
         "points_required": 5,
         "type": "gate",
+        "prerequisites": [
+            ["about_song_choice"]
+        ]
+    },
+    "sight_reading_vs_ear_training": {
+        "title": "Sight Reading and Ear Training Practice",
+        "video_url": "",
+        "description": "",
+        "x": 0.9,
+        "type": "sight_reading_vs_ear_training",
         "prerequisites": [
             ["about_song_choice"]
         ]
@@ -315,18 +507,8 @@
     "common_scales": {
         "title": "More Common Scales",
         "video_url": "",
-        "description": "",
+        "description": "Dorian Scale, Pentatonic and Blues Scales",
         "x": 0.7,
-        "type": "technique",
-        "prerequisites": [
-            ["gate_1a"]
-        ]
-    },
-    "syncopation": {
-        "title": "Syncopated Grooves",
-        "video_url": "",
-        "description": "",
-        "x": 0.5,
         "type": "technique",
         "prerequisites": [
             ["gate_1a"]
@@ -336,7 +518,7 @@
         "title": "Big Right Hand Jumps",
         "video_url": "",
         "description": "",
-        "x": 0.3,
+        "x": 0.5,
         "type": "technique",
         "prerequisites": [
             ["gate_1a"]
@@ -346,48 +528,137 @@
         "title": "Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.1,
+        "x": 0.3,
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
             ["gate_1a"]
         ]
     },
-
-
-
-
-
-    "scale_theory": {
-        "title": "Scale Theory",
+    "gate_2a": {
+        "x": 0.5,
+        "points_required": 20,
+        "type": "gate",
+        "prerequisites": [
+            ["big_right_hand_jumps"],
+            ["right_hand_chords"]
+        ]
+    },
+    "advanced_right_hand_chords": {
+        "title": "Advanced Right Hand Chords",
+        "video_url": "",
+        "description": "",
+        "x": 0.2,
+        "y_offset": 1,
+        "type": "technique",
+        "prerequisites": [
+            ["intermediate_chord_theory"],
+            ["gate_2a"]
+        ]
+    },
+    "modes": {
+        "title": "Modes of the Major Scale",
+        "video_url": "",
+        "description": "Lydian, Mixolydian, Phrygian, and Phrygian Dominant",
+        "x": 0.8,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_2a"],
+            ["common_scales"]
+        ]
+    },
+    "cool_tricks": {
+        "title": "Some Cool Tricks",
+        "video_url": "",
+        "description": "Super fast note playing",
+        "x": 1.0,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_2a"]
+        ]
+    },
+    "gate_3a": {
+        "x": 0.6,
+        "points_required": 60,
+        "type": "gate",
+        "prerequisites": [
+            ["advanced_right_hand_chords"]
+        ]
+    },
+    "expert_right_hand_chords": {
+        "title": "Advanced Right Hand Chords",
         "video_url": "",
         "description": "",
         "x": 0.4,
+        "y_offset": 0,
+        "type": "technique",
+        "prerequisites": [
+            ["advanced_chord_theory"],
+            ["gate_3a"]
+        ]
+    },
+
+
+
+
+
+    "intro_to_music_theory": {
+        "title": "Introductory Music Theory",
+        "video_url": "",
+        "description": "Notes, Semitones, Intervals",
+        "x": 0.4,
+        "limit_preview": true,
         "type": "theory",
         "prerequisites": [
             ["about"]
+        ]
+    },
+    "scale_theory": {
+        "title": "Scale Theory",
+        "video_url": "",
+        "description": "Scales, Keys, Basics of Chords",
+        "x": 0.2,
+        "y_offset": 0,
+        "limit_preview": true,
+        "type": "theory",
+        "prerequisites": [
+            ["intro_to_music_theory"]
         ]
     },
     "chord_theory": {
         "title": "Chord Theory",
         "video_url": "",
         "description": "Chord progressions, harmony",
-        "x": 0,
+        "x": -0.1,
         "y_offset": 1,
+        "limit_preview": true,
         "type": "theory",
         "prerequisites": [
             ["scale_theory"]
         ]
     },
-    "advanced_chord_theory": {
-        "title": "Advanced Chord Theory",
+    "intermediate_chord_theory": {
+        "title": "Intermediate Chord Theory",
         "video_url": "",
-        "description": "Seventh Chords\nAdvanced Chord Progressions",
-        "x": 0,
-        "y_offset": 3,
+        "description": "Seventh Chords\nChord Inversions\nSuspended Chords",
+        "x": 0.2,
+        "y_offset": 2,
+        "limit_preview": true,
         "type": "theory",
         "prerequisites": [
             ["chord_theory"]
+        ]
+    },
+    "advanced_chord_theory": {
+        "title": "Advanced Chord Theory",
+        "video_url": "",
+        "description": "Ninth and Thirteenth Chords\nAugmented Chords",
+        "x": -0.1,
+        "y_offset": 1,
+        "limit_preview": true,
+        "type": "theory",
+        "prerequisites": [
+            ["intermediate_chord_theory"]
         ]
     },
 
@@ -399,10 +670,30 @@
         "title": "History of the Accordion",
         "video_url": "",
         "description": "",
-        "x": 0.2,
+        "x": 1.0,
         "type": "history",
         "prerequisites": [
-            ["register_switches"]
+            ["major_scale"]
+        ]
+    },
+    "genres_of_the_accordion": {
+        "title": "Genres of the Accordion",
+        "video_url": "",
+        "description": "",
+        "x": 1.0,
+        "type": "history",
+        "prerequisites": [
+            ["dynamics"]
+        ]
+    },
+    "famous_accordion_players": {
+        "title": "Famous Accordion Players",
+        "video_url": "",
+        "description": "",
+        "x": 0.3,
+        "type": "history",
+        "prerequisites": [
+            ["improvisation"]
         ]
     }
 }

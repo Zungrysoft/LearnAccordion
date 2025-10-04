@@ -11,6 +11,7 @@
 
     "colorConnector": "#000000",
     "colorConnectorCompleted": "#d3edb9",
+    "colorLockedLesson": "colorBackgroundLight",
 
     "filterIcon": "invert(1)",
     "filterIconOnColor": ""
@@ -27,6 +28,7 @@
 
     "colorConnector": "#7e838c",
     "colorConnectorCompleted": "#ffffff",
+    "colorLockedLesson": "colorBackgroundDark",
 
     "filterIcon": "",
     "filterIconOnColor": ""
