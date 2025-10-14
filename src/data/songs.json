@@ -2,6 +2,7 @@
   "beer_barrel_polka": {
     "title": "The Beer Barrel Polka",
     "artist": "Jaromír Vejvoda",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 50,
@@ -17,6 +18,7 @@
   "sakkijarven_polkka": {
     "title": "Säkkijärven Polkka",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 35,
@@ -33,6 +35,7 @@
     "title": "Korobeiniki (Tetris Theme A)",
     "artist": "",
     "description": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 10,
@@ -48,6 +51,7 @@
   "loch_lommond": {
     "title": "The Bonnie Banks o' Loch Lomond",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -60,6 +64,7 @@
   "clarinet_polka": {
     "title": "The Clarinet Polka",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -76,6 +81,7 @@
   "accordions_on_fire": {
     "title": "Accordions on Fire",
     "artist": "Jimmy Sturr & His Orchestra",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -90,18 +96,20 @@
   "pennsylvania_polka": {
     "title": "Pennsylvania Polka",
     "artist": "Frankie Yankovic And His Yanks",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "polka",
-    "hidden": true,
+    "is_hidden": true,
     "requirements": []
   },
   "banquet": {
     "title": "Banquet",
     "artist": "Yann Tiersen",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -114,6 +122,7 @@
   "scarborough_fair": {
     "title": "Scarborough Fair",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 28,
@@ -122,13 +131,14 @@
     "genre": "folk",
     "requirements": [
       ["two_handed_playing_3"],
-      ["common_scales"],
+      ["modes"],
       ["bass_buttons_4"]
     ]
   },
   "sailors_hornpipe": {
     "title": "The Sailor's Hornpipe",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -141,6 +151,7 @@
   "cronins_hornpipe": {
     "title": "Cronin's Hornpipe",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -156,6 +167,7 @@
   "off_to_california": {
     "title": "Off To California",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -171,6 +183,7 @@
   "harvest_home": {
     "title": "Harvest Home",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 10,
@@ -186,6 +199,7 @@
   "dajchovo_horo": {
     "title": "Dajchovo Horo",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "Daychovo Daichovo",
     "video_url": "",
     "points": 0,
@@ -201,6 +215,7 @@
   "keelhauled": {
     "title": "Keelhauled",
     "artist": "Alestorm",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -213,6 +228,7 @@
   "the_sunkn_norwegian": {
     "title": "The Sunk'n Norwegian",
     "artist": "Alestorm",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -225,6 +241,7 @@
   "nancy_the_tavern_wench": {
     "title": "Nancy the Tavern Wench",
     "artist": "Alestorm",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -237,6 +254,7 @@
   "south_australia": {
     "title": "South Australia",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 10,
@@ -252,6 +270,7 @@
   "drunken_sailor": {
     "title": "Drunken Sailor",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 18,
@@ -260,13 +279,14 @@
     "genre": "sea_shanty",
     "requirements": [
       ["two_handed_playing_3"],
-      ["common_scales"],
+      ["modes"],
       ["bass_buttons_3"]
     ]
   },
   "leave_her_johnny": {
     "title": "Leave Her Johnny",
     "artist": "",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -285,6 +305,7 @@
   "fell_in_love_with_a_girl": {
     "title": "Fell In Love With a Girl",
     "artist": "The White Stripes",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -299,6 +320,7 @@
   "love_potion_number_9": {
     "title": "Love Potion No. 9",
     "artist": "The Searchers",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -313,6 +335,7 @@
   "you_got_to_lose": {
     "title": "You Got To Lose",
     "artist": "George Thorogood & The Destroyers",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -325,6 +348,7 @@
   "jerk_it_out": {
     "title": "Jerk It Out",
     "artist": "Caesars",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -339,6 +363,7 @@
   "sixteen_tons": {
     "title": "Sixteen Tons",
     "artist": "Tennessee Ernie Ford",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -351,6 +376,7 @@
   "the_huntmaster": {
     "title": "The Huntmaster",
     "artist": "Alestorm",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -363,6 +389,7 @@
   "ill_sink_manhattan": {
     "title": "I'll Sink Manhattan",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -375,6 +402,7 @@
   "we_want_a_rock": {
     "title": "We Want a Rock",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -387,6 +415,7 @@
   "lucky_ball_and_chain": {
     "title": "Lucky Ball and Chain",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -399,6 +428,7 @@
   "road_movie_to_berlin": {
     "title": "Road Movie to Berlin",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -411,6 +441,7 @@
   "32_footsteps": {
     "title": "32 Footsteps",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -423,6 +454,7 @@
   "shes_an_angel": {
     "title": "She's an Angel",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -435,6 +467,7 @@
   "twisting": {
     "title": "Twisting",
     "artist": "They Might Be Giants",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -447,6 +480,7 @@
   "bone": {
     "title": "Bone",
     "artist": "King Gizzard and the Lizard Wizard",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -459,6 +493,7 @@
   "magenta_mountain": {
     "title": "Magenta Mountain",
     "artist": "King Gizzard and the Lizard Wizard",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -471,6 +506,7 @@
   "mars_for_the_rich": {
     "title": "Mars For The Rich",
     "artist": "King Gizzard and the Lizard Wizard",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -483,6 +519,7 @@
   "april_part_1": {
     "title": "April - Part 1",
     "artist": "Deep Purple",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -495,6 +532,7 @@
   "april_part_2": {
     "title": "April - Part 2",
     "artist": "Deep Purple",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -507,6 +545,7 @@
   "april_part_3": {
     "title": "April - Part 3",
     "artist": "Deep Purple",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -519,6 +558,7 @@
   "time": {
     "title": "Time",
     "artist": "Pink Floyd",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -531,6 +571,7 @@
   "money": {
     "title": "Money",
     "artist": "Pink Floyd",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -543,6 +584,7 @@
   "good_times_bad_times": {
     "title": "Good Times Bad Times",
     "artist": "Led Zeppelin",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -555,6 +597,7 @@
   "stairway_to_heaven": {
     "title": "Stairway to Heaven",
     "artist": "Led Zeppelin",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -567,6 +610,7 @@
   "thank_you": {
     "title": "Thank You",
     "artist": "Led Zeppelin",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -579,6 +623,7 @@
   "temple_of_the_king": {
     "title": "Temple of the King",
     "artist": "Rainbow",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -591,6 +636,7 @@
   "the_caves_of_altamira": {
     "title": "The Caves of Altamira",
     "artist": "Steely Dan",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -603,6 +649,7 @@
   "here_comes_the_sun": {
     "title": "Here Comes the Sun",
     "artist": "The Beatles",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -615,6 +662,7 @@
   "friend_of_the_devil": {
     "title": "Friend of the Devil",
     "artist": "Grateful Dead",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -627,6 +675,7 @@
   "wish_you_were_here": {
     "title": "Wish You Were Here",
     "artist": "Pink Floyd",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -639,6 +688,7 @@
   "long_tall_sally": {
     "title": "Long Tall Sally",
     "artist": "Little Richard",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -651,6 +701,24 @@
   "paint_it_black": {
     "title": "Paint It, Black",
     "artist": "The Rolling Stones",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "requirements": [
+      ["intermediate_right_hand_chords"],
+      ["two_handed_playing_3"],
+      ["bass_buttons_3"],
+      ["minor_scale"]
+    ]
+  },
+  "the_joker": {
+    "title": "The Joker",
+    "artist": "Steve Miller Band",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -666,6 +734,7 @@
   "come_on_eileen": {
     "title": "Come on Eileen",
     "artist": "Dexys Midnight Runners",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -678,6 +747,7 @@
   "two_out_of_three_aint_bad": {
     "title": "Two Out of Three Ain't Bad",
     "artist": "Meat Loaf",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -690,6 +760,7 @@
   "25_or_6_to_4": {
     "title": "25 or 6 to 4",
     "artist": "Chicago",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -702,6 +773,7 @@
   "if_you_leave_me_now": {
     "title": "If You Leave Me Now",
     "artist": "Chicago",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -714,6 +786,7 @@
   "total_eclipse_of_the_heart": {
     "title": "Total Eclipse of the Heart",
     "artist": "Bonnie Tyler",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -726,6 +799,7 @@
   "oh_what_a_night": {
     "title": "December, 1963 (Oh What a Night!)",
     "artist": "Frankie Valli, The Four Seasons",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -738,6 +812,7 @@
   "you_take_me_up": {
     "title": "You Take Me Up",
     "artist": "Thompson Twins",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -750,6 +825,7 @@
   "hold_me_now": {
     "title": "Hold Me Now",
     "artist": "Thompson Twins",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -762,6 +838,7 @@
   "superstar": {
     "title": "Superstar",
     "artist": "Rosemary Fairweather",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -774,6 +851,7 @@
   "piano_man": {
     "title": "Piano Man",
     "artist": "Billy Joel",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -789,30 +867,33 @@
   "shes_always_a_woman": {
     "title": "She's Always a Woman",
     "artist": "Billy Joel",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "pop",
-    "hidden": true,
+    "is_hidden": true,
     "requirements": []
   },
   "the_longest_time": {
     "title": "The Longest Time",
     "artist": "Billy Joel",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "pop",
-    "hidden": true,
+    "is_hidden": true,
     "requirements": []
   },
   "somebody_that_i_used_to_know": {
     "title": "Somebody That I Used To Know",
     "artist": "Gotye",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -825,6 +906,7 @@
   "my_type": {
     "title": "My Type",
     "artist": "Saint Motel",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 10,
@@ -836,12 +918,26 @@
       ["minor_scale"]
     ]
   },
+  "dont_let_me_be_misunderstood": {
+    "title": "Don't Let Me Be Misunderstood",
+    "artist": "Nina Simone",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
   "big_mamou": {
     "title": "Big Mamou",
     "artist": "Fernest Arceneaux",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -854,6 +950,7 @@
   "au_contraire_mon_frere": {
     "title": "Au Contraire, Mon Frere",
     "artist": "C.J. Chenier",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -866,6 +963,7 @@
   "zydeco_mardi_gras": {
     "title": "Zydeco Mardi Gras",
     "artist": "C.J. Chenier",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -878,6 +976,7 @@
   "old_times_la_la": {
     "title": "Old Times La La",
     "artist": "Buckwheat Zydeco",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -890,6 +989,7 @@
   "whiskey_cest_mon_ami": {
     "title": "Whiskey C'est Mon Ami",
     "artist": "Pine Leaf Boys",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -902,6 +1002,7 @@
   "la_creve_de_faim": {
     "title": "La Crève De Faim",
     "artist": "Steve Riley & The Mamou Playboys",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -917,6 +1018,7 @@
   "goin_loco": {
     "title": "Goin' Loco",
     "artist": "Flaco Jimenez, Major Dundee",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -929,6 +1031,7 @@
   "carmelita": {
     "title": "Carmelita",
     "artist": "Flaco Jimenez",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -941,6 +1044,7 @@
   "en_san_antonio": {
     "title": "¡Ay Te Dejo en San Antonio!",
     "artist": "Flaco Jimenez",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -953,6 +1057,7 @@
   "ingratos_ojos_mios": {
     "title": "Ingratos Ojos Míos",
     "artist": "Ramón Ayala",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -965,6 +1070,7 @@
   "soy_de_tejas": {
     "title": "Soy De Tejas",
     "artist": "Steve Jordan",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -980,6 +1086,7 @@
   "none_of_your_doing": {
     "title": "None of Your Doing",
     "artist": "Steppenwolf",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -992,6 +1099,7 @@
   "icarus": {
     "title": "Icarus - Borne on Wings of Steel",
     "artist": "Kansas",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1004,6 +1112,7 @@
   "gimme_some_money": {
     "title": "Gimme Some Money",
     "artist": "The Thamesmen",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1016,6 +1125,7 @@
   "somebody_to_love": {
     "title": "Somebody to Love",
     "artist": "Jefferson Airplane",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1028,6 +1138,7 @@
   "spectrum": {
     "title": "Spectrum",
     "artist": "R.M.F.C.",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1040,6 +1151,7 @@
   "zomby_woof": {
     "title": "Zomby Woof",
     "artist": "Frank Zappa",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1052,6 +1164,7 @@
   "suzy_creamcheese": {
     "title": "Son of Suzy Creamcheese",
     "artist": "Frank Zappa and the Mothers of Invention",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1064,6 +1177,7 @@
   "peaches_en_regalia": {
     "title": "Peaches En Regalia",
     "artist": "Frank Zappa",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1076,6 +1190,7 @@
   "nobody_but_me": {
     "title": "Nobody But Me",
     "artist": "Save Ferris",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1088,6 +1203,7 @@
   "through_the_fire_and_the_flames": {
     "title": "Through the Fire and the Flames",
     "artist": "DragonForce",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1100,6 +1216,7 @@
   "ill_be_mellow_when_im_dead": {
     "title": "I'll Be Mellow When I'm Dead",
     "artist": "Weird Al Yankovic",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1112,6 +1229,7 @@
   "mr_frump_in_the_iron_lung": {
     "title": "Mr. Frump in the Iron Lung",
     "artist": "Weird Al Yankovic",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1124,6 +1242,7 @@
   "trollhammaren": {
     "title": "Trollhammaren",
     "artist": "Finntroll",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1136,6 +1255,7 @@
   "on_the_border": {
     "title": "On the Border",
     "artist": "Eagles",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1148,6 +1268,7 @@
   "take_it_easy": {
     "title": "Take it Easy",
     "artist": "Eagles",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1160,6 +1281,7 @@
   "help": {
     "title": "Help",
     "artist": "The Beatles",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1172,6 +1294,7 @@
   "hello_i_love_you": {
     "title": "Hello, I Love You",
     "artist": "The Doors",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1184,6 +1307,7 @@
   "riders_on_the_storm": {
     "title": "Riders on the Storm",
     "artist": "The Doors",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1196,6 +1320,7 @@
   "mr_crowley": {
     "title": "Mr. Crowley",
     "artist": "Ozzy Osbourne",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1208,6 +1333,7 @@
   "youre_no_different": {
     "title": "You're No Different",
     "artist": "Ozzy Osbourne",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1220,6 +1346,7 @@
   "cross_eyed_mary": {
     "title": "Cross-Eyed Mary",
     "artist": "Jethro Tull",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1232,6 +1359,7 @@
   "wonderwall": {
     "title": "Wonderwall",
     "artist": "Oasis",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1244,6 +1372,7 @@
   "refugee": {
     "title": "Refugee",
     "artist": "Tom Petty and the Heartbreakers",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1256,6 +1385,7 @@
   "the_state_of_massachusetts": {
     "title": "The State of Massachusetts",
     "artist": "Dropkick Murphys",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1268,6 +1398,7 @@
   "uncle_remus": {
     "title": "Uncle Remus",
     "artist": "Frank Zappa",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1280,6 +1411,7 @@
   "never_going_back_again": {
     "title": "Never Going Back Again",
     "artist": "Fleetwood Mac",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1292,6 +1424,7 @@
   "outside": {
     "title": "Outside",
     "artist": "Staind",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1304,6 +1437,7 @@
   "house_of_the_rising_sun": {
     "title": "House of the Rising Sun",
     "artist": "The Animals",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1320,6 +1454,7 @@
   "come_out_and_play": {
     "title": "Come Out and Play",
     "artist": "The Offspring",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1332,6 +1467,7 @@
   "rebel_yell": {
     "title": "Rebel Yell",
     "artist": "Billy Idol",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1344,6 +1480,7 @@
   "i_stole_your_love": {
     "title": "I Stole Your Love",
     "artist": "KISS",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1356,6 +1493,7 @@
   "golden_brown": {
     "title": "Golden Brown",
     "artist": "The Stranglers",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1371,6 +1509,7 @@
   "mozart_sonata_11": {
     "title": "Piano Sonata No. 11 in A Major, K. 331: III",
     "artist": "Wolfgang Amadeus Mozart",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1383,6 +1522,7 @@
   "canon_in_d": {
     "title": "Canon in D",
     "artist": "Johann Pachelbel",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1398,6 +1538,7 @@
   "misty": {
     "title": "Misty",
     "artist": "Erroll Garner",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1410,6 +1551,7 @@
   "coffee_cold": {
     "title": "Coffee Cold",
     "artist": "Galt MacDermot",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1422,6 +1564,7 @@
   "take_five": {
     "title": "Take Five",
     "artist": "The Dave Brubeck Quartet",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1434,6 +1577,7 @@
   "blue_rondo_a_la_turk": {
     "title": "Blue Rondo à la Turk",
     "artist": "The Dave Brubeck Quartet",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1446,6 +1590,7 @@
   "petite_fleur": {
     "title": "Petite Fleur",
     "artist": "Sidney Bechet",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1461,6 +1606,7 @@
   "simpsons_theme": {
     "title": "Main Theme",
     "artist": "The Simpsons",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1473,6 +1619,7 @@
   "it_crowd_theme": {
     "title": "Main Theme",
     "artist": "The IT Crowd",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1485,6 +1632,7 @@
   "always_sunny_theme": {
     "title": "Main Theme",
     "artist": "It's Always Sunny in Philadelphia",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1497,6 +1645,7 @@
   "paddys_pub_theme": {
     "title": "I Like Life at Paddy's Pub",
     "artist": "It's Always Sunny in Philadelphia",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1509,6 +1658,7 @@
   "my_robot_friend": {
     "title": "My Robot Friend",
     "artist": "South Park",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1518,12 +1668,43 @@
     "is_hidden": true,
     "requirements": []
   },
+  "jeopardy_theme": {
+    "title": "Think!",
+    "artist": "Jeopardy!",
+    "is_title_inspecific": false,
+    "search_text": "Final Theme",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "pust_begut": {
+    "title": "Pust' Begut Neuklyuzhe",
+    "artist": "Crocodile Gena",
+    "description": "",
+    "is_title_inspecific": false,
+    "search_text": "Russian Happy Birthday",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television",
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
+  },
 
 
 
   "what_ever_happened_to_saturday_night": {
     "title": "What Ever Happened To Saturday Night",
     "artist": "The Rocky Horror Show",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1536,6 +1717,7 @@
   "brother_can_you_spare_a_dime": {
     "title": "Brother, Can You Spare a Dime?",
     "artist": "Americana",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1551,6 +1733,7 @@
   "lukes_theme": {
     "title": "Luke's Theme",
     "artist": "Star Wars",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1563,6 +1746,7 @@
   "duel_of_fates": {
     "title": "Duel of Fates",
     "artist": "Star Wars: Episode III",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1575,6 +1759,7 @@
   "amelie": {
     "title": "La valse d'Amélie",
     "artist": "Amélie",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1587,6 +1772,7 @@
   "pirates_of_the_caribbean_theme": {
     "title": "Main Theme",
     "artist": "Pirates of the Caribbean",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1602,6 +1788,7 @@
   "mario_64_merry_go_round": {
     "title": "Merry-Go-Round",
     "artist": "Super Mario 64",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 16,
@@ -1617,6 +1804,7 @@
   "kazotsky_kick": {
     "title": "The Kazotsky Kick",
     "artist": "Team Fortress 2",
+    "is_title_inspecific": false,
     "search_text": "Soldier of Dance",
     "video_url": "",
     "points": 23,
@@ -1632,6 +1820,7 @@
   "song_of_storms": {
     "title": "Song of Storms",
     "artist": "The Legend of Zelda: Ocarina of Time",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1644,6 +1833,7 @@
   "casino_night_zone": {
     "title": "Casino Night Zone",
     "artist": "Sonic the Hedgehog 2",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1656,6 +1846,7 @@
   "running_from_evil": {
     "title": "Running From Evil",
     "artist": "Doom II",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1668,6 +1859,7 @@
   "into_sandys_city": {
     "title": "Into Sandy's City",
     "artist": "Doom II",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1680,6 +1872,7 @@
   "sign_of_evil": {
     "title": "Sign of Evil",
     "artist": "Doom",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1692,6 +1885,7 @@
   "death_by_glamour": {
     "title": "Death By Glamour",
     "artist": "Undertale",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1704,6 +1898,7 @@
   "home_undertale": {
     "title": "Home",
     "artist": "Undertale",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1716,6 +1911,7 @@
   "super_mario_world_end_credits": {
     "title": "End Credits",
     "artist": "Super Mario World",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1728,6 +1924,7 @@
   "terraria_corruption": {
     "title": "Corruption",
     "artist": "Terraria",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1740,6 +1937,7 @@
   "minecraft_far": {
     "title": "Far",
     "artist": "Minecraft",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1752,6 +1950,7 @@
   "mario_main_theme": {
     "title": "Overworld",
     "artist": "Super Mario Bros.",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1764,6 +1963,7 @@
   "mario_3_athletic_theme": {
     "title": "Athletic",
     "artist": "Super Mario Bros. 3",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1776,6 +1976,7 @@
   "melee_title_theme": {
     "title": "Menu",
     "artist": "Super Smash Bros. Melee",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1788,6 +1989,7 @@
   "gates_of_fort_firestorm": {
     "title": "Gates of Fort Firestorm",
     "artist": "Super C",
+    "is_title_inspecific": false,
     "search_text": "Contra",
     "video_url": "",
     "points": 0,
@@ -1800,6 +2002,7 @@
   "contra_4_stage_1": {
     "title": "Area 1",
     "artist": "Contra",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1812,6 +2015,7 @@
   "hydrocity_zone": {
     "title": "Hydrocity Zone Act 1",
     "artist": "Sonic the Hedgehog 3",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1824,6 +2028,7 @@
   "carnival_night_zone": {
     "title": "Carnival Night Zone Act 1",
     "artist": "Sonic the Hedgehog 3",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1836,6 +2041,7 @@
   "sonic_3_mini_boss": {
     "title": "Mini Boss",
     "artist": "Sonic the Hedgehog 3",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1848,6 +2054,7 @@
   "green_hill_zone": {
     "title": "Green Hill Zone",
     "artist": "Sonic the Hedgehog",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1860,6 +2067,7 @@
   "emerald_hill_zone": {
     "title": "Emerald Hill Zone",
     "artist": "Sonic the Hedgehog 2",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1872,6 +2080,7 @@
   "nsmb_athletic_theme": {
     "title": "Athletic",
     "artist": "New Super Mario Bros. Wii",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1884,6 +2093,7 @@
   "nsmb_castle": {
     "title": "Castle",
     "artist": "New Super Mario Bros.",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1896,6 +2106,7 @@
   "nsmb_boss": {
     "title": "Boss Fight",
     "artist": "New Super Mario Bros.",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1908,6 +2119,7 @@
   "smw_castle": {
     "title": "Castle",
     "artist": "Super Mario World",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1920,6 +2132,7 @@
   "kraids_lair": {
     "title": "Kraid's Lair",
     "artist": "Metroid",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1932,6 +2145,7 @@
   "dark_world": {
     "title": "Dark World",
     "artist": "The Legend of Zelda: Link to the Past",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1944,6 +2158,7 @@
   "tloz_dungeon": {
     "title": "Dungeon",
     "artist": "The Legend of Zelda",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1956,6 +2171,7 @@
   "wild_korok_forest_day": {
     "title": "Wild Korok Forest",
     "artist": "The Legend of Zelda: Breath of the Wild",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1968,6 +2184,7 @@
   "red_brinstar": {
     "title": "Red Brinstar",
     "artist": "Super Metroid",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1980,6 +2197,7 @@
   "brinstar": {
     "title": "Brinstar",
     "artist": "Metroid",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -1992,6 +2210,7 @@
   "the_world_revolving": {
     "title": "The World Revolving",
     "artist": "Deltarune",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2004,6 +2223,7 @@
   "vampire_killer": {
     "title": "Vampire Killer",
     "artist": "Castlevania",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2016,6 +2236,7 @@
   "bloody_tears": {
     "title": "Bloody Tears",
     "artist": "Castlevania II",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2028,6 +2249,7 @@
   "guiles_theme": {
     "title": "Guile's Theme",
     "artist": "Street Fighter II",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2040,6 +2262,7 @@
   "mario_64_slide": {
     "title": "Slide",
     "artist": "Super Mario 64",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2052,6 +2275,7 @@
   "shadow_of_the_ninja_stage_2": {
     "title": "Stage 2",
     "artist": "Shadow of the Ninja",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2064,6 +2288,7 @@
   "a_little_heart_to_heart": {
     "title": "A Little Heart to Heart",
     "artist": "Team Fortress 2",
+    "is_title_inspecific": false,
     "search_text": "Archimedes",
     "video_url": "",
     "points": 10,
@@ -2079,6 +2304,7 @@
   "dog_song": {
     "title": "Dogsong",
     "artist": "Undertale",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 18,
@@ -2095,6 +2321,7 @@
   "bonetrousle": {
     "title": "Bonetrousle",
     "artist": "Undertale",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2112,6 +2339,7 @@
   "papers_please_theme": {
     "title": "Title Theme",
     "artist": "Papers Please",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2124,6 +2352,7 @@
   "wii_shop_theme": {
     "title": "Wii Shop Channel",
     "artist": "Nintendo Wii",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
@@ -2136,6 +2365,7 @@
   "ancient_power": {
     "title": "Ancient Power",
     "artist": "AM2R",
+    "is_title_inspecific": false,
     "search_text": "Metroid",
     "video_url": "",
     "points": 0,
@@ -2144,5 +2374,34 @@
     "genre": "video_game",
     "is_hidden": true,
     "requirements": []
+  },
+  "monkey_island_theme": {
+    "title": "Main Theme",
+    "artist": "The Secret of Monkey Island",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "angry_birds_theme": {
+    "title": "Main Theme",
+    "artist": "Angry Birds",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 27,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["modes"],
+      ["bass_buttons_4"]
+    ]
   }
 }

@@ -103,49 +103,16 @@
             ["stradella_system"]
         ]
     },
-    "bass_capstone_1": {
-        "title": "Beginner Bass Capstone",
-        "video_url": "",
-        "description": "Bass pattern challenges that test your abilities.",
-        "x": -1.0,
-        "type": "challenge",
-        "subtasks": {
-            "speed_demon": {
-                "title": "Speed Demon",
-                "difficulty": 1
-            },
-            "2_jumps": {
-                "title": "Back and Forth Jumps",
-                "difficulty": 2
-            },
-            "up_and_down": {
-                "title": "Up and Down",
-                "difficulty": 3
-            }
-        },
-        "subtasks_required": 2,
-        "prerequisites": [
-            ["bass_buttons_3"]
-        ]
-    },
     "bass_buttons_4": {
         "title": "Bass Buttons #4",
         "video_url": "",
         "description": "Three-buttons jumps.\nMore chord progressions.",
-        "x": -0.7,
+        "x": -0.8,
         "y_offset": 0,
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
             ["bass_buttons_3"]
-        ]
-    },
-    "gate_1c": {
-        "x": -0.8,
-        "points_required": 30,
-        "type": "gate",
-        "prerequisites": [
-            ["bass_buttons_4"]
         ]
     },
     "bass_button_chord_combos": {
@@ -155,7 +122,7 @@
         "x": -0.7,
         "type": "technique",
         "prerequisites": [
-            ["gate_1c"],
+            ["bass_buttons_4"],
             ["advanced_chord_theory"]
         ]
     },
@@ -166,7 +133,7 @@
         "x": -1.0,
         "type": "technique",
         "prerequisites": [
-            ["gate_1c"]
+            ["bass_buttons_4"]
         ]
     },
     "bass_buttons_5": {
@@ -174,11 +141,11 @@
         "video_url": "",
         "description": "Four-buttons jumps.\nMore chord progressions.\nCombining basslines with oompah.",
         "x": -0.9,
-        "y_offset": 1,
+        "y_offset": 0,
         "type": "technique",
         "prerequisites": [
             ["bass_button_basslines"],
-            ["gate_1c"]
+            ["bass_buttons_4"]
         ]
     },
     "bass_buttons_6": {
@@ -186,6 +153,7 @@
         "video_url": "",
         "description": "Five-buttons jumps.\nMore chord progressions.",
         "x": -0.9,
+        "y_offset": 1,
         "type": "technique",
         "prerequisites": [
             ["bass_buttons_5"]
@@ -272,10 +240,10 @@
         "title": "Syncopated Grooves",
         "video_url": "",
         "description": "",
-        "x": 0,
+        "x": -0.1,
         "type": "technique",
         "prerequisites": [
-            ["two_handed_playing_2"]
+            ["two_handed_playing_3"]
         ]
     },
     "gate_1b": {
@@ -295,7 +263,7 @@
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
-            ["advanced_right_hand_chords"],
+            ["intermediate_right_hand_chords"],
             ["gate_1b"]
         ]
     },
@@ -307,7 +275,7 @@
         "type": "technique",
         "prerequisites": [
             ["bass_button_basslines"],
-            ["advanced_right_hand_chords"],
+            ["intermediate_right_hand_chords"],
             ["gate_1b"]
         ]
     },
@@ -319,7 +287,7 @@
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
-            ["advanced_right_hand_chords"],
+            ["intermediate_right_hand_chords"],
             ["gate_1b"]
         ]
     },
@@ -488,7 +456,7 @@
         "title": "Major Scale in Thirds",
         "video_url": "",
         "description": "",
-        "x": 0.9,
+        "x": 1.0,
         "type": "technique",
         "prerequisites": [
             ["gate_1a"]
@@ -498,27 +466,41 @@
         "title": "Major Scale in Sixths",
         "video_url": "",
         "description": "",
-        "x": 0.9,
+        "x": 1.0,
         "type": "technique",
         "prerequisites": [
             ["major_scale_in_thirds"]
-        ]
-    },
-    "common_scales": {
-        "title": "More Common Scales",
-        "video_url": "",
-        "description": "Dorian Scale, Pentatonic and Blues Scales",
-        "x": 0.7,
-        "type": "technique",
-        "prerequisites": [
-            ["gate_1a"]
         ]
     },
     "big_right_hand_jumps": {
         "title": "Big Right Hand Jumps",
         "video_url": "",
         "description": "",
-        "x": 0.5,
+        "x": 0.8,
+        "y_offset": 0.25,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_1a"]
+        ]
+    },
+    "blues_scales": {
+        "title": "Blues Scales",
+        "video_url": "",
+        "description": "Blues and Major Blues",
+        "x": 0.2,
+        "y_offset": 1,
+        "type": "technique",
+        "prerequisites": [
+            ["gate_1a"],
+            ["blues_theory"]
+        ]
+    },
+    "modes": {
+        "title": "Modes of the Major Scale",
+        "video_url": "",
+        "description": "Lydian, Mixolydian, Dorian, Phrygian, and Phrygian Dominant",
+        "x": 0.6,
+        "y_offset": 0.5,
         "type": "technique",
         "prerequisites": [
             ["gate_1a"]
@@ -528,7 +510,8 @@
         "title": "Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.3,
+        "x": 0.4,
+        "y_offset": 0.75,
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
@@ -536,35 +519,26 @@
         ]
     },
     "gate_2a": {
-        "x": 0.5,
+        "x": 0.7,
+        "y_offset": 0.25,
         "points_required": 20,
         "type": "gate",
         "prerequisites": [
             ["big_right_hand_jumps"],
+            ["modes"],
             ["right_hand_chords"]
         ]
     },
-    "advanced_right_hand_chords": {
-        "title": "Advanced Right Hand Chords",
+    "intermediate_right_hand_chords": {
+        "title": "Intermediate Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.2,
+        "x": 0.3,
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
             ["intermediate_chord_theory"],
             ["gate_2a"]
-        ]
-    },
-    "modes": {
-        "title": "Modes of the Major Scale",
-        "video_url": "",
-        "description": "Lydian, Mixolydian, Phrygian, and Phrygian Dominant",
-        "x": 0.8,
-        "type": "technique",
-        "prerequisites": [
-            ["gate_2a"],
-            ["common_scales"]
         ]
     },
     "cool_tricks": {
@@ -582,10 +556,10 @@
         "points_required": 60,
         "type": "gate",
         "prerequisites": [
-            ["advanced_right_hand_chords"]
+            ["intermediate_right_hand_chords"]
         ]
     },
-    "expert_right_hand_chords": {
+    "advanced_right_hand_chords": {
         "title": "Advanced Right Hand Chords",
         "video_url": "",
         "description": "",
@@ -637,11 +611,23 @@
             ["scale_theory"]
         ]
     },
+    "blues_theory": {
+        "title": "The Blues",
+        "video_url": "",
+        "description": "The Blues Scales, ",
+        "x": 0.3,
+        "y_offset": 0,
+        "limit_preview": true,
+        "type": "theory",
+        "prerequisites": [
+            ["chord_theory"]
+        ]
+    },
     "intermediate_chord_theory": {
         "title": "Intermediate Chord Theory",
         "video_url": "",
         "description": "Seventh Chords\nChord Inversions\nSuspended Chords",
-        "x": 0.2,
+        "x": 0,
         "y_offset": 2,
         "limit_preview": true,
         "type": "theory",
@@ -653,7 +639,7 @@
         "title": "Advanced Chord Theory",
         "video_url": "",
         "description": "Ninth and Thirteenth Chords\nAugmented Chords",
-        "x": -0.1,
+        "x": 0,
         "y_offset": 1,
         "limit_preview": true,
         "type": "theory",
@@ -690,10 +676,10 @@
         "title": "Famous Accordion Players",
         "video_url": "",
         "description": "",
-        "x": 0.3,
+        "x": -0.9,
         "type": "history",
         "prerequisites": [
-            ["improvisation"]
+            ["bass_buttons_3"]
         ]
     }
 }
