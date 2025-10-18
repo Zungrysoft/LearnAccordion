@@ -3,6 +3,7 @@ import './App.css';
 
 import MainPage from './MainPage.js';
 import { SettingsProvider } from './context/SettingsProvider.jsx';
+import { LessonStateProvider } from './context/LessonStateProvider.jsx';
 
 function App() {
     useEffect(() => {
@@ -12,7 +13,9 @@ function App() {
     return (
         <div className="App">
             <SettingsProvider>
-                <MainPage />
+                <LessonStateProvider>
+                    <MainPage />
+                </LessonStateProvider>
             </SettingsProvider>
         </div>
     );

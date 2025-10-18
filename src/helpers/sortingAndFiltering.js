@@ -1,6 +1,6 @@
 import genreData from '../data/genres.json';
 
-function removeThe(title) {
+export function removeThe(title) {
     let ret = title.toLowerCase();
     if (ret.startsWith('the ')) {
         ret = ret.substring(4);
@@ -94,4 +94,19 @@ export function sortSongs(songs, sortMode) {
 
     const sortedSongs = Object.keys(songs).map(k => ({...songs[k], key: k})).sort(getSortModeFunc(sortMode));
     return sortedSongs; // .map(l => l.key);
+}
+
+export function processForFilter(text) {
+  return text.toLowerCase()
+    .replaceAll('ä', 'a')
+    .replaceAll('é', 'e')
+    .replaceAll('è', 'e')
+    .replaceAll('í', 'i')
+    .replaceAll('ó', 'o')
+    .replaceAll('ñ', 'n')
+    .replaceAll('-', '')
+    .replaceAll('\'', '')
+    .replaceAll(',', '')
+    .replaceAll('.', '')
+  ;
 }

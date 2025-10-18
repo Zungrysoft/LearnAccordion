@@ -1,28 +1,22 @@
 import '../App.css';
 
-import songData from '../data/songs.json';
 import lessonData from '../data/lessons.json';
 import { useTheme } from '../helpers/theme';
+import { useLessonState } from '../context/LessonStateProvider';
 
 
-function LessonCounter({ state }) {
+function LessonCounter() {
     const { colorText, filterIcon } = useTheme();
+    const { lessonState, points } = useLessonState();
 
     let total = 0
     let completed = 0
     Object.entries(lessonData).forEach(([id, lesson]) => {
         total ++;
-        if (state[id]?.completed) {
+        if (lessonState[id]?.completed) {
             completed ++;
         }
-    })
-
-    let points = 0;
-    Object.entries(songData).forEach(([id, song]) => {
-        if (state[id]?.completed) {
-            points += song.points ?? 0;
-        }
-    })
+    });
 
     return (
         <div className="top-left">

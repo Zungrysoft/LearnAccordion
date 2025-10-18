@@ -1,31 +1,17 @@
 import '../App.css';
 import React, { useCallback, useState } from 'react';
 import songData from '../data/songs.json';
-import { sortSongs } from '../helpers/sorting.jsx';
+import { processForFilter, sortSongs } from '../helpers/sortingAndFiltering.js';
 import genreData from '../data/genres.json';
 import RadioButtons from './RadioButtons.jsx';
 import { useTheme } from '../helpers/theme.jsx';
 import SettingsGroup from './SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 import TextInput from './TextInput.js';
+import { useLessonState } from '../context/LessonStateProvider.jsx';
 
-function processForFilter(text) {
-  return text.toLowerCase()
-    .replaceAll('ä', 'a')
-    .replaceAll('é', 'e')
-    .replaceAll('è', 'e')
-    .replaceAll('í', 'i')
-    .replaceAll('ó', 'o')
-    .replaceAll('ñ', 'n')
-    .replaceAll('-', '')
-    .replaceAll('\'', '')
-    .replaceAll(',', '')
-    .replaceAll('.', '')
-  ;
-}
-
-const SongTable = ({ state, onOpenPage }) => {
-  const songs = Object.entries(songData).map(([key, value]) => ({ ...value, id: key }));
+const SongTable = ({ onOpenPage }) => {
+  const { lessonState } = useLessonState();
   const {
     songSortMode,
     setSongSortMode,
@@ -36,10 +22,11 @@ const SongTable = ({ state, onOpenPage }) => {
     showLockedSongs,
     setShowLockedSongs,
     showHiddenSongs,
-    setShowHiddenSongs,
   } = useSettings();
   const [filterText, setFilterText] = useState("");
   const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+
+  const songs = Object.entries(songData).map(([key, value]) => ({ ...value, id: key }));
 
   const isSongUnlocked = useCallback((song) => {
     if (!song.requirements) {
@@ -49,7 +36,7 @@ const SongTable = ({ state, onOpenPage }) => {
     for (const requirement of song.requirements) {
       let satisfied = false
       for (const option of requirement) {
-        if (state[option]?.completed) {
+        if (lessonState[option]?.completed) {
           satisfied = true;
           break;
         }
@@ -59,27 +46,27 @@ const SongTable = ({ state, onOpenPage }) => {
       }
     }
     return true;
-  }, [state])
+  }, [lessonState])
 
   const getSongBackgroundColor = useCallback((song) => {
     if (song.is_hidden) {
       return colorBackgroundDarker;
     }
-    if (state[song.id]?.completed) {
+    if (lessonState[song.id]?.completed) {
       return colorBackgroundLight;
     }
     if (isSongUnlocked(song)) {
       return colorBackground;
     }
     return colorBackgroundDark;
-  }, [state, isSongUnlocked, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
+  }, [lessonState, isSongUnlocked, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
 
   let filteredSongs = songs;
   if (!showHiddenSongs) {
     filteredSongs = filteredSongs.filter((song) => !song.is_hidden)
   }
   if (!showLockedSongs) {
-    filteredSongs = filteredSongs.filter((song) => state[song.id]?.pinned || isSongUnlocked(song))
+    filteredSongs = filteredSongs.filter((song) => lessonState[song.id]?.pinned || isSongUnlocked(song))
   }
   const noSongsUnlocked = filteredSongs.length === 0;
   if (filterHandsMode === 'one-handed') {
@@ -117,18 +104,18 @@ const SongTable = ({ state, onOpenPage }) => {
   // Then sort again by pinned
   sortedSongs.sort((a, b) => {
     // Sort pinned lessons at the top
-    if (state[a.id]?.pinned && !state[b.id]?.pinned) {
+    if (lessonState[a.id]?.pinned && !lessonState[b.id]?.pinned) {
       return -1;
     }
-    if (state[b.id]?.pinned && !state[a.id]?.pinned) {
+    if (lessonState[b.id]?.pinned && !lessonState[a.id]?.pinned) {
       return 1;
     }
 
     // Sort completed lessons at the end
-    if (state[a.id]?.completed && !state[b.id]?.completed) {
+    if (lessonState[a.id]?.completed && !lessonState[b.id]?.completed) {
       return 1;
     }
-    if (state[b.id]?.completed && !state[a.id]?.completed) {
+    if (lessonState[b.id]?.completed && !lessonState[a.id]?.completed) {
       return -1;
     }
 
@@ -237,8 +224,8 @@ const SongTable = ({ state, onOpenPage }) => {
                     <td style={tdStyle}>
                       <SongTitle
                         title={song.title}
-                        pinned={state[song.id]?.pinned}
-                        completed={state[song.id]?.completed}
+                        pinned={lessonState[song.id]?.pinned}
+                        completed={lessonState[song.id]?.completed}
                         hidden={song.is_hidden}
                         locked={!isSongUnlocked(song)}
                       />

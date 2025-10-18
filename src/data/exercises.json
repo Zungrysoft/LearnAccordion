@@ -1,0 +1,14 @@
+{
+    "bass_scales_major": {
+        "title": "Bass Buttons Major Scale",
+        "description": "Play up the Major Scale until you hit the root note again. Then go back down until you hit the root note. Repeat.",
+        "video_timestamp_seconds": 0,
+        "lesson": "bass_button_bass_scales"
+    },
+    "bass_scales_minor": {
+        "title": "Bass Buttons Minor Scale",
+        "description": "Play up the Minor Scale until you hit the root note again. Then go back down until you hit the root note. Repeat. Do this in two different ways: With the root note on the counterbass row and with the root note on the bass row.",
+        "video_timestamp_seconds": 0,
+        "lesson": "bass_button_bass_scales"
+    }
+}

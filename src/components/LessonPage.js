@@ -6,8 +6,13 @@ import Embed from './Embed';
 import CheckBox from './CheckBox';
 import LessonSubtask from './LessonSubtask';
 import { useTheme } from '../helpers/theme';
+import { useLessonState } from '../context/LessonStateProvider';
 
-function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned, onChangeSubtask, onClose, isOpen, state }) {
+function LessonPage({ lessonId, onClose, isOpen }) {
+    const { lessonData, lessonState, setLessonCompleted, setLessonSubtaskCompleted, setLessonPinned } = useLessonState();
+
+    const lesson = lessonData[lessonId] ?? songData[lessonId]
+
     const [openSubtask, setOpenSubtask] = useState(null);
     const subtasksList = Object.keys(lesson.subtasks ?? {}).map((key) => ({...lesson.subtasks[key], id: key}));
     const { colorBackground, colorText } = useTheme();
@@ -18,7 +23,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
     }
     
     const nearlyUnlockedSongs = useMemo(() => {
-        if (completionState?.completed) {
+        if (lessonState[lessonId]?.completed) {
             return [];
         }
 
@@ -35,7 +40,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
             for (const requirement of song.requirements) {
                 let satisfied = false
                 for (const option of requirement) {
-                    if (state[option]?.completed) {
+                    if (lessonState[option]?.completed) {
                         satisfied = true;
                         break;
                     }
@@ -57,13 +62,13 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
         }
 
         return ret;
-    }, [state, lesson.id, completionState]);
+    }, [lesson.id, lessonState]);
 
     if (!lesson) {
         return null;
     }
 
-    const completedSubtasks = Object.values(completionState?.subtasks ?? {}).filter((x) => x).length;
+    const completedSubtasks = Object.values(lessonState[lessonId]?.subtasks ?? {}).filter((x) => x).length;
     const requiredSubtasks = lesson.subtasks_required;
     let subtaskCompletionText = `Lesson Complete!`;
     if (completedSubtasks < requiredSubtasks) {
@@ -102,23 +107,28 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
                                     key={subtask.id}
                                     lesson={lesson}
                                     subtask={subtask}
-                                    toggleCompletion={(newState) => onChangeSubtask(subtask.id, newState)}
+                                    toggleCompletion={(newState) => setLessonSubtaskCompleted(lessonId, subtask.id, newState)}
                                     onClickTitle={() => setOpenSubtask((prev) => {return prev === subtask.id ? null : subtask.id})}
                                     isOpen={openSubtask === subtask.id}
-                                    completed={completionState?.subtasks?.[subtask.id]}
+                                    completed={lessonState[lessonId]?.subtasks?.[subtask.id]}
                                 />;
                             })
                         }
                     </div>
                 )}
                 {lessonType === 'song' && (
-                    <CheckBox text="Pin lesson:" onChange={onChangePinned} checked={completionState?.pinned} textColor={colorText}/>
+                    <CheckBox
+                        text="Pin lesson:"
+                        onChange={(val) => setLessonPinned(lessonId, val)}
+                        checked={lessonState[lessonId]?.pinned}
+                        textColor={colorText}
+                    />
                 )}
                 {!(lesson.subtasks) && (
                     <CheckBox
                         text={lesson.type === 'gate' ? "Bypass gate:" : "Mark as completed:"}
-                        onChange={onChangeCompleted}
-                        checked={completionState?.completed}
+                        onChange={(val) => setLessonCompleted(lessonId, val)}
+                        checked={lessonState[lessonId]?.completed}
                         textColor={colorText}
                     />
                 )}

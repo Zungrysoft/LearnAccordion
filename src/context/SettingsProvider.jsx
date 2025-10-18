@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import themeData from '../data/themes.json';
 
 const defaultContext = {
-    theme: 'dark',
+    theme: 'light',
     setTheme: () => {},
     songSortMode: 'genre',
     setTheme: () => {},
@@ -10,12 +10,14 @@ const defaultContext = {
     setFilterHandsMode: () => {},
     filterVocalsMode: null,
     setFilterVocalsMode: () => {},
-    showLockedSongs: true,
+    showLockedSongs: false,
     setShowLockedSongs: () => {},
-    showHiddenSongs: true,
+    showHiddenSongs: false,
     setShowHiddenSongs: () => {},
     showLockedLessons: false,
     setShowLockedLessons: () => {},
+    showLockedExercises: false,
+    setShowLockedExercises: () => {},
 }
 
 const SettingsContext = createContext(defaultContext);
@@ -63,6 +65,9 @@ export function SettingsProvider({ children }) {
     const showLockedLessons = settings?.showLockedLessons ?? defaultContext.showLockedLessons;
     const setShowLockedLessons = useCallback((value) => changeSetting('showLockedLessons', value), [changeSetting]);
 
+    const showLockedExercises = settings?.showLockedExercises ?? defaultContext.showLockedExercises;
+    const setShowLockedExercises = useCallback((value) => changeSetting('showLockedExercises', value), [changeSetting]);
+
     return (
         <SettingsContext.Provider
             value={useMemo(
@@ -81,6 +86,8 @@ export function SettingsProvider({ children }) {
                     setShowHiddenSongs,
                     showLockedLessons,
                     setShowLockedLessons,
+                    showLockedExercises,
+                    setShowLockedExercises,
                 }),
                 [
                     theme,
@@ -97,6 +104,8 @@ export function SettingsProvider({ children }) {
                     setShowHiddenSongs,
                     showLockedLessons,
                     setShowLockedLessons,
+                    showLockedExercises,
+                    setShowLockedExercises,
                 ]
             )}
         >
