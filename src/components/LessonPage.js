@@ -123,7 +123,7 @@ function LessonPage({ lesson, completionState, onChangeCompleted, onChangePinned
                     />
                 )}
                 {nearlyUnlockedSongs.length > 0 && (
-                    <h2 style={{ fontSize: 18, marginTop: '0px' }}>
+                    <h2 style={{ fontSize: 18, marginTop: '0px', color: colorText }}>
                         Completing this lesson will unlock new songs: {nearlyUnlockedSongs.map((x) => 
                             songData[x].is_title_inspecific ? songData[x].artist + " " + songData[x].title : songData[x].title
                         ).join(', ')}

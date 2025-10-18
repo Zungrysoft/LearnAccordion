@@ -4,8 +4,8 @@ import { useIsMobile } from '../helpers/breakpoints';
 import { useCallback } from 'react';
 import { useTheme } from '../helpers/theme';
 
-function curvePoint(p) {
-    return (Math.tanh((p - 0.5) * configData.connector_bendiness) * 0.5) + 0.5
+function curvePoint(p, bendiness) {
+    return (Math.tanh((p - 0.5) * bendiness) * 0.5) + 0.5
 }
 
 function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
@@ -66,8 +66,8 @@ function Connector({ lesson1, lesson2, state1, state2, boardSize }) {
     for (let i = 0; i < seg; i ++) {
         let yf1 = i/seg
         let yf2 = (i+1)/seg
-        let xf1 = curvePoint(yf1)
-        let xf2 = curvePoint(yf2)
+        let xf1 = curvePoint(yf1, lesson2.connector_bendiness ?? configData.connector_bendiness)
+        let xf2 = curvePoint(yf2, lesson2.connector_bendiness ?? configData.connector_bendiness)
         if (flip) {
             xf1 = 1-xf1
             xf2 = 1-xf2

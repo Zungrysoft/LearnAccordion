@@ -6,7 +6,7 @@
     "search_text": "",
     "video_url": "",
     "points": 50,
-    "has_vocals": false,
+    "has_vocals": true,
     "is_two_handed": true,
     "genre": "polka",
     "requirements": [
@@ -106,6 +106,23 @@
     "is_hidden": true,
     "requirements": []
   },
+  "liechtensteiner_polka": {
+    "title": "Liechtensteiner Polka",
+    "artist": "Will Glahé and His Orchestra",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "polka",
+    "requirements": [
+      ["bass_buttons_4"],
+      ["major_scale"],
+      ["major_scale_in_thirds"],
+      ["right_hand_chords"]
+    ]
+  },
   "banquet": {
     "title": "Banquet",
     "artist": "Yann Tiersen",
@@ -126,7 +143,7 @@
     "search_text": "",
     "video_url": "",
     "points": 28,
-    "has_vocals": false,
+    "has_vocals": true,
     "is_two_handed": true,
     "genre": "folk",
     "requirements": [
@@ -161,7 +178,7 @@
     "requirements": [
       ["two_handed_playing_3"],
       ["major_scale"],
-      ["bass_buttons_4"]
+      ["bass_buttons_5"]
     ]
   },
   "off_to_california": {
@@ -175,7 +192,7 @@
     "is_two_handed": true,
     "genre": "hornpipe",
     "requirements": [
-      ["bass_buttons_6"],
+      ["bass_buttons_5"],
       ["major_scale"],
       ["two_handed_playing_3"]
     ]
@@ -209,6 +226,46 @@
     "is_hidden": true,
     "requirements": []
   },
+  "big_rock_candy_mountain": {
+    "title": "Big Rock Candy Mountain",
+    "artist": "Harry McClintock",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "folk",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "irish_washerwoman": {
+    "title": "The Irish Washerwoman",
+    "artist": "",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jig",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "maggies_pancakes": {
+    "title": "Maggie's Pancakes",
+    "artist": "",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "reel",
+    "is_hidden": true,
+    "requirements": []
+  },
+  
 
   
 
@@ -248,8 +305,11 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "nautical",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["bass_buttons_4"],
+      ["two_handed_playing_3"],
+      ["minor_scale"]
+    ]
   },
   "south_australia": {
     "title": "South Australia",
@@ -620,6 +680,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "broken_bells": {
+    "title": "Broken Bells",
+    "artist": "Greta Van Fleet",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
   "temple_of_the_king": {
     "title": "Temple of the King",
     "artist": "Rainbow",
@@ -699,7 +772,7 @@
     "requirements": []
   },
   "paint_it_black": {
-    "title": "Paint It, Black",
+    "title": "Paint It Black",
     "artist": "The Rolling Stones",
     "is_title_inspecific": false,
     "search_text": "",
@@ -918,6 +991,19 @@
       ["minor_scale"]
     ]
   },
+  "getaway": {
+    "title": "Getaway",
+    "artist": "Saint Motel",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 10,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
   "dont_let_me_be_misunderstood": {
     "title": "Don't Let Me Be Misunderstood",
     "artist": "Nina Simone",
@@ -1113,7 +1199,7 @@
     "title": "Gimme Some Money",
     "artist": "The Thamesmen",
     "is_title_inspecific": false,
-    "search_text": "",
+    "search_text": "This is Spinal Tap",
     "video_url": "",
     "points": 0,
     "has_vocals": true,
@@ -1490,6 +1576,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "jump": {
+    "title": "Jump",
+    "artist": "Van Halen",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
   "golden_brown": {
     "title": "Golden Brown",
     "artist": "The Stranglers",
@@ -1600,6 +1699,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "minor_swing": {
+    "title": "Minor Swing",
+    "artist": "Django Reinhardt",
+    "is_title_inspecific": false,
+    "search_text": "Gypsy",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "jazz",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
@@ -1688,7 +1800,7 @@
     "is_title_inspecific": false,
     "search_text": "Russian Happy Birthday",
     "video_url": "",
-    "points": 0,
+    "points": 12,
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "television",
@@ -1830,19 +1942,6 @@
     "is_hidden": true,
     "requirements": []
   },
-  "casino_night_zone": {
-    "title": "Casino Night Zone",
-    "artist": "Sonic the Hedgehog 2",
-    "is_title_inspecific": false,
-    "search_text": "",
-    "video_url": "",
-    "points": 0,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
-  },
   "running_from_evil": {
     "title": "Running From Evil",
     "artist": "Doom II",
@@ -1909,7 +2008,20 @@
     "requirements": []
   },
   "super_mario_world_end_credits": {
-    "title": "End Credits",
+    "title": "Credits",
+    "artist": "Super Mario World",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "super_mario_world_athletic": {
+    "title": "Athletic",
     "artist": "Super Mario World",
     "is_title_inspecific": true,
     "search_text": "",
@@ -1950,15 +2062,19 @@
   "mario_main_theme": {
     "title": "Overworld",
     "artist": "Super Mario Bros.",
-    "is_title_inspecific": false,
-    "search_text": "",
+    "is_title_inspecific": true,
+    "search_text": "Ground",
     "video_url": "",
     "points": 0,
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["major_scale"],
+      ["two_handed_playing_3"],
+      ["syncopation"],
+      ["bass_buttons_3"]
+    ]
   },
   "mario_3_athletic_theme": {
     "title": "Athletic",
@@ -1969,6 +2085,32 @@
     "points": 0,
     "has_vocals": false,
     "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "mario_3_hammer_bros": {
+    "title": "Hammer Bros. Battle",
+    "artist": "Super Mario Bros. 3",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "gusty_garden_galaxy": {
+    "title": "Gusty Garden Galaxy",
+    "artist": "Super Mario Galaxy",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
     "genre": "video_game",
     "is_hidden": true,
     "requirements": []
@@ -2025,6 +2167,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "casino_night_zone": {
+    "title": "Casino Night Zone",
+    "artist": "Sonic the Hedgehog 2",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "carnival_night_zone": {
     "title": "Carnival Night Zone Act 1",
     "artist": "Sonic the Hedgehog 3",
@@ -2064,6 +2219,32 @@
     "is_hidden": true,
     "requirements": []
   },
+  "marble_zone": {
+    "title": "Marble Zone",
+    "artist": "Sonic the Hedgehog",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "star_light_zone": {
+    "title": "Star Light Zone",
+    "artist": "Sonic the Hedgehog",
+    "is_title_inspecific": false,
+    "search_text": "Starlight",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "emerald_hill_zone": {
     "title": "Emerald Hill Zone",
     "artist": "Sonic the Hedgehog 2",
@@ -2080,6 +2261,19 @@
   "nsmb_athletic_theme": {
     "title": "Athletic",
     "artist": "New Super Mario Bros. Wii",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "nsmbu_athletic_theme": {
+    "title": "Athletic",
+    "artist": "New Super Mario Bros. U",
     "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
@@ -2339,7 +2533,20 @@
   "papers_please_theme": {
     "title": "Title Theme",
     "artist": "Papers Please",
-    "is_title_inspecific": false,
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "obra_dinn_theme": {
+    "title": "Title Theme",
+    "artist": "Return of the Obra Dinn",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,

@@ -19,10 +19,20 @@
         "icon": "clap",
         "priority": 150
     },
+    "jig": {
+        "display": "Jig",
+        "icon": "clap",
+        "priority": 151
+    },
+    "reel": {
+        "display": "Reel",
+        "icon": "clap",
+        "priority": 152
+    },
     "hornpipe": {
         "display": "Hornpipe",
         "icon": "clap",
-        "priority": 151
+        "priority": 153
     },
 
 
