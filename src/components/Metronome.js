@@ -37,6 +37,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import RadioButtons from "./RadioButtons";
 import { useLessonState } from "../context/LessonStateProvider";
+import { useSettings } from "../context/SettingsProvider";
+import { useTheme } from "../helpers/theme";
 
 const timeSignatures = {
   '4/4': {
@@ -115,12 +117,19 @@ const timeSignatureGroupsAdvanced = [
 ];
 
 export default function Metronome() {
-  const [bpm, setBpm] = useState(100);
-  const [volume, setVolume] = useState(0.5);
   const [isPlaying, setIsPlaying] = useState(false);
   const [visibleActiveBeat, setVisibleActiveBeat] = useState(0);
-  const [timeSignature, setTimeSignature] = useState('4/4');
   const { lessonState } = useLessonState();
+  const { colorText } = useTheme();
+
+  const {
+    metronomeBpm: bpm,
+    setMetronomeBpm: setBpm,
+    metronomeVolume: volume,
+    setMetronomeVolume: setVolume,
+    metronomeTimeSignature: timeSignature,
+    setMetronomeTimeSignature: setTimeSignature,
+  } = useSettings();
 
   const audioCtxRef = useRef(null);
   const nextNoteTimeRef = useRef(0);
@@ -277,7 +286,7 @@ export default function Metronome() {
 
         <label style={{ flex: 1 }}>
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
-            <div style={{ fontSize: "14px" }}>BPM</div>
+            <div style={{ fontSize: "14px", color: colorText }}>BPM</div>
             <input
               type="number"
               min={0}
@@ -292,7 +301,7 @@ export default function Metronome() {
 
         <label style={{ width: "120px" }}>
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
-            <div style={{ fontSize: "14px" }}>Volume</div>
+            <div style={{ fontSize: "14px", color: colorText }}>Volume</div>
             <input
               type="range"
               min={0}

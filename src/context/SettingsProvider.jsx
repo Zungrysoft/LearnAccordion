@@ -1,30 +1,4 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import themeData from '../data/themes.json';
-
-// const defaultContext = {
-//     theme: 'light',
-//     setTheme: () => {},
-//     songSortMode: 'genre',
-//     setTheme: () => {},
-//     filterHandsMode: null,
-//     setFilterHandsMode: () => {},
-//     filterVocalsMode: null,
-//     setFilterVocalsMode: () => {},
-//     showLockedSongs: false,
-//     setShowLockedSongs: () => {},
-//     showHiddenSongs: false,
-//     setShowHiddenSongs: () => {},
-//     showLockedLessons: false,
-//     setShowLockedLessons: () => {},
-//     showLockedExercises: false,
-//     setShowLockedExercises: () => {},
-//     showRightHandExercises: true,
-//     setShowRightHandExercises: () => {},
-//     showLeftHandExercises: true,
-//     setShowLeftHandExercises: () => {},
-//     showTwoHandExercises: true,
-//     setShowTwoHandExercises: () => {},
-// }
 
 const defaultContext = {
     theme: 'light',
@@ -38,6 +12,9 @@ const defaultContext = {
     showRightHandExercises: true,
     showLeftHandExercises: true,
     showTwoHandExercises: true,
+    metronomeBpm: 100,
+    metronomeVolume: 0.7,
+    metronomeTimeSignature: '4/4',
 }
 
 const SettingsContext = createContext(defaultContext);
