@@ -24,6 +24,9 @@
         "video_url": "",
         "description": "",
         "x": -0.1,
+        "connector_bendiness": {
+            "about": 1.3
+        },
         "type": "instrument",
         "prerequisites": [
             ["about"]
@@ -378,7 +381,7 @@
         ]
     },
     "scale_intervals_practice": {
-        "title": "Scale Interval Practice",
+        "title": "Scale Intervals and Arpeggios",
         "video_url": "",
         "description": "Play up and down your scales ",
         "x": 0.6,
@@ -519,7 +522,9 @@
         "description": "Lydian, Mixolydian, Dorian, Phrygian, and Phrygian Dominant",
         "x": 0.6,
         "y_offset": 0.5,
-        "connector_bendiness": 4.5,
+        "connector_bendiness": {
+            "chord_theory": 0.8
+        },
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
@@ -532,7 +537,9 @@
         "description": "",
         "x": 0.4,
         "y_offset": 0.75,
-        "connector_bendiness": 4,
+        "connector_bendiness": {
+            "chord_theory": 0.8
+        },
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],

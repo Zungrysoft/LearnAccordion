@@ -1017,6 +1017,32 @@
     "is_hidden": true,
     "requirements": []
   },
+  "viva_la_vida": {
+    "title": "Viva La Vida",
+    "artist": "Coldplay",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "werewolves_of_london": {
+    "title": "Werewolves of London",
+    "artist": "Warren Zevon",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
@@ -1829,6 +1855,32 @@
   "brother_can_you_spare_a_dime": {
     "title": "Brother, Can You Spare a Dime?",
     "artist": "Americana",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "showtune",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "master_of_the_house": {
+    "title": "Master of the House",
+    "artist": "Les Misérables",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "showtune",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "do_you_hear_the_people_sing": {
+    "title": "Do You Hear the People Sing?",
+    "artist": "Les Misérables",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",

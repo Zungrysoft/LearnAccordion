@@ -139,7 +139,7 @@ export default function Metronome() {
 
   const lookahead = 25.0;
   const scheduleAheadTime = 0.2;
-  const gainMultiplier = 6;
+  const gainMultiplier = 2;
 
   const circles = timeSignatures[timeSignature].beats.filter(b => b !== 0).length;
   const circleScale = 4.0 / Math.max(circles, 4.0);
@@ -165,6 +165,10 @@ export default function Metronome() {
 
   const getBpm = () => {
     return Math.min(Math.max(Number(bpm) || 0, 0), 1000);
+  }
+
+  const multiplyBpm = (scalar) => {
+    setBpm((prev) => Math.floor(prev * scalar));
   }
 
   const secondsPerBeat = () => 60.0 / Math.max(1, getBpm()) / timeSignatures[timeSignature].speedMultiplier;
@@ -295,8 +299,16 @@ export default function Metronome() {
               value={bpm}
               placeholder="Enter value"
               onChange={(e) => setBpm(e.target.value)}
-              style={{ marginTop: "4px", width: "60px", padding: "8px", border: "1px solid #ccc", borderRadius: "6px" }}
+              style={{ width: "48px", padding: "8px", border: "1px solid #ccc", borderRadius: "6px" }}
             />
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px" }}>
+              <button onClick={() => multiplyBpm(2.0)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '30px', fontSize: '9px' }}>
+                x2
+              </button>
+              <button onClick={() => multiplyBpm(0.5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '30px', fontSize: '9px' }}>
+                ÷2
+              </button>
+            </div>
           </div>
         </label>
 
