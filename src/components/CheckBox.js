@@ -1,21 +1,22 @@
-function CheckBox({ text, checked, onChange, textColor="black" }) {
-    let rnum = Math.floor(Math.random() * 9007199254740991)
+function CheckBox({ text, checked, onChange, textColor = "black" }) {
     return (
-        <div className="align">
-            <label
-                htmlFor={"cbLabel_" + rnum}
-                style={{
-                    color: textColor
-                }}
-            >{text}</label>
-            <input
-                type="checkbox"
-                checked={checked?true:false}
-                className="checkbox"
-                id={"cbLabel_" + rnum}
-                onChange={(e) => {onChange(e.target.checked)}}
-            />
-        </div>
+        <label style={{ cursor: "pointer", color: textColor, fontSize: '18px' }}>
+            <div style={{ display: "flex", flexDirection: "row", padding: '16px', justifyContent: 'center', alignItems: 'center', margin: '0 auto' }}>
+                {text}
+                <input
+                    type="checkbox"
+                    checked={!!checked}
+                    onChange={(e) => {onChange(e.target.checked)}}
+                    style={{
+                        color: 'white',
+                        margin: '4px',
+                        padding: 0,
+                        width: '30px',
+                        height: '30px',
+                    }}
+                />
+            </div>
+        </label>
     )
 }
 

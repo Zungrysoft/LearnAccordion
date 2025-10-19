@@ -1,6 +1,6 @@
 import { useTheme } from "../helpers/theme";
 
-const SettingsGroup = ({ title, scale, children }) => {
+const SettingsGroup = ({ title, scale, minWidth, children }) => {
   const { colorText } = useTheme();
 
   const headerItemStyle = {
@@ -17,6 +17,7 @@ const SettingsGroup = ({ title, scale, children }) => {
     display: 'flex',
     flex: 1,
     gap: '16px',
+    minWidth,
   }
 
   return (

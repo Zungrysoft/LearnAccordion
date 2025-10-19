@@ -11,6 +11,7 @@ import { useSettings } from '../context/SettingsProvider.jsx';
 import TextInput from './TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
 import CheckBox from './CheckBox.js';
+import Metronome from './Metronome.js';
 
 export default function ExercisesPage() {
   const { colorBackground, colorText } = useTheme();
@@ -71,7 +72,7 @@ export default function ExercisesPage() {
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px', borderBottom: `2px solid ${colorText}`}}>
-        <SettingsGroup title="Filter Exercises" scale={2}>
+        <SettingsGroup title="Filter Exercises" scale={3}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: 'start', gap: "0px", padding: '0px' }}>
             <RadioButtons
               options={[
@@ -115,6 +116,9 @@ export default function ExercisesPage() {
             placeholder="Search"
           />
         </SettingsGroup>
+        <SettingsGroup title="Metronome" scale={2} minWidth="400px">
+          <Metronome/>
+        </SettingsGroup>
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', minHeight: 0, flex: 1 }}>
         <ExerciseEntryList exercises={exercisesMainColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
@@ -131,7 +135,7 @@ export default function ExercisesPage() {
           {selectedExerciseId && (
             <>
               <h4 style={{ fontSize: 30, color: colorText }}>{exerciseData[selectedExerciseId]?.title}</h4>
-              <p>{exerciseData[selectedExerciseId]?.description}</p>
+              <p style={{ color: colorText }}>{exerciseData[selectedExerciseId]?.description}</p>
               <CheckBox
                 text="Pin exercise:"
                 onChange={(val) => setLessonPinned(selectedExerciseId, val)}

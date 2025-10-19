@@ -126,10 +126,10 @@
             ["advanced_chord_theory"]
         ]
     },
-    "irregular_time_signatures": {
+    "irregular_time_signatures_1": {
         "title": "Irregular Time Signatures",
         "video_url": "",
-        "description": "5/4, 7/8, and 9/8 aksak",
+        "description": "5/4 and 7/8",
         "x": -1.0,
         "y_offset": 0,
         "type": "technique",
@@ -137,12 +137,23 @@
             ["bass_buttons_4"]
         ]
     },
+    "irregular_time_signatures_2": {
+        "title": "More Irregular Time Signatures",
+        "video_url": "",
+        "description": "9/8, 13/8, and Balkan grooves",
+        "x": -1.0,
+        "y_offset": 0,
+        "type": "technique",
+        "prerequisites": [
+            ["irregular_time_signatures_1"]
+        ]
+    },
     "bass_buttons_5": {
         "title": "Bass Buttons #5",
         "video_url": "",
         "description": "Four and five buttons jumps.\nMore chord progressions.\nCombining basslines with Alternating Bass.",
         "x": -0.9,
-        "y_offset": 0,
+        "y_offset": 1,
         "type": "technique",
         "prerequisites": [
             ["bass_button_basslines"],
