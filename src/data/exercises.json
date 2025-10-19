@@ -113,7 +113,7 @@
     "alternating_bass_1_4_5_1": {
         "title": "i-iv-V7-i Progression",
         "search_text": "Alternating Bass",
-        "description": "Practice playing a i-iv-V7-i progression. Do two bars on each chord before moving to the next chord. Repeat.\n\nOnce comfortable, swap the V chord with a V7 chord. (Play the 7th chord button instead of the major chord button.)",
+        "description": "Practice playing a i-iv-V-i progression. Do two bars on each chord before moving to the next chord. Repeat.\n\nOnce comfortable, swap the V chord with a V7 chord. (Play the 7th chord button instead of the major chord button.)",
         "video_timestamp_seconds": 0,
         "image": "",
         "hand": "left",
@@ -156,7 +156,7 @@
         "lesson": "bass_buttons_4"
     },
     "alternating_bass_piano_man": {
-        "title": "Piano Man Verse Chord Progression",
+        "title": "Piano Man Chord Progression",
         "search_text": "Alternating Bass Counterbass",
         "description": "Practice playing the chord progression from the verse of Piano Man. See below for the structure.",
         "video_timestamp_seconds": 0,

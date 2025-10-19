@@ -291,6 +291,7 @@ export default function Metronome() {
               type="number"
               min={0}
               max={1000}
+              step={5}
               value={bpm}
               placeholder="Enter value"
               onChange={(e) => setBpm(e.target.value)}

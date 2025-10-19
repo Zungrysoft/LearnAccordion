@@ -169,7 +169,7 @@ function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise 
       flexGrow: 0,
       flexShink: 2,
       minWidth: '300px',
-      overflowY: 'auto',
+      overflowY: 'scroll',
       height: '100%',
       backgroundColor: colorBackgroundDark,
       borderRight: `2px solid ${colorText}`,

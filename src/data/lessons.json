@@ -519,8 +519,10 @@
         "description": "Lydian, Mixolydian, Dorian, Phrygian, and Phrygian Dominant",
         "x": 0.6,
         "y_offset": 0.5,
+        "connector_bendiness": 4.5,
         "type": "technique",
         "prerequisites": [
+            ["chord_theory"],
             ["gate_1a"]
         ]
     },
