@@ -34,7 +34,7 @@
 // }
 
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import RadioButtons from "./RadioButtons";
 import { useLessonState } from "../context/LessonStateProvider";
 import { useSettings } from "../context/SettingsProvider";
@@ -136,6 +136,7 @@ export default function Metronome() {
   const currentBeatRef = useRef(0);
   const schedulerTimerRef = useRef(null);
   const volumeRef = useRef(volume);
+  const timeoutsRef = useRef([]);
 
   const lookahead = 25.0;
   const scheduleAheadTime = 0.2;
@@ -197,7 +198,7 @@ export default function Metronome() {
     const audioCtx = audioCtxRef.current;
     if (!audioCtx) return;
     const msUntil = Math.max(0, (scheduledTime - audioCtx.currentTime) * 1000);
-    window.setTimeout(() => {
+    const id = window.setTimeout(() => {
       let visibleActiveBeat = 0;
       for (let i = 0; i <= beatIndex; i ++) {
         if (timeSignatures[timeSignature].beats[i] !== 0) {
@@ -206,6 +207,7 @@ export default function Metronome() {
       }
       setVisibleActiveBeat(Math.max(visibleActiveBeat - 1, 0));
     }, msUntil);
+    timeoutsRef.current.push(id);
   };
 
   const scheduler = () => {
@@ -226,6 +228,15 @@ export default function Metronome() {
     }
   };
 
+  const stop = useCallback(() => {
+    if (schedulerTimerRef.current) {
+      clearInterval(schedulerTimerRef.current);
+      schedulerTimerRef.current = null;
+    }
+    timeoutsRef.current.forEach(clearTimeout);
+    timeoutsRef.current = [];
+  }, []);
+
   useEffect(() => {
     if (isPlaying) {
       initAudio();
@@ -236,16 +247,10 @@ export default function Metronome() {
       schedulerTimerRef.current = window.setInterval(scheduler, lookahead);
 
       return () => {
-        if (schedulerTimerRef.current) {
-          clearInterval(schedulerTimerRef.current);
-          schedulerTimerRef.current = null;
-        }
+        stop();
       };
     } else {
-      if (schedulerTimerRef.current) {
-        clearInterval(schedulerTimerRef.current);
-        schedulerTimerRef.current = null;
-      }
+      stop();
     }
   }, [isPlaying, bpm, timeSignature]);
 
@@ -312,7 +317,7 @@ export default function Metronome() {
           </div>
         </label>
 
-        <label style={{ width: "120px" }}>
+        <label style={{ width: "140px" }}>
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
             <div style={{ fontSize: "14px", color: colorText }}>Volume</div>
             <input
