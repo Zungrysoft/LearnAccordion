@@ -10,47 +10,29 @@ import SettingsGroup from './SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 import TextInput from './TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
+import CheckBox from './CheckBox.js';
 
 export default function ExercisesPage() {
-  const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+  const { colorBackground, colorText } = useTheme();
   const {
     showLockedExercises,
     setShowLockedExercises,
     showHiddenSongs,
   } = useSettings();
-  const { lessonState, lessonData } = useLessonState();
+  const { lessonState, setLessonPinned } = useLessonState();
 
   const [filterText, setFilterText] = useState("");
+  const [selectedExerciseId, setSelectedExercise] = useState(null);
   const exercises = Object.entries(exerciseData).map(([key, value]) => ({ ...value, id: key }));
-
-  const isExerciseUnlocked = useCallback((exercise) => {
-      if (!exercise.lesson) {
-        return true;
-      }
-
-      return !!lessonState[exercise.lesson]?.unlocked;
-    }, [lessonState])
-  
-  const getExerciseBackgroundColor = useCallback((exercise) => {
-    if (exercise.is_hidden) {
-      return colorBackgroundDarker;
-    }
-    if (lessonState[exercise.id]?.completed) {
-      return colorBackgroundLight;
-    }
-    if (isExerciseUnlocked(exercise)) {
-      return colorBackground;
-    }
-    return colorBackgroundDark;
-  }, [lessonState, isExerciseUnlocked, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
 
   let filteredExercises = exercises;
   if (!showHiddenSongs) {
     filteredExercises = filteredExercises.filter((exercise) => !exercise.is_hidden)
   }
   if (!showLockedExercises) {
-    filteredExercises = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned || isExerciseUnlocked(exercise))
+    filteredExercises = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned || lessonState[exercise.lesson]?.unlocked)
   }
+  const noExercisesUnlocked = filteredExercises.length === 0;
   if (filterText.length > 0) {
     filteredExercises = filteredExercises.filter((exercise) => {
       for (const filterWord of filterText.split(" ")) {
@@ -67,23 +49,103 @@ export default function ExercisesPage() {
     })
   }
 
+  const exercisesMainColumn = filteredExercises.filter((exercise) => !lessonState[exercise.id]?.pinned) || [];
+  const exercisesPinnedColumn = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned) || [];
+  const hasAnyPinnedExercises = exercises.some((exercise) => lessonState[exercise.id]?.pinned)
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <div style={{ flex: 2, overflowY: 'auto', margin: '16px' }}>
-        {filteredExercises.map((exercise) => (
-          <div key={exercise.id}>
-            <ExerciseEntryTitle
-              title={exercise.title}
-            />
-            </div>
-        ))}
+    <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px', borderBottom: `2px solid ${colorText}`, }}>
+        <SettingsGroup title="Filter Exercises" scale={2}>
+          <RadioButtons
+            options={[
+              { value: true, label: 'Show locked exercises' },
+            ]}
+            selectedOption={showLockedExercises}
+            onChange={() => setShowLockedExercises((prev) => !prev)}
+            isCheckbox
+          />
+          <TextInput
+            value={filterText}
+            onChange={setFilterText}
+            onClear={() => setFilterText("")}
+            placeholder="Search"
+          />
+        </SettingsGroup>
       </div>
-      <div style={{ flex: 1, minWidth: '640px', overflowY: 'auto', margin: '16px'  }}>
-        DSA
+      <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
+        <ExerciseEntryList exercises={exercisesMainColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
+        {hasAnyPinnedExercises &&
+          <ExerciseEntryList exercises={exercisesPinnedColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
+        }
+        <div style={{
+          flex: 1,
+          overflowY: 'auto',
+          padding: '16px',
+          backgroundColor: colorBackground,
+          height: '100%',
+        }}>
+          {selectedExerciseId && (
+            <>
+              <h4 style={{ fontSize: 30, color: colorText }}>{exerciseData[selectedExerciseId]?.title}</h4>
+              <p>{exerciseData[selectedExerciseId]?.description}</p>
+              <CheckBox
+                text="Pin exercise:"
+                onChange={(val) => setLessonPinned(selectedExerciseId, val)}
+                checked={lessonState[selectedExerciseId]?.pinned}
+                textColor={colorText}
+            />
+            </>
+          )}
+        </div>
       </div>
     </div>
   )
 };
+
+function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise }) {
+  const { lessonState } = useLessonState();
+  const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+
+  const getExerciseBackgroundColor = useCallback((exercise) => {
+    if (exercise.id === selectedExerciseId) {
+      return colorBackground;
+    }
+    if (exercise.is_hidden) {
+      return colorBackgroundDarker;
+    }
+    return colorBackgroundDark;
+  }, [selectedExerciseId, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
+
+  return (
+    <div style={{
+      flexGrow: 0,
+      flexShink: 2,
+      minWidth: '300px',
+      overflowY: 'auto',
+      backgroundColor: colorBackgroundDark,
+      borderRight: `2px solid ${colorText}`,
+    }}>
+      {exercises.length === 0 ? (
+        <p style={{ textAlign: "center", margin: '16px' }}>{`There are no exercises here\nthat match your filters.`}</p>
+      ) : exercises.map((exercise) => (
+        <div
+          key={exercise.id}
+          onClick={() => setSelectedExercise(exercise.id)}
+          style={{ padding: '8px', cursor: 'pointer', backgroundColor: getExerciseBackgroundColor(exercise) }}
+        >
+          <ExerciseEntryTitle
+            title={exercise.title}
+            pinned={lessonState[exercise.id]?.pinned}
+            completed={lessonState[exercise.id]?.completed}
+            hidden={exercise.is_hidden}
+            locked={!lessonState[exercise.lesson]?.unlocked}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function ExerciseEntryTitle({ title, pinned, completed, locked, hidden }) {
   const { colorText, filterIcon } = useTheme();

@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import lessonData from '../data/lessons.json';
+import exerciseData from '../data/exercises.json';
 import songData from '../data/songs.json';
 import { buildLessonStates, processLessonData } from '../helpers/progression';
 import { useSettings } from './SettingsProvider';
@@ -51,7 +52,13 @@ export function LessonStateProvider({ children }) {
             pinned: !!(rawLessonState[songId]?.pinned),
         }
     }
-    
+
+    for (const exerciseId in exerciseData) {
+        builtLessonState[exerciseId] = {
+            completed: !!(rawLessonState[exerciseId]?.completed),
+            pinned: !!(rawLessonState[exerciseId]?.pinned),
+        }
+    }
 
     const saveLessonState = useCallback((newState) => {
         setRawLessonState(newState);
@@ -81,15 +88,17 @@ export function LessonStateProvider({ children }) {
         })
     )
 
-    const setLessonPinned = (lessonId, newState) => (
-        saveLessonState({
-            ...rawLessonState,
-            [lessonId]: {
-                ...rawLessonState[lessonId] ?? {},
-                pinned: newState,
-            }
-        })
-    )
+    const setLessonPinned = (lessonId, newState) => {
+        return (
+            saveLessonState({
+                ...rawLessonState,
+                [lessonId]: {
+                    ...rawLessonState[lessonId] ?? {},
+                    pinned: newState,
+                }
+            })
+        );
+    }
 
     
 

@@ -1,13 +1,43 @@
 {
+    "scales_c_major": {
+        "title": "C Major Scale",
+        "description": "Start on C, then walk up the C Major Scale until you hit the octave note. Then go back down until you hit the root note. Repeat.",
+        "video_timestamp_seconds": 0,
+        "lesson": "major_scale"
+    },
+    "scales_major": {
+        "title": "All Major Scales",
+        "description": "Walk up the Major Scale across three octaves. When you hit the top note, go back down until you hit the root note. Repeat. Do this in a variety of keys.",
+        "video_timestamp_seconds": 0,
+        "lesson": "c_system"
+    },
+    "scales_natural_minor": {
+        "title": "Natural Minor Scales",
+        "description": "Walk up the Natural Minor Scale across three octaves. When you hit the top note, go back down until you hit the root note. Repeat. Do this in a variety of keys.",
+        "video_timestamp_seconds": 0,
+        "lesson": "minor_scale"
+    },
+    "scales_harmonic_minor": {
+        "title": "Harmonic Minor Scales",
+        "description": "Walk up the Harmonic Minor Scale across three octaves. When you hit the top note, go back down until you hit the root note. Repeat. Do this in a variety of keys.",
+        "video_timestamp_seconds": 0,
+        "lesson": "minor_scale"
+    },
+    "scales_chromatic": {
+        "title": "Chromatic Scale",
+        "description": "Walk up the Chromatic Scale across the entire keyboard. When you hit the top note, go back down until you hit the bottom note. Repeat.",
+        "video_timestamp_seconds": 0,
+        "lesson": "minor_scale"
+    },
     "bass_scales_major": {
         "title": "Bass Buttons Major Scale",
-        "description": "Play up the Major Scale until you hit the root note again. Then go back down until you hit the root note. Repeat.",
+        "description": "Play up the Major Scale until you hit the root note again. Then go back down until you hit the root note. Repeat.\n\nDo this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.",
         "video_timestamp_seconds": 0,
         "lesson": "bass_button_bass_scales"
     },
     "bass_scales_minor": {
         "title": "Bass Buttons Minor Scale",
-        "description": "Play up the Minor Scale until you hit the root note again. Then go back down until you hit the root note. Repeat. Do this in two different ways: With the root note on the counterbass row and with the root note on the bass row.",
+        "description": "Play up the Minor Scale until you hit the root note again. Then go back down until you hit the root note. Repeat.\n\nDo this in two different ways: With the root note on the counterbass row and with the root note on the bass row. And do this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.",
         "video_timestamp_seconds": 0,
         "lesson": "bass_button_bass_scales"
     }
