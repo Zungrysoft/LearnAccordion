@@ -18,6 +18,12 @@ export default function ExercisesPage() {
     showLockedExercises,
     setShowLockedExercises,
     showHiddenSongs,
+    showRightHandExercises,
+    setShowRightHandExercises,
+    showLeftHandExercises,
+    setShowLeftHandExercises,
+    showTwoHandExercises,
+    setShowTwoHandExercises,
   } = useSettings();
   const { lessonState, setLessonPinned } = useLessonState();
 
@@ -33,6 +39,15 @@ export default function ExercisesPage() {
     filteredExercises = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned || lessonState[exercise.lesson]?.unlocked)
   }
   const noExercisesUnlocked = filteredExercises.length === 0;
+  if (!showRightHandExercises) {
+    filteredExercises = filteredExercises.filter((exercise) => exercise.hand === 'right')
+  }
+  if (!showLeftHandExercises) {
+    filteredExercises = filteredExercises.filter((exercise) => exercise.hand === 'left')
+  }
+  if (!showTwoHandExercises) {
+    filteredExercises = filteredExercises.filter((exercise) => exercise.hand === 'both')
+  }
   if (filterText.length > 0) {
     filteredExercises = filteredExercises.filter((exercise) => {
       for (const filterWord of filterText.split(" ")) {
@@ -57,6 +72,35 @@ export default function ExercisesPage() {
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px', borderBottom: `2px solid ${colorText}`, }}>
         <SettingsGroup title="Filter Exercises" scale={2}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: 'start', gap: "0px", padding: '0px' }}>
+            <RadioButtons
+              options={[
+                { value: true, label: 'Show right hand exercises' },
+              ]}
+              selectedOption={showRightHandExercises}
+              onChange={() => setShowRightHandExercises((prev) => !prev)}
+              isCheckbox
+            />
+            <RadioButtons
+              options={[
+                { value: true, label: 'Show left hand exercises' },
+              ]}
+              selectedOption={showLeftHandExercises}
+              onChange={() => setShowLeftHandExercises((prev) => {
+                console.log(prev, !prev)
+                return !prev;
+              })}
+              isCheckbox
+            />
+            <RadioButtons
+              options={[
+                { value: true, label: 'Show two-handed exercises' },
+              ]}
+              selectedOption={showTwoHandExercises}
+              onChange={() => setShowTwoHandExercises((prev) => !prev)}
+              isCheckbox
+            />
+          </div>
           <RadioButtons
             options={[
               { value: true, label: 'Show locked exercises' },
