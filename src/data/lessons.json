@@ -41,10 +41,10 @@
     },
 
 
-    "bass_buttons": {
+    "bass_buttons_1": {
         "title": "Intro to the Bass Buttons",
         "video_url": "",
-        "description": "Learn your first bass pattern.\nSimple 4/4 oompah in C major.",
+        "description": "Learn your first bass pattern.\nSimple 4/4 Alternating Bass pattern in C major.",
         "x": -0.6,
         "type": "technique",
         "prerequisites": [
@@ -54,11 +54,11 @@
     "bass_buttons_2": {
         "title": "Bass Buttons #2",
         "video_url": "",
-        "description": "6/8 oompah.\nOther keys.\nPressing the bass and chord button at the same time.",
+        "description": "6/8 Alternating Bass.\nOther keys.\nPressing the bass and chord button at the same time.",
         "x": -0.6,
         "type": "technique",
         "prerequisites": [
-            ["bass_buttons"]
+            ["bass_buttons_1"]
         ]
     },
     "bass_button_movement": {
@@ -68,7 +68,7 @@
         "x": -0.4,
         "type": "technique",
         "prerequisites": [
-            ["bass_buttons"]
+            ["bass_buttons_1"]
         ]
     },
     "stradella_system": {
@@ -78,7 +78,7 @@
         "x": -0.8,
         "type": "instrument",
         "prerequisites": [
-            ["bass_buttons"]
+            ["bass_buttons_1"]
         ]
     },
     "accordion_internals": {
@@ -140,7 +140,7 @@
     "bass_buttons_5": {
         "title": "Bass Buttons #5",
         "video_url": "",
-        "description": "Four and five buttons jumps.\nMore chord progressions.\nCombining basslines with oompah.",
+        "description": "Four and five buttons jumps.\nMore chord progressions.\nCombining basslines with Alternating Bass.",
         "x": -0.9,
         "y_offset": 0,
         "type": "technique",
@@ -221,7 +221,7 @@
     "two_handed_playing_3": {
         "title": "Two-Handed Playing #3",
         "video_url": "",
-        "description": "Playing the oom-pah pattern with a melody on top.\nMary Had a Little Lamb: Two-handed version.",
+        "description": "Playing the Alternating Bass pattern with a melody on top.\nMary Had a Little Lamb: Two-handed version.",
         "x": -0.3,
         "type": "technique",
         "prerequisites": [

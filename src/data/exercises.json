@@ -1,51 +1,167 @@
 {
     "scales_c_major": {
-        "title": "C Major Scale",
-        "description": "Start on C, then walk up the C Major Scale until you hit the octave note. Then go back down until you hit the root note. Repeat.",
+        "title": "Major Scales",
+        "search_text": "",
+        "description": "Start on C, then walk up the C Major Scale until you hit the octave note. Then go back down until you hit the root note. Repeat.\n\nOnce comfortable with this, try starting from different notes, walking up in the same pattern.",
         "video_timestamp_seconds": 0,
+        "image": "",
         "hand": "right",
         "lesson": "major_scale"
     },
-    "scales_major": {
-        "title": "All Major Scales",
-        "description": "Walk up the Major Scale across three octaves. When you hit the top note, go back down until you hit the root note. Repeat. Do this in a variety of keys.",
-        "video_timestamp_seconds": 0,
-        "hand": "right",
-        "lesson": "c_system"
-    },
     "scales_natural_minor": {
         "title": "Natural Minor Scales",
+        "search_text": "",
         "description": "Walk up the Natural Minor Scale across three octaves. When you hit the top note, go back down until you hit the root note. Repeat. Do this in a variety of keys.",
         "video_timestamp_seconds": 0,
+        "image": "",
         "hand": "right",
         "lesson": "minor_scale"
     },
     "scales_harmonic_minor": {
         "title": "Harmonic Minor Scales",
+        "search_text": "",
         "description": "Walk up the Harmonic Minor Scale across three octaves. When you hit the top note, go back down until you hit the root note. Repeat. Do this in a variety of keys.",
         "video_timestamp_seconds": 0,
+        "image": "",
         "hand": "right",
         "lesson": "minor_scale"
     },
     "scales_chromatic": {
         "title": "Chromatic Scale",
+        "search_text": "",
         "description": "Walk up the Chromatic Scale across the entire keyboard. When you hit the top note, go back down until you hit the bottom note. Repeat.",
         "video_timestamp_seconds": 0,
+        "image": "",
         "hand": "right",
         "lesson": "minor_scale"
     },
+
+
+
+    "alternating_bass_4/4_in_c_major": {
+        "title": "Alternating Bass 4/4 in C Major",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a 4/4 Alternating Bass. Play the dimpled C bass note, then the C chord note, the G bass note, the C chord note, repeat.\n\nMake sure to start slow and build speed as you improve. Remember, it's better to play slowly than poorly!\n\nOnce comfortable, do this exercise to a metronome to ensure you get the timing correct.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_1"
+    },
+    "alternating_bass_4/4": {
+        "title": "Alternating Bass 4/4",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a 4/4 Alternating Bass. Do this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_2"
+    },
+    "alternating_bass_4/4_minor": {
+        "title": "Alternating Bass 4/4 Minor",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a 4/4 Alternating Bass. Do this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_2"
+    },
+    "alternating_bass_4/4_with_double_button": {
+        "title": "Alt. Bass 4/4 w/ Double Button",
+        "search_text": "Alternating Bass",
+        "description": "Play a 4/4 Alternating Bass pattern with the addition of hitting both the bass and chord buttons at the end of the bar. Do this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.\n\nOnce comfortable, do this exercise to a metronome.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_2"
+    },
+    "alternating_bass_6/8": {
+        "title": "Alternating Bass 6/8",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a 6/8 Alternating Bass. Do this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.\n\nOnce comfortable, do this exercise to a metronome.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_2"
+    },
+    "alternating_bass_1_4_1_5": {
+        "title": "I-IV-I-V Progression",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a I-IV-I-V progression. Do two bars on each chord before moving to the next chord. Repeat.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_button_movement"
+    },
+    "alternating_bass_6/8_minor": {
+        "title": "Alternating Bass 6/8 Minor",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a 6/8 Alternating Bass using the minor bass buttons.\nOnce comfortable, move between the I, IV, and V chords.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_3"
+    },
+    "alternating_bass_4/4_with_counterbass": {
+        "title": "Alternating Bass 4/4",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a 4/4 Alternating Bass using counterbass button in place of the 5th-base button.\nOnce comfortable, go back and forth between using the 5th-bass button and the counterbass button. (In other words, do the 5th-bass button on odd bars and the counterbass button on even bars.)",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_3"
+    },
+    "alternating_bass_1_4_5_1": {
+        "title": "i-iv-V7-i Progression",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a i-iv-V7-i progression. Do two bars on each chord before moving to the next chord. Repeat.\n\nOnce comfortable, swap the V chord with a V7 chord. (Play the 7th chord button instead of the major chord button.)",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_3"
+    },
+    "alternating_bass_1_5_4_5": {
+        "title": "I-V-IV-V Progression w/ Counterbass",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a I-V-IV-V progression. Do half a bar on each chord before moving to the next chord. Repeat.\n\nOnce comfortable, play the counterbass button instead of the fifth-bass button for the first V chord and for the IV chord.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_3"
+    },
     "bass_scales_major": {
         "title": "Bass Buttons Major Scale",
+        "search_text": "",
         "description": "Play up the Major Scale until you hit the root note again. Then go back down until you hit the root note. Repeat.\n\nDo this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.",
         "video_timestamp_seconds": 0,
+        "image": "",
         "hand": "left",
         "lesson": "bass_button_bass_scales"
     },
     "bass_scales_minor": {
         "title": "Bass Buttons Minor Scale",
+        "search_text": "",
         "description": "Play up the Minor Scale until you hit the root note again. Then go back down until you hit the root note. Repeat.\n\nDo this in two different ways: With the root note on the counterbass row and with the root note on the bass row. And do this in a variety of different keys on both ends of the stradella keyboard so that you build muscle memory for all left-hand positions.",
         "video_timestamp_seconds": 0,
+        "image": "",
         "hand": "left",
         "lesson": "bass_button_bass_scales"
+    },
+    "alternating_bass_tin_street_busker": {
+        "title": "Tin Street Busker Progression",
+        "search_text": "Alternating Bass",
+        "description": "Practice playing a I-vi-II-V progression in 6/8. See below for the structure.\n\nOnce comfortable, do a more advanced version of the progression: I-vi-II7-V-IV-V. Once again, see below for the structure.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_4"
+    },
+    "alternating_bass_piano_man": {
+        "title": "Piano Man Verse Chord Progression",
+        "search_text": "Alternating Bass Counterbass",
+        "description": "Practice playing the chord progression from the verse of Piano Man. See below for the structure.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "left",
+        "lesson": "bass_buttons_4"
     }
 }

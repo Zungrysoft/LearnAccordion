@@ -40,13 +40,13 @@ export default function ExercisesPage() {
   }
   const noExercisesUnlocked = filteredExercises.length === 0;
   if (!showRightHandExercises) {
-    filteredExercises = filteredExercises.filter((exercise) => exercise.hand === 'right')
+    filteredExercises = filteredExercises.filter((exercise) => exercise.hand !== 'right')
   }
   if (!showLeftHandExercises) {
-    filteredExercises = filteredExercises.filter((exercise) => exercise.hand === 'left')
+    filteredExercises = filteredExercises.filter((exercise) => exercise.hand !== 'left')
   }
   if (!showTwoHandExercises) {
-    filteredExercises = filteredExercises.filter((exercise) => exercise.hand === 'both')
+    filteredExercises = filteredExercises.filter((exercise) => exercise.hand !== 'both')
   }
   if (filterText.length > 0) {
     filteredExercises = filteredExercises.filter((exercise) => {
@@ -70,7 +70,7 @@ export default function ExercisesPage() {
 
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
-      <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px', borderBottom: `2px solid ${colorText}`, }}>
+      <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px', borderBottom: `2px solid ${colorText}`}}>
         <SettingsGroup title="Filter Exercises" scale={2}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: 'start', gap: "0px", padding: '0px' }}>
             <RadioButtons
@@ -87,7 +87,6 @@ export default function ExercisesPage() {
               ]}
               selectedOption={showLeftHandExercises}
               onChange={() => setShowLeftHandExercises((prev) => {
-                console.log(prev, !prev)
                 return !prev;
               })}
               isCheckbox
@@ -117,7 +116,7 @@ export default function ExercisesPage() {
           />
         </SettingsGroup>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'row', minHeight: 0, flex: 1 }}>
         <ExerciseEntryList exercises={exercisesMainColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
         {hasAnyPinnedExercises &&
           <ExerciseEntryList exercises={exercisesPinnedColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
@@ -127,7 +126,7 @@ export default function ExercisesPage() {
           overflowY: 'auto',
           padding: '16px',
           backgroundColor: colorBackground,
-          height: '100%',
+          minHeight: 0,
         }}>
           {selectedExerciseId && (
             <>
@@ -167,6 +166,7 @@ function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise 
       flexShink: 2,
       minWidth: '300px',
       overflowY: 'auto',
+      height: '100%',
       backgroundColor: colorBackgroundDark,
       borderRight: `2px solid ${colorText}`,
     }}>
@@ -181,17 +181,16 @@ function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise 
           <ExerciseEntryTitle
             title={exercise.title}
             pinned={lessonState[exercise.id]?.pinned}
-            completed={lessonState[exercise.id]?.completed}
+            active={lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)}
             hidden={exercise.is_hidden}
-            locked={!lessonState[exercise.lesson]?.unlocked}
-          />
+            locked={!lessonState[exercise.lesson]?.unlocked} />
         </div>
       ))}
     </div>
   );
 }
 
-function ExerciseEntryTitle({ title, pinned, completed, locked, hidden }) {
+function ExerciseEntryTitle({ title, pinned, active, locked, hidden }) {
   const { colorText, filterIcon } = useTheme();
 
   return (
@@ -207,18 +206,19 @@ function ExerciseEntryTitle({ title, pinned, completed, locked, hidden }) {
           }}
         />
       )}
-      {completed && (
+      {active && (!pinned) && (
         <img
-          src={`${process.env.PUBLIC_URL}/icon/check.png`}
+          src={`${process.env.PUBLIC_URL}/icon/pointer.png`}
           alt=""
           style={{
-            width: '16px',
-            height: '16px',
+            width: '12px',
+            height: '12px',
+            marginRight: '-6px',
             filter: filterIcon,
           }}
         />
       )}
-      {locked && (!hidden) && (!completed) && (
+      {locked && (!hidden) && (
         <img
           src={`${process.env.PUBLIC_URL}/icon/lock.png`}
           alt=""

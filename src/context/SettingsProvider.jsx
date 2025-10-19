@@ -65,30 +65,6 @@ export function SettingsProvider({ children }) {
     // Write to localstorage whenever a setting is changed
     useEffect(() => localStorage.setItem("lessonSettings", JSON.stringify(settings)), [settings]);
 
-    // const theme = settings?.theme ?? defaultContext.theme;
-    // const setTheme = useCallback((value) => changeSetting('theme', value), [changeSetting]);
-
-    // const songSortMode = settings?.songSortMode ?? defaultContext.songSortMode;
-    // const setSongSortMode = useCallback((value) => changeSetting('songSortMode', value), [changeSetting]);
-
-    // const filterHandsMode = settings?.filterHandsMode ?? defaultContext.filterHandsMode;
-    // const setFilterHandsMode = useCallback((value) => changeSetting('filterHandsMode', value), [changeSetting]);
-
-    // const filterVocalsMode = settings?.filterVocalsMode ?? defaultContext.filterVocalsMode;
-    // const setFilterVocalsMode = useCallback((value) => changeSetting('filterVocalsMode', value), [changeSetting]);
-
-    // const showLockedSongs = settings?.showLockedSongs ?? defaultContext.showLockedSongs;
-    // const setShowLockedSongs = useCallback((value) => changeSetting('showLockedSongs', value), [changeSetting]);
-
-    // const showHiddenSongs = settings?.showHiddenSongs ?? defaultContext.showHiddenSongs;
-    // const setShowHiddenSongs = useCallback((value) => changeSetting('showHiddenSongs', value), [changeSetting]);
-
-    // const showLockedLessons = settings?.showLockedLessons ?? defaultContext.showLockedLessons;
-    // const setShowLockedLessons = useCallback((value) => changeSetting('showLockedLessons', value), [changeSetting]);
-
-    // const showLockedExercises = settings?.showLockedExercises ?? defaultContext.showLockedExercises;
-    // const setShowLockedExercises = useCallback((value) => changeSetting('showLockedExercises', value), [changeSetting]);
-
     const providerValue = useMemo(() => {
         const ret = {};
 
@@ -102,8 +78,6 @@ export function SettingsProvider({ children }) {
         return ret;
 
     }, [changeSetting, settings])
-
-    console.log(providerValue)
 
     return (
         <SettingsContext.Provider
