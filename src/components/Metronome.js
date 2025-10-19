@@ -322,13 +322,14 @@ export default function Metronome() {
           </button>
         </div>
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: circleGapStyle, margin: '8px', height: '16px' }}>
-          {timeSignatures[timeSignature].beats.filter(b => b !== 0).map((strength, i) => {
+          {timeSignatures[timeSignature].beats.filter(b => b !== 0).map((_strength, i) => {
             const isActive = visibleActiveBeat === i && isPlaying;
             const color = isActive ? "#22c55e" : "#f3f4f6";
             const borderColor = isActive ? "#16a34a" : "#d1d5db";
             const transform = isActive ? "scale(1.25)" : "scale(1.0)";
             return (
                 <div
+                  key={i}
                   style={{
                     ...circleBaseStyle,
                     width: circleSizeStyle,

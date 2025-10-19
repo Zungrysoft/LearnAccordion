@@ -100,7 +100,8 @@
         "prerequisites": [
             ["bass_buttons_2"],
             ["bass_button_movement"],
-            ["stradella_system"]
+            ["stradella_system"],
+            ["scale_theory"]
         ]
     },
     "bass_buttons_4": {
@@ -178,8 +179,7 @@
         "x": -0.45,
         "type": "technique",
         "prerequisites": [
-            ["bass_buttons_3"],
-            ["scale_theory"]
+            ["bass_buttons_3"]
         ]
     },
     "bass_button_basslines": {
@@ -193,14 +193,15 @@
             ["bass_button_bass_scales"]
         ]
     },
-    "bass_button_basslines_2": {
-        "title": "Intermediate Basslines",
+    "two_handed_basslines": {
+        "title": "Two-Handed Bass Scale Exercises",
         "video_url": "",
         "description": "Play more complex basslines.",
         "x": -0.55,
         "type": "technique",
         "prerequisites": [
-            ["bass_button_basslines"]
+            ["bass_button_bass_scales"],
+            ["two_handed_playing_2"]
         ]
     },
 
@@ -262,7 +263,7 @@
         "title": "Augmenting Left Hand Chords",
         "video_url": "",
         "description": "",
-        "x": -0.25,
+        "x": -0.15,
         "y_offset": 0.5,
         "type": "technique",
         "prerequisites": [
@@ -270,15 +271,27 @@
             ["gate_1b"]
         ]
     },
+    "two_part_harmony": {
+        "title": "Two-Part Harmony",
+        "video_url": "",
+        "description": "",
+        "x": -0.6,
+        "y_offset": 2,
+        "type": "technique",
+        "prerequisites": [
+            ["bass_button_basslines"],
+            ["two_handed_basslines"]
+        ]
+    },
     "walking_bass": {
         "title": "Walking Bass",
         "video_url": "",
         "description": "",
-        "x": -0.5,
+        "x": -0.3,
         "type": "technique",
         "prerequisites": [
-            ["bass_button_basslines"],
             ["intermediate_right_hand_chords"],
+            ["two_part_harmony"],
             ["gate_1b"]
         ]
     },
@@ -298,7 +311,7 @@
         "title": "Intermediate Two-Handed Exercises #1",
         "video_url": "",
         "description": "",
-        "x": -0.7,
+        "x": -0.5,
         "type": "technique",
         "prerequisites": [
             ["gate_1b"]
@@ -308,7 +321,7 @@
         "title": "Intermediate Two-Handed Exercises #2",
         "video_url": "",
         "description": "",
-        "x": -0.7,
+        "x": -0.5,
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
@@ -320,7 +333,7 @@
         "title": "Intermediate Two-Handed Exercises #3",
         "video_url": "",
         "description": "",
-        "x": -0.7,
+        "x": -0.5,
         "type": "technique",
         "prerequisites": [
             ["two_handed_exercises_2"]
@@ -550,7 +563,7 @@
     "cool_tricks": {
         "title": "Some Cool Tricks",
         "video_url": "",
-        "description": "Super fast note playing",
+        "description": "Note jackhammer technique.",
         "x": 1.0,
         "type": "technique",
         "prerequisites": [
@@ -620,7 +633,7 @@
     "blues_theory": {
         "title": "The Blues",
         "video_url": "",
-        "description": "The Blues Scales, ",
+        "description": "The Blues Scales, Blues Tonality",
         "x": 0.1,
         "y_offset": 1,
         "limit_preview": true,
@@ -645,7 +658,7 @@
         "title": "Advanced Chord Theory",
         "video_url": "",
         "description": "Ninth and Thirteenth Chords\nAugmented Chords",
-        "x": -0.1,
+        "x": 0,
         "y_offset": 1,
         "limit_preview": true,
         "type": "theory",

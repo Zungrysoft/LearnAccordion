@@ -43,7 +43,7 @@ export function LessonStateProvider({ children }) {
         }
     })
 
-    const processedLessonData = useMemo(() => processLessonData(lessonData), [lessonData]);
+    const processedLessonData = useMemo(() => processLessonData(lessonData), []);
     const builtLessonState = buildLessonStates(rawLessonState, processedLessonData, points, showLockedLessons);
 
     for (const songId in songData) {
@@ -63,9 +63,9 @@ export function LessonStateProvider({ children }) {
     const saveLessonState = useCallback((newState) => {
         setRawLessonState(newState);
         localStorage.setItem("lessonState", JSON.stringify(newState))
-    })
+    }, [setRawLessonState])
 
-    const setLessonCompleted = (lessonId, newState) => (
+    const setLessonCompleted = useCallback((lessonId, newState) => (
         saveLessonState({
             ...rawLessonState,
             [lessonId]: {
@@ -73,9 +73,9 @@ export function LessonStateProvider({ children }) {
                 completed: newState,
             }
         })
-    )
+    ), [rawLessonState, saveLessonState]);
 
-    const setLessonSubtaskCompleted = (lessonId, subtask, newState) => (
+    const setLessonSubtaskCompleted = useCallback((lessonId, subtask, newState) => (
         saveLessonState({
             ...rawLessonState,
             [lessonId]: {
@@ -86,19 +86,17 @@ export function LessonStateProvider({ children }) {
                 },
             }
         })
-    )
+    ), [rawLessonState, saveLessonState]);
 
-    const setLessonPinned = (lessonId, newState) => {
-        return (
-            saveLessonState({
-                ...rawLessonState,
-                [lessonId]: {
-                    ...rawLessonState[lessonId] ?? {},
-                    pinned: newState,
-                }
-            })
-        );
-    }
+    const setLessonPinned = useCallback((lessonId, newState) => (
+        saveLessonState({
+            ...rawLessonState,
+            [lessonId]: {
+                ...rawLessonState[lessonId] ?? {},
+                pinned: newState,
+            }
+        })
+    ), [rawLessonState, saveLessonState]);
 
     
 
