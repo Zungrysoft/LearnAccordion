@@ -1628,6 +1628,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "bitter_sweet_symphony": {
+    "title": "Bitter Sweet Symphony",
+    "artist": "The Verve",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 

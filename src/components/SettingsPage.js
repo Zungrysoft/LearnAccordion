@@ -11,8 +11,8 @@ const SettingsPage = () => {
       <SettingsGroup title="Theme">
         <RadioButtons
           options={[
-            { value: 'dark', label: 'Dark Mode' },
             { value: 'light', label: 'Light Mode' },
+            { value: 'dark', label: 'Dark Mode' },
           ]}
           selectedOption={theme}
           onChange={setTheme}
