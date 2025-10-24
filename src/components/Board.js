@@ -44,7 +44,7 @@ function Board({ onOpenPage }) {
                 {Object.keys(lessonData).map((key) => (
                     lessonData[key].prerequisites.map((options) => (
                         options.map((option) => {
-                            const { optionId, pointsRequired, bendiness } = getOptionData(option);
+                            const { optionId, pointsRequired, flipPointsPosition, bendiness } = getOptionData(option);
                             return (
                                 <Connector
                                     key={`${optionId}-${key}`}
@@ -53,6 +53,7 @@ function Board({ onOpenPage }) {
                                     state1={lessonState[optionId]}
                                     state2={lessonState[key]}
                                     pointsRequired={pointsRequired}
+                                    flipPointsPosition={flipPointsPosition}
                                     bendiness={bendiness}
                                     boardSize={boardSize}
                                 />

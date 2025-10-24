@@ -12,7 +12,7 @@ function curvePoint(p, bendiness) {
     return (Math.tanh((p - 0.5) * bendiness) * 0.5) + 0.5
 }
 
-function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired, boardSize }) {
+function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired, flipPointsPosition, boardSize }) {
     const { colorConnector, colorConnectorCompleted } = useTheme();
     const { points } = useLessonState();
     const isMobile = useIsMobile();
@@ -42,10 +42,12 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
     // Special early exit case for if the line is completely vertical
     if (x1 === x2) {
         const size = Math.abs(y1-y2);
+        const lockLineHeight = lesson2.is_connector ? 0.7 : 0.5;
         const textPos = [
             x1 + 1.5,
-            Math.min(y1, y2) + (Math.abs(y1 - y2) / 2) + h,
+            Math.min(y1, y2) + (Math.abs(y1 - y2) * lockLineHeight) + h,
         ];
+        const llhp = `${lockLineHeight * 100}%`;
         return (
             <>
                 <svg style={{
@@ -57,10 +59,17 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
                     top: isMobile ? 100-x1-(size/2)+v(isMobile) : v(Math.min(y1, y2)+h),
                     transform: isMobile ? 'rotate(90deg) translate(25%, 25%)' : '',
                 }}>
-                    <line x1="50%" y1="0%" x2="50%" y2="50%" stroke={color1} strokeWidth="2" />
-                    <line x1="50%" y1="50%" x2="50%" y2="100%" stroke={color2} strokeWidth="2" />
+                    <line x1="50%" y1="0%" x2="50%" y2={llhp} stroke={color1} strokeWidth="2" />
+                    <line x1="50%" y1={llhp} x2="50%" y2="100%" stroke={color2} strokeWidth="2" />
                     {pointsRequired > 0 && (
-                        <line x1="calc(50% - 10px)" y1="50%" x2="calc(50% + 10px)" y2="50%" stroke={color2} strokeWidth="2" />
+                        <line
+                            x1="calc(50% - 10px)"
+                            y1={llhp}
+                            x2="calc(50% + 10px)"
+                            y2={llhp}
+                            stroke={color2}
+                            strokeWidth="2"
+                        />
                     )}
                 </svg>
                 {pointsRequired > 0 && (
@@ -128,9 +137,10 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
     ];
     const len = Math.sqrt(deltaVector[0]**2 + deltaVector[1]**2);
     const dirVectorOrientation = (x1-x2 < 0) !== (y1-y2 < 0) ? -1 : 1;
+    const dirVectorFlip = flipPointsPosition ? -1 : 1;
     const dirVector = [
-        (deltaVector[0] / len) * dirVectorOrientation,
-        (deltaVector[1] / len) * dirVectorOrientation,
+        (deltaVector[0] / len) * dirVectorOrientation * dirVectorFlip,
+        (deltaVector[1] / len) * dirVectorOrientation * dirVectorFlip,
     ];
     const pos = [
         line1.x2 * 100,
@@ -183,7 +193,7 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
                     position: "absolute",
                     left: v(textPos[0]),
                     top: v(textPos[1]),
-                    transform: "translate(-50%, 0%)",
+                    transform: flipPointsPosition ? "translate(-50%, -100%)" : "translate(-50%, 0%)",
                 }}>
                     <h2 style={{ color: enoughPoints ? colorConnectorCompleted : colorConnector, fontSize: 14, margin: 0}}>{pointsRequired}</h2>
                     <IconStar width={14} color={enoughPoints ? colorConnectorCompleted : colorConnector} />

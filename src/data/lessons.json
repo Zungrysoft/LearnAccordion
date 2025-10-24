@@ -264,21 +264,13 @@
         ]
     },
     "syncopation": {
-        "title": "Syncopated Grooves",
+        "title": "Syncopation and Basic Polymeter",
         "video_url": "",
         "description": "",
-        "x": -0.2,
+        "x": -0.4,
         "type": "technique",
         "prerequisites": [
-            ["two_handed_playing_3"]
-        ]
-    },
-    "gate_1b": {
-        "x": -0.4,
-        "points_required": 25,
-        "type": "gate",
-        "prerequisites": [
-            ["two_handed_playing_3"],
+            [{ "id": "two_handed_playing_3", "points_required": 25, "flip_points_position": true }],
             ["bass_buttons_3"]
         ]
     },
@@ -291,7 +283,7 @@
         "type": "technique",
         "prerequisites": [
             ["intermediate_right_hand_chords"],
-            ["gate_1b"]
+            ["syncopation"]
         ]
     },
     "two_part_harmony": {
@@ -315,7 +307,7 @@
         "prerequisites": [
             ["intermediate_right_hand_chords"],
             ["two_part_harmony"],
-            ["gate_1b"]
+            ["syncopation"]
         ]
     },
     "two_handed_chords": {
@@ -327,7 +319,7 @@
         "type": "technique",
         "prerequisites": [
             ["intermediate_right_hand_chords"],
-            ["gate_1b"]
+            ["syncopation"]
         ]
     },
     "two_handed_exercises_1": {
@@ -337,7 +329,7 @@
         "x": -0.5,
         "type": "technique",
         "prerequisites": [
-            ["gate_1b"]
+            ["syncopation"]
         ]
     },
     "two_handed_exercises_2": {
@@ -348,8 +340,7 @@
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
-            ["two_handed_exercises_1"],
-            ["syncopation"]
+            ["two_handed_exercises_1"]
         ]
     },
     "two_handed_exercises_3": {
@@ -478,12 +469,12 @@
         ]
     },
     
-    "gate_1a": {
+    "connector_1": {
         "x": 0.6,
-        "points_required": 5,
-        "type": "gate",
+        "type": "connector",
+        "is_connector": true,
         "prerequisites": [
-            ["about_song_choice"]
+            [{ "id": "about_song_choice", "points_required": 5 }]
         ]
     },
     "sight_reading_vs_ear_training": {
@@ -503,7 +494,7 @@
         "x": 1.0,
         "type": "technique",
         "prerequisites": [
-            ["gate_1a"]
+            ["connector_1"]
         ]
     },
     "major_scale_in_sixths": {
@@ -524,7 +515,7 @@
         "y_offset": 0.25,
         "type": "technique",
         "prerequisites": [
-            ["gate_1a"]
+            ["connector_1"]
         ]
     },
     "blues_scales": {
@@ -535,7 +526,7 @@
         "y_offset": 0.5,
         "type": "technique",
         "prerequisites": [
-            ["gate_1a"],
+            ["connector_1"],
             ["improvisation"],
             ["blues_theory"]
         ]
@@ -549,7 +540,7 @@
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
-            ["gate_1a"]
+            ["connector_1"]
         ]
     },
     "right_hand_chords": {
@@ -561,18 +552,7 @@
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
-            ["gate_1a"]
-        ]
-    },
-    "gate_2a": {
-        "x": 0.7,
-        "y_offset": 0.25,
-        "points_required": 20,
-        "type": "gate",
-        "prerequisites": [
-            ["big_right_hand_jumps"],
-            ["modes"],
-            ["right_hand_chords"]
+            ["connector_1"]
         ]
     },
     "intermediate_right_hand_chords": {
@@ -583,18 +563,18 @@
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
-            ["intermediate_chord_theory"],
-            ["gate_2a"]
+            ["right_hand_chords"],
+            ["intermediate_chord_theory"]
         ]
     },
     "cool_tricks": {
         "title": "Some Cool Tricks",
         "video_url": "",
         "description": "Note jackhammer technique.",
-        "x": 1.0,
+        "x": 0.8,
         "type": "technique",
         "prerequisites": [
-            ["gate_2a"]
+            [{ "id": "big_right_hand_jumps", "points_required": 30 }]
         ]
     },
     "gate_3a": {

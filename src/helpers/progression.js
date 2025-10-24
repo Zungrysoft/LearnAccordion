@@ -149,6 +149,7 @@ export function getOptionData(option) {
       optionId: option,
       pointsRequired: 0,
       bendiness: 1,
+      flipPointsPosition: false,
     }
   }
 
@@ -156,6 +157,7 @@ export function getOptionData(option) {
     optionId: option.id,
     pointsRequired: option.points_required ?? 0,
     bendiness: option.bendiness ?? 1,
+    flipPointsPosition: option.flip_points_position ?? false,
   }
 }
 

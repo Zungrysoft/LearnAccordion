@@ -4,10 +4,12 @@ import configData from '../data/config.json';
 import typeData from '../data/types.json';
 import { useIsMobile } from '../helpers/breakpoints';
 import { useTheme } from '../helpers/theme';
+import IconDiamond from './IconDiamond';
+import IconStar from './IconStar';
 
 function Lesson({ lesson, state, onSetPage, boardSize }) {
     const isMobile = useIsMobile();
-    const { colorLockedLesson, colorConnectorCompleted } = useTheme();
+    const { colorLockedLesson, colorConnector, colorConnectorCompleted } = useTheme();
 
     const vwToPx = useCallback((vw) => {
         return `${(vw / 100) * boardSize.width}px`;
@@ -15,7 +17,7 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
 
     // Don't show at all if we're not close to unlocking it
     if (!state.threshold) {
-        return <div/>
+        return null;
     }
 
     let xPos = (lesson.x *45) + 50
@@ -40,17 +42,40 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
 
     let iconImage = typeData[lesson.type].icon
 
+    if (lesson.is_connector) {
+        return (
+            <div
+                style={{
+                    position: 'absolute',
+                    zIndex: 4,
+                    left: isMobile ? yPos+"vh" : vwToPx(xPos),
+                    top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
+                    transform: 'translate(-50%, 50%)'
+                }}
+            >
+                <IconDiamond
+                    width={(1.2 / 100) * boardSize.width}
+                    color={state.unlocked ? colorConnectorCompleted : colorConnector}
+                />
+            </div>
+        );
+    }
+
     return (
         <>
-            <div className="bounding-box-lesson" onClick={state.selectable?onSetPage:null} style={{
-                left: isMobile ? yPos+"vh" : vwToPx(xPos),
-                top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
-                zIndex: 4,
-                outline: state.unlocked && !state.completed ? `${colorConnectorCompleted} solid 6px` : null,
-                borderStyle: state.selectable ? "solid" : "dashed",
-                "--background-color": backgroundColor,
-                "--background-color2": backgroundColor2,
-            }}>
+            <div
+                className="bounding-box-lesson"
+                onClick={state.selectable?onSetPage:null}
+                style={{
+                    left: isMobile ? yPos+"vh" : `calc(${vwToPx(xPos)} - 2px)`,
+                    top: isMobile ? (100-xPos)+"vh" : `calc(${vwToPx(yPos)} - 2px)`,
+                    zIndex: 4,
+                    outline: state.unlocked && !state.completed ? `${colorConnectorCompleted} solid 6px` : null,
+                    borderStyle: state.selectable ? "solid" : "dashed",
+                    "--background-color": backgroundColor,
+                    "--background-color2": backgroundColor2,
+                }}
+            >
                 <img
                     src={`${process.env.PUBLIC_URL}/icon/${iconImage}.png`}
                     fill="currentColor"
@@ -63,18 +88,20 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
                     }}
                 />
             </div>
-            {(state.completed && !lesson.is_connector)?<img
-                src={`${process.env.PUBLIC_URL}/icon/complete.png`}
-                className="check-mark"
-                alt=""
-                style={{
-                    zIndex: 5,
-                    left: isMobile ? yPos+"vh" :  vwToPx(xPos),
-                    top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
-                    width: isMobile ? configData.icon_width+"vh" :  vwToPx(configData.icon_width),
-                    height: isMobile ? configData.icon_width+"vh" :  vwToPx(configData.icon_width),
-                }}
-            />:<div/>}
+            {state.completed && (
+                <img
+                    src={`${process.env.PUBLIC_URL}/icon/complete.png`}
+                    className="check-mark"
+                    alt=""
+                    style={{
+                        zIndex: 5,
+                        left: isMobile ? yPos+"vh" :  vwToPx(xPos),
+                        top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
+                        width: isMobile ? configData.icon_width+"vh" :  vwToPx(configData.icon_width),
+                        height: isMobile ? configData.icon_width+"vh" :  vwToPx(configData.icon_width),
+                    }}
+                />
+            )}
         </>
     )
 }
