@@ -7,6 +7,7 @@ import CheckBox from './CheckBox';
 import LessonSubtask from './LessonSubtask';
 import { useTheme } from '../helpers/theme';
 import { useLessonState } from '../context/LessonStateProvider';
+import { sortSongs } from '../helpers/sortingAndFiltering';
 
 function LessonPage({ lessonId, onClose, isOpen }) {
     const { lessonData, lessonState, setLessonCompleted, setLessonSubtaskCompleted, setLessonPinned } = useLessonState();
@@ -57,11 +58,11 @@ function LessonPage({ lessonId, onClose, isOpen }) {
                 requirementsSatisfied + requirementsWillSatisfy === song.requirements.length &&
                 requirementsSatisfied !== song.requirements.length
             ) {
-                ret.push(songId);
+                ret.push(song);
             }
         }
 
-        return ret;
+        return sortSongs(ret, 'genre');
     }, [lesson.id, lessonState]);
 
     if (!lesson) {
@@ -134,8 +135,8 @@ function LessonPage({ lessonId, onClose, isOpen }) {
                 )}
                 {nearlyUnlockedSongs.length > 0 && (
                     <h2 style={{ fontSize: 18, marginTop: '0px', color: colorText }}>
-                        Completing this lesson will unlock new songs: {nearlyUnlockedSongs.map((x) => 
-                            songData[x].is_title_inspecific ? songData[x].artist + " " + songData[x].title : songData[x].title
+                        Completing this lesson will unlock new songs: {nearlyUnlockedSongs.map((song) => 
+                            song.is_title_inspecific ? song.artist + " " + song.title : song.title
                         ).join(', ')}
                     </h2>
                 )}

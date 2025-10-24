@@ -59,7 +59,7 @@ function sortLessonSubtasksCompare(a, b, sortOrder) {
 }
 
 function sortLessonSubtasksGenre(a, b) {
-    return sortLessonSubtasksCompare(a, b, ['genre', 'artist', 'title'])
+    return sortLessonSubtasksCompare(a, b, ['genre', 'artist', 'title', '-points'])
 }
 
 function sortLessonSubtasksPoints(a, b) {
@@ -108,5 +108,6 @@ export function processForFilter(text) {
     .replaceAll('\'', '')
     .replaceAll(',', '')
     .replaceAll('.', '')
+    .replaceAll('&', 'and')
   ;
 }

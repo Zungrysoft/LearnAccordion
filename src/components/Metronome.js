@@ -1,39 +1,3 @@
-// import { useState } from "react";
-// import { useTheme } from "../helpers/theme";
-// import RadioButtons from "./RadioButtons";
-
-// export default function Metronome() {
-//   const { colorText } = useTheme();
-//   const [timeSignature, setTimeSignature] = useState('4/4');
-
-//   return (
-//     <div style={{ display: "flex", flexDirection: "row", alignItems: 'start', gap: '8px' }}>
-//       <RadioButtons
-//         options={[
-//           { value: '4/4', label: '4/4' },
-//           { value: '3/4', label: '3/4' },
-//           { value: '6/8', label: '6/8' },
-//         ]}
-//         selectedOption={timeSignature}
-//         onChange={setTimeSignature}
-//       />
-//       <RadioButtons
-//         options={[
-//           { value: '7/8', label: '7/8' },
-//           { value: '5/4', label: '5/4' },
-//           { value: 'none', label: 'None' },
-//         ]}
-//         selectedOption={timeSignature}
-//         onChange={setTimeSignature}
-//       />
-//       <div style={{ display: "flex", flexDirection: "column", alignItems: 'start', gap: '8px' }}>
-
-//       </div>
-//     </div>
-//   );
-// }
-
-
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import RadioButtons from "./RadioButtons";
 import { useLessonState } from "../context/LessonStateProvider";
@@ -129,6 +93,7 @@ export default function Metronome() {
     setMetronomeVolume: setVolume,
     metronomeTimeSignature: timeSignature,
     setMetronomeTimeSignature: setTimeSignature,
+    showLockedExercises,
   } = useSettings();
 
   const audioCtxRef = useRef(null);
@@ -148,10 +113,10 @@ export default function Metronome() {
   const circleGapStyle = `${Math.floor(circleScale * 6)}px`;
 
   let timeSignatureGroups = timeSignatureGroupsBasic;
-  if (lessonState['irregular_time_signatures_2'].selectable) {
+  if (lessonState['irregular_time_signatures_2'].unlocked || showLockedExercises) {
     timeSignatureGroups = timeSignatureGroupsAdvanced;
   }
-  else if (lessonState['irregular_time_signatures_1'].selectable) {
+  else if (lessonState['irregular_time_signatures_1'].unlocked) {
     timeSignatureGroups = timeSignatureGroupsIntermediate;
   }
   

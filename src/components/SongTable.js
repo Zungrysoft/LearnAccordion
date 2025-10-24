@@ -9,6 +9,7 @@ import SettingsGroup from './SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 import TextInput from './TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
+import IconStar from './IconStar.js';
 
 const SongTable = ({ onOpenPage }) => {
   const { lessonState } = useLessonState();
@@ -101,7 +102,7 @@ const SongTable = ({ onOpenPage }) => {
 
   const sortedSongs = sortSongs(filteredSongs, songSortMode);
 
-  // Then sort again by pinned
+  // Then sort again by pinned and completed
   sortedSongs.sort((a, b) => {
     // Sort pinned lessons at the top
     if (lessonState[a.id]?.pinned && !lessonState[b.id]?.pinned) {
@@ -122,6 +123,25 @@ const SongTable = ({ onOpenPage }) => {
     // Keep the same sort order otherwise
     return 0;
   })
+
+  // Sort one-hand versions of songs above their two-hand versions
+  // This is kind of a hack
+  // sortedSongs.sort((a, b) => {
+  //   const match = " (One-Hand)";
+
+  //   // Sort pinned lessons at the top
+  //   if (a.title.replace(match, '') === b.title.replace(match, '')) {
+  //     if (a.title.endsWith(match) && !b.title.endsWith(match)) {
+  //       return -1;
+  //     }
+  //     if (b.title.endsWith(match) && !a.title.endsWith(match)) {
+  //       return 1;
+  //     }
+  //   }
+
+  //   // Keep the same sort order otherwise
+  //   return 0;
+  // })
 
   const tableContainerStyle = {
     maxHeight: "100%",
@@ -155,8 +175,8 @@ const SongTable = ({ onOpenPage }) => {
         <SettingsGroup title="Filter Songs" scale={2}>
           <RadioButtons
             options={[
-              { value: 'one-handed', label: 'One-handed songs only' },
-              { value: 'two-handed', label: 'Two-handed songs only' },
+              { value: 'one-handed', label: 'One-hand songs only' },
+              { value: 'two-handed', label: 'Two-hand songs only' },
             ]}
             selectedOption={filterHandsMode}
             onChange={(value) => setFilterHandsMode((prev) => prev === value ? null : value)}
@@ -340,15 +360,7 @@ function SongDetails({ hasLyrics, points, isTwoHanded }) {
         {hasPoints && (
           <>
             <h2 style={{ color: colorText, fontSize: 18, margin: 0 }}>{points}</h2>
-            <img
-              src={`${process.env.PUBLIC_URL}/icon/star.png`}
-              alt=""
-              style={{
-                width: '18px',
-                height: '18px',
-                filter: filterIcon,
-              }}
-            />
+            <IconStar width={18} color={colorText} />
           </>
         )}
       </div>

@@ -4,6 +4,7 @@ import Lesson from './Lesson.js'
 import Connector from './Connector.js';
 import LessonCounter from './LessonCounter.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
+import { getOptionData } from '../helpers/progression.js';
 
 function Board({ onOpenPage }) {
     const { lessonState, lessonData } = useLessonState();
@@ -42,16 +43,21 @@ function Board({ onOpenPage }) {
                 ))}
                 {Object.keys(lessonData).map((key) => (
                     lessonData[key].prerequisites.map((options) => (
-                        options.map((option) => (
-                            <Connector
-                                key={`${option}-${key}`}
-                                lesson1={lessonData[option]}
-                                lesson2={lessonData[key]}
-                                state1={lessonState[option]}
-                                state2={lessonState[key]}
-                                boardSize={boardSize}
-                            />
-                        ))
+                        options.map((option) => {
+                            const { optionId, pointsRequired, bendiness } = getOptionData(option);
+                            return (
+                                <Connector
+                                    key={`${optionId}-${key}`}
+                                    lesson1={lessonData[optionId]}
+                                    lesson2={lessonData[key]}
+                                    state1={lessonState[optionId]}
+                                    state2={lessonState[key]}
+                                    pointsRequired={pointsRequired}
+                                    bendiness={bendiness}
+                                    boardSize={boardSize}
+                                />
+                            );
+                        })
                     ))
                 ))}
             </div>

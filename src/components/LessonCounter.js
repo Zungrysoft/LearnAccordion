@@ -3,6 +3,7 @@ import '../App.css';
 import lessonData from '../data/lessons.json';
 import { useTheme } from '../helpers/theme';
 import { useLessonState } from '../context/LessonStateProvider';
+import IconStar from './IconStar';
 
 
 function LessonCounter() {
@@ -23,15 +24,7 @@ function LessonCounter() {
             <h2 style={{color: colorText}}>Lessons: {completed + "/" + total}</h2>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '4px'}}>
                 <h2 style={{ color: colorText, fontSize: 18, margin: 0}}>{points}</h2>
-                <img
-                    src={`${process.env.PUBLIC_URL}/icon/star.png`}
-                    alt=""
-                    style={{
-                        width: '18px',
-                        height: '18px',
-                        filter: filterIcon,
-                    }}
-                />
+                <IconStar width={18} color={colorText} />
             </div>
         </div>
     )

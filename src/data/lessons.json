@@ -24,9 +24,6 @@
         "video_url": "",
         "description": "",
         "x": 1.0,
-        "connector_bendiness": {
-            "about": 1.3
-        },
         "type": "instrument",
         "prerequisites": [
             ["about"]
@@ -549,9 +546,6 @@
         "description": "Lydian, Mixolydian, Dorian, Phrygian, and Phrygian Dominant",
         "x": 0.6,
         "y_offset": 0.5,
-        "connector_bendiness": {
-            "chord_theory": 0.8
-        },
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],
@@ -564,9 +558,6 @@
         "description": "",
         "x": 0.4,
         "y_offset": 0.75,
-        "connector_bendiness": {
-            "chord_theory": 0.8
-        },
         "type": "technique",
         "prerequisites": [
             ["chord_theory"],

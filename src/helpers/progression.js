@@ -23,20 +23,28 @@ function markGraph(key, state, lessons, points, gMap) {
   for (let prerequisite of lesson.prerequisites) {
     let optionDistances = [];
     for (let option of prerequisite) {
-      markGraph(option, state, lessons, points, gMap)
-      let distance = gMap[option];
+      const { optionId, pointsRequired } = getOptionData(option);
+      markGraph(optionId, state, lessons, points, gMap)
+      let distance = gMap[optionId];
 
       // Limit preview on some lessons prevents them from always revealing
       // their children. This helps prevent the tree from cluttering too
       // much from the music theory lessons
-      if (!lessons[option].limit_preview) {
+      if (!lessons[optionId].limit_preview) {
         closestParentDistance = Math.min(closestParentDistance, distance)
       }
 
       // Connectors are passthrough, so don't increment distance through them
-      if (!lessons[option].is_connector) {
+      if (!lessons[optionId].is_connector) {
         distance++;
       }
+
+      // Check points required for this connector. If the player doesn't have
+      // enough, limit distance
+      if (pointsRequired > points) {
+        distance = Math.max(distance, 2);
+      }
+
       optionDistances.push(distance);
     }
     prereqDistances.push(Math.min(...optionDistances));
@@ -84,8 +92,9 @@ function buildGraph(state, lessons, points) {
     let lesson = lessons[key]
     for (let prerequisite of lesson.prerequisites) {
       for (let option of prerequisite) {
-        if (gMap[option] > 2) {
-          gMap[option] = 2;
+        const { optionId } = getOptionData(option);
+        if (gMap[optionId] > 2) {
+          gMap[optionId] = 2;
         }
       }
     }
@@ -134,6 +143,22 @@ function dfsLessonHeights(lessonData, lesson, height) {
   }
 }
 
+export function getOptionData(option) {
+  if (typeof option === 'string') {
+    return {
+      optionId: option,
+      pointsRequired: 0,
+      bendiness: 1,
+    }
+  }
+
+  return {
+    optionId: option.id,
+    pointsRequired: option.points_required ?? 0,
+    bendiness: option.bendiness ?? 1,
+  }
+}
+
 export function processLessonData(lessonData) {
   let procLessonData = {};
 
@@ -145,7 +170,8 @@ export function processLessonData(lessonData) {
     if (lesson.prerequisites) {
       for (const prerequisite of lesson.prerequisites) {
         for (const option of prerequisite) {
-          parentLessonKeys.add(option)
+          const { optionId } = getOptionData(option);
+          parentLessonKeys.add(optionId);
         }
       }
     }

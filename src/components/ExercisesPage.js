@@ -94,7 +94,7 @@ export default function ExercisesPage() {
             />
             <RadioButtons
               options={[
-                { value: true, label: 'Show two-handed exercises' },
+                { value: true, label: 'Show two-hand exercises' },
               ]}
               selectedOption={showTwoHandExercises}
               onChange={() => setShowTwoHandExercises((prev) => !prev)}

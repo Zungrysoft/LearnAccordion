@@ -15,6 +15,20 @@
       ["bass_buttons_3"]
     ]
   },
+  "beer_barrel_polka_one_hand": {
+    "title": "The Beer Barrel Polka (One-Hand)",
+    "artist": "Jaromír Vejvoda",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 5,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "polka",
+    "requirements": [
+      ["major_scale_in_thirds"]
+    ]
+  },
   "sakkijarven_polkka": {
     "title": "Säkkijärven Polkka",
     "artist": "",
@@ -32,11 +46,11 @@
     ]
   },
   "tetris_theme": {
-    "title": "Korobeiniki (Tetris Theme A)",
+    "title": "Korobeiniki",
     "artist": "",
     "description": "",
     "is_title_inspecific": false,
-    "search_text": "",
+    "search_text": "Tetris Theme A",
     "video_url": "",
     "points": 10,
     "has_vocals": false,
@@ -46,6 +60,22 @@
       ["two_handed_playing_3"],
       ["minor_scale"],
       ["bass_buttons_3"]
+    ]
+  },
+  "tetris_theme_one_hand": {
+    "title": "Korobeiniki (One-Hand)",
+    "artist": "",
+    "description": "",
+    "is_title_inspecific": false,
+    "search_text": "Tetris Theme A",
+    "video_url": "",
+    "points": 1,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "folk",
+    "subsong_of": "tetris_theme",
+    "requirements": [
+      ["minor_scale"]
     ]
   },
   "loch_lommond": {
@@ -120,7 +150,7 @@
       ["bass_buttons_4"],
       ["major_scale"],
       ["major_scale_in_thirds"],
-      ["right_hand_chords"]
+      ["intermediate_right_hand_chords"]
     ]
   },
   "banquet": {
@@ -203,7 +233,7 @@
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
-    "points": 10,
+    "points": 12,
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "hornpipe",
@@ -286,11 +316,11 @@
     "title": "The Sunk'n Norwegian",
     "artist": "Alestorm",
     "is_title_inspecific": false,
-    "search_text": "",
+    "search_text": "Sunken",
     "video_url": "",
     "points": 0,
     "has_vocals": true,
-    "is_two_handed": true,
+    "is_two_handed": false,
     "genre": "nautical",
     "is_hidden": true,
     "requirements": []
@@ -359,6 +389,19 @@
       ["bass_buttons_4"]
     ]
   },
+  "haul_away_joe": {
+    "title": "Haul Away Joe",
+    "artist": "",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "sea_shanty",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
   
@@ -423,6 +466,19 @@
   "sixteen_tons": {
     "title": "Sixteen Tons",
     "artist": "Tennessee Ernie Ford",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "blues",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "folsom_prison_blues": {
+    "title": "Folsom Prison Blues",
+    "artist": "Johnny Cash",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
@@ -556,12 +612,13 @@
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
-    "points": 0,
+    "points": 1,
     "has_vocals": true,
     "is_two_handed": false,
     "genre": "rock",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["minor_scale"]
+    ]
   },
   "mars_for_the_rich": {
     "title": "Mars For The Rich",
@@ -732,6 +789,45 @@
     "is_hidden": true,
     "requirements": []
   },
+  "help": {
+    "title": "Help",
+    "artist": "The Beatles",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "hey_jude": {
+    "title": "Hey Jude",
+    "artist": "The Beatles",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "wait": {
+    "title": "Wait",
+    "artist": "The Beatles",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
   "friend_of_the_devil": {
     "title": "Friend of the Devil",
     "artist": "Grateful Dead",
@@ -801,6 +897,20 @@
     "is_hidden": true,
     "requirements": []
   },
+  "flagpole_sitta": {
+    "title": "Flagpole Sitta",
+    "artist": "Harvey Danger",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+
 
 
 
@@ -963,6 +1073,32 @@
     "is_hidden": true,
     "requirements": []
   },
+  "tell_her_about_it": {
+    "title": "Tell Her About It",
+    "artist": "Billy Joel",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "sweet_caroline": {
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
   "somebody_that_i_used_to_know": {
     "title": "Somebody That I Used To Know",
     "artist": "Gotye",
@@ -1012,7 +1148,7 @@
     "video_url": "",
     "points": 0,
     "has_vocals": true,
-    "is_two_handed": false,
+    "is_two_handed": true,
     "genre": "pop",
     "is_hidden": true,
     "requirements": []
@@ -1025,7 +1161,7 @@
     "video_url": "",
     "points": 0,
     "has_vocals": true,
-    "is_two_handed": false,
+    "is_two_handed": true,
     "genre": "pop",
     "is_hidden": true,
     "requirements": []
@@ -1038,7 +1174,20 @@
     "video_url": "",
     "points": 0,
     "has_vocals": true,
-    "is_two_handed": false,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "heart_and_soul": {
+    "title": "Heart and Soul",
+    "artist": "Hoagy Carmichael",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
     "genre": "pop",
     "is_hidden": true,
     "requirements": []
@@ -1351,6 +1500,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "gone_daddy_gone": {
+    "title": "Gone Daddy Gone",
+    "artist": "Violent Femmes",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
+  },
   "trollhammaren": {
     "title": "Trollhammaren",
     "artist": "Finntroll",
@@ -1380,19 +1542,6 @@
   "take_it_easy": {
     "title": "Take it Easy",
     "artist": "Eagles",
-    "is_title_inspecific": false,
-    "search_text": "",
-    "video_url": "",
-    "points": 0,
-    "has_vocals": true,
-    "is_two_handed": true,
-    "genre": "rock",
-    "is_hidden": true,
-    "requirements": []
-  },
-  "help": {
-    "title": "Help",
-    "artist": "The Beatles",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
@@ -1477,7 +1626,7 @@
     "points": 0,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock",
+    "genre": "alternative",
     "is_hidden": true,
     "requirements": []
   },
@@ -1612,8 +1761,11 @@
     "has_vocals": true,
     "is_two_handed": false,
     "genre": "rock",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["intermediate_right_hand_chords"],
+      ["scale_intervals_practice"],
+      ["major_scale"]
+    ]
   },
   "golden_brown": {
     "title": "Golden Brown",
@@ -1631,6 +1783,59 @@
   "bitter_sweet_symphony": {
     "title": "Bitter Sweet Symphony",
     "artist": "The Verve",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "rock_lobster": {
+    "title": "Rock Lobster",
+    "artist": "The B-52's",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 2,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "requirements": [
+      ["minor_scale"]
+    ]
+  },
+  "accordion_boogie": {
+    "title": "Accordion Boogie",
+    "artist": "Charles Magnante",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "mrs_robinson": {
+    "title": "Mrs. Robinson",
+    "artist": "Simon & Garfunkel",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "we_aint_got_nothin_yet": {
+    "title": "(We Ain't Got) Nothin' Yet",
+    "artist": "The Blues Magoos",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
@@ -1839,7 +2044,7 @@
     "is_title_inspecific": false,
     "search_text": "Russian Happy Birthday",
     "video_url": "",
-    "points": 12,
+    "points": 15,
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "television",
@@ -2124,6 +2329,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "minecraft_sweden": {
+    "title": "Sweden",
+    "artist": "Minecraft",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "mario_main_theme": {
     "title": "Overworld",
     "artist": "Super Mario Bros.",
@@ -2154,6 +2372,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "mario_3_boss_fight": {
+    "title": "Boss Fight",
+    "artist": "Super Mario Bros. 3",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "mario_3_hammer_bros": {
     "title": "Hammer Bros. Battle",
     "artist": "Super Mario Bros. 3",
@@ -2176,6 +2407,32 @@
     "points": 0,
     "has_vocals": false,
     "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "mushroom_gorge": {
+    "title": "Mushroom Gorge",
+    "artist": "Mario Kart Wii",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "luigi_raceway": {
+    "title": "Luigi Raceway",
+    "artist": "Mario Kart 64",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
     "genre": "video_game",
     "is_hidden": true,
     "requirements": []
@@ -2258,19 +2515,6 @@
     "is_hidden": true,
     "requirements": []
   },
-  "sonic_3_mini_boss": {
-    "title": "Mini Boss",
-    "artist": "Sonic the Hedgehog 3",
-    "is_title_inspecific": false,
-    "search_text": "",
-    "video_url": "",
-    "points": 0,
-    "has_vocals": false,
-    "is_two_handed": false,
-    "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
-  },
   "green_hill_zone": {
     "title": "Green Hill Zone",
     "artist": "Sonic the Hedgehog",
@@ -2281,8 +2525,12 @@
     "has_vocals": false,
     "is_two_handed": false,
     "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["major_scale"],
+      ["major_scale_in_thirds"],
+      ["scale_intervals_practice"],
+      ["right_hand_chords"]
+    ]
   },
   "marble_zone": {
     "title": "Marble Zone",
@@ -2292,7 +2540,7 @@
     "video_url": "",
     "points": 0,
     "has_vocals": false,
-    "is_two_handed": false,
+    "is_two_handed": true,
     "genre": "video_game",
     "is_hidden": true,
     "requirements": []
@@ -2323,9 +2571,61 @@
     "is_hidden": true,
     "requirements": []
   },
+  "oil_ocean_zone": {
+    "title": "Oil Ocean Zone",
+    "artist": "Sonic the Hedgehog 2",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "wacky_workbench_past": {
+    "title": "Wacky Workbench Past",
+    "artist": "Sonic CD",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "stardust_speedway_past": {
+    "title": "Stardust Speedway Past",
+    "artist": "Sonic CD",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "nsmb_athletic_theme": {
     "title": "Athletic",
     "artist": "New Super Mario Bros. Wii",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "nsmb_desert_theme": {
+    "title": "Desert",
+    "artist": "New Super Mario Bros.",
     "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
@@ -2388,15 +2688,28 @@
     "is_hidden": true,
     "requirements": []
   },
-  "kraids_lair": {
-    "title": "Kraid's Lair",
-    "artist": "Metroid",
-    "is_title_inspecific": false,
+  "crescent_moon_village": {
+    "title": "Crescent Moon Village",
+    "artist": "Wario Land 4",
+    "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
     "points": 0,
     "has_vocals": false,
     "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "greenhorn_forest": {
+    "title": "Greenhorn Forest",
+    "artist": "Wario World",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
     "genre": "video_game",
     "is_hidden": true,
     "requirements": []
@@ -2440,6 +2753,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "full_steam_ahead": {
+    "title": "Full Steam Ahead",
+    "artist": "The Legend of Zelda: Spirit Tracks",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "red_brinstar": {
     "title": "Red Brinstar",
     "artist": "Super Metroid",
@@ -2455,6 +2781,19 @@
   },
   "brinstar": {
     "title": "Brinstar",
+    "artist": "Metroid",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "kraids_lair": {
+    "title": "Kraid's Lair",
     "artist": "Metroid",
     "is_title_inspecific": false,
     "search_text": "",
@@ -2519,9 +2858,22 @@
     "requirements": []
   },
   "mario_64_slide": {
-    "title": "Slide",
+    "title": "Athletic",
     "artist": "Super Mario 64",
     "is_title_inspecific": true,
+    "search_text": "Slider",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "delfino_plaza": {
+    "title": "Delfino Plaza",
+    "artist": "Super Mario Sunshine",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "points": 0,
