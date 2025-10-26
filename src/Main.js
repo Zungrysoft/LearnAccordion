@@ -9,6 +9,7 @@ import LessonsPage from './pages/LessonsPage.js';
 import ExercisesPage from './pages/ExercisesPage.js';
 import SongsPage from './pages/SongsPage.js';
 import SettingsPage from './pages/SettingsPage.js';
+import { Route, Routes } from 'react-router-dom';
 
 export default function Main() {
     const { colorBackground } = useTheme();
@@ -18,38 +19,34 @@ export default function Main() {
 
     return (
         <div style={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: colorBackground }}>
-            <Tabs tabs={[
-                {
-                    title: 'Lessons',
-                    value: 'lessons',
-                },
-                {
-                    title: 'Exercises',
-                    value: 'exercises',
-                },
-                {
-                    title: 'Songs',
-                    value: 'songs',
-                },
-                {
-                    icon: 'gear',
-                    value: 'settings',
-                    style: { maxWidth: '64px' },
-                },
-            ]} activeTab={activeTab} onTabChange={setActiveTab}/>
+            <Tabs
+                tabs={[
+                    {
+                        title: 'Lessons',
+                        url: '/',
+                    },
+                    {
+                        title: 'Exercises',
+                        url: '/exercises',
+                    },
+                    {
+                        title: 'Songs',
+                        url: '/songs',
+                    },
+                    {
+                        icon: 'gear',
+                        url: '/settings',
+                        style: { maxWidth: '64px' },
+                    },
+                ]}
+            />
             <div style={{ flex: 1, minHeight: 0 }}>
-                {activeTab === 'lessons' && (
-                    <LessonsPage/>
-                )}
-                {activeTab === 'exercises' && (
-                    <ExercisesPage/>
-                )}
-                {activeTab === 'songs' && (
-                    <SongsPage/>
-                )}
-                {activeTab === 'settings' && (
-                    <SettingsPage/>
-                )}
+                <Routes>
+                    <Route path="/" element={<LessonsPage />} />
+                    <Route path="/exercises" element={<ExercisesPage />} />
+                    <Route path="/songs" element={<SongsPage />} />
+                    <Route path="/settings" element={<SettingsPage />} />
+                </Routes>
             </div>
 
             <LessonPopup

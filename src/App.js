@@ -5,6 +5,7 @@ import { SettingsProvider } from './context/SettingsProvider.jsx';
 import { LessonStateProvider } from './context/LessonStateProvider.jsx';
 import { ActiveLessonProvider } from './context/ActiveLessonProvider.jsx';
 import Main from './Main.js';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
     useEffect(() => {
@@ -13,13 +14,15 @@ function App() {
 
     return (
         <div className="App">
-            <SettingsProvider>
-                <LessonStateProvider>
-                    <ActiveLessonProvider>
-                        <Main/>
-                    </ActiveLessonProvider>
-                </LessonStateProvider>
-            </SettingsProvider>
+            <BrowserRouter>
+                <SettingsProvider>
+                    <LessonStateProvider>
+                        <ActiveLessonProvider>
+                            <Main/>
+                        </ActiveLessonProvider>
+                    </LessonStateProvider>
+                </SettingsProvider>
+            </BrowserRouter>
         </div>
     );
 }

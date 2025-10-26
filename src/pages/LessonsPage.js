@@ -1,5 +1,5 @@
 import '../App.css';
-import React,{useCallback, useEffect, useRef, useState} from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Lesson from '../components/Lesson.js'
 import Connector from '../components/Connector.js';
 import LessonCounter from '../components/LessonCounter.js';
@@ -21,7 +21,9 @@ export default function LessonsPage() {
         const observer = new ResizeObserver((entries) => {
             for (let entry of entries) {
                 const { width, height } = entry.contentRect;
-                setBoardSize({ width, height });
+                requestAnimationFrame(() => {
+                    setBoardSize({ width, height });
+                });
             }
         });
 
@@ -29,7 +31,6 @@ export default function LessonsPage() {
 
         return () => observer.disconnect();
     }, []);
-
     const onOpenPage = useCallback((key) => {
         setActiveLessonId(key);
         setIsLessonOpen(true);
@@ -70,8 +71,8 @@ export default function LessonsPage() {
                     ))
                 ))}
             </div>
-            <LessonCounter/>
-            <ShowLockedLessons/>
+            <LessonCounter />
+            <ShowLockedLessons />
         </div>
     )
 }

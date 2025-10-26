@@ -1,7 +1,8 @@
 import React from "react";
 import { useTheme } from "../helpers/theme";
+import { NavLink } from "react-router-dom";
 
-export default function Tabs({ tabs = [], activeTab, onTabChange }) {
+export default function Tabs({ tabs = [] }) {
   const { colorBackgroundDark, filterIcon, colorText } = useTheme();
 
   const styles = {
@@ -35,28 +36,26 @@ export default function Tabs({ tabs = [], activeTab, onTabChange }) {
   return (
     <div style={styles.container}>
       <div style={styles.tabBar}>
-        {tabs.map(({ title, icon, value, style }) => (
-          <div
-            key={value}
-            style={{...styles.tab(activeTab === value), ...style}}
-            onClick={() => onTabChange(value)}
+        {tabs.map(({ title, icon, style, url }) => (
+          <NavLink
+            key={title + url}
+            to={url ?? '/'}
+            style={({ isActive }) => ({
+              ...styles.tab(isActive),
+              ...style,
+              flex: 1,
+              textDecoration: 'none',
+            })}
           >
             {icon && (
               <img
                 src={`${process.env.PUBLIC_URL}/icon/${icon}.png`}
                 alt=""
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  margin: '0px',
-                  filter: filterIcon,
-                }}
+                style={{ width: '32px', height: '32px', filter: filterIcon }}
               />
             )}
-            {title && (
-              <h2 style={{ margin: '8px', color: colorText }}>{title}</h2>
-            )}
-          </div>
+            {title && <h2 style={{ margin: '8px', color: colorText }}>{title}</h2>}
+          </NavLink>
         ))}
       </div>
     </div>
