@@ -3,7 +3,7 @@ import RadioButtons from '../components/RadioButtons.jsx';
 import SettingsGroup from '../components/SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 
-const SettingsPage = () => {
+export default function SettingsPage() {
   const { theme, setTheme, showHiddenSongs, setShowHiddenSongs } = useSettings();
 
   return (
@@ -31,5 +31,3 @@ const SettingsPage = () => {
     </div>
   );
 }
-
-export default SettingsPage;

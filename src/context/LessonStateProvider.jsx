@@ -22,9 +22,13 @@ function getDefaultStorage() {
 const defaultContext = {
     lessonData: {},
     lessonState: {},
-    setLessonCompleted: () => {},
-    setLessonSubtaskCompleted: () => {},
-    setLessonPinned: () => {},
+    setLessonCompleted: () => { },
+    setLessonSubtaskCompleted: () => { },
+    setLessonPinned: () => { },
+    completedLessonCount: 0,
+    totalLessonCount: 0,
+    totalSongCount: 0,
+    totalExerciseCount: 0,
     points: 0,
 }
 
@@ -41,24 +45,48 @@ export function LessonStateProvider({ children }) {
         if (rawLessonState[id]?.completed) {
             points += song.points ?? 0;
         }
+        
     })
 
     const processedLessonData = useMemo(() => processLessonData(lessonData), []);
     const builtLessonState = buildLessonStates(rawLessonState, processedLessonData, points, showLockedLessons);
 
+    let totalSongCount = 0;
     for (const songId in songData) {
         builtLessonState[songId] = {
             completed: !!(rawLessonState[songId]?.completed),
             pinned: !!(rawLessonState[songId]?.pinned),
         }
+        if (!songData[songId].is_hidden) {
+            totalSongCount ++;
+        }
     }
-
+    
+    let totalExerciseCount = 0;
     for (const exerciseId in exerciseData) {
         builtLessonState[exerciseId] = {
             completed: !!(rawLessonState[exerciseId]?.completed),
             pinned: !!(rawLessonState[exerciseId]?.pinned),
         }
+        if (!exerciseData[exerciseId].is_hidden) {
+            totalExerciseCount ++;
+        }
     }
+
+    const { completedLessonCount, totalLessonCount } = useMemo(() => {
+        let total = 0
+        let completed = 0
+        Object.entries(lessonData).forEach(([id, lesson]) => {
+            total ++;
+            if (builtLessonState[id]?.completed) {
+                completed ++;
+            }
+        });
+        return {
+            completedLessonCount: completed,
+            totalLessonCount: total,
+        };
+    }, [builtLessonState])
 
     const saveLessonState = useCallback((newState) => {
         setRawLessonState(newState);
@@ -98,7 +126,7 @@ export function LessonStateProvider({ children }) {
         })
     ), [rawLessonState, saveLessonState]);
 
-    
+
 
     return (
         <LessonStateContext.Provider
@@ -109,6 +137,10 @@ export function LessonStateProvider({ children }) {
                     setLessonCompleted,
                     setLessonSubtaskCompleted,
                     setLessonPinned,
+                    completedLessonCount,
+                    totalLessonCount,
+                    totalSongCount,
+                    totalExerciseCount,
                     points,
                 }),
                 [
@@ -117,6 +149,10 @@ export function LessonStateProvider({ children }) {
                     setLessonCompleted,
                     setLessonSubtaskCompleted,
                     setLessonPinned,
+                    completedLessonCount,
+                    totalLessonCount,
+                    totalSongCount,
+                    totalExerciseCount,
                     points,
                 ]
             )}

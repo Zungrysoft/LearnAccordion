@@ -7,21 +7,12 @@ import IconStar from './IconStar';
 
 
 function LessonCounter() {
-    const { colorText, filterIcon } = useTheme();
-    const { lessonState, points } = useLessonState();
-
-    let total = 0
-    let completed = 0
-    Object.entries(lessonData).forEach(([id, lesson]) => {
-        total ++;
-        if (lessonState[id]?.completed) {
-            completed ++;
-        }
-    });
+    const { colorText } = useTheme();
+    const { completedLessonCount, totalLessonCount, points } = useLessonState();
 
     return (
         <div className="top-left">
-            <h2 style={{color: colorText}}>Lessons: {completed + "/" + total}</h2>
+            <h2 style={{color: colorText}}>Lessons: {completedLessonCount + "/" + totalLessonCount}</h2>
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '4px'}}>
                 <h2 style={{ color: colorText, fontSize: 18, margin: 0}}>{points}</h2>
                 <IconStar width={18} color={colorText} />
