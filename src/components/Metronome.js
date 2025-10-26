@@ -137,6 +137,10 @@ export default function Metronome() {
     setBpm((prev) => Math.floor(prev * scalar));
   }
 
+  const addBpm = (value) => {
+    setBpm((prev) => Math.floor(prev + value));
+  }
+
   const secondsPerBeat = () => 60.0 / Math.max(1, getBpm()) / timeSignatures[timeSignature].speedMultiplier;
 
   const scheduleClick = (time, isDownbeat) => {
@@ -259,23 +263,38 @@ export default function Metronome() {
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", flex: 1 }}>
 
         <label style={{ flex: 1 }}>
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px" }}>
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "2px" }}>
             <div style={{ fontSize: "14px", color: colorText }}>BPM</div>
             <input
-              type="number"
+              type="textfield"
               min={0}
               max={1000}
-              step={5}
               value={bpm}
-              placeholder="Enter value"
-              onChange={(e) => setBpm(e.target.value)}
-              style={{ width: "48px", padding: "8px", border: "1px solid #ccc", borderRadius: "6px" }}
+              placeholder="Bpm"
+              onChange={(e) => setBpm(e.target.value.replaceAll(/[^0-9]/g, ''))}
+              style={{
+                width: "32px",
+                padding: "8px",
+                border: "1px solid #ccc",
+                borderRadius: "6px",
+                MozAppearance: "textfield",
+                marginRight: '4px',
+                marginLeft: '4px',
+              }}
             />
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px" }}>
-              <button onClick={() => multiplyBpm(2.0)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '30px', fontSize: '9px' }}>
+              <button onClick={() => addBpm(5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
+                +5
+              </button>
+              <button onClick={() => addBpm(-5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
+                -5
+              </button>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px" }}>
+              <button onClick={() => multiplyBpm(2.0)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
                 x2
               </button>
-              <button onClick={() => multiplyBpm(0.5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '30px', fontSize: '9px' }}>
+              <button onClick={() => multiplyBpm(0.5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
                 ÷2
               </button>
             </div>

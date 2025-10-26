@@ -21,6 +21,11 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
         return `${(val / 100) * boardSize.width}px`
     }, [isMobile, boardSize, boardSize.width]);
 
+    // Early out if width hasn't been set yet
+    if (!boardSize.width) {
+        return null;
+    }
+
     // Don't draw if either of the lessons won't show up
     if (!state1 || !state1.threshold || !state2 || !state2.threshold) {
         return null;
@@ -156,8 +161,8 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
     const endPosY2 = pos[1] + dirVectorInSvg[1];
 
     const textPos = [
-        Math.min(x1, x2) + (pos[0]/100 * Math.abs(x1-x2)) + (dirVector[0] * 4),
-        Math.min(y1, y2) + (pos[1]/100 * Math.abs(y1-y2) + h) + (dirVector[1] * 4),
+        Math.min(x1, x2) + (pos[0]/100 * Math.abs(x1-x2)) + (dirVector[0] * 3),
+        Math.min(y1, y2) + (pos[1]/100 * Math.abs(y1-y2) + h) + (dirVector[1] * 3),
     ];
 
     return (

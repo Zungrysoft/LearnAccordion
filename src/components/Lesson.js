@@ -58,6 +58,11 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
     //     );
     // }
 
+    // Early out if width hasn't been set yet
+    if (!boardSize.width) {
+        return null;
+    }
+
     if (lesson.is_connector) {
         return null;
     }

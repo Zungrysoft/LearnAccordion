@@ -1846,6 +1846,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "piece_of_my_heart": {
+    "title": "Piece of My Heart",
+    "artist": "Big Brother & The Holding Company",
+    "is_title_inspecific": false,
+    "search_text": "Janis Joplin",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
@@ -1872,6 +1885,19 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "classical",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "temptation_sensation": {
+    "title": "Temptation Sensation",
+    "artist": "Heinz Kiessling",
+    "is_title_inspecific": true,
+    "search_text": "Haute Couture It's Always Sunny in Philadelphia",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "orchestra",
     "is_hidden": true,
     "requirements": []
   },
@@ -1975,19 +2001,6 @@
   "it_crowd_theme": {
     "title": "Main Theme",
     "artist": "The IT Crowd",
-    "is_title_inspecific": true,
-    "search_text": "",
-    "video_url": "",
-    "points": 0,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "television",
-    "is_hidden": true,
-    "requirements": []
-  },
-  "always_sunny_theme": {
-    "title": "Main Theme",
-    "artist": "It's Always Sunny in Philadelphia",
     "is_title_inspecific": true,
     "search_text": "",
     "video_url": "",
@@ -2142,7 +2155,7 @@
     "title": "La valse d'Amélie",
     "artist": "Amélie",
     "is_title_inspecific": false,
-    "search_text": "",
+    "search_text": "Yann Tiersen",
     "video_url": "",
     "points": 0,
     "has_vocals": false,
@@ -2716,7 +2729,7 @@
   },
   "dark_world": {
     "title": "Dark World",
-    "artist": "The Legend of Zelda: Link to the Past",
+    "artist": "The Legend of Zelda: A Link to the Past",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
@@ -2740,11 +2753,53 @@
     "is_hidden": true,
     "requirements": []
   },
+  "tloz_overworld": {
+    "title": "Overworld",
+    "artist": "The Legend of Zelda",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "wild_korok_forest_day": {
     "title": "Wild Korok Forest",
     "artist": "The Legend of Zelda: Breath of the Wild",
     "is_title_inspecific": false,
     "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "kass_theme": {
+    "title": "Kass' Theme",
+    "artist": "The Legend of Zelda: Breath of the Wild",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "requirements": [
+      ["bass_buttons_5"],
+      ["minor_scale"],
+      ["major_scale_in_thirds"]
+    ]
+  },
+  "palace_theme": {
+    "title": "Temple",
+    "artist": "Zelda II: The Adventure of Link",
+    "is_title_inspecific": false,
+    "search_text": "Dungeon",
     "video_url": "",
     "points": 0,
     "has_vocals": false,
@@ -3040,5 +3095,44 @@
       ["modes"],
       ["bass_buttons_4"]
     ]
+  },
+  "strike_the_earth": {
+    "title": "Strike the Earth!",
+    "artist": "Shovel Knight",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "alight_storm": {
+    "title": "Alight (Storm)",
+    "artist": "Fire Emblem Fates",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "air_man": {
+    "title": "Air Man",
+    "artist": "Mega Man 2",
+    "is_title_inspecific": true,
+    "search_text": "Megaman",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   }
 }
