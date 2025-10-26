@@ -3,15 +3,16 @@ import React, { useCallback, useState } from 'react';
 import songData from '../data/songs.json';
 import { processForFilter, sortSongs } from '../helpers/sortingAndFiltering.js';
 import genreData from '../data/genres.json';
-import RadioButtons from './RadioButtons.jsx';
+import RadioButtons from '../components/RadioButtons.jsx';
 import { useTheme } from '../helpers/theme.jsx';
-import SettingsGroup from './SettingsGroup.js';
+import SettingsGroup from '../components/SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
-import TextInput from './TextInput.js';
+import TextInput from '../components/TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
-import IconStar from './IconStar.js';
+import IconStar from '../components/IconStar.js';
+import { useActiveLesson } from '../context/ActiveLessonProvider.jsx';
 
-const SongTable = ({ onOpenPage }) => {
+export default function SongsPage() {
   const { lessonState } = useLessonState();
   const {
     songSortMode,
@@ -26,8 +27,14 @@ const SongTable = ({ onOpenPage }) => {
   } = useSettings();
   const [filterText, setFilterText] = useState("");
   const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+  const { setActiveLessonId, setIsLessonOpen } = useActiveLesson();
 
   const songs = Object.entries(songData).map(([key, value]) => ({ ...value, id: key }));
+
+  const onOpenPage = useCallback((key) => {
+      setActiveLessonId(key);
+      setIsLessonOpen(true);
+  }, [setActiveLessonId, setIsLessonOpen]);
 
   const isSongUnlocked = useCallback((song) => {
     if (!song.requirements) {
@@ -276,9 +283,6 @@ const SongTable = ({ onOpenPage }) => {
     </div>
   );
 };
-
-export default SongTable;
-
 
 function SongTitle({ title, pinned, completed, locked, hidden }) {
   const { colorText, filterIcon } = useTheme();

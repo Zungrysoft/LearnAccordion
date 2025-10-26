@@ -1192,6 +1192,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "demons": {
+    "title": "Demons",
+    "artist": "Imagine Dragons",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 

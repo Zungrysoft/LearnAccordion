@@ -1,17 +1,16 @@
 import '../App.css';
 import React, { useCallback, useState } from 'react';
-import songData from '../data/songs.json';
 import exerciseData from '../data/exercises.json';
 import { processForFilter, sortSongs } from '../helpers/sortingAndFiltering.js';
 import genreData from '../data/genres.json';
-import RadioButtons from './RadioButtons.jsx';
+import RadioButtons from '../components/RadioButtons.jsx';
 import { useTheme } from '../helpers/theme.jsx';
-import SettingsGroup from './SettingsGroup.js';
+import SettingsGroup from '../components/SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
-import TextInput from './TextInput.js';
+import TextInput from '../components/TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
-import CheckBox from './CheckBox.js';
-import Metronome from './Metronome.js';
+import CheckBox from '../components/CheckBox.js';
+import Metronome from '../components/Metronome.js';
 
 export default function ExercisesPage() {
   const { colorBackground, colorText } = useTheme();

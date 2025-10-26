@@ -9,7 +9,7 @@ import { useTheme } from '../helpers/theme';
 import { useLessonState } from '../context/LessonStateProvider';
 import { sortSongs } from '../helpers/sortingAndFiltering';
 
-function LessonPage({ lessonId, onClose, isOpen }) {
+export default function LessonPopup({ lessonId, onClose, isOpen }) {
     const { lessonData, lessonState, setLessonCompleted, setLessonSubtaskCompleted, setLessonPinned } = useLessonState();
 
     const lesson = lessonData[lessonId] ?? songData[lessonId]
@@ -144,5 +144,3 @@ function LessonPage({ lessonId, onClose, isOpen }) {
         </div>
     )
 }
-
-export default LessonPage;

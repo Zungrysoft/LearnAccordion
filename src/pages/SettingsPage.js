@@ -1,6 +1,6 @@
 import '../App.css';
-import RadioButtons from './RadioButtons.jsx';
-import SettingsGroup from './SettingsGroup.js';
+import RadioButtons from '../components/RadioButtons.jsx';
+import SettingsGroup from '../components/SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 
 const SettingsPage = () => {
