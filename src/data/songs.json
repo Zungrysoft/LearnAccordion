@@ -2766,11 +2766,24 @@
     "is_hidden": true,
     "requirements": []
   },
-  "red_brinstar": {
-    "title": "Red Brinstar",
+  "lower_brinstar": {
+    "title": "Lower Brinstar",
     "artist": "Super Metroid",
     "is_title_inspecific": false,
-    "search_text": "",
+    "search_text": "Red",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "lower_norfair": {
+    "title": "Lower Norfair",
+    "artist": "Super Metroid",
+    "is_title_inspecific": false,
+    "search_text": "Magmoor Caverns",
     "video_url": "",
     "points": 0,
     "has_vocals": false,

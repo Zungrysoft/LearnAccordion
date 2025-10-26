@@ -2,8 +2,9 @@ import Icon from "./Icon"
 
 export default function IconDiamond({ color, width, height }) {
   return (
-    <Icon color={color} width={width} height={height} viewbox="0 0 16 16">
-      <path d="M6.407.753L.75 6.409a2.25 2.25 0 000 3.182l5.657 5.657a2.25 2.25 0 003.182 0l5.657-5.657a2.25 2.25 0 000-3.182L9.589.753a2.25 2.25 0 00-3.182 0z"/>
+    <Icon color={color} width={width} height={height} viewbox="0 0 52 52">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M24.4,49.2c0.9,0.9,2.2,0.9,3.1,0l21.9-21.9c0.9-0.9,0.9-2.2,0-3.1
+	L27.6,2.4c-0.9-0.9-2.2-0.9-3.1,0L2.6,24.3c-0.9,0.9-0.9,2.2,0,3.1L24.4,49.2z"/>
     </Icon>
   );
 }

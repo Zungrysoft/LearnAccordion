@@ -6,7 +6,7 @@ import { useTheme } from '../helpers/theme';
 import { useLessonState } from '../context/LessonStateProvider';
 import IconStar from './IconStar';
 
-const LOCK_LINE_LENGTH = 10;
+const LOCK_LINE_LENGTH = 100;
 
 function curvePoint(p, bendiness) {
     return (Math.tanh((p - 0.5) * bendiness) * 0.5) + 0.5
@@ -42,12 +42,12 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
     // Special early exit case for if the line is completely vertical
     if (x1 === x2) {
         const size = Math.abs(y1-y2);
-        const lockLineHeight = lesson2.is_connector ? 0.7 : 0.5;
+        const lockLineHeight = lesson2.is_connector ? 1.0 : 0.5;
         const textPos = [
-            x1 + 1.5,
+            flipPointsPosition ? x1 - 1.5 : x1 + 1.5,
             Math.min(y1, y2) + (Math.abs(y1 - y2) * lockLineHeight) + h,
         ];
-        const llhp = `${lockLineHeight * 100}%`;
+        const llhp = `${(lockLineHeight * 100) - (size / 50)}%`;
         return (
             <>
                 <svg style={{
@@ -63,9 +63,9 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
                     <line x1="50%" y1={llhp} x2="50%" y2="100%" stroke={color2} strokeWidth="2" />
                     {pointsRequired > 0 && (
                         <line
-                            x1="calc(50% - 10px)"
+                            x1={`${50 - (LOCK_LINE_LENGTH / size)}%`}
                             y1={llhp}
-                            x2="calc(50% + 10px)"
+                            x2={`${50 + (LOCK_LINE_LENGTH / size)}%`}
                             y2={llhp}
                             stroke={color2}
                             strokeWidth="2"
@@ -82,7 +82,7 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
                         position: "absolute",
                         left: v(textPos[0]),
                         top: v(textPos[1]),
-                        transform: "translate(0%, -50%)",
+                        transform: flipPointsPosition ? "translate(-100%, -50%)" : "translate(0%, -50%)",
                     }}>
                         <h2 style={{ color: enoughPoints ? colorConnectorCompleted : colorConnector, fontSize: 14, margin: 0}}>{pointsRequired}</h2>
                         <IconStar width={14} color={enoughPoints ? colorConnectorCompleted : colorConnector} />
@@ -146,9 +146,18 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
         line1.x2 * 100,
         line1.y2 * 100,
     ];
+    const dirVectorInSvg = [
+        dirVector[0] * LOCK_LINE_LENGTH / Math.abs(x1-x2),
+        dirVector[1] * LOCK_LINE_LENGTH / Math.abs(y1-y2),
+    ]
+    const endPosX1 = pos[0] - dirVectorInSvg[0];
+    const endPosX2 = pos[0] + dirVectorInSvg[0];
+    const endPosY1 = pos[1] - dirVectorInSvg[1];
+    const endPosY2 = pos[1] + dirVectorInSvg[1];
+
     const textPos = [
-        Math.min(x1, x2) + (pos[0]/100 * Math.abs(x1-x2)) + (dirVector[0] * 3),
-        Math.min(y1, y2) + (pos[1]/100 * Math.abs(y1-y2) + h) + (dirVector[1] * 3),
+        Math.min(x1, x2) + (pos[0]/100 * Math.abs(x1-x2)) + (dirVector[0] * 4),
+        Math.min(y1, y2) + (pos[1]/100 * Math.abs(y1-y2) + h) + (dirVector[1] * 4),
     ];
 
     return (
@@ -174,10 +183,10 @@ function Connector({ lesson1, lesson2, state1, state2, bendiness, pointsRequired
                 ))}
                 {pointsRequired > 0 && (
                     <line
-                        x1={`calc(${pos[0].toFixed(3)}% - ${Math.round(dirVector[0] * LOCK_LINE_LENGTH)}px)`}
-                        y1={`calc(${pos[1].toFixed(3)}% - ${Math.round(dirVector[1] * LOCK_LINE_LENGTH)}px)`}
-                        x2={`calc(${pos[0].toFixed(3)}% + ${Math.round(dirVector[0] * LOCK_LINE_LENGTH)}px)`}
-                        y2={`calc(${pos[1].toFixed(3)}% + ${Math.round(dirVector[1] * LOCK_LINE_LENGTH)}px)`}
+                        x1={`${endPosX1}%`}
+                        y1={`${endPosY1}%`}
+                        x2={`${endPosX2}%`}
+                        y2={`${endPosY2}%`}
                         stroke={color2}
                         strokeWidth="2"
                     />

@@ -124,7 +124,7 @@ img {
     position: absolute;
     left: 50vw;
     top: 100px;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
 }
 
 .bounding-box-lesson:hover {
@@ -133,7 +133,7 @@ img {
 
 .check-mark {
     position: absolute;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
 }
 
 .top-right {

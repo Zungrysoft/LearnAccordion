@@ -23,7 +23,7 @@
         "title": "Types of Accordions",
         "video_url": "",
         "description": "",
-        "x": 1.0,
+        "x": 0.9,
         "type": "instrument",
         "prerequisites": [
             ["about"]
@@ -33,7 +33,7 @@
         "title": "Buying a Used Accordion",
         "video_url": "",
         "description": "",
-        "x": 1.0,
+        "x": 0.9,
         "type": "instrument",
         "prerequisites": [
             ["types_of_accordions"]
@@ -279,7 +279,7 @@
         "video_url": "",
         "description": "",
         "x": -0.15,
-        "y_offset": 0.5,
+        "y_offset": 1.7,
         "type": "technique",
         "prerequisites": [
             ["intermediate_right_hand_chords"],
@@ -315,7 +315,7 @@
         "video_url": "",
         "description": "",
         "x": 0,
-        "y_offset": 1,
+        "y_offset": 2,
         "type": "technique",
         "prerequisites": [
             ["intermediate_right_hand_chords"],
@@ -351,17 +351,6 @@
         "type": "technique",
         "prerequisites": [
             ["two_handed_exercises_2"]
-        ]
-    },
-    "gate_2b": {
-        "x": -0.3,
-        "points_required": 60,
-        "type": "gate",
-        "prerequisites": [
-            ["two_handed_exercises_3"],
-            ["augmenting_left_hand_chords"],
-            ["two_handed_chords"],
-            ["walking_bass"]
         ]
     },
     
@@ -559,7 +548,7 @@
         "title": "Intermediate Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.3,
+        "x": 0.2,
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
@@ -577,24 +566,16 @@
             [{ "id": "big_right_hand_jumps", "points_required": 30 }]
         ]
     },
-    "gate_3a": {
-        "x": 0.6,
-        "points_required": 60,
-        "type": "gate",
-        "prerequisites": [
-            ["intermediate_right_hand_chords"]
-        ]
-    },
     "advanced_right_hand_chords": {
         "title": "Advanced Right Hand Chords",
         "video_url": "",
         "description": "",
-        "x": 0.4,
-        "y_offset": 0,
+        "x": 0.3,
+        "y_offset": 1,
         "type": "technique",
         "prerequisites": [
             ["advanced_chord_theory"],
-            ["gate_3a"]
+            ["intermediate_right_hand_chords"]
         ]
     },
 
@@ -617,7 +598,7 @@
         "title": "Scale Theory",
         "video_url": "",
         "description": "Scales, Keys, Basics of Chords",
-        "x": 0.1,
+        "x": 0.0,
         "y_offset": 0,
         "limit_preview": true,
         "type": "theory",

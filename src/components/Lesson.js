@@ -4,8 +4,6 @@ import configData from '../data/config.json';
 import typeData from '../data/types.json';
 import { useIsMobile } from '../helpers/breakpoints';
 import { useTheme } from '../helpers/theme';
-import IconDiamond from './IconDiamond';
-import IconStar from './IconStar';
 
 function Lesson({ lesson, state, onSetPage, boardSize }) {
     const isMobile = useIsMobile();
@@ -21,13 +19,12 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
     }
 
     let xPos = (lesson.x *45) + 50
-    let yPos = lesson.y * configData.icon_width * configData.vertical_spacing + 1.5
+    let yPos = lesson.y * configData.icon_width * configData.vertical_spacing + (configData.icon_width/2) + 1.5
     let iconWidth = configData.icon_width * configData.icon_scale
     let iconMargin = (configData.icon_width - iconWidth) / 2
     if (lesson.is_connector) {
         iconWidth *= 0.3
         iconMargin *= 0.3
-        yPos += iconWidth
     }
 
     let backgroundColor = colorLockedLesson
@@ -42,23 +39,27 @@ function Lesson({ lesson, state, onSetPage, boardSize }) {
 
     let iconImage = typeData[lesson.type].icon
 
+    // if (lesson.is_connector) {
+    //     return (
+    //         <div
+    //             style={{
+    //                 position: 'absolute',
+    //                 zIndex: 4,
+    //                 left: isMobile ? yPos+"vh" : vwToPx(xPos),
+    //                 top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
+    //                 transform: 'translate(-50%, -50%)'
+    //             }}
+    //         >
+    //             <IconDiamond
+    //                 width={(1.1 / 100) * boardSize.width}
+    //                 color={state.unlocked ? colorConnectorCompleted : colorConnector}
+    //             />
+    //         </div>
+    //     );
+    // }
+
     if (lesson.is_connector) {
-        return (
-            <div
-                style={{
-                    position: 'absolute',
-                    zIndex: 4,
-                    left: isMobile ? yPos+"vh" : vwToPx(xPos),
-                    top: isMobile ? (100-xPos)+"vh" : vwToPx(yPos),
-                    transform: 'translate(-50%, 50%)'
-                }}
-            >
-                <IconDiamond
-                    width={(1.2 / 100) * boardSize.width}
-                    color={state.unlocked ? colorConnectorCompleted : colorConnector}
-                />
-            </div>
-        );
+        return null;
     }
 
     return (

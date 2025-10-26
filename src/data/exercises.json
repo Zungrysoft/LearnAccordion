@@ -163,5 +163,62 @@
         "image": "",
         "hand": "left",
         "lesson": "bass_buttons_4"
+    },
+
+
+
+    "tapping_bass_note": {
+        "title": "Tapping a Bass Note",
+        "search_text": "",
+        "description": "Tap the C bass note in the left hand while tapping a C note in right-hand simultaneously. Every four taps, switch your right hand note from C to D.\n\nOnce comfortable, slowly climb up and down the C major scale on the right hand while tapping the bass note.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_playing"
+    },
+    "back_and_forth_bass_note": {
+        "title": "Back and Forth Bass Note",
+        "search_text": "",
+        "description": "Alternate between tapping the C bass note in the left hand and tapping a C note in right-hand.\n\nOnce comfortable, switch back and forth between this pattern and tapping the two notes simultaneously.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_playing"
+    },
+    "moving_bass_note": {
+        "title": "Moving Bass Note",
+        "search_text": "",
+        "description": "Walk up the E Major Scale on the right hand starting on E and ending on the octave. For the first four notes, tap the E bass button. For the last four notes, tap the B bass button.\n\nOnce comfortable, try and variation where you tap E for the first two notes, A for notes 3 and 4, B for notes 5 and 6 and E for notes 7 and 8.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_playing_2"
+    },
+    "simple_alternating_bass_pattern": {
+        "title": "Simple Alternating Bass Pattern",
+        "search_text": "",
+        "description": "Play a C alternating bass pattern in 4/4 while playing the first three notes of the major scale. C -> D -> E -> D\n\nOnce comfortable, try a 6/8 pattern.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_playing_2"
+    },
+    "mary_had_a_little_lamb_two_handed": {
+        "title": "Mary Had a Little Lamb Two-Hand",
+        "search_text": "",
+        "description": "Play Mary had a Little Lamb with two hands.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_playing_3"
+    },
+    "major_scale_over_alternating_bass": {
+        "title": "Major Scale over Alternating Bass",
+        "search_text": "",
+        "description": "Play up and down the G Major Scale over a 4/4 alternating bass pattern. Switch between the G chord and the D chord.\n\nOnce comfortable, play up the scale in thirds.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_playing_3"
     }
 }
