@@ -1,12 +1,12 @@
 import '../App.css';
 
 import { useTheme } from '../helpers/theme';
-import { useLessonState } from '../context/LessonStateProvider';
 import CheckBox from './CheckBox';
+import { useSettings } from '../context/SettingsProvider';
 
 
 function ShowLockedLessons() {
-    const { showLockedLessons, setShowLockedLessons } = useLessonState();
+    const { showLockedLessons, setShowLockedLessons } = useSettings();
     const { colorText } = useTheme();
 
     return (

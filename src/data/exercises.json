@@ -1,4 +1,25 @@
 {
+    "ear_training": {
+        "title": "Daily Ear Training Practice",
+        "search_text": "",
+        "description": "",
+        "video_timestamp_seconds": null,
+        "image": "",
+        "hand": null,
+        "lesson": "sight_reading_and_ear_training",
+        "require_lesson_complete": true
+    },
+    "sight_reading": {
+        "title": "Daily Sight Reading Practice",
+        "search_text": "",
+        "description": "",
+        "video_timestamp_seconds": null,
+        "image": "",
+        "hand": null,
+        "lesson": "sight_reading_and_ear_training",
+        "require_lesson_complete": true
+    },
+
     "scales_c_major": {
         "title": "Major Scales",
         "search_text": "",

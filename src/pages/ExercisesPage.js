@@ -36,7 +36,11 @@ export default function ExercisesPage() {
     filteredExercises = filteredExercises.filter((exercise) => !exercise.is_hidden)
   }
   if (!showLockedExercises) {
-    filteredExercises = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned || lessonState[exercise.lesson]?.unlocked)
+    filteredExercises = filteredExercises.filter((exercise) => 
+      lessonState[exercise.id]?.pinned ||
+      (lessonState[exercise.lesson]?.unlocked && !(exercise?.require_lesson_complete)) ||
+      lessonState[exercise.lesson]?.completed
+    )
   }
   const noExercisesUnlocked = filteredExercises.length === 0;
   if (!showRightHandExercises) {
@@ -184,9 +188,9 @@ function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise 
           <ExerciseEntryTitle
             title={exercise.title}
             pinned={lessonState[exercise.id]?.pinned}
-            active={lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)}
+            active={(lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)) || exercise.require_lesson_complete}
             hidden={exercise.is_hidden}
-            locked={!lessonState[exercise.lesson]?.unlocked} />
+            locked={!(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)))} />
         </div>
       ))}
     </div>
@@ -209,7 +213,7 @@ function ExerciseEntryTitle({ title, pinned, active, locked, hidden }) {
           }}
         />
       )}
-      {active && (!pinned) && (
+      {active && (!pinned) && (!locked) && (
         <img
           src={`${process.env.PUBLIC_URL}/icon/pointer.png`}
           alt=""

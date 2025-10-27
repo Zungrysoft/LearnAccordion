@@ -19,28 +19,6 @@
     },
 
 
-    "types_of_accordions": {
-        "title": "Types of Accordions",
-        "video_url": "",
-        "description": "",
-        "x": 0.9,
-        "type": "instrument",
-        "prerequisites": [
-            ["about"]
-        ]
-    },
-    "buying_used_accordions": {
-        "title": "Buying a Used Accordion",
-        "video_url": "",
-        "description": "",
-        "x": 0.9,
-        "type": "instrument",
-        "prerequisites": [
-            ["types_of_accordions"]
-        ]
-    },
-
-
     "bass_buttons_1": {
         "title": "Intro to the Bass Buttons",
         "video_url": "",
@@ -466,8 +444,8 @@
             [{ "id": "about_song_choice", "points_required": 5 }]
         ]
     },
-    "sight_reading_vs_ear_training": {
-        "title": "Sight Reading and Ear Training Practice",
+    "sight_reading_and_ear_training": {
+        "title": "Intro to Sight Reading and Ear Training",
         "video_url": "",
         "description": "",
         "x": 0.9,

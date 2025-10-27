@@ -78,7 +78,7 @@ export default function HomePage() {
         </div>
       </div>
       <div style={{ padding: '16px' }}>
-        <p style={{ margin: '0px', fontSize: '18px', color: colorText, width: '100%' }}>{`Features:\n- ${totalSongCount} songs in a wide selection of genres - Polka, Folk, Sea Shanties, Norteño, Zydeco, Classical, Jazz, Pop, Rock, Video Game Music and more!\n- ${totalLessonCount} lessons in technique, music theory, and instrument knowledge.\n- ${totalExerciseCount} exercises with organization tools to set up your daily regimen.\n- Daily ear training and sight reading exercises.\n- Structured lesson order while still giving you the freedom to focus on your preferred styles.`}</p>
+        <p style={{ margin: '0px', fontSize: '18px', color: colorText, width: '100%' }}>{`Features:\n- ${totalSongCount} songs in a wide selection of genres - Polka, Classical, Jazz, covers of Pop and Rock songs, Sea Shanties, Video Game Music, and more!\n- ${totalLessonCount} lessons in technique, music theory, and instrument knowledge.\n- ${totalExerciseCount} exercises with organization tools to set up your daily practice regimen.\n- Daily ear training and sight reading exercises.\n- Structured lesson order while still giving you the freedom to focus on your preferred styles.`}</p>
       </div>
     </div>
   );

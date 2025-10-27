@@ -5,9 +5,13 @@ export function removeThe(title) {
     if (ret.startsWith('the ')) {
         ret = ret.substring(4);
     }
+    if (ret.startsWith('la ')) {
+        ret = ret.substring(3);
+    }
     while (
         ret.startsWith('¡') ||
-        ret.startsWith('¿')
+        ret.startsWith('¿') ||
+        ret.startsWith('(')
     ) {
         ret = ret.substring(1);
     }
@@ -106,6 +110,7 @@ export function processForFilter(text) {
     .replaceAll('ñ', 'n')
     .replaceAll('-', '')
     .replaceAll('\'', '')
+    .replaceAll('/', '')
     .replaceAll(',', '')
     .replaceAll('.', '')
     .replaceAll('&', 'and')

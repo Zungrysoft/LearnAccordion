@@ -37,7 +37,7 @@ export default function LessonsPage() {
     }, [setActiveLessonId, setIsLessonOpen]);
 
     return (
-        <div ref={divRef} style={{ width: '100%', height: '100%', overflowY: 'scroll', }}>
+        <div ref={divRef} style={{ width: '100%', height: '100%', overflowY: 'scroll', overflowX: 'clip' }}>
             <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                 {Object.keys(lessonData).map((key) => (
                     <Lesson
