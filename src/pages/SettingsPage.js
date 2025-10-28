@@ -4,7 +4,14 @@ import SettingsGroup from '../components/SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 
 export default function SettingsPage() {
-  const { theme, setTheme, showHiddenSongs, setShowHiddenSongs } = useSettings();
+  const {
+    theme,
+    setTheme,
+    showHiddenSongs,
+    setShowHiddenSongs,
+    compactExercises,
+    setCompactExercises
+  } = useSettings();
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px' }}>
@@ -16,6 +23,16 @@ export default function SettingsPage() {
           ]}
           selectedOption={theme}
           onChange={setTheme}
+        />
+      </SettingsGroup>
+      <SettingsGroup title="Layout">
+        <RadioButtons
+          options={[
+            { value: true, label: 'Compact Pinned Exercises' },
+          ]}
+          selectedOption={compactExercises}
+          onChange={() => setCompactExercises((prev) => !prev)}
+          isCheckbox
         />
       </SettingsGroup>
       <SettingsGroup title="Developer">

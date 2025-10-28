@@ -7,7 +7,8 @@
         "image": "",
         "hand": null,
         "lesson": "sight_reading_and_ear_training",
-        "require_lesson_complete": true
+        "require_lesson_complete": true,
+        "is_ear_training": true
     },
     "sight_reading": {
         "title": "Daily Sight Reading Practice",
@@ -17,8 +18,11 @@
         "image": "",
         "hand": null,
         "lesson": "sight_reading_and_ear_training",
-        "require_lesson_complete": true
+        "require_lesson_complete": true,
+        "is_sight_reading": true
     },
+
+
 
     "scales_c_major": {
         "title": "Major Scales",

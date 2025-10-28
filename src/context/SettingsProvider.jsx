@@ -15,6 +15,7 @@ const defaultContext = {
     metronomeBpm: 100,
     metronomeVolume: 0.7,
     metronomeTimeSignature: '4/4',
+    compactExercises: false,
 }
 
 const SettingsContext = createContext(defaultContext);

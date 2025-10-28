@@ -4,6 +4,7 @@
     "colorBackgroundLight": "#566073",
     "colorBackgroundDark": "#131b2b",
     "colorBackgroundDarker": "#0a0f1a",
+    "colorBackgroundSheetMusic": "#ffffff",
 
     "colorText": "#ffffff",
     "colorTextAlt": "#bdbdbd",
@@ -21,6 +22,7 @@
     "colorBackgroundLight": "#f7f7f7",
     "colorBackgroundDark": "#90959e",
     "colorBackgroundDarker": "#6b6f78",
+    "colorBackgroundSheetMusic": "colorBackgroundLight",
 
     "colorText": "#000000",
     "colorTextAlt": "#90959e",

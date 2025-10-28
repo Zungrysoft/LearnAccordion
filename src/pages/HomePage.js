@@ -68,7 +68,7 @@ export default function HomePage() {
         <div style={{ flex: 1 }}>
           <img
             src={`${process.env.PUBLIC_URL}/photos/accordion1.png`}
-            alt=""
+            alt="My accordion"
             style={{
               width: '100%',
               aspectRatio: '3768/2670',

@@ -2546,7 +2546,7 @@
     "video_url": "",
     "points": 0,
     "has_vocals": false,
-    "is_two_handed": true,
+    "is_two_handed": false,
     "genre": "video_game",
     "is_hidden": true,
     "requirements": []

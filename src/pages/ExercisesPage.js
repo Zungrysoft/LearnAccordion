@@ -11,6 +11,8 @@ import TextInput from '../components/TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
 import CheckBox from '../components/CheckBox.js';
 import Metronome from '../components/Metronome.js';
+import SightReading from '../components/SightReading.js';
+import { SightReadingProvider } from '../context/SightReadingProvider.jsx';
 
 export default function ExercisesPage() {
   const { colorBackground, colorText } = useTheme();
@@ -24,6 +26,7 @@ export default function ExercisesPage() {
     setShowLeftHandExercises,
     showTwoHandExercises,
     setShowTwoHandExercises,
+    compactExercises,
   } = useSettings();
   const { lessonState, setLessonPinned } = useLessonState();
 
@@ -68,9 +71,13 @@ export default function ExercisesPage() {
     })
   }
 
-  const exercisesMainColumn = filteredExercises.filter((exercise) => !lessonState[exercise.id]?.pinned) || [];
-  const exercisesPinnedColumn = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned) || [];
-  const hasAnyPinnedExercises = exercises.some((exercise) => lessonState[exercise.id]?.pinned)
+  let exercisesMainColumn = filteredExercises.filter((exercise) => !lessonState[exercise.id]?.pinned) || [];
+  let exercisesPinnedColumn = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned) || [];
+  if (compactExercises) {
+    exercisesMainColumn = [...exercisesPinnedColumn, ...exercisesMainColumn];
+    exercisesPinnedColumn = [];
+  }
+  const hasAnyPinnedExercises = exercises.some((exercise) => lessonState[exercise.id]?.pinned) && !compactExercises
 
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -139,12 +146,17 @@ export default function ExercisesPage() {
             <>
               <h4 style={{ fontSize: 30, color: colorText }}>{exerciseData[selectedExerciseId]?.title}</h4>
               <p style={{ color: colorText }}>{exerciseData[selectedExerciseId]?.description}</p>
+              {(exerciseData[selectedExerciseId].is_sight_reading || exerciseData[selectedExerciseId].is_ear_training) && (
+                <SightReadingProvider isSightReading={exerciseData[selectedExerciseId].is_sight_reading}>
+                  <SightReading isSightReading={exerciseData[selectedExerciseId].is_sight_reading} />
+                </SightReadingProvider>
+              )}
               <CheckBox
                 text="Pin exercise:"
                 onChange={(val) => setLessonPinned(selectedExerciseId, val)}
                 checked={lessonState[selectedExerciseId]?.pinned}
                 textColor={colorText}
-            />
+              />
             </>
           )}
         </div>

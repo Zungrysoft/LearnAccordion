@@ -1,0 +1,14 @@
+{
+    "0001": {
+        "origin": "",
+        "description": "Key is A minor. Mind the two eighth-notes.",
+        "sheet_music": ["0001"],
+        "recording": "",
+        "difficulty_sight_reading": 1.4,
+        "difficulty_ear_training": 1.1,
+        "genres": [],
+        "requirements": [
+            ["minor_scale"]
+        ]
+    }
+}
