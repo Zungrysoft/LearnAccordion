@@ -6,10 +6,14 @@ import sightReadingExerciseData from '../data/sight_reading_exercises.json';
 import { useTheme } from '../helpers/theme';
 import { useSightReading } from '../context/SightReadingProvider';
 import CheckBox from './CheckBox';
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
+import { weightedPick } from '../helpers/random';
 
 export default function SightReading() {
   const { colorText, colorBackgroundDark, colorBackgroundLight } = useTheme();
   const {
+    isSightReading,
     activeExerciseId,
     setActiveExerciseId,
     getExerciseState,
@@ -33,6 +37,37 @@ export default function SightReading() {
     })
     return ret;
   }, [getExerciseState]);
+
+  const getExerciseWeight = useCallback((exerciseId) => {
+    const exercise = sightReadingExerciseData[exerciseId];
+
+    let weight = 1;
+
+    // Very low chance to redo completed lessons
+    const { completed } = getExerciseState(exerciseId);
+    if (completed) {
+      weight *= 1/10_000;
+    }
+
+    // Weight lessons based on desired difficulty
+    const exerciseDifficulty = (isSightReading ? exercise.difficulty_sight_reading : exercise.difficulty_ear_training) ?? null;
+    if (!exerciseDifficulty) {
+      return 0;
+    }
+    const delta = Math.abs(difficulty - exerciseDifficulty);
+    weight *= 1 / (3 * delta**3 + 1);
+
+    return weight;
+  }, [getExerciseState]);
+
+  const pickExercise = useCallback(() => {
+    const exerciseWeights = Object.keys(sightReadingExerciseData).map((id) => ({
+      value: id,
+      weight: getExerciseWeight(id),
+    }));
+
+    setActiveExerciseId(weightedPick(exerciseWeights));
+  }, [getExerciseWeight, setActiveExerciseId]);
   
 
   const buttonStyle = {
@@ -41,12 +76,13 @@ export default function SightReading() {
     borderRadius: '8px',
     textDecoration: 'none',
     backgroundColor: 'inherit',
+    cursor: 'pointer',
   };
 
   return (
     <div>
       <h2 style={{ color: colorText, margin: '8px', marginTop: '-16px' }}>#{activeExerciseId}</h2>
-      <SheetMusic exercise={currentSightReadingExercise}/>
+      <SheetMusicOrAudio exercise={currentSightReadingExercise} isSheetMusic={isSightReading}/>
       <p style={{ color: colorText, marginTop: '4px' }}>{currentSightReadingExercise?.description}</p>
       <button
         style={{ width: '100%', border: '0px', backgroundColor: colorBackgroundDark }}
@@ -55,17 +91,17 @@ export default function SightReading() {
         <h2 style={{ color: colorText, margin: '8px', fontSize: '16px' }}>{showSolution ? 'Hide Solution' : 'Show Solution'}</h2>
       </button>
       {showSolution && (
-        <SheetMusic exercise={currentSightReadingExercise}/>
+        <SheetMusicOrAudio exercise={currentSightReadingExercise} isSheetMusic={!isSightReading}/>
       )}
       <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', marginTop: '16px' }}>
-        <div style={{ flex:1, display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '16px' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '0px 16px' }}>
           <CheckBox
             text="Mark as completed:"
             onChange={(val) => setExerciseCompleted(activeExerciseId, val)}
             checked={completed}
             textColor={colorText}
           />
-          <button style={buttonStyle}>
+          <button style={buttonStyle} onClick={pickExercise}>
             <h2 style={{ margin: '8px 32px', color: colorText }}>Random exercise</h2>
           </button>
           <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "8px", width: '100%' }}>
@@ -81,7 +117,7 @@ export default function SightReading() {
             />
           </div>
         </div>
-        <div style={{ flex:1, display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '16px' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '16px' }}>
           <button
             style={{ width: '100%', border: '0px', backgroundColor: colorBackgroundDark }}
             onClick={() => {setShowPreviousExercises(!showPreviousExercises)}}
@@ -123,7 +159,13 @@ export default function SightReading() {
   );
 }
 
+function SheetMusicOrAudio({ exercise, isSheetMusic }) {
+  return isSheetMusic ? <SheetMusic exercise={exercise} /> : <Audio exercise={exercise} />
+}
+
 function SheetMusic({ exercise }) {
+  const { colorBackgroundSheetMusic } = useTheme();
+
   if (!exercise) {
     return null;
   }
@@ -134,8 +176,21 @@ function SheetMusic({ exercise }) {
       alt=""
       style={{
         width: '100%',
-        backgroundColor: 'white',
+        backgroundColor: colorBackgroundSheetMusic,
       }}
+    />
+  );
+}
+
+function Audio({ exercise }) {
+  const { colorBackgroundSheetMusic } = useTheme();
+
+  return (
+    <AudioPlayer
+      src={`${process.env.PUBLIC_URL}/sheet_music/sight_reading_practice/${exercise.recording}.wav`}
+      loop={false}
+      showFilledVolume
+      style={{ backgroundColor: colorBackgroundSheetMusic }}
     />
   );
 }

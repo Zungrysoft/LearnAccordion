@@ -7,6 +7,7 @@ const defaultExerciseState = {
 };
 
 const defaultContext = {
+    isSightReading: true,
     activeExerciseId: () => {},
     setActiveExerciseId: () => {},
     getExerciseState: () => defaultExerciseState,
@@ -103,6 +104,7 @@ export function SightReadingProvider({ isSightReading, children }) {
         <SightReadingContext.Provider
             value={useMemo(
                 () => ({
+                    isSightReading,
                     activeExerciseId,
                     setActiveExerciseId,
                     getExerciseState,
@@ -114,6 +116,7 @@ export function SightReadingProvider({ isSightReading, children }) {
                     setDifficulty,
                 }),
                 [
+                    isSightReading,
                     activeExerciseId,
                     setActiveExerciseId,
                     getExerciseState,

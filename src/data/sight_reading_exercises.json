@@ -3,9 +3,21 @@
         "origin": "",
         "description": "Key is A minor. Mind the two eighth-notes.",
         "sheet_music": ["0001"],
-        "recording": "",
-        "difficulty_sight_reading": 1.4,
+        "recording": "test",
+        "difficulty_sight_reading": 1.3,
         "difficulty_ear_training": 1.1,
+        "genres": [],
+        "requirements": [
+            ["minor_scale"]
+        ]
+    },
+    "0002": {
+        "origin": "",
+        "description": "Key is A minor.",
+        "sheet_music": ["0002"],
+        "recording": "test",
+        "difficulty_sight_reading": 1.9,
+        "difficulty_ear_training": 1.3,
         "genres": [],
         "requirements": [
             ["minor_scale"]
