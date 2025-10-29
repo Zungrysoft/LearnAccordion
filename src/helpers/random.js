@@ -15,5 +15,5 @@ export function weightedPick(list) {
       return list[i].value;
     }
   }
-  return list[Math.floor(Math.random() * list.length)];
+  return list[Math.floor(Math.random() * list.length)].value;
 }

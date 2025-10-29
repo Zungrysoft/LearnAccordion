@@ -9,6 +9,7 @@ import CheckBox from './CheckBox';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { weightedPick } from '../helpers/random';
+import { useLessonState } from '../context/LessonStateProvider';
 
 export default function SightReading() {
   const { colorText, colorBackgroundDark, colorBackgroundLight } = useTheme();
@@ -27,6 +28,7 @@ export default function SightReading() {
 
   const currentSightReadingExercise = sightReadingExerciseData[activeExerciseId];
   const { completed, showSolution } = getExerciseState(activeExerciseId);
+  const { lessonState } = useLessonState();
 
   const completedExerciseIds = useMemo(() => {
     let ret = new Set();
@@ -40,22 +42,28 @@ export default function SightReading() {
 
   const getExerciseWeight = useCallback((exerciseId) => {
     const exercise = sightReadingExerciseData[exerciseId];
-
     let weight = 1;
 
-    // Very low chance to redo completed lessons
-    const { completed } = getExerciseState(exerciseId);
-    if (completed) {
-      weight *= 1/10_000;
+    // Check exercise requirements
+    for (const requirement of exercise.requirements) {
+      if (!requirement.some((option) => lessonState[option].completed)) {
+        return 0;
+      }
     }
 
-    // Weight lessons based on desired difficulty
+    // Weight exercises based on desired difficulty
     const exerciseDifficulty = (isSightReading ? exercise.difficulty_sight_reading : exercise.difficulty_ear_training) ?? null;
     if (!exerciseDifficulty) {
       return 0;
     }
     const delta = Math.abs(difficulty - exerciseDifficulty);
     weight *= 1 / (3 * delta**3 + 1);
+
+    // Very low chance to redo completed exercises
+    const { completed } = getExerciseState(exerciseId);
+    if (completed) {
+      weight *= 1/10_000;
+    }
 
     return weight;
   }, [getExerciseState]);
