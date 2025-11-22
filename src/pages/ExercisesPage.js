@@ -214,18 +214,16 @@ function ExerciseEntryTitle({ title, pinned, active, locked, hidden }) {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px' }}>
-      {pinned && (
-        <img
-          src={`${process.env.PUBLIC_URL}/icon/pin.png`}
-          alt=""
-          style={{
-            width: '16px',
-            height: '16px',
-            filter: filterIcon,
-          }}
-        />
-      )}
-      {active && (!pinned) && (!locked) && (
+      <img
+        src={`${process.env.PUBLIC_URL}/icon/${pinned ? 'pin_filled' : 'pin'}.png`}
+        alt=""
+        style={{
+          width: '16px',
+          height: '16px',
+          filter: filterIcon,
+        }}
+      />
+      {active && (!locked) && (
         <img
           src={`${process.env.PUBLIC_URL}/icon/pointer.png`}
           alt=""

@@ -134,11 +134,11 @@ export default function Metronome() {
   }
 
   const multiplyBpm = (scalar) => {
-    setBpm((prev) => Math.floor(prev * scalar));
+    setBpm((prev) => Math.floor(Number(prev) * scalar));
   }
 
   const addBpm = (value) => {
-    setBpm((prev) => Math.floor(prev + value));
+    setBpm((prev) => Math.floor(Number(prev) + value));
   }
 
   const secondsPerBeat = () => 60.0 / Math.max(1, getBpm()) / timeSignatures[timeSignature].speedMultiplier;

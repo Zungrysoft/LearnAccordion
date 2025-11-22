@@ -366,7 +366,8 @@
         "y_offset": 0.5,
         "type": "technique",
         "prerequisites": [
-            ["c_system"]
+            ["c_system"],
+            ["scale_theory"]
         ]
     },
     "minor_scale": {
@@ -377,8 +378,7 @@
         "y_offset": 1,
         "type": "technique",
         "prerequisites": [
-            ["c_system"],
-            ["scale_theory"]
+            ["c_system"]
         ]
     },
     "improvisation": {
@@ -564,7 +564,7 @@
     "intro_to_music_theory": {
         "title": "Introductory Music Theory",
         "video_url": "",
-        "description": "Notes, Semitones, Intervals",
+        "description": "Notes, Semitones, Intervals, Counting Time",
         "x": 0.0,
         "limit_preview": true,
         "type": "theory",

@@ -245,5 +245,23 @@
         "image": "",
         "hand": "both",
         "lesson": "two_handed_playing_3"
+    },
+    "major_scale_on_both_hands": {
+        "title": "Major Scale on Both Hands",
+        "search_text": "",
+        "description": "Play up and down the major scale on both hands simultaneously. Once comfortable, also try going up on one hand while going down on the other.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_basslines"
+    },
+    "minor_scale_on_both_hands": {
+        "title": "Minor Scale on Both Hands",
+        "search_text": "",
+        "description": "Play up and down the minor scale on both hands simultaneously. Once comfortable, also try going up on one hand while going down on the other.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "both",
+        "lesson": "two_handed_basslines"
     }
 }

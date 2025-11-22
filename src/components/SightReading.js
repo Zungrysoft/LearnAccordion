@@ -76,6 +76,8 @@ export default function SightReading() {
 
     setActiveExerciseId(weightedPick(exerciseWeights));
   }, [getExerciseWeight, setActiveExerciseId]);
+
+  const description = currentSightReadingExercise?.[isSightReading ? 'description_sight_reading' : 'description_ear_training'];
   
 
   const buttonStyle = {
@@ -91,7 +93,7 @@ export default function SightReading() {
     <div>
       <h2 style={{ color: colorText, margin: '8px', marginTop: '-16px' }}>#{activeExerciseId}</h2>
       <SheetMusicOrAudio exercise={currentSightReadingExercise} isSheetMusic={isSightReading}/>
-      <p style={{ color: colorText, marginTop: '4px' }}>{currentSightReadingExercise?.description}</p>
+      <p style={{ color: colorText, marginTop: '4px' }}>{description}</p>
       <button
         style={{ width: '100%', border: '0px', backgroundColor: colorBackgroundDark }}
         onClick={() => {setExerciseShowSolution(activeExerciseId, !showSolution)}}

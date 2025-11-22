@@ -20,7 +20,7 @@ export function removeThe(title) {
 
 function sortLessonSubtasksCompareEntry(a, b, sortOrderEntry) {
     if (sortOrderEntry === 'genre') {
-        return (genreData[a.genre].priority ?? Infinity) - (genreData[b.genre].priority ?? Infinity);
+        return (genreData[a.genre]?.priority ?? Infinity) - (genreData[b.genre]?.priority ?? Infinity);
     }
     else if (sortOrderEntry === 'points') {
         return (b.points ?? 0) - (a.points ?? 0);

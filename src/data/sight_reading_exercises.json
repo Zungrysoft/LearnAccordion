@@ -1,23 +1,77 @@
 {
     "0001": {
         "origin": "",
-        "description": "Key is A minor. Mind the two eighth-notes.",
         "sheet_music": ["0001"],
         "recording": "test",
-        "difficulty_sight_reading": 1.3,
-        "difficulty_ear_training": 1.1,
+        "description_sight_reading": "Key is C Major.",
+        "description_ear_training": "Key is C Major.",
+        "difficulty_sight_reading": 1.0,
+        "difficulty_ear_training": 1.0,
+        "genres": [],
+        "requirements": [
+            ["major_scale"]
+        ]
+    },
+    "0002": {
+        "origin": "",
+        "sheet_music": ["0002"],
+        "recording": "test",
+        "description_sight_reading": "Key is A minor.",
+        "description_ear_training": "Key is A minor.",
+        "difficulty_sight_reading": 1.9,
+        "difficulty_ear_training": 1.3,
         "genres": [],
         "requirements": [
             ["minor_scale"]
         ]
     },
-    "0002": {
+    "0003": {
         "origin": "",
-        "description": "Key is A minor.",
-        "sheet_music": ["0002"],
+        "sheet_music": ["0003"],
         "recording": "test",
-        "difficulty_sight_reading": 1.9,
-        "difficulty_ear_training": 1.3,
+        "description_sight_reading": "",
+        "description_ear_training": "Time signature is 6/8.",
+        "difficulty_sight_reading": 1.1,
+        "difficulty_ear_training": 1.0,
+        "genres": [],
+        "requirements": [
+            ["minor_scale"]
+        ]
+    },
+    "0004": {
+        "origin": "",
+        "sheet_music": ["0004"],
+        "recording": "test",
+        "description_sight_reading": "The dot above the note means 'stacatto'. Those notes should be played short and sharp.",
+        "description_ear_training": "Time signature is 4/4.",
+        "difficulty_sight_reading": 2.3,
+        "difficulty_ear_training": 1.6,
+        "genres": [],
+        "requirements": [
+            ["minor_scale"]
+        ]
+    },
+    "0005": {
+        "origin": "",
+        "sheet_music": ["0005"],
+        "recording": "test",
+        "description_sight_reading": "",
+        "description_ear_training": "Swing time in 4/4.",
+        "difficulty_sight_reading": 2.8,
+        "difficulty_ear_training": 1.4,
+        "genres": ["irish_folk"],
+        "requirements": [
+            ["major_scale"]
+        ]
+    },
+    "0006": {
+        "origin": "",
+        "sheet_music": ["0006"],
+        "recording": "test",
+        "description_sight_reading": "Key is A minor. Mind the two eighth-notes.",
+        "description_ear_training": "Key is A minor.",
+        "difficulty_sight_reading": 1.3,
+        "difficulty_ear_training": 1.1,
         "genres": [],
         "requirements": [
             ["minor_scale"]

@@ -14,38 +14,52 @@
         "icon": "accordion",
         "priority": 102
     },
-    "folk": {
-        "display": "Folk",
+
+
+    "folk_american": {
+        "display": "American Folk",
         "icon": "clap",
         "priority": 150
     },
-    "jig": {
-        "display": "Jig",
+    "folk_english": {
+        "display": "English Folk",
         "icon": "clap",
         "priority": 151
     },
-    "reel": {
-        "display": "Reel",
+    "folk_scottish": {
+        "display": "Scottish Folk",
         "icon": "clap",
         "priority": 152
     },
-    "hornpipe": {
-        "display": "Hornpipe",
+    "folk_irish": {
+        "display": "Irish Folk",
         "icon": "clap",
         "priority": 153
     },
-
-
-
-    "sea_shanty": {
-        "display": "Sea Shanty",
-        "icon": "anchor",
-        "priority": 200
+    "folk_balkan": {
+        "display": "Balkan Folk",
+        "icon": "clap",
+        "priority": 170
     },
+    "folk_russian": {
+        "display": "Russian Folk",
+        "icon": "clap",
+        "priority": 171
+    },
+    "folk_contemporary": {
+        "display": "Contemporary Folk",
+        "icon": "clap",
+        "priority": 199
+    },
+    
+    
+
+
+
     "nautical": {
         "display": "Nautical Tune",
         "icon": "anchor",
-        "priority": 201
+        "priority": 200
     },
 
 

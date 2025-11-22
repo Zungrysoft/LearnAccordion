@@ -291,7 +291,7 @@ function SongTitle({ title, pinned, completed, locked, hidden }) {
     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px' }}>
       {pinned && (
         <img
-          src={`${process.env.PUBLIC_URL}/icon/pin.png`}
+          src={`${process.env.PUBLIC_URL}/icon/pin_filled.png`}
           alt=""
           style={{
             width: '16px',
