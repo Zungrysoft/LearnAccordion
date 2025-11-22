@@ -13,6 +13,9 @@ import CheckBox from '../components/CheckBox.js';
 import Metronome from '../components/Metronome.js';
 import SightReading from '../components/SightReading.js';
 import { SightReadingProvider } from '../context/SightReadingProvider.jsx';
+import Tabs from '../components/Tabs.js';
+
+const MIN_EXERCISE_ENTRY_WIDTH_PX = 410;
 
 export default function ExercisesPage() {
   const { colorBackground, colorText } = useTheme();
@@ -26,7 +29,6 @@ export default function ExercisesPage() {
     setShowLeftHandExercises,
     showTwoHandExercises,
     setShowTwoHandExercises,
-    compactExercises,
   } = useSettings();
   const { lessonState, setLessonPinned } = useLessonState();
 
@@ -71,13 +73,9 @@ export default function ExercisesPage() {
     })
   }
 
-  let exercisesMainColumn = filteredExercises.filter((exercise) => !lessonState[exercise.id]?.pinned) || [];
-  let exercisesPinnedColumn = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned) || [];
-  if (compactExercises) {
-    exercisesMainColumn = [...exercisesPinnedColumn, ...exercisesMainColumn];
-    exercisesPinnedColumn = [];
-  }
-  const hasAnyPinnedExercises = exercises.some((exercise) => lessonState[exercise.id]?.pinned) && !compactExercises
+  let exercisesAll = filteredExercises || [];
+  let exercisesPinned = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned) || [];
+  const hasAnyPinnedExercises = exercisesPinned.length > 0;
 
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -131,10 +129,12 @@ export default function ExercisesPage() {
         </SettingsGroup>
       </div>
       <div style={{ display: 'flex', flexDirection: 'row', minHeight: 0, flex: 1 }}>
-        <ExerciseEntryList exercises={exercisesMainColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
-        {hasAnyPinnedExercises &&
-          <ExerciseEntryList exercises={exercisesPinnedColumn} selectedExerciseId={selectedExerciseId} setSelectedExercise={setSelectedExercise} />
-        }
+        <ExerciseEntryList
+          exercisesAll={exercisesAll}
+          exercisesPinned={exercisesPinned}
+          selectedExerciseId={selectedExerciseId}
+          setSelectedExercise={setSelectedExercise}
+        />
         <div style={{
           flex: 1,
           overflowY: 'auto',
@@ -151,12 +151,6 @@ export default function ExercisesPage() {
                   <SightReading isSightReading={exerciseData[selectedExerciseId].is_sight_reading} />
                 </SightReadingProvider>
               )}
-              <CheckBox
-                text="Pin exercise:"
-                onChange={(val) => setLessonPinned(selectedExerciseId, val)}
-                checked={lessonState[selectedExerciseId]?.pinned}
-                textColor={colorText}
-              />
             </>
           )}
         </div>
@@ -165,9 +159,10 @@ export default function ExercisesPage() {
   )
 };
 
-function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise }) {
+function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, setSelectedExercise }) {
   const { lessonState } = useLessonState();
   const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+  const { showPinnedExercises, setShowPinnedExercises } = useSettings();
 
   const getExerciseBackgroundColor = useCallback((exercise) => {
     if (exercise.id === selectedExerciseId) {
@@ -179,87 +174,132 @@ function ExerciseEntryList({ exercises, selectedExerciseId, setSelectedExercise 
     return colorBackgroundDark;
   }, [selectedExerciseId, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
 
+  const containerStyle = {
+    flexGrow: 0,
+    flexShink: 2,
+    height: '100%',
+    backgroundColor: colorBackgroundDark,
+    borderRight: `2px solid ${colorText}`,
+  };
+
+  const listContainerStyle = {
+    flexGrow: 0,
+    flexShink: 2,
+    overflowY: 'scroll',
+    height: '100%',
+  };
+
+  const exercises = showPinnedExercises ? exercisesPinned : exercisesAll;
+
   return (
-    <div style={{
-      flexGrow: 0,
-      flexShink: 2,
-      minWidth: '300px',
-      overflowY: 'scroll',
-      height: '100%',
-      backgroundColor: colorBackgroundDark,
-      borderRight: `2px solid ${colorText}`,
-    }}>
+    <div style={containerStyle}>
+      <Tabs
+        tabs={[
+          { id: 'all', title: 'All Exercises' },
+          { id: 'pinned', title: 'Regimen' },
+        ]}
+        activeTab={ showPinnedExercises ? 'pinned' : 'all' }
+        setActiveTab={ (tab) => setShowPinnedExercises(tab === 'pinned') }
+      />
       {exercises.length === 0 ? (
-        <p style={{ textAlign: "center", margin: '16px' }}>{`There are no exercises here\nthat match your filters.`}</p>
-      ) : exercises.map((exercise) => (
-        <div
-          key={exercise.id}
-          onClick={() => setSelectedExercise(exercise.id)}
-          style={{ padding: '8px', cursor: 'pointer', backgroundColor: getExerciseBackgroundColor(exercise) }}
-        >
-          <ExerciseEntryTitle
-            title={exercise.title}
-            pinned={lessonState[exercise.id]?.pinned}
-            active={(lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)) || exercise.require_lesson_complete}
-            hidden={exercise.is_hidden}
-            locked={!(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)))} />
+        <p style={{ textAlign: "center", margin: '16px', minWidth: `${MIN_EXERCISE_ENTRY_WIDTH_PX}px` }}>{`There are no exercises here\nthat match your filters.`}</p>
+      ) : (
+        <div style={listContainerStyle}>
+          {exercises.map((exercise) => (
+            <div
+              key={exercise.id}
+              onClick={() => setSelectedExercise(exercise.id)}
+              style={{ padding: '0px', cursor: 'pointer', backgroundColor: getExerciseBackgroundColor(exercise) }}
+            >
+              <ExerciseEntry
+                id={exercise.id}
+                title={exercise.title}
+                pinned={lessonState[exercise.id]?.pinned}
+                active={(lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)) || exercise.require_lesson_complete}
+                hidden={exercise.is_hidden}
+                locked={!(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)))}
+                isPinnedList={showPinnedExercises}
+              />
+            </div>
+          ))}
         </div>
-      ))}
+      )}
+      
     </div>
   );
 }
 
-function ExerciseEntryTitle({ title, pinned, active, locked, hidden }) {
+function ExerciseEntry({ id, title, pinned, active, locked, hidden, isPinnedList, isExpanded }) {
   const { colorText, filterIcon } = useTheme();
+  const { lessonState, setLessonPinned } = useLessonState();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px' }}>
-      <img
-        src={`${process.env.PUBLIC_URL}/icon/${pinned ? 'pin_filled' : 'pin'}.png`}
-        alt=""
-        style={{
-          width: '16px',
-          height: '16px',
-          filter: filterIcon,
-        }}
-      />
-      {active && (!locked) && (
-        <img
-          src={`${process.env.PUBLIC_URL}/icon/pointer.png`}
-          alt=""
-          style={{
-            width: '12px',
-            height: '12px',
-            marginRight: '-6px',
-            filter: filterIcon,
-          }}
-        />
-      )}
-      {locked && (!hidden) && (
-        <img
-          src={`${process.env.PUBLIC_URL}/icon/lock.png`}
-          alt=""
-          style={{
-            width: '16px',
-            height: '16px',
-            filter: filterIcon,
-          }}
-        />
-      )}
-      {hidden && (
-        <img
-          src={`${process.env.PUBLIC_URL}/icon/warning.png`}
-          alt=""
-          style={{
-            width: '16px',
-            height: '16px',
-            filter: filterIcon,
-          }}
-        />
-      )}
-      <h2 style={{ fontSize: 20, margin: 0, color: colorText }}>
-        {title}
-      </h2>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px'}}>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px', padding: '0px 8px', minWidth: `${MIN_EXERCISE_ENTRY_WIDTH_PX}px` }}>
+        {!isPinnedList && (
+          <button
+            onClick={(event) => {
+              setLessonPinned(id, !lessonState[id].pinned);
+              event.stopPropagation();
+            }}
+            style={{
+              cursor: 'pointer',
+              backgroundColor: 'inherit',
+              border: '0px',
+              margin: '0px',
+              margin: '0px -8px',
+              padding: '8px',
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/icon/${pinned ? 'pin_filled' : 'pin'}.png`}
+              alt=""
+              style={{
+                width: '16px',
+                height: '16px',
+                filter: filterIcon,
+              }}
+            />
+          </button>
+        )}
+        {active && (!locked) && (!isPinnedList) && (
+          <img
+            src={`${process.env.PUBLIC_URL}/icon/pointer.png`}
+            alt=""
+            style={{
+              width: '12px',
+              height: '12px',
+              marginRight: '-6px',
+              filter: filterIcon,
+            }}
+          />
+        )}
+        {locked && (!hidden) && (!isPinnedList) && (
+          <img
+            src={`${process.env.PUBLIC_URL}/icon/lock.png`}
+            alt=""
+            style={{
+              width: '16px',
+              height: '16px',
+              filter: filterIcon,
+            }}
+          />
+        )}
+        {hidden && (
+          <img
+            src={`${process.env.PUBLIC_URL}/icon/warning.png`}
+            alt=""
+            style={{
+              width: '16px',
+              height: '16px',
+              filter: filterIcon,
+            }}
+          />
+        )}
+        <h2 style={{ fontSize: 20, margin: '8px 0px', color: colorText }}>
+          {title}
+        </h2>
+      </div>
     </div>
   );
 }

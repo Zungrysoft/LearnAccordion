@@ -9,8 +9,6 @@ export default function SettingsPage() {
     setTheme,
     showHiddenSongs,
     setShowHiddenSongs,
-    compactExercises,
-    setCompactExercises
   } = useSettings();
 
   return (
@@ -23,16 +21,6 @@ export default function SettingsPage() {
           ]}
           selectedOption={theme}
           onChange={setTheme}
-        />
-      </SettingsGroup>
-      <SettingsGroup title="Layout">
-        <RadioButtons
-          options={[
-            { value: true, label: 'Compact Pinned Exercises' },
-          ]}
-          selectedOption={compactExercises}
-          onChange={() => setCompactExercises((prev) => !prev)}
-          isCheckbox
         />
       </SettingsGroup>
       <SettingsGroup title="Developer">

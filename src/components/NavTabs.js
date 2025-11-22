@@ -1,8 +1,9 @@
 import React from "react";
 import { useTheme } from "../helpers/theme";
+import { NavLink } from "react-router-dom";
 
-export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
-  const { colorBackgroundDark, filterIcon, colorText, colorBackground } = useTheme();
+export default function NavTabs({ tabs = [] }) {
+  const { colorBackgroundDark, filterIcon, colorText } = useTheme();
 
   const styles = {
     container: {
@@ -19,32 +20,31 @@ export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
     tab: (isActive) => ({
       flex: 1,
       textAlign: "center",
-      textDecoration: isActive ? 'underline' : 'none',
+      textDecoration: 'none',
       padding: "12px",
       fontSize: "12px",
       fontWeight: "bold",
       cursor: isActive ? "auto" : "pointer",
-      backgroundColor: isActive ? colorBackgroundDark : colorBackground,
+      backgroundColor: isActive ? "inherit" : colorBackgroundDark,
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       gap: '8px',
-      border: '0px',
     }),
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.tabBar}>
-        {tabs.map(({ id, title, icon, style }) => (
-          <button
-            key={id + title}
-            style={{
-              ...styles.tab(activeTab === id),
+        {tabs.map(({ title, icon, style, url }) => (
+          <NavLink
+            key={title + url}
+            to={url ?? '/'}
+            style={({ isActive }) => ({
+              ...styles.tab(isActive),
               ...style,
-            }}
-            onClick={() => setActiveTab(id)}
+            })}
           >
             {icon && (
               <img
@@ -54,7 +54,7 @@ export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
               />
             )}
             {title && <h2 style={{ margin: '8px', color: colorText }}>{title}</h2>}
-          </button>
+          </NavLink>
         ))}
       </div>
     </div>

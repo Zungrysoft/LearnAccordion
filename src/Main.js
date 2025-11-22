@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import './App.css';
 
 import LessonPopup from './components/LessonPopup.js';
-import Tabs from './components/Tabs.js';
+import NavTabs from './components/NavTabs.js';
 import { useTheme } from './helpers/theme.jsx';
 import { useActiveLesson } from './context/ActiveLessonProvider.jsx';
 import LessonsPage from './pages/LessonsPage.js';
@@ -21,7 +21,7 @@ export default function Main() {
     return (
         <div style={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: colorBackground }}>
             {currentPath !== "/" && (
-                <Tabs
+                <NavTabs
                     tabs={[
                         {
                             icon: 'home',
