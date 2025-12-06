@@ -233,19 +233,21 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
             width="120px"
           />
         </div>
-        <div style={{ borderRight: '2px solid black', width: "120px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ borderRight: '2px solid black', width: "90px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <BasicButton
             icon="arrow_left"
             onClick={() => setRegimenSize((prev) => Math.max(prev - 1, 1))}
+            disabled={regimenSize <= 1}
             height="32px"
-            width="40px"
+            width="32px"
           />
           <h2 style={{ color: colorText, margin: '0px', marginBottom: '4px' }}>{regimenSize}</h2>
           <BasicButton
             icon="arrow_right"
             onClick={() => setRegimenSize((prev) => Math.min(prev + 1, 25))}
+            disabled={regimenSize >= 25}
             height="32px"
-            width="40px"
+            width="32px"
           />
         </div>
         <BasicButton

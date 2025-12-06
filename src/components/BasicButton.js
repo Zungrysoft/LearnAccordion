@@ -1,6 +1,6 @@
 import { useTheme } from "../helpers/theme";
 
-function BasicButton({ text, icon, onClick, backgroundColor, width, height }) {
+function BasicButton({ text, icon, onClick, backgroundColor, width, height, disabled }) {
   const { colorText, filterIcon } = useTheme();
 
   const buttonStyle = {
@@ -11,12 +11,14 @@ function BasicButton({ text, icon, onClick, backgroundColor, width, height }) {
     border: 0,
     minWidth: '0px',
     height: height ?? '48px',
-    cursor: 'pointer',
+    cursor: disabled ? undefined : 'pointer',
   };
 
+  const opacity = disabled ? '30%' : '100%';
+
   return (
-    <button style={buttonStyle} onClick={onClick}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+    <button style={buttonStyle} onClick={disabled ? () => {} : onClick}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', opacity: opacity }}>
         {text && (
           <h2 style={{ color: colorText, margin: '0px' }}>{text}</h2>
         )}
