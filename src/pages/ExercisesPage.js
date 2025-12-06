@@ -1,21 +1,22 @@
 import '../App.css';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useLayoutEffect, useState } from 'react';
 import exerciseData from '../data/exercises.json';
-import { processForFilter, sortSongs } from '../helpers/sortingAndFiltering.js';
-import genreData from '../data/genres.json';
+import { processForFilter } from '../helpers/sortingAndFiltering.js';
 import RadioButtons from '../components/RadioButtons.jsx';
 import { useTheme } from '../helpers/theme.jsx';
 import SettingsGroup from '../components/SettingsGroup.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 import TextInput from '../components/TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
-import CheckBox from '../components/CheckBox.js';
 import Metronome from '../components/Metronome.js';
 import SightReading from '../components/SightReading.js';
 import { SightReadingProvider } from '../context/SightReadingProvider.jsx';
 import Tabs from '../components/Tabs.js';
+import BasicButton from '../components/BasicButton.js';
+import { exerciseFrequencyMap, useExerciseSettings } from '../context/ExerciseSettingsProvider.jsx';
 
-const MIN_EXERCISE_ENTRY_WIDTH_PX = 410;
+const EXERCISE_ENTRY_WIDTH_PX = 410;
+const EXERCISE_SETTINGS_WIDTH_PX = 290;
 
 export default function ExercisesPage() {
   const { colorBackground, colorText } = useTheme();
@@ -30,11 +31,18 @@ export default function ExercisesPage() {
     showTwoHandExercises,
     setShowTwoHandExercises,
   } = useSettings();
-  const { lessonState, setLessonPinned } = useLessonState();
+  const { lessonState, exercises } = useLessonState();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { regimen } = useExerciseSettings();
 
   const [filterText, setFilterText] = useState("");
-  const [selectedExerciseId, setSelectedExercise] = useState(null);
-  const exercises = Object.entries(exerciseData).map(([key, value]) => ({ ...value, id: key }));
+  const [selectedExerciseId, setSelectedExerciseId] = useState(null);
+
+  useLayoutEffect(() => {
+    if (regimen.length > 0) {
+      setSelectedExerciseId(regimen[0].id);
+    }
+  }, [regimen])
 
   let filteredExercises = exercises;
   if (!showHiddenSongs) {
@@ -74,8 +82,6 @@ export default function ExercisesPage() {
   }
 
   let exercisesAll = filteredExercises || [];
-  let exercisesPinned = filteredExercises.filter((exercise) => lessonState[exercise.id]?.pinned) || [];
-  const hasAnyPinnedExercises = exercisesPinned.length > 0;
 
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -131,9 +137,11 @@ export default function ExercisesPage() {
       <div style={{ display: 'flex', flexDirection: 'row', minHeight: 0, flex: 1 }}>
         <ExerciseEntryList
           exercisesAll={exercisesAll}
-          exercisesPinned={exercisesPinned}
+          exercisesPinned={regimen}
           selectedExerciseId={selectedExerciseId}
-          setSelectedExercise={setSelectedExercise}
+          setSelectedExerciseId={setSelectedExerciseId}
+          isExpanded={isExpanded}
+          setIsExpanded={setIsExpanded}
         />
         <div style={{
           flex: 1,
@@ -159,20 +167,10 @@ export default function ExercisesPage() {
   )
 };
 
-function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, setSelectedExercise }) {
-  const { lessonState } = useLessonState();
-  const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText } = useTheme();
+function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, setSelectedExerciseId, isExpanded, setIsExpanded }) {
+  const { colorBackgroundDark, colorBackgroundLight, colorText } = useTheme();
   const { showPinnedExercises, setShowPinnedExercises } = useSettings();
-
-  const getExerciseBackgroundColor = useCallback((exercise) => {
-    if (exercise.id === selectedExerciseId) {
-      return colorBackground;
-    }
-    if (exercise.is_hidden) {
-      return colorBackgroundDarker;
-    }
-    return colorBackgroundDark;
-  }, [selectedExerciseId, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
+  const { generateRegimen, setRegimenSize, regimenSize } = useExerciseSettings();
 
   const containerStyle = {
     flexGrow: 0,
@@ -180,13 +178,15 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
     height: '100%',
     backgroundColor: colorBackgroundDark,
     borderRight: `2px solid ${colorText}`,
+    display: 'flex',
+    flexDirection: 'column',
   };
 
   const listContainerStyle = {
-    flexGrow: 0,
+    flexGrow: 1,
     flexShink: 2,
     overflowY: 'scroll',
-    height: '100%',
+    minHeight: '0px',
   };
 
   const exercises = showPinnedExercises ? exercisesPinned : exercisesAll;
@@ -196,72 +196,104 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
       <Tabs
         tabs={[
           { id: 'all', title: 'All Exercises' },
-          { id: 'pinned', title: 'Regimen' },
+          { id: 'pinned', title: 'Today\'s Regimen' },
         ]}
         activeTab={ showPinnedExercises ? 'pinned' : 'all' }
         setActiveTab={ (tab) => setShowPinnedExercises(tab === 'pinned') }
       />
       {exercises.length === 0 ? (
-        <p style={{ textAlign: "center", margin: '16px', minWidth: `${MIN_EXERCISE_ENTRY_WIDTH_PX}px` }}>{`There are no exercises here\nthat match your filters.`}</p>
+        <p style={{ textAlign: "center", margin: '16px', flexGrow: 1, minWidth: `${EXERCISE_ENTRY_WIDTH_PX}px` }}>
+          {showPinnedExercises ? `There are no exercises in your regimen.` : `There are no exercises here\nthat match your filters.`}
+        </p>
       ) : (
         <div style={listContainerStyle}>
           {exercises.map((exercise) => (
             <div
               key={exercise.id}
-              onClick={() => setSelectedExercise(exercise.id)}
-              style={{ padding: '0px', cursor: 'pointer', backgroundColor: getExerciseBackgroundColor(exercise) }}
+              style={{ padding: '0px' }}
             >
               <ExerciseEntry
-                id={exercise.id}
-                title={exercise.title}
-                pinned={lessonState[exercise.id]?.pinned}
-                active={(lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)) || exercise.require_lesson_complete}
-                hidden={exercise.is_hidden}
-                locked={!(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)))}
+                exercise={exercise}
                 isPinnedList={showPinnedExercises}
+                isExpanded={isExpanded}
+                onSelect={() => setSelectedExerciseId(exercise.id)}
+                selected={exercise.id === selectedExerciseId}
               />
             </div>
           ))}
         </div>
       )}
-      
+      <div style={{ display: 'flex', flexGrow: 0, minHeight: '48px', borderTop: '2px solid black', alignItems: 'center' }}>
+        <div style={{ borderRight: '2px solid black', height: "100%" }}>
+          <BasicButton
+            text="Edit"
+            icon="pencil"
+            backgroundColor={ isExpanded ? colorBackgroundLight : undefined }
+            onClick={() => setIsExpanded((prev) => !prev)}
+            width="120px"
+          />
+        </div>
+        <div style={{ borderRight: '2px solid black', width: "120px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <BasicButton
+            icon="arrow_left"
+            onClick={() => setRegimenSize((prev) => Math.max(prev - 1, 1))}
+            height="32px"
+            width="40px"
+          />
+          <h2 style={{ color: colorText, margin: '0px', marginBottom: '4px' }}>{regimenSize}</h2>
+          <BasicButton
+            icon="arrow_right"
+            onClick={() => setRegimenSize((prev) => Math.min(prev + 1, 25))}
+            height="32px"
+            width="40px"
+          />
+        </div>
+        <BasicButton
+          text="Generate Regimen"
+          icon="clock"
+          onClick={() => {
+            generateRegimen(true);
+            setShowPinnedExercises(true);
+          }}
+        />
+      </div>
     </div>
   );
 }
 
-function ExerciseEntry({ id, title, pinned, active, locked, hidden, isPinnedList, isExpanded }) {
-  const { colorText, filterIcon } = useTheme();
-  const { lessonState, setLessonPinned } = useLessonState();
+function ExerciseEntry({exercise, isPinnedList, isExpanded, selected, onSelect }) {
+  const { lessonState } = useLessonState();
+  const hidden = exercise.is_hidden;
+  const locked = !(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)));
+  const active = (lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)) || exercise.require_lesson_complete;
+  const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText, filterIcon } = useTheme();
+  const { getExerciseFrequency, setExerciseFrequency } = useExerciseSettings();
+
+  const getExerciseBackgroundColor = useCallback((exercise) => {
+    if (selected) {
+      return colorBackground;
+    }
+    if (exercise.is_hidden) {
+      return colorBackgroundDarker;
+    }
+    return colorBackgroundDark;
+  }, [selected, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px'}}>
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px', padding: '0px 8px', minWidth: `${MIN_EXERCISE_ENTRY_WIDTH_PX}px` }}>
-        {!isPinnedList && (
-          <button
-            onClick={(event) => {
-              setLessonPinned(id, !lessonState[id].pinned);
-              event.stopPropagation();
-            }}
-            style={{
-              cursor: 'pointer',
-              backgroundColor: 'inherit',
-              border: '0px',
-              margin: '0px',
-              margin: '0px -8px',
-              padding: '8px',
-            }}
-          >
-            <img
-              src={`${process.env.PUBLIC_URL}/icon/${pinned ? 'pin_filled' : 'pin'}.png`}
-              alt=""
-              style={{
-                width: '16px',
-                height: '16px',
-                filter: filterIcon,
-              }}
-            />
-          </button>
-        )}
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', backgroundColor: getExerciseBackgroundColor(exercise) }}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'start',
+          gap: '12px',
+          padding: '0px 8px',
+          cursor: 'pointer',
+          minWidth: `${EXERCISE_ENTRY_WIDTH_PX}px`,
+        }}
+        onClick={onSelect}
+      >
         {active && (!locked) && (!isPinnedList) && (
           <img
             src={`${process.env.PUBLIC_URL}/icon/pointer.png`}
@@ -297,9 +329,52 @@ function ExerciseEntry({ id, title, pinned, active, locked, hidden, isPinnedList
           />
         )}
         <h2 style={{ fontSize: 20, margin: '8px 0px', color: colorText }}>
-          {title}
+          {exercise.title}
         </h2>
       </div>
+      {isExpanded && (
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px', minWidth: `${EXERCISE_SETTINGS_WIDTH_PX}px` }}>
+          {getExerciseFrequency(exercise.id) > 0 ? (
+            <>
+              <h2 style={{ fontSize: "13px", width: '100px', textAlign: 'left' }}>{exerciseFrequencyMap[getExerciseFrequency(exercise.id)]?.display}</h2>
+              <input
+                  type="range"
+                  min={1}
+                  max={exerciseFrequencyMap.length-1}
+                  step={-1}
+                  value={exerciseFrequencyMap.length - getExerciseFrequency(exercise.id)}
+                  onChange={(e) => setExerciseFrequency(exercise.id, exerciseFrequencyMap.length - Number(e.target.value))}
+                  style={{ width: "120px" }}
+                />
+              <div style={{ padding: '6px', cursor: 'pointer' }} onClick={() => {setExerciseFrequency(exercise.id, 0)}}>
+                <img
+                  key={"trash"}
+                  src={`${process.env.PUBLIC_URL}/icon/trash.png`}
+                  alt=""
+                  style={{
+                    width: '16px',
+                    height: '16px',
+                    filter: filterIcon,
+                  }}
+                />
+              </div>
+            </>
+          ) : (
+            <div style={{ padding: '8px', cursor: 'pointer' }} onClick={() => {setExerciseFrequency(exercise.id, 1)}}>
+              <img
+                key={"plus"}
+                src={`${process.env.PUBLIC_URL}/icon/plus.png`}
+                alt=""
+                style={{
+                  width: '12px',
+                  height: '12px',
+                  filter: filterIcon,
+                }}
+              />
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

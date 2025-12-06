@@ -6,6 +6,7 @@ import { LessonStateProvider } from './context/LessonStateProvider.jsx';
 import { ActiveLessonProvider } from './context/ActiveLessonProvider.jsx';
 import Main from './Main.js';
 import { BrowserRouter } from 'react-router-dom';
+import { ExerciseSettingsProvider } from './context/ExerciseSettingsProvider.jsx';
 
 function App() {
     useEffect(() => {
@@ -18,7 +19,9 @@ function App() {
                 <SettingsProvider>
                     <LessonStateProvider>
                         <ActiveLessonProvider>
-                            <Main/>
+                            <ExerciseSettingsProvider>
+                                <Main/>
+                            </ExerciseSettingsProvider>
                         </ActiveLessonProvider>
                     </LessonStateProvider>
                 </SettingsProvider>

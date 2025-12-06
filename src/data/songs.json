@@ -1209,6 +1209,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "cheval": {
+    "title": "Cheval",
+    "artist": "Igorrr",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "metal",
+    "is_hidden": true,
+    "requirements": []
+  },
   "cross_eyed_mary": {
     "title": "Cross-Eyed Mary",
     "artist": "Jethro Tull",

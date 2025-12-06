@@ -21,6 +21,7 @@ function getDefaultStorage() {
 
 const defaultContext = {
     lessonData: {},
+    exerciseList: [],
     lessonState: {},
     setLessonCompleted: () => { },
     setLessonSubtaskCompleted: () => { },
@@ -126,13 +127,16 @@ export function LessonStateProvider({ children }) {
         })
     ), [rawLessonState, saveLessonState]);
 
-
+    const exerciseList = useMemo(() => {
+        return Object.entries(exerciseData).map(([key, value]) => ({ ...value, id: key }));
+    }, []);
 
     return (
         <LessonStateContext.Provider
             value={useMemo(
                 () => ({
                     lessonData: processedLessonData,
+                    exercises: exerciseList,
                     lessonState: builtLessonState,
                     setLessonCompleted,
                     setLessonSubtaskCompleted,
@@ -145,6 +149,7 @@ export function LessonStateProvider({ children }) {
                 }),
                 [
                     processedLessonData,
+                    exerciseList,
                     builtLessonState,
                     setLessonCompleted,
                     setLessonSubtaskCompleted,
