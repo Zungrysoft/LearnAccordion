@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../helpers/theme";
 
-export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
+export default function Tabs({ tabs = [], activeTab, setActiveTab, smallTabs }) {
   const { colorBackgroundDark, filterIcon, colorText, colorBackground } = useTheme();
 
   const styles = {
@@ -14,23 +14,23 @@ export default function Tabs({ tabs = [], activeTab, setActiveTab }) {
     tabBar: {
       display: "flex",
       width: "100%",
-      justifyContent: "center",
+      justifyContent: "center"
     },
     tab: (isActive) => ({
       flex: 1,
       textAlign: "center",
-      textDecoration: isActive ? 'underline' : 'none',
-      padding: "12px",
+      padding: smallTabs ? '4px' : '12px',
       fontSize: "12px",
       fontWeight: "bold",
       cursor: isActive ? "auto" : "pointer",
-      backgroundColor: isActive ? colorBackgroundDark : colorBackground,
+      backgroundColor: isActive ? colorBackground : colorBackgroundDark,
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
       gap: '8px',
       border: '0px',
+      margin: smallTabs ? '8px' : '0px',
     }),
   };
 

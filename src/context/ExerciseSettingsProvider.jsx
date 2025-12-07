@@ -21,6 +21,7 @@ const defaultContext = {
     generateRegimen: () => {},
     regimen: [],
     regimenLeftovers: [],
+    exercisesAvailableForRegimen: 0,
 }
 
 const ExerciseSettingsContext = createContext(defaultContext);
@@ -69,7 +70,7 @@ export function ExerciseSettingsProvider({ isExerciseSettings, children }) {
     const regimenLeftovers = useMemo(() => {
         const inRegimenIdSet = new Set(regimen.map((exercise) => exercise.id));
         return exercisesAvailableForRegimen.filter((exercise) => !inRegimenIdSet.has(exercise.id))
-    }, []);
+    }, [exercisesAvailableForRegimen]);
 
     const generateRegimen = useCallback(() => {
         const available = [...exercisesAvailableForRegimen];
@@ -99,6 +100,7 @@ export function ExerciseSettingsProvider({ isExerciseSettings, children }) {
                     generateRegimen,
                     regimen,
                     regimenLeftovers,
+                    exercisesAvailableForRegimen,
                 }),
                 [
                     getExerciseFrequency,
@@ -108,6 +110,7 @@ export function ExerciseSettingsProvider({ isExerciseSettings, children }) {
                     generateRegimen,
                     regimen,
                     regimenLeftovers,
+                    exercisesAvailableForRegimen,
                 ]
             )}
         >

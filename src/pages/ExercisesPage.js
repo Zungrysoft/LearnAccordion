@@ -170,7 +170,7 @@ export default function ExercisesPage() {
 function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, setSelectedExerciseId, isExpanded, setIsExpanded }) {
   const { colorBackgroundDark, colorBackgroundLight, colorText } = useTheme();
   const { showPinnedExercises, setShowPinnedExercises } = useSettings();
-  const { generateRegimen, setRegimenSize, regimenSize } = useExerciseSettings();
+  const { generateRegimen, setRegimenSize, regimenSize, exercisesAvailableForRegimen } = useExerciseSettings();
 
   const containerStyle = {
     flexGrow: 0,
@@ -200,6 +200,7 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
         ]}
         activeTab={ showPinnedExercises ? 'pinned' : 'all' }
         setActiveTab={ (tab) => setShowPinnedExercises(tab === 'pinned') }
+        smallTabs
       />
       {exercises.length === 0 ? (
         <p style={{ textAlign: "center", margin: '16px', flexGrow: 1, minWidth: `${EXERCISE_ENTRY_WIDTH_PX}px` }}>
@@ -233,7 +234,7 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
             width="120px"
           />
         </div>
-        <div style={{ borderRight: '2px solid black', width: "90px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ borderRight: '2px solid black', width: "86px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <BasicButton
             icon="arrow_left"
             onClick={() => setRegimenSize((prev) => Math.max(prev - 1, 1))}
@@ -253,6 +254,7 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
         <BasicButton
           text="Generate Regimen"
           icon="clock"
+          disabled={exercisesAvailableForRegimen.length === 0}
           onClick={() => {
             generateRegimen(true);
             setShowPinnedExercises(true);
