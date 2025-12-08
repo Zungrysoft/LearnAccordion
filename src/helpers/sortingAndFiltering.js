@@ -114,5 +114,6 @@ export function processForFilter(text) {
     .replaceAll(',', '')
     .replaceAll('.', '')
     .replaceAll('&', 'and')
+    .replaceAll('w/', 'with')
   ;
 }

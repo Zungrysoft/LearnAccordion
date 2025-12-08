@@ -10,11 +10,13 @@ export default function Tabs({ tabs = [], activeTab, setActiveTab, smallTabs }) 
       flexDirection: "column",
       alignItems: "center",
       fontFamily: "Arial, sans-serif",
+      padding: smallTabs ? '8px' : '0px',
     },
     tabBar: {
       display: "flex",
       width: "100%",
-      justifyContent: "center"
+      justifyContent: "center",
+      gap: smallTabs ? '8px' : '0px',
     },
     tab: (isActive) => ({
       flex: 1,
@@ -30,7 +32,6 @@ export default function Tabs({ tabs = [], activeTab, setActiveTab, smallTabs }) 
       alignItems: 'center',
       gap: '8px',
       border: '0px',
-      margin: smallTabs ? '8px' : '0px',
     }),
   };
 

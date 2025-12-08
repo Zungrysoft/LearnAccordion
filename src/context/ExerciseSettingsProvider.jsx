@@ -20,7 +20,6 @@ const defaultContext = {
     setRegimenSize: () => {},
     generateRegimen: () => {},
     regimen: [],
-    regimenLeftovers: [],
     exercisesAvailableForRegimen: 0,
 }
 
@@ -67,15 +66,11 @@ export function ExerciseSettingsProvider({ isExerciseSettings, children }) {
         return exercises.filter((exercise) => getExerciseFrequency(exercise.id) > 0);
     }, [exercises, getExerciseFrequency]);
     const regimen = exerciseSettingsData?.regimen ?? [];
-    const regimenLeftovers = useMemo(() => {
-        const inRegimenIdSet = new Set(regimen.map((exercise) => exercise.id));
-        return exercisesAvailableForRegimen.filter((exercise) => !inRegimenIdSet.has(exercise.id))
-    }, [exercisesAvailableForRegimen]);
 
     const generateRegimen = useCallback(() => {
         const available = [...exercisesAvailableForRegimen];
         const builtRegimen = [];
-        while (available.length > 0 && builtRegimen.length < regimenSize) {
+        while (available.length > 0) {
             const pickList = available.map((exercise, index) => ({
                 value: index,
                 weight: exerciseFrequencyMap[getExerciseFrequency(exercise.id)].weight,
@@ -99,7 +94,6 @@ export function ExerciseSettingsProvider({ isExerciseSettings, children }) {
                     setRegimenSize,
                     generateRegimen,
                     regimen,
-                    regimenLeftovers,
                     exercisesAvailableForRegimen,
                 }),
                 [
@@ -109,7 +103,6 @@ export function ExerciseSettingsProvider({ isExerciseSettings, children }) {
                     setRegimenSize,
                     generateRegimen,
                     regimen,
-                    regimenLeftovers,
                     exercisesAvailableForRegimen,
                 ]
             )}

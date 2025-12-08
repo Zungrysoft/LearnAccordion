@@ -172,6 +172,9 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
   const { showPinnedExercises, setShowPinnedExercises } = useSettings();
   const { generateRegimen, setRegimenSize, regimenSize, exercisesAvailableForRegimen } = useExerciseSettings();
 
+  const exercisesPinnedShortened = isExpanded ? exercisesPinned : exercisesPinned.slice(0, regimenSize);
+  const exercises = showPinnedExercises ? exercisesPinnedShortened : exercisesAll;
+
   const containerStyle = {
     flexGrow: 0,
     flexShink: 2,
@@ -188,8 +191,6 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
     overflowY: 'scroll',
     minHeight: '0px',
   };
-
-  const exercises = showPinnedExercises ? exercisesPinned : exercisesAll;
 
   return (
     <div style={containerStyle}>
@@ -208,7 +209,7 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
         </p>
       ) : (
         <div style={listContainerStyle}>
-          {exercises.map((exercise) => (
+          {exercises.map((exercise, index) => (
             <div
               key={exercise.id}
               style={{ padding: '0px' }}
@@ -219,13 +220,14 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
                 isExpanded={isExpanded}
                 onSelect={() => setSelectedExerciseId(exercise.id)}
                 selected={exercise.id === selectedExerciseId}
+                lined={showPinnedExercises && index === regimenSize}
               />
             </div>
           ))}
         </div>
       )}
-      <div style={{ display: 'flex', flexGrow: 0, minHeight: '48px', borderTop: '2px solid black', alignItems: 'center' }}>
-        <div style={{ borderRight: '2px solid black', height: "100%" }}>
+      <div style={{ display: 'flex', flexGrow: 0, minHeight: '48px', borderTop: `2px solid ${colorText}`, alignItems: 'center' }}>
+        <div style={{ borderRight: `2px solid ${colorText}`, height: "100%" }}>
           <BasicButton
             text="Edit"
             icon="pencil"
@@ -234,7 +236,7 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
             width="120px"
           />
         </div>
-        <div style={{ borderRight: '2px solid black', width: "86px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ borderRight: `2px solid ${colorText}`, width: "86px", height: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <BasicButton
             icon="arrow_left"
             onClick={() => setRegimenSize((prev) => Math.max(prev - 1, 1))}
@@ -265,7 +267,7 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
   );
 }
 
-function ExerciseEntry({exercise, isPinnedList, isExpanded, selected, onSelect }) {
+function ExerciseEntry({exercise, isPinnedList, isExpanded, selected, onSelect, lined }) {
   const { lessonState } = useLessonState();
   const hidden = exercise.is_hidden;
   const locked = !(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)));
@@ -284,7 +286,16 @@ function ExerciseEntry({exercise, isPinnedList, isExpanded, selected, onSelect }
   }, [selected, colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', backgroundColor: getExerciseBackgroundColor(exercise) }}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'start',
+        backgroundColor: getExerciseBackgroundColor(exercise),
+        borderTop: lined ? `2px solid ${colorText}` : null,
+      }}
+    >
       <div
         style={{
           display: 'flex',
@@ -340,7 +351,9 @@ function ExerciseEntry({exercise, isPinnedList, isExpanded, selected, onSelect }
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px', minWidth: `${EXERCISE_SETTINGS_WIDTH_PX}px` }}>
           {getExerciseFrequency(exercise.id) > 0 ? (
             <>
-              <h2 style={{ fontSize: "13px", width: '100px', textAlign: 'left' }}>{exerciseFrequencyMap[getExerciseFrequency(exercise.id)]?.display}</h2>
+              <h2 style={{ fontSize: "13px", width: '100px', textAlign: 'left', color: colorText }}>
+                {exerciseFrequencyMap[getExerciseFrequency(exercise.id)]?.display}
+              </h2>
               <input
                   type="range"
                   min={1}

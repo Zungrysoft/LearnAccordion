@@ -1,6 +1,6 @@
 {
     "ear_training": {
-        "title": "Daily Ear Training Practice",
+        "title": "Ear Training Practice",
         "search_text": "",
         "description": "",
         "video_timestamp_seconds": null,
@@ -11,7 +11,7 @@
         "is_ear_training": true
     },
     "sight_reading": {
-        "title": "Daily Sight Reading Practice",
+        "title": "Sight Reading Practice",
         "search_text": "",
         "description": "",
         "video_timestamp_seconds": null,
@@ -59,6 +59,42 @@
         "image": "",
         "hand": "right",
         "lesson": "minor_scale"
+    },
+    "triplet_walk": {
+        "title": "Triplet Walk",
+        "search_text": "",
+        "description": "Pick a random major key. Walk up three notes in the scale, jump back two, repeat. Go up and down across at least two octaves. Use your index finger for the leftmost row, your middle finger for the middle row, and your ring finger for the rightmost row.\n\nOnce comfortable, also do this pattern with your thumb, index, and middle fingers and with your middle, ring, and pinky fingers.\n\nPattern: 123 234 345 456 etc.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "right",
+        "lesson": "scale_intervals_practice"
+    },
+    "triplet_walk_with_repeat": {
+        "title": "Triplet Walk w/ Repeat",
+        "search_text": "",
+        "description": "Pick a random major key. Walk up the first three notes in the scale. Repeat a total of eight times. Then move the pattern up one note in the scale and repeat. Go up and down across at least two octaves.\n\nOnce comfortable, repeat the pattern two times instead of eight.\n\nPattern: 123 123 234 234 345 345 etc.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "right",
+        "lesson": "scale_intervals_practice"
+    },
+    "triplet_stagger": {
+        "title": "Triplet Stagger",
+        "search_text": "",
+        "description": "Pick a random major key. Play the below pattern up and down the scale. Go up and down across at least two octaves.\n\nPattern: 121 232 343 454 565 etc.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "right",
+        "lesson": "scale_intervals_practice"
+    },
+    "diminished_walk": {
+        "title": "Diminished Walk",
+        "search_text": "",
+        "description": "Walk up and down a row on the button board in triplets. Go up three notes, jump back two, repeat.\n\nOnce comfortable, also do this in quadruplets, jumping back three.\n\nPattern A: 123 234 345 456 etc.\nPattern B: 1234 2345 3456 4567 etc.",
+        "video_timestamp_seconds": 0,
+        "image": "",
+        "hand": "right",
+        "lesson": "scale_intervals_practice"
     },
 
 
