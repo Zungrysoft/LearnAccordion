@@ -1,11 +1,9 @@
 import '../App.css';
 import React, { useCallback, useMemo } from 'react';
-import configData from '../data/config.json';
-import typeData from '../data/types.json';
 import sightReadingExerciseData from '../data/sight_reading_exercises.json';
 import { useTheme } from '../helpers/theme';
 import { useSightReading } from '../context/SightReadingProvider';
-import CheckBox from './CheckBox';
+import CheckBox from '../components/CheckBox';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { weightedPick } from '../helpers/random';

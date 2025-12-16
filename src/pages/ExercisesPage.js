@@ -9,11 +9,13 @@ import { useSettings } from '../context/SettingsProvider.jsx';
 import TextInput from '../components/TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
 import Metronome from '../components/Metronome.js';
-import SightReading from '../components/SightReading.js';
+import SightReading from '../exerciseFeatures/SightReading.jsx';
 import { SightReadingProvider } from '../context/SightReadingProvider.jsx';
 import Tabs from '../components/Tabs.js';
 import BasicButton from '../components/BasicButton.js';
 import { exerciseFrequencyMap, useExerciseSettings } from '../context/ExerciseSettingsProvider.jsx';
+import IdentifyNoteOnButtonBoard from '../exerciseFeatures/IdentifyNoteOnButtonBoard.jsx';
+import FindNoteOnButtonBoard from '../exerciseFeatures/FindNoteOnButtonBoard.jsx';
 
 const EXERCISE_ENTRY_WIDTH_PX = 410;
 const EXERCISE_SETTINGS_WIDTH_PX = 290;
@@ -154,10 +156,17 @@ export default function ExercisesPage() {
             <>
               <h4 style={{ fontSize: 30, color: colorText }}>{exerciseData[selectedExerciseId]?.title}</h4>
               <p style={{ color: colorText }}>{exerciseData[selectedExerciseId]?.description}</p>
-              {(exerciseData[selectedExerciseId].is_sight_reading || exerciseData[selectedExerciseId].is_ear_training) && (
-                <SightReadingProvider isSightReading={exerciseData[selectedExerciseId].is_sight_reading}>
-                  <SightReading isSightReading={exerciseData[selectedExerciseId].is_sight_reading} />
+
+              {(exerciseData[selectedExerciseId].feature === 'sight_reading' || exerciseData[selectedExerciseId].feature === 'ear_training') && (
+                <SightReadingProvider isSightReading={exerciseData[selectedExerciseId].feature === 'sight_reading'}>
+                  <SightReading isSightReading={exerciseData[selectedExerciseId].feature === 'sight_reading'} />
                 </SightReadingProvider>
+              )}
+              {exerciseData[selectedExerciseId].feature === 'identify_note_on_button_board' && (
+                <IdentifyNoteOnButtonBoard />
+              )}
+              {exerciseData[selectedExerciseId].feature === 'find_note_on_button_board' && (
+                <FindNoteOnButtonBoard />
               )}
             </>
           )}
@@ -204,8 +213,8 @@ function ExerciseEntryList({ exercisesAll, exercisesPinned, selectedExerciseId, 
         smallTabs
       />
       {exercises.length === 0 ? (
-        <p style={{ textAlign: "center", margin: '16px', flexGrow: 1, minWidth: `${EXERCISE_ENTRY_WIDTH_PX}px` }}>
-          {showPinnedExercises ? `There are no exercises in your regimen.` : `There are no exercises here\nthat match your filters.`}
+        <p style={{ textAlign: "center", margin: '16px', flexGrow: 1, width: `${EXERCISE_ENTRY_WIDTH_PX}px` }}>
+          {showPinnedExercises ? `There are no exercises in your regimen.\n\nTo build a regimen, click 'All Exercises', enable Edit Mode, then add exercises to your regimen.` : `There are no exercises here\nthat match your filters.`}
         </p>
       ) : (
         <div style={listContainerStyle}>

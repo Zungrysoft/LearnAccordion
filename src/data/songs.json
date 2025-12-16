@@ -45,6 +45,22 @@
       ["bass_buttons_3"]
     ]
   },
+  "julida_polka": {
+    "title": "Julida Polka",
+    "artist": "",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "polka",
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["major_scale"],
+      ["bass_buttons_3"]
+    ]
+  },
   "tetris_theme": {
     "title": "Korobeiniki",
     "artist": "",
@@ -284,7 +300,7 @@
   },
   "maggies_pancakes": {
     "title": "Maggie's Pancakes",
-    "artist": "",
+    "artist": "Stuart Morison",
     "is_title_inspecific": false,
     "search_text": "Reel",
     "video_url": "",
@@ -292,6 +308,21 @@
     "has_vocals": false,
     "is_two_handed": true,
     "genre": "folk_scottish",
+    "requirements": [
+      ["bass_buttons_5"],
+      ["minor_scale"]
+    ]
+  },
+  "fishermans_favorite": {
+    "title": "Fisherman's Favorite",
+    "artist": "",
+    "is_title_inspecific": false,
+    "search_text": "Reel",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "folk_irish",
     "is_hidden": true,
     "requirements": []
   },
@@ -467,8 +498,11 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "alternative",
-    "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["major_scale"],
+      ["bass_buttons_4"],
+      ["intermediate_right_hand_chords"]
+    ]
   },
   "lucky_ball_and_chain": {
     "title": "Lucky Ball and Chain",
@@ -557,7 +591,33 @@
     "points": 0,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "folk_contemporary",
+    "genre": "folk_rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "dirt": {
+    "title": "Dirt",
+    "artist": "King Gizzard and the Lizard Wizard",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "folk_rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "paper_mache_dream_balloon": {
+    "title": "Paper Mâché Dream Balloon",
+    "artist": "King Gizzard and the Lizard Wizard",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "folk_rock",
     "is_hidden": true,
     "requirements": []
   },
@@ -783,6 +843,19 @@
     "is_hidden": true,
     "requirements": []
   },
+  "all_you_need_is_love": {
+    "title": "All You Need Is Love",
+    "artist": "The Beatles",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
   "friend_of_the_devil": {
     "title": "Friend of the Devil",
     "artist": "Grateful Dead",
@@ -792,7 +865,7 @@
     "points": 0,
     "has_vocals": true,
     "is_two_handed": true,
-    "genre": "rock",
+    "genre": "folk_rock",
     "is_hidden": true,
     "requirements": []
   },
@@ -1216,9 +1289,22 @@
     "search_text": "",
     "video_url": "",
     "points": 0,
-    "has_vocals": true,
+    "has_vocals": false,
     "is_two_handed": true,
-    "genre": "metal",
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "musette_maximum": {
+    "title": "Musette Maximum",
+    "artist": "Igorrr",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "alternative",
     "is_hidden": true,
     "requirements": []
   },
@@ -1513,6 +1599,19 @@
     "has_vocals": true,
     "is_two_handed": true,
     "genre": "blues",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "first_i_look_at_the_purse": {
+    "title": "First I Look At The Purse",
+    "artist": "The Contours",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rhythm_and_blues",
     "is_hidden": true,
     "requirements": []
   },
@@ -1842,6 +1941,19 @@
     "artist": "Bobby Bare",
     "is_title_inspecific": false,
     "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "pop",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "close_to_you": {
+    "title": "Close to You",
+    "artist": "Burt Bacharach, Hal David",
+    "is_title_inspecific": false,
+    "search_text": "They Long to Be Carpenters",
     "video_url": "",
     "points": 0,
     "has_vocals": true,
@@ -2233,6 +2345,32 @@
       ["bass_buttons_3"]
     ]
   },
+  "parks_and_rec_theme": {
+    "title": "Main Theme",
+    "artist": "Parks and Recreation",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "the_office_theme": {
+    "title": "Main Theme",
+    "artist": "The Office",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
@@ -2366,7 +2504,7 @@
     "title": "The Kazotsky Kick",
     "artist": "Team Fortress 2",
     "is_title_inspecific": false,
-    "search_text": "Soldier of Dance",
+    "search_text": "TF2 Soldier of Dance",
     "video_url": "",
     "points": 23,
     "has_vocals": false,
@@ -2377,6 +2515,48 @@
       ["minor_scale"],
       ["bass_buttons_3"]
     ]
+  },
+  "a_little_heart_to_heart": {
+    "title": "A Little Heart to Heart",
+    "artist": "Team Fortress 2",
+    "is_title_inspecific": false,
+    "search_text": "TF2 Archimedes",
+    "video_url": "",
+    "points": 10,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["minor_scale"],
+      ["bass_buttons_3"]
+    ]
+  },
+  "surgeons_squeezebox": {
+    "title": "Surgeon's Squeezebox",
+    "artist": "Team Fortress 2",
+    "is_title_inspecific": false,
+    "search_text": "TF2",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "intruder_alert": {
+    "title": "Intruder Alert",
+    "artist": "Team Fortress 2",
+    "is_title_inspecific": false,
+    "search_text": "TF2",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
   },
   "song_of_storms": {
     "title": "Song of Storms",
@@ -2823,7 +3003,7 @@
     "video_url": "",
     "points": 0,
     "has_vocals": false,
-    "is_two_handed": false,
+    "is_two_handed": true,
     "genre": "video_game",
     "requirements": [
       ["major_scale"],
@@ -3029,6 +3209,22 @@
       ["major_scale_in_thirds"]
     ]
   },
+  "revalis_theme": {
+    "title": "Revali's Theme",
+    "artist": "The Legend of Zelda: Breath of the Wild",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "requirements": [
+      ["bass_buttons_5"],
+      ["minor_scale"],
+      ["dynamics"]
+    ]
+  },
   "palace_theme": {
     "title": "Temple",
     "artist": "Zelda II: The Adventure of Link",
@@ -3045,6 +3241,19 @@
   "full_steam_ahead": {
     "title": "Full Steam Ahead",
     "artist": "The Legend of Zelda: Spirit Tracks",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": false,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "dragon_roost_island": {
+    "title": "Dragon Roost Island",
+    "artist": "The Legend of Zelda: The Wind Waker",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
@@ -3198,22 +3407,6 @@
     "is_hidden": true,
     "requirements": []
   },
-  "a_little_heart_to_heart": {
-    "title": "A Little Heart to Heart",
-    "artist": "Team Fortress 2",
-    "is_title_inspecific": false,
-    "search_text": "Archimedes",
-    "video_url": "",
-    "points": 10,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game",
-    "requirements": [
-      ["two_handed_playing_3"],
-      ["minor_scale"],
-      ["bass_buttons_3"]
-    ]
-  },
   "dog_song": {
     "title": "Dogsong",
     "artist": "Undertale",
@@ -3345,6 +3538,19 @@
   },
   "alight_storm": {
     "title": "Alight (Storm)",
+    "artist": "Fire Emblem Fates",
+    "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "lost_in_thoughts_all_alone": {
+    "title": "Lost In Thoughts All Alone",
     "artist": "Fire Emblem Fates",
     "is_title_inspecific": true,
     "search_text": "",

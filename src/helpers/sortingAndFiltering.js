@@ -103,6 +103,7 @@ export function sortSongs(songs, sortMode) {
 export function processForFilter(text) {
   return text.toLowerCase()
     .replaceAll('ä', 'a')
+    .replaceAll('â', 'a')
     .replaceAll('é', 'e')
     .replaceAll('è', 'e')
     .replaceAll('í', 'i')

@@ -134,7 +134,7 @@ export default function Metronome() {
   }
 
   const multiplyBpm = (scalar) => {
-    setBpm((prev) => Math.floor(Number(prev) * scalar));
+    setBpm((prev) => Math.round(Number(prev) * scalar));
   }
 
   const addBpm = (value) => {
@@ -283,18 +283,18 @@ export default function Metronome() {
               }}
             />
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px" }}>
-              <button onClick={() => addBpm(5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
-                +5
+              <button onClick={() => multiplyBpm(1.05)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '30px', fontSize: '9px' }}>
+                +5%
               </button>
-              <button onClick={() => addBpm(-5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
-                -5
+              <button onClick={() => multiplyBpm(1/1.05)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '30px', fontSize: '9px' }}>
+                -5%
               </button>
             </div>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "2px" }}>
-              <button onClick={() => multiplyBpm(2.0)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
+              <button onClick={() => multiplyBpm(2.0)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '22px', fontSize: '9px' }}>
                 x2
               </button>
-              <button onClick={() => multiplyBpm(0.5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '24px', fontSize: '9px' }}>
+              <button onClick={() => multiplyBpm(0.5)} style={{ ...buttonStyle, backgroundColor: "#2563eb", padding: '2px', width: '22px', fontSize: '9px' }}>
                 ÷2
               </button>
             </div>

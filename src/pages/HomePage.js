@@ -47,8 +47,8 @@ export default function HomePage() {
           />
         </div>
       </div>
-      <div style={{ padding: '16px', display: 'flex', flexDirection: 'row', justifyContent: 'center', maxWidth: '1920px', margin: 'auto' }}>
-        <div style={{ padding: '8px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <div style={{ padding: '16px', display: 'flex', flexDirection: 'row', justifyContent: 'center', maxWidth: '1920px', margin: 'auto', gap: '16px' }}>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
           <div style={{ padding: '8px', ...sideBarsStyle }}>
             <p style={{ margin: '0px', fontSize: '22px', textAlign: 'center', color: colorText }}>Looking for a structured online course for C-System Chromatic Button Accordion? This free video-based course provides you with lessons, exercises, songs and every other resource you'll need to play your accordion in whatever genres you wish!</p>
           </div>

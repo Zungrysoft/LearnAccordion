@@ -9,3 +9,7 @@ export function fillKeys(object, keys) {
 
     fillKeys(object[keys[0]], keys.slice(1));
 };
+
+export function mod(a, b) {
+    return ((a % b) + b) % b;
+}
