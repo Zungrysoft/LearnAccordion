@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/LearnAccordion/static/css/main.26e07a5a.css",
-    "main.js": "/LearnAccordion/static/js/main.01791d84.js",
-    "static/js/787.b4e7f8ae.chunk.js": "/LearnAccordion/static/js/787.b4e7f8ae.chunk.js",
-    "index.html": "/LearnAccordion/index.html",
-    "main.26e07a5a.css.map": "/LearnAccordion/static/css/main.26e07a5a.css.map",
-    "main.01791d84.js.map": "/LearnAccordion/static/js/main.01791d84.js.map",
-    "787.b4e7f8ae.chunk.js.map": "/LearnAccordion/static/js/787.b4e7f8ae.chunk.js.map"
+    "main.css": "/static/css/main.76e71885.css",
+    "main.js": "/static/js/main.8835ecb3.js",
+    "static/js/453.569ea4a7.chunk.js": "/static/js/453.569ea4a7.chunk.js",
+    "index.html": "/index.html",
+    "main.76e71885.css.map": "/static/css/main.76e71885.css.map",
+    "main.8835ecb3.js.map": "/static/js/main.8835ecb3.js.map",
+    "453.569ea4a7.chunk.js.map": "/static/js/453.569ea4a7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.26e07a5a.css",
-    "static/js/main.01791d84.js"
+    "static/css/main.76e71885.css",
+    "static/js/main.8835ecb3.js"
   ]
 }
