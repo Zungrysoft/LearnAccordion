@@ -2,8 +2,8 @@ import React from "react";
 import { useTheme } from "../helpers/theme";
 import { NavLink } from "react-router-dom";
 
-export default function NavTabs({ tabs = [] }) {
-  const { colorBackgroundDark, filterIcon, colorText } = useTheme();
+export default function NavTabs({ tabs = [], isVertical=false, requireExactUrlMatch=false }) {
+  const { colorBackgroundDark, colorBackground, filterIcon, colorText } = useTheme();
 
   const styles = {
     container: {
@@ -14,21 +14,22 @@ export default function NavTabs({ tabs = [] }) {
     },
     tabBar: {
       display: "flex",
+      flexDirection: isVertical ? 'column' : 'row',
       width: "100%",
       justifyContent: "center",
     },
     tab: (isActive) => ({
       flex: 1,
-      textAlign: "center",
+      textAlign: 'center',
       textDecoration: 'none',
       padding: "12px",
       fontSize: "12px",
       fontWeight: "bold",
       cursor: isActive ? "auto" : "pointer",
-      backgroundColor: isActive ? "inherit" : colorBackgroundDark,
+      backgroundColor: isActive ? colorBackground : colorBackgroundDark,
       display: 'flex',
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: isVertical ? 'start' : 'center',
       alignItems: 'center',
       gap: '8px',
     }),
@@ -45,6 +46,7 @@ export default function NavTabs({ tabs = [] }) {
               ...styles.tab(isActive),
               ...style,
             })}
+            end={requireExactUrlMatch}
           >
             {icon && (
               <img

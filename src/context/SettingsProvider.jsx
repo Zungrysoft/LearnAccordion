@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 const defaultContext = {
+    isDeveloper: false,
     theme: 'light',
     songSortMode: 'genre',
     filterHandsMode: null,
@@ -12,6 +13,7 @@ const defaultContext = {
     showRightHandExercises: true,
     showLeftHandExercises: true,
     showTwoHandExercises: true,
+    showDeveloperFilters: false,
     metronomeBpm: 100,
     metronomeVolume: 0.7,
     metronomeTimeSignature: '4/4',

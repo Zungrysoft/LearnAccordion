@@ -5,14 +5,17 @@ import { useSettings } from '../context/SettingsProvider.jsx';
 
 export default function SettingsPage() {
   const {
+    isDeveloper,
     theme,
     setTheme,
     showHiddenSongs,
     setShowHiddenSongs,
+    showDeveloperFilters,
+    setShowDeveloperFilters
   } = useSettings();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', padding: '8px', gap: '8px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', padding: '16px', gap: '8px', alignItems: 'center', width: '100%' }}>
       <SettingsGroup title="Theme">
         <RadioButtons
           options={[
@@ -23,16 +26,28 @@ export default function SettingsPage() {
           onChange={setTheme}
         />
       </SettingsGroup>
-      <SettingsGroup title="Developer">
-        <RadioButtons
-          options={[
-            { value: true, label: 'Show Hidden Songs' },
-          ]}
-          selectedOption={showHiddenSongs}
-          onChange={() => setShowHiddenSongs((prev) => !prev)}
-          isCheckbox={true}
-        />
-      </SettingsGroup>
+      {isDeveloper && (
+        <SettingsGroup title="Developer">
+          <div style={{ display: "flex", flexDirection: "column", alignItems: 'start', gap: "0px", padding: '0px' }}>
+            <RadioButtons
+              options={[
+                { value: true, label: 'Show Hidden Songs' },
+              ]}
+              selectedOption={showHiddenSongs}
+              onChange={() => setShowHiddenSongs((prev) => !prev)}
+              isCheckbox={true}
+            />
+            <RadioButtons
+              options={[
+                { value: true, label: 'Show Developer Filtering Modes' },
+              ]}
+              selectedOption={showDeveloperFilters}
+              onChange={() => setShowDeveloperFilters((prev) => !prev)}
+              isCheckbox={true}
+            />
+          </div>
+        </SettingsGroup>
+      )}
     </div>
   );
 }

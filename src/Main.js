@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useCallback, useState} from 'react';
 import './App.css';
 
 import LessonPopup from './components/LessonPopup.js';
@@ -10,17 +10,28 @@ import ExercisesPage from './pages/ExercisesPage.js';
 import SongsPage from './pages/SongsPage.js';
 import SettingsPage from './pages/SettingsPage.js';
 import HomePage from './pages/HomePage.js';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import MiscPage from './pages/MiscPage.js';
+import { useSettings } from './context/SettingsProvider.jsx';
+import { useHotkey } from './helpers/hotkey.js';
+import AboutPage from './pages/AboutPage.js';
 
 export default function Main() {
     const { colorBackground } = useTheme();
     const { activeLessonId, isLessonOpen, setIsLessonOpen } = useActiveLesson();
     const location = useLocation();
     const currentPath = location.pathname;
+    const { isDeveloper, setIsDeveloper } = useSettings();
+
+    const toggleDeveloper = useCallback(() => {
+        setIsDeveloper((prev) => !prev);
+    }, [setIsDeveloper])
+
+    useHotkey(toggleDeveloper, 'j', true, true, true);
 
     return (
         <div style={{ width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: colorBackground }}>
-            {currentPath !== "/" && (
+            {currentPath !== "/" && isDeveloper && (
                 <NavTabs
                     tabs={[
                         {
@@ -30,7 +41,7 @@ export default function Main() {
                         },
                         {
                             title: 'Lessons',
-                            url: 'lessons',
+                            url: '/lessons',
                         },
                         {
                             title: 'Exercises',
@@ -41,8 +52,8 @@ export default function Main() {
                             url: '/songs',
                         },
                         {
-                            icon: 'gear',
-                            url: '/settings',
+                            icon: 'menu',
+                            url: '/misc',
                             style: { maxWidth: '64px' },
                         },
                     ]}
@@ -54,7 +65,8 @@ export default function Main() {
                     <Route path="/lessons" element={<LessonsPage />} />
                     <Route path="/exercises" element={<ExercisesPage />} />
                     <Route path="/songs" element={<SongsPage />} />
-                    <Route path="/settings" element={<SettingsPage />} />
+                    <Route path="/misc/*" element={<MiscPage />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </div>
 

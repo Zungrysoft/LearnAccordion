@@ -7,10 +7,13 @@ import { useLessonState } from '../context/LessonStateProvider.jsx';
 import { getOptionData } from '../helpers/progression.js';
 import { useActiveLesson } from '../context/ActiveLessonProvider.jsx';
 import ShowLockedLessons from '../components/ShowLockedLessons.js';
+import { useSettings } from '../context/SettingsProvider.jsx';
+import { Navigate } from 'react-router-dom';
 
 export default function LessonsPage() {
     const { lessonState, lessonData } = useLessonState();
     const { setActiveLessonId, setIsLessonOpen } = useActiveLesson();
+    const { isDeveloper } = useSettings();
 
     const divRef = useRef(null);
     const [boardSize, setBoardSize] = useState({ width: 0, height: 0 });
@@ -35,6 +38,11 @@ export default function LessonsPage() {
         setActiveLessonId(key);
         setIsLessonOpen(true);
     }, [setActiveLessonId, setIsLessonOpen]);
+
+    // Not ready for release
+    if (!isDeveloper) {
+        return <Navigate to="/" replace />;
+    }
 
     return (
         <div ref={divRef} style={{ width: '100%', height: '100%', overflowY: 'scroll', overflowX: 'clip' }}>

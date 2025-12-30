@@ -1,53 +1,115 @@
 {
-    "polka": {
-        "display": "Polka",
-        "icon": "accordion",
+    "irish_hornpipe": {
+        "display": "Irish Hornpipe",
+        "search_text": "Folk",
+        "icon": "clap",
         "priority": 100
     },
-    "waltz": {
-        "display": "Waltz",
-        "icon": "accordion",
+    "irish_jig": {
+        "display": "Irish Jig",
+        "search_text": "Folk",
+        "icon": "clap",
         "priority": 101
     },
-    "tango": {
-        "display": "Tango",
-        "icon": "accordion",
+    "irish_reel": {
+        "display": "Irish Reel",
+        "search_text": "Folk",
+        "icon": "clap",
         "priority": 102
     },
-
-
-    "folk_american": {
-        "display": "American Folk",
+    "irish_ballad": {
+        "display": "Irish Ballad",
+        "search_text": "Folk",
         "icon": "clap",
-        "priority": 150
+        "priority": 103
     },
-    "folk_english": {
-        "display": "English Folk",
+    "scottish_hornpipe": {
+        "display": "Scottish Hornpipe",
+        "search_text": "Folk",
         "icon": "clap",
-        "priority": 151
+        "priority": 110
     },
-    "folk_scottish": {
-        "display": "Scottish Folk",
+    "scottish_jig": {
+        "display": "Scottish Jig",
+        "search_text": "Folk",
         "icon": "clap",
-        "priority": 152
+        "priority": 111
     },
-    "folk_irish": {
-        "display": "Irish Folk",
+    "scottish_reel": {
+        "display": "Scottish Reel",
+        "search_text": "Folk",
         "icon": "clap",
-        "priority": 153
+        "priority": 112
+    },
+    "scottish_ballad": {
+        "display": "Scottish Ballad",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 113
+    },
+    "english_hornpipe": {
+        "display": "English Hornpipe",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 120
+    },
+    "english_jig": {
+        "display": "English Jig",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 121
+    },
+    "english_reel": {
+        "display": "English Reel",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 122
+    },
+    "english_ballad": {
+        "display": "English Ballad",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 123
+    },
+    "french_waltz": {
+        "display": "French Waltz",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 154
+    },
+    "polka": {
+        "display": "Polka",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 155
+    },
+    "finnish_polkka": {
+        "display": "Finnish Polkka",
+        "search_text": "Polka",
+        "icon": "clap",
+        "priority": 156
     },
     "folk_balkan": {
         "display": "Balkan Folk",
+        "search_text": "Folk",
         "icon": "clap",
         "priority": 170
     },
     "folk_russian": {
         "display": "Russian Folk",
+        "search_text": "Folk",
         "icon": "clap",
         "priority": 171
     },
+    "folk_american": {
+        "display": "American Folk",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 180
+    },
     "folk_contemporary": {
         "display": "Contemporary Folk",
+        "search_text": "Folk",
         "icon": "clap",
         "priority": 199
     },
@@ -58,6 +120,7 @@
 
     "nautical": {
         "display": "Nautical Tune",
+        "search_text": "",
         "icon": "anchor",
         "priority": 200
     },
@@ -66,24 +129,34 @@
 
     "latin": {
         "display": "Latin",
+        "search_text": "",
         "icon": "maracas",
         "priority": 300
     },
     "norteno": {
         "display": "Norteño",
+        "search_text": "",
         "icon": "maracas",
         "priority": 301
+    },
+    "tango": {
+        "display": "Tango",
+        "search_text": "",
+        "icon": "maracas",
+        "priority": 302
     },
 
 
 
     "zydeco": {
         "display": "Zydeco",
+        "search_text": "Cajun Creole",
         "icon": "washboard",
         "priority": 400
     },
     "cajun": {
         "display": "Cajun",
+        "search_text": "Creole",
         "icon": "washboard",
         "priority": 401
     },
@@ -92,11 +165,13 @@
 
     "classical": {
         "display": "Classical",
+        "search_text": "",
         "icon": "piano",
         "priority": 500
     },
     "orchestra": {
         "display": "Orchestra",
+        "search_text": "",
         "icon": "violin",
         "priority": 510
     },
@@ -105,16 +180,19 @@
 
     "jazz": {
         "display": "Jazz",
+        "search_text": "",
         "icon": "saxophone",
         "priority": 600
     },
     "swing": {
         "display": "Swing",
+        "search_text": "",
         "icon": "saxophone",
         "priority": 601
     },
     "ska": {
         "display": "Ska",
+        "search_text": "",
         "icon": "trombone",
         "priority": 620
     },
@@ -123,36 +201,37 @@
 
     "pop": {
         "display": "Pop",
+        "search_text": "",
         "icon": "microphone",
         "priority": 700
     },
     "rock": {
         "display": "Rock",
+        "search_text": "",
         "icon": "guitar",
         "priority": 750
     },
     "blues": {
         "display": "Blues",
+        "search_text": "",
         "icon": "guitar",
         "priority": 751
     },
     "rhythm_and_blues": {
         "display": "Rhythm and Blues",
+        "search_text": "",
         "icon": "guitar",
         "priority": 752
     },
     "metal": {
         "display": "Metal",
+        "search_text": "",
         "icon": "guitar",
         "priority": 753
     },
-    "folk_rock": {
-        "display": "Folk Rock",
-        "icon": "guitar",
-        "priority": 754
-    },
     "alternative": {
         "display": "Alternative",
+        "search_text": "",
         "icon": "guitar",
         "priority": 799
     },
@@ -161,21 +240,25 @@
 
     "showtune": {
         "display": "Showtune",
+        "search_text": "",
         "icon": "theater",
         "priority": 800
     },
     "film": {
         "display": "Film",
+        "search_text": "",
         "icon": "clapperboard",
         "priority": 810
     },
     "television": {
         "display": "Television",
+        "search_text": "",
         "icon": "television",
         "priority": 820
     },
     "video_game": {
         "display": "Video Game Music",
+        "search_text": "",
         "icon": "controller",
         "priority": 830
     }

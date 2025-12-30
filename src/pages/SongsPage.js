@@ -11,10 +11,12 @@ import TextInput from '../components/TextInput.js';
 import { useLessonState } from '../context/LessonStateProvider.jsx';
 import IconStar from '../components/IconStar.js';
 import { useActiveLesson } from '../context/ActiveLessonProvider.jsx';
+import { Navigate } from 'react-router-dom';
 
 export default function SongsPage() {
   const { lessonState } = useLessonState();
   const {
+    isDeveloper,
     songSortMode,
     setSongSortMode,
     filterHandsMode,
@@ -98,7 +100,8 @@ export default function SongsPage() {
           processForFilter(song.title).includes(fw) ||
           processForFilter(song.artist || "Traditional").includes(fw) ||
           processForFilter(song.search_text || "").includes(fw) ||
-          processForFilter(genreData[song.genre].display).includes(fw)
+          processForFilter(genreData[song.genre].display).includes(fw) ||
+          processForFilter(genreData[song.genre].search_text).includes(fw)
         )) {
           return false;
         }
@@ -175,6 +178,11 @@ export default function SongsPage() {
     padding: "8px",
     color: "#eee",
   };
+
+  // Not ready for release
+    if (!isDeveloper) {
+        return <Navigate to="/" replace />;
+    }
 
   return (
     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>

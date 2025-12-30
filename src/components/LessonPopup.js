@@ -8,6 +8,7 @@ import LessonSubtask from './LessonSubtask';
 import { useTheme } from '../helpers/theme';
 import { useLessonState } from '../context/LessonStateProvider';
 import { sortSongs } from '../helpers/sortingAndFiltering';
+import SheetMusicLink from './SheetMusicLink';
 
 export default function LessonPopup({ lessonId, onClose, isOpen }) {
     const { lessonData, lessonState, setLessonCompleted, setLessonSubtaskCompleted, setLessonPinned } = useLessonState();
@@ -95,6 +96,7 @@ export default function LessonPopup({ lessonId, onClose, isOpen }) {
                 <h4 style={{ color: colorText }}>{lesson.title}</h4>
                 <p style={{ color: colorText }}>{description}</p>
                 <Embed url={lesson.video_url}/>
+                <SheetMusicLink file={lesson.sheet_music_file} />
                 {lesson.subtasks && (
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center' }}>
                         <h2 style={{ gridColumn: 2, color: colorText }}>{subtaskCompletionText}</h2>
