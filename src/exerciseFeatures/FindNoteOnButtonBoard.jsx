@@ -45,7 +45,10 @@ export default function FindNoteOnButtonBoard() {
                 ret.push({ text: getNoteName(questionState?.hintNote, false, questionState?.isFlat) })
             }
             else {
-                const buttonData = { };
+                const buttonData = {
+                    text: questionState?.submittedAnswer ? getNoteName(mod(i + (questionState?.questionNote - questionState?.questionNoteIndex), 12), false, questionState?.isFlat) : '',
+                    opacity: 0.2,
+                };
                 if (questionState?.submittedAnswer == null) {
                     buttonData.onClick = () => onSubmit(i);
                 }
@@ -53,7 +56,8 @@ export default function FindNoteOnButtonBoard() {
                     if (i === questionState?.questionNoteIndex) {
                         const correct = questionState?.submittedAnswer === questionState?.questionNoteIndex;
                         buttonData.backgroundColor = correct ? '#29cf5e' : '#cc4729';
-                        buttonData.text = getNoteName(questionState?.questionNote);
+                        buttonData.text = getNoteName(questionState?.questionNote, false, questionState?.isFlat);
+                        buttonData.opacity = 1.0;
                     }
                 }
 

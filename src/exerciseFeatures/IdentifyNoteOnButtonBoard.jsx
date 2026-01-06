@@ -48,14 +48,15 @@ export default function IdentifyNoteOnButtonBoard() {
     const buttonBoardButtons = useMemo(() => {
         const ret = [];
         for (let i = 0; i < 17; i ++) {
+            const noteName = getNoteName(mod(i + (questionState?.questionNote - questionState?.questionNoteIndex), 12), false, questionState?.isFlat);
             if (questionState?.hintNoteIndex === i) {
-                ret.push({ text: getNoteName(questionState?.hintNote, false, questionState?.isFlat) })
+                ret.push({ text: noteName })
             }
             else if (questionState?.questionNoteIndex === i) {
-                ret.push({ icon: 'question' })
+                ret.push(questionState?.submittedAnswer ? { text: noteName } : { icon: 'question' })
             }
             else {
-                ret.push({});
+                ret.push(questionState?.submittedAnswer ? { text: noteName, opacity: 0.2 } : {});
             }
         }
         return ret;

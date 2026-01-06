@@ -16,7 +16,7 @@ const RadioButtons = ({ options, selectedOption, onChange, isCheckbox }) => {
             value={option.value}
             checked={selectedOption === option.value}
             onChange={handleChange}
-            style={{ color: 'white', margin: '4px', padding: 0 }}
+            style={{ color: 'white', margin: '4px', padding: 0, cursor: 'pointer' }}
           />
           {option.label}
         </label>

@@ -36,6 +36,7 @@ export default function ButtonBoard({ rows = 3, columns = 5, buttons, onClick = 
                             x={x}
                             y={y}
                             radiusPx={buttonRadiusPx}
+                            opacity={buttons[buttonIndex]?.opacity}
                         />
                     );
                 });
@@ -44,7 +45,7 @@ export default function ButtonBoard({ rows = 3, columns = 5, buttons, onClick = 
     );
 }
 
-function BoardButton({ onClick, text, icon, radiusPx, x, y, backgroundColor }) {
+function BoardButton({ onClick, text, icon, radiusPx, x, y, backgroundColor, opacity }) {
 
     let contents = null;
     if (icon) {
@@ -61,7 +62,7 @@ function BoardButton({ onClick, text, icon, radiusPx, x, y, backgroundColor }) {
     }
     else if (text) {
         contents = (
-            <h2 style={{ fontSize: `${radiusPx * 0.5}px` }}>{text}</h2>
+            <h2 style={{ fontSize: `${radiusPx * 0.5}px`, opacity: opacity ?? 1.0, }}>{text}</h2>
         );
     };
 

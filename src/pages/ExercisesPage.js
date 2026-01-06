@@ -287,7 +287,7 @@ function ExerciseEntry({ exercise, isPinnedList, isExpanded, selected, onSelect,
     const { lessonState } = useLessonState();
     const hidden = exercise.is_hidden;
     const locked = !(lessonState[exercise.lesson]?.completed || (lessonState[exercise.lesson]?.unlocked && !(exercise.require_lesson_complete)));
-    const active = (lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed)) || exercise.require_lesson_complete;
+    const active = (lessonState[exercise.lesson]?.unlocked && !(lessonState[exercise.lesson]?.completed));
     const { colorBackground, colorBackgroundDark, colorBackgroundDarker, colorBackgroundLight, colorText, filterIcon } = useTheme();
     const { getExerciseFrequency, setExerciseFrequency } = useExerciseSettings();
 
@@ -367,7 +367,7 @@ function ExerciseEntry({ exercise, isPinnedList, isExpanded, selected, onSelect,
                 <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'start', gap: '12px', minWidth: `${EXERCISE_SETTINGS_WIDTH_PX}px` }}>
                     {getExerciseFrequency(exercise.id) > 0 ? (
                         <>
-                            <h2 style={{ fontSize: "13px", width: '100px', textAlign: 'left', color: colorText }}>
+                            <h2 style={{ fontSize: "13px", width: '110px', textAlign: 'left', color: colorText }}>
                                 {exerciseFrequencyMap[getExerciseFrequency(exercise.id)]?.display}
                             </h2>
                             <input

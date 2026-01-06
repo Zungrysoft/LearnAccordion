@@ -15,7 +15,7 @@ export default function SettingsPage() {
   } = useSettings();
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', padding: '16px', gap: '8px', alignItems: 'center', width: '100%' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', padding: '16px', gap: '8px', alignItems: 'center', width: '100%', overflowY: 'auto' }}>
       <SettingsGroup title="Theme">
         <RadioButtons
           options={[
