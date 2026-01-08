@@ -3,10 +3,12 @@ import QuestionAndAnswer from "./QuestionAndAnswer";
 import ButtonBoard from "../components/ButtonBoard";
 import { getNoteName } from "../helpers/music";
 import { mod } from "../helpers/misc";
+import { useTheme } from "../helpers/theme";
 
 export default function FindNoteOnButtonBoard() {
     const [difficulty, setDifficulty] = useState(1);
     const [questionState, setQuestionState] = useState(null);
+    const { colorText } = useTheme();
 
     const generateQuestion = useCallback(() => {
         const radius = (difficulty * 4) - 1;
@@ -86,7 +88,7 @@ export default function FindNoteOnButtonBoard() {
         >
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                 <ButtonBoard rows={3} heightPx={380} buttons={buttonBoardButtons} />
-                <h2>Find note {getNoteName(questionState?.questionNote, false, questionState?.isFlat)} {questionState?.questionNoteIndex > questionState?.hintNoteIndex ? 'above' : 'below'}</h2>
+                <h2 style={{ color: colorText }}>Find note {getNoteName(questionState?.questionNote, false, questionState?.isFlat)} {questionState?.questionNoteIndex > questionState?.hintNoteIndex ? 'above' : 'below'}</h2>
             </div>
         </QuestionAndAnswer>
     );

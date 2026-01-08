@@ -7,12 +7,13 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import SheetMusicRepositoryPage from './SheetMusicRepositoryPage.js';
 import { useSettings } from '../context/SettingsProvider.jsx';
 import { useMemo } from 'react';
+import GlossaryPage from './GlossaryPage.js';
 
 const TABS = [
     { title: 'About', url: '/misc' },
-    { title: 'Settings', url: '/misc/settings' },
     { title: 'Sheet Music Repository', url: '/misc/sheet_music' },
-    // { title: 'Glossary', url: '/misc/glossary' },
+    { title: 'Glossary', url: '/misc/glossary' },
+    { title: 'Settings', url: '/misc/settings' },
     // { title: 'Resources', url: '/misc/resources' },
 ]
 
@@ -40,6 +41,7 @@ export default function MiscPage() {
                 <Route path="/" element={<AboutPage />} />
                 <Route path="/settings" element={<SettingsPage />} />
                 <Route path="/sheet_music" element={<SheetMusicRepositoryPage />} />
+                <Route path="/glossary" element={<GlossaryPage />} />
                 <Route path="*" element={<Navigate to="/misc" replace />} />
             </Routes>
         </div>

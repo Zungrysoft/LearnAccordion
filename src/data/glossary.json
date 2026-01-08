@@ -1,0 +1,422 @@
+[
+    {
+        "term": "Unisonoric",
+        "definition": "Each button on the instrument plays the same pitch regardless of whether the bellows is opening or closing. These types of instruments require twice as many reeds per note since free reeds only work in one direction; there must be a reed for both opening and closing the instrument even if both reeds are tuned the same. Piano accordions and chromatic button accordions are unisonoric."
+    },
+    {
+        "term": "Bisonoric",
+        "definition": "Each button on the instrument plays a different pitch depending on whether the bellows is opening or closing. Most diatonic button accordions, *concertinas|concertina*, and *bandoneons|bandoneon* are bisonoric. Playing bisonoric instruments requires careful attention to the amount of air in the bellows as running out of air may force a direction change."
+    },
+    {
+        "term": "Chromatic",
+        "definition": "Containing all 12 notes found in western music. This can refer to a scale, a piece, or an instrument. The chromatic scale is the scale containing all 12 of the notes found in standard 12-TET equal-temperament. A chromatic instrument is capable of comfortably playing music in all 12 keys."
+    },
+    {
+        "term": "Diatonic",
+        "definition": "Usually refers to a scale or instrument that plays a scale which contains seven notes that are evenly spaced across the chromatic scale. The major and minor scale are diatonic, as are all of the modes of the major scale. A diatonic instrument is usually designed for playing only those seven notes, though possibly in several keys such as with multi-row diatonic accordions."
+    },
+    {
+        "term": "Isomorphic",
+        "definition": "A keyboard or button board is isomorphic if the keys/buttons follow a particular pattern where moving in a certain direction or distance on the keyboard/button board represents the same interval anywhere on the keyboard. What this means in practical terms is that you can play the same piece of music in a different key simply by shifting your fingering. The chromatic button accordion has an isomorphic button layout, as does the Stradella Bass System."
+    },
+    {
+        "term": "Tone Chamber",
+        "definition": "Most accordions have their reed blocks facing outwards toward the grille. Some higher-end accordions have their lower reed blocks facing toward the back of the instrument. This has the effect of cutting out the higher harmonics of the sound which mellows the tone of the instrument. This is considered desireable by some musicians, especially in ensembles. Accordions with tone chambers tend to be more expensive due to the greater precision required to get both the chambered and unchambered key arms aligned."
+    },
+    {
+        "term": "Double-Chambered",
+        "definition": "An accordion with both the L and one of the M reeds in the tone chamber. See also *Tone Chamber*"
+    },
+    {
+        "term": "Single-Chambered",
+        "definition": "An accordion with the L reed in the tone chamber. See also *Tone Chamber*"
+    },
+    {
+        "term": "Detuning",
+        "definition": "On accordions that utilize *wet tuning*, this is the amount of difference in pitch between the M reeds."
+    },
+    {
+        "term": "Musette",
+        "definition": "A register setting with three M reeds playing together utilizing *wet tuning*. One M reed is tuned to the standard pitch for the accordion (usually A440), one reed is tuned down from that by a small amount, and one reed is tuned up by that same amount. Musette can sometimes also refer to when there are only two reeds (the lower reed omitted), though this is more commonly known as the *Violin* register."
+    },
+    {
+        "term": "Register Switch",
+        "definition": "Switches on either side of the accordion which change the combination of reeds played by the keys or buttons. Accordions often have the capacity to play multiple reeds tuned to the same note but in different octaves or with a slight detuning. (See *Wet Tuning*). The most common Register Switches are shown below:\nL - *Bassoon*\nM - *Clarinet*\nH - *Piccolo*\nLM - *Bandoneon*\nMH - *Oboe*\nLH - *Organ*\nMM - *Violin*\nMMM - *Musette*\nLMH - *Harmonium*\nLMM - *Accordion*\nMMH - *Celeste*\nLMMH - *Master*"
+    },
+    {
+        "term": "Stradella Bass System",
+        "definition": "The button layout found on the left hand of most piano accordions and chromatic button accordions. The system is organized via a row-and-column system where the column determines a root note (the columns being ordered by the circle of fifths rather than chromatically) and the row determines the interval (in the case of the bass and counterbass notes) or the quality of the chord (in the case of the chord notes). This system is designed to make simple accompaniments very easy to perform, which is desireable given the left hand's dual role of also controlling the bellows. See the lesson \"The Stradella Bass System\" for more information."
+    },
+    {
+        "term": "Wet Tuning",
+        "definition": "An feature of many accordions where multiple reeds are tuned to the same note and octave, but vary in pitch by a small amount. The amount of detuning amounts to usually only a few cents (about one 20th of a semitone) so the notes do not sound out of tune. The destructive interference between the three notes causes a unique tremolo sound. Wet Tuning is found on the *Musette*, *Violin*, *Celeste*, *Accordion*, and *Master* sounds in the *Register Switch+es*."
+    },
+    {
+        "term": "Bassoon",
+        "definition": "The *register|Register Switch* setting with only the L reed active."
+    },
+    {
+        "term": "Clarinet",
+        "definition": "The *register|Register Switch* setting with only the M reed active."
+    },
+    {
+        "term": "Piccolo",
+        "definition": "The *register|Register Switch* setting with only the H reed active."
+    },
+    {
+        "term": "Bandoneon",
+        "definition": "A small square-shaped *free-reed* instrument popular in South America. It is known for its small size, its presence in Tango music, and its convoluted note layout.\n\nIt can also refer to the *register|Register Switch* setting on an accordion with the L and M reeds active."
+    },
+    {
+        "term": "Oboe",
+        "definition": "The *register|Register Switch* setting with the M and H reeds active."
+    },
+    {
+        "term": "Organ",
+        "definition": "The *register|Register Switch* setting with the L and H reeds active."
+    },
+    {
+        "term": "Violin",
+        "definition": "The *register|Register Switch* setting with two M reeds active, utilizing *wet tuning*."
+    },
+    {
+        "term": "Harmonium",
+        "definition": "A hand-pumped *free-reed* instrument played on the floor. It is popular in India and surrounding countries.\n\nIt can also refer to the *register|Register Switch* setting with the L, M, and H reeds active."
+    },
+    {
+        "term": "Accordion",
+        "definition": "A versatile and beautiful *free-reed* instrument.\n\nIt can also refer to the *register|Register Switch* setting with the L and two M reeds active."
+    },
+    {
+        "term": "Celeste",
+        "definition": "The *register|Register Switch* setting with two M reeds and one H reed active. This setting is also known as \"Fake *Musette*\" due to the tendency of some accordion manufacturers to label this setting as such despite the instrument only having two M reeds."
+    },
+    {
+        "term": "Master",
+        "definition": "On any accordion, this is the *register|Register Switch* setting that utilizes every reed available on that accordion. When used generally, it usually refers to the setting that uses the L reed, two or three M reeds, and the H reed."
+    },
+    {
+        "term": "Concertina",
+        "definition": "A small hexagon-shaped *free-reed* instrument popular in europe."
+    },
+    {
+        "term": "Free-Reed",
+        "definition": "Accordions are classified as \"Free-Reed Aerophones\" in the wind instrument family. Also in this category are its close cousins the *Concertina* and *Bandoneon* as well as the Harmonica, Melodica, *Harmonium*, and Reed Organ. Free-Reed instruments work by flowing air over small rectangular metal *reed+s*. Accordions often have hundreds of reeds as each key or button may require up to ten reeds to support the two different directions the air can flow and all of the different *register switch+es*"
+    },
+    {
+        "term": "Reed",
+        "definition": "A vibrating piece on a wind instrument which generates its sound. Accordions are *free-reed* instruments."
+    },
+    {
+        "term": "Circle of Fifths",
+        "definition": "The ordering of the 12 notes in 12-TET *equal temperament* by fifths rather than ascending order. Each note is a *Perfect Fifth* interval above the previous note. It is also the way columns are arranged in the *stradella bass system*. The order goes: C -> G -> D -> A -> E -> B -> F# -> Db -> Ab -> Eb -> Bb -> F -> C"
+    },
+    {
+        "term": "Equal Temperament",
+        "definition": "The tuning system used by most modern *chromatic* instruments (including most *piano accordion+s* and *chromatic button accordion+s*) which spaces the notes out evenly in a logarithmic fashion. Nearly all western music (especially that played on an accordion) uses 12-TET equal temperament, which means there are twelve available notes. Equal temperament is preferred over *just intonation* when being able to play music the same in all 12 keys."
+    },
+    {
+        "term": "Just Intonation",
+        "definition": "The tuning system used by many *diatonic* instruments (including most *diatonic button accordion*) where notes are tuned according to a particular scale in order to maintain precise interval relationships between notes. This is at the expense of being able to play in all 12 keys (a feature many diatonic instruments lack anyway). Just intonation's pure intervals are often contrasted with *equal temperament*'s compromised intervals."
+    },
+    {
+        "term": "Piano Accordion",
+        "definition": "A type of accordion with a piano keyboard on the right side. Piano accordions are the most popular type of accordion in the United States though they enjoy popularity all over the world. A big advantage of the piano accordion is the ability to transfer skills from the piano and other keyboard instruments. These instruments are *unisonoric* and *chromatic* and usually have the *stradella bass system* on the left side."
+    },
+    {
+        "term": "Chromatic Button Accordion",
+        "definition": "A type of accordion with an *isomorphic* arrangement of circular buttons on the right side. Chromatic button accordions are popular in Europe. Advantages of the chromatic button accordion include a more compact note layout (which is beneficial for fingering as well as limiting the physical size of the instrument), the ability to play in all twelve keys without needing to change fingering at all, and the ability to use the same fingering on the left and right side of the instrument is the instrument has a *free bass* or *converter bass* on the left side. Though many chromatic button accordions have a basic *stradella bass system* on the left side.\n\nThe button layout on the right side can either be in the *C-System* layout or the *B-System* layout, which are mirror images of each other. Chromatic button accordions are *unisonoric* and *chromatic*."
+    },
+    {
+        "term": "C-System",
+        "definition": "A layout of the *chromatic button accordion*'s buttons which puts semitone intervals up and to the left side of the instrument. Contrasted with its mirror-image, the *B-System*, the C-System generally has an easier time playing whole-tone intervals due to the direction the hand comes in, although many consider the choice of system to be primarily up to personal preference.\n\nThe C-System is more popular in Western Europe."
+    },
+    {
+        "term": "B-System",
+        "definition": "A layout of the *chromatic button accordion*'s buttons which puts semitone intervals down and to the left side of the instrument. Contrasted with its mirror-image, the *C-System*, the B-System generally has an easier time playing semitone intervals due to the direction the hand comes in, although many consider the choice of system to be primarily up to personal preference.\n\nThe B-System is more popular in Eastern Europe, especially on Bayan accordions."
+    },
+    {
+        "term": "Diatonic Button Accordion",
+        "definition": "A smaller accordion with a *diatonic* arrangement of circular buttons on the right side. These accordions are very small and light and are good for playing folk songs. The diatonic note layout does however limit the ability to play in keys other than those the instrument is designed to play in.\n\nDiatonic button accordions are popular in Western Europe and Mexico."
+    },
+    {
+        "term": "Timbre",
+        "definition": "Refers to the way an instrument sounds that separates it sonically from other instruments."
+    },
+    {
+        "term": "Cassotto",
+        "definition": "Another name for a *tone chamber*."
+    },
+    {
+        "term": "Dynamics",
+        "definition": "Refers to the volume or other qualities of an instrument's sound as it plays a piece. The accordion's main source of dynamics comes from control of the *bellows*, as the force used when opening or closing the bellows affect's the output volume. Control over dynamics is vital to expressive playing on any instrument."
+    },
+    {
+        "term": "Bellows",
+        "definition": "The flexible chamber of air connecting the two halves of the accordion. The accordion generates its sound by forcing air over the *reed+s* as air rushes in or out of the bellows."
+    },
+    {
+        "term": "Bellows Shake",
+        "definition": "A technique of shaking the accordion or jittering one's leg in order to modulate pressure on the *bellows* and create a *tremolo* effect."
+    },
+    {
+        "term": "Tremolo",
+        "definition": "An effect on an instrument where the volume of the sound modulates up an down at a fixed rate. This can be best achieved on an accordion through the *bellows shake* technique, but it also is present in the *wet tuning* sound."
+    },
+    {
+        "term": "Vibrato",
+        "definition": "An effect on an instrument where the pitch of the sound modulates up and down at a fixed rate. This cannot be achieved on the accordion, but is included here to clear up common confusion with the related term *tremolo*, which in contrast refers to a modulation in volume."
+    },
+    {
+        "term": "Grille",
+        "definition": "The part on the right side of the accordion above the keyboard where the sound from the right hand *reed+s* comes out."
+    },
+    {
+        "term": "Alternating Bass",
+        "definition": "The playing pattern of alternating between *bass button+s* and *chord button+s*. This is the simplest way to create accompaniment with the left hand on the *stradella bass system*."
+    },
+    {
+        "term": "Root",
+        "definition": "The base note of a chord or scale around which all of the intervals are oriented. The name of the key or chord denotes the root note."
+    },
+    {
+        "term": "Minor Second",
+        "definition": "The interval one semitone above the root. Found in the Phrygian, Phrygian Dominant, and Locrian scales. (But not the Minor Scale, despite the name.)"
+    },
+    {
+        "term": "Major Second",
+        "definition": "The interval two semitones above the root. Found in both the Major and Minor scales, despite the name."
+    },
+    {
+        "term": "Minor Third",
+        "definition": "The interval three semitones above the root."
+    },
+    {
+        "term": "Major Third",
+        "definition": "The interval four semitones above the root."
+    },
+    {
+        "term": "Perfect Fourth",
+        "definition": "The interval five semitones above the root."
+    },
+    {
+        "term": "Tritone",
+        "definition": "The interval six semitones above the root. This is considered to be a very dissonant interval."
+    },
+    {
+        "term": "Perfect Fifth",
+        "definition": "The interval seven semitones above the root. This is considered the most consonant inverval in music, aside from the *octave*."
+    },
+    {
+        "term": "Minor Sixth",
+        "definition": "The interval eight semitones above the root."
+    },
+    {
+        "term": "Major Sixth",
+        "definition": "The interval nine semitones above the root."
+    },
+    {
+        "term": "Minor Seventh",
+        "definition": "The interval ten semitones above the root."
+    },
+    {
+        "term": "Major Seventh",
+        "definition": "The interval eleven semitones above the root."
+    },
+    {
+        "term": "Octave",
+        "definition": "The interval twelve semitones above the root. Moving up by one octave has the effect of doubling the pitch of the note. This interval is so consonant that a note and its octave are considered the same note and are thus named the same."
+    },
+    {
+        "term": "Minor Ninth",
+        "definition": "The interval thirteen semitones (or an octave plus one semitone) above the root."
+    },
+    {
+        "term": "Major Ninth",
+        "definition": "The interval fourteen semitones (or an octave plus two semitones) above the root."
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "Enharmonic",
+        "definition": "Two notes or chords which play all the same pitches but are spelled differently. For example, C# and Db are enharmonic."
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    },
+    {
+        "term": "",
+        "definition": ""
+    }
+]
