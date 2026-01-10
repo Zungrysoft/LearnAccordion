@@ -118,6 +118,17 @@
         "feature": "find_note_on_button_board",
         "require_lesson_complete": true
     },
+    "identify_interval_between_notes": {
+        "title": "Identify Interval Between Notes",
+        "search_text": "",
+        "description": "",
+        "video_timestamp_seconds": null,
+        "image": "",
+        "hand": "",
+        "lesson": "c_system",
+        "feature": "identify_interval_between_notes",
+        "require_lesson_complete": true
+    },
 
 
 

@@ -20,7 +20,11 @@ export function getNoteName(n, withOctave = false, flat = false) {
   return (flat ? noteBasesFlat[noteBase] : noteBasesSharp[noteBase]) + noteOctave;
 }
 
-export function intervalName(i) {
+export function isNoteWhite(n) {
+  return (n % 12) in [0, 2, 4, 5, 7, 9, 11];
+}
+
+export function getIntervalName(i) {
   i = Math.abs(i);
   const intervals = [
     "Unison", "Minor Second", "Major Second", "Minor Third", "Major Third",

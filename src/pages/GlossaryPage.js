@@ -37,6 +37,8 @@ export default function GlossaryPage() {
 }
 
 function TextWithLinks({ text }) {
+  const { colorTextLink } = useTheme();
+
   const parts = text.split('*');
 
   return parts.map((part, index) => {
@@ -53,7 +55,7 @@ function TextWithLinks({ text }) {
     if (index % 2 === 1) {
       const id = partLink.toLowerCase().replaceAll(' ', '_');
       return (
-        <a key={index} href={`#${id}`}>
+        <a key={index} href={`#${id}`} style={{ color: colorTextLink }}>
           {partText}
         </a>
       );

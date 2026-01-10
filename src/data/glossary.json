@@ -1,27 +1,27 @@
 [
     {
         "term": "Unisonoric",
-        "definition": "Each button on the instrument plays the same pitch regardless of whether the bellows is opening or closing. These types of instruments require twice as many reeds per note since free reeds only work in one direction; there must be a reed for both opening and closing the instrument even if both reeds are tuned the same. Piano accordions and chromatic button accordions are unisonoric."
+        "definition": "Each button on the instrument plays the same pitch regardless of whether the *bellows* is opening or closing. These types of instruments require twice as many reeds per note since *free reed+s* only work in one direction; there must be a reed for both opening and closing the instrument even if both reeds are tuned the same."
     },
     {
         "term": "Bisonoric",
-        "definition": "Each button on the instrument plays a different pitch depending on whether the bellows is opening or closing. Most diatonic button accordions, *concertinas|concertina*, and *bandoneons|bandoneon* are bisonoric. Playing bisonoric instruments requires careful attention to the amount of air in the bellows as running out of air may force a direction change."
+        "definition": "Each button on the instrument plays a different pitch depending on whether the *bellows* is opening or closing. Playing bisonoric instruments requires careful attention to the amount of air in the bellows as running out of air may force a direction change or require pausing to use the *air button*."
     },
     {
         "term": "Chromatic",
-        "definition": "Containing all 12 notes found in western music. This can refer to a scale, a piece, or an instrument. The chromatic scale is the scale containing all 12 of the notes found in standard 12-TET equal-temperament. A chromatic instrument is capable of comfortably playing music in all 12 keys."
+        "definition": "Containing all 12 notes found in western music. This can refer to a *scale*, a piece, or an instrument. The chromatic scale is the scale containing all 12 of the notes found in standard 12-TET *equal temperament*. A chromatic instrument is capable of comfortably playing music in all 12 *key+s*."
     },
     {
         "term": "Diatonic",
-        "definition": "Usually refers to a scale or instrument that plays a scale which contains seven notes that are evenly spaced across the chromatic scale. The major and minor scale are diatonic, as are all of the modes of the major scale. A diatonic instrument is usually designed for playing only those seven notes, though possibly in several keys such as with multi-row diatonic accordions."
+        "definition": "Usually refers to a scale or instrument that plays a scale which contains seven notes that are evenly spaced across the *chromatic* scale. The major and minor scale are diatonic, as are all of the modes of the *major scale*. A diatonic instrument is usually designed for playing only those seven notes, though possibly in several keys such as with multi-row diatonic accordions."
     },
     {
         "term": "Isomorphic",
-        "definition": "A keyboard or button board is isomorphic if the keys/buttons follow a particular pattern where moving in a certain direction or distance on the keyboard/button board represents the same interval anywhere on the keyboard. What this means in practical terms is that you can play the same piece of music in a different key simply by shifting your fingering. The chromatic button accordion has an isomorphic button layout, as does the Stradella Bass System."
+        "definition": "A keyboard or button board is isomorphic if the keys/buttons follow a particular pattern where moving in a certain direction or distance on the keyboard/button board represents the same interval anywhere on the keyboard. What this means in practical terms is that you can play the same piece of music in a different key simply by shifting your *fingering*. The *chromatic button accordion* has an isomorphic button layout, as does the *stradella bass system*."
     },
     {
         "term": "Tone Chamber",
-        "definition": "Most accordions have their reed blocks facing outwards toward the grille. Some higher-end accordions have their lower reed blocks facing toward the back of the instrument. This has the effect of cutting out the higher harmonics of the sound which mellows the tone of the instrument. This is considered desireable by some musicians, especially in ensembles. Accordions with tone chambers tend to be more expensive due to the greater precision required to get both the chambered and unchambered key arms aligned."
+        "definition": "Most accordions have their reed blocks facing outwards toward the *grill*. Some higher-end accordions have their lower *reed block+s* facing toward the back of the instrument. This has the effect of cutting out the higher harmonics of the sound which mellows the tone of the instrument. This is considered desireable by some musicians, especially in ensembles. Accordions with tone chambers tend to be more expensive due to the greater precision required to get both the chambered and unchambered *key arm+s* aligned."
     },
     {
         "term": "Double-Chambered",
@@ -49,7 +49,7 @@
     },
     {
         "term": "Wet Tuning",
-        "definition": "An feature of many accordions where multiple reeds are tuned to the same note and octave, but vary in pitch by a small amount. The amount of detuning amounts to usually only a few cents (about one 20th of a semitone) so the notes do not sound out of tune. The destructive interference between the three notes causes a unique tremolo sound. Wet Tuning is found on the *Musette*, *Violin*, *Celeste*, *Accordion*, and *Master* sounds in the *Register Switch+es*."
+        "definition": "An feature of many accordions where multiple reeds are tuned to the same note and octave, but vary in pitch by a small amount. The amount of detuning amounts to usually only a few cents (about one 20th of a semitone) so the notes do not sound out of tune. The destructive interference between the three notes causes a unique *tremolo* sound. Wet Tuning is found on the *Musette*, *Violin*, *Celeste*, *Accordion*, and *Master* sounds in the *Register Switch+es*."
     },
     {
         "term": "Bassoon",
@@ -165,10 +165,10 @@
     },
     {
         "term": "Vibrato",
-        "definition": "An effect on an instrument where the pitch of the sound modulates up and down at a fixed rate. This cannot be achieved on the accordion, but is included here to clear up common confusion with the related term *tremolo*, which in contrast refers to a modulation in volume."
+        "definition": "An effect on an instrument where the pitch of the sound modulates up and down at a fixed rate. This cannot be achieved on the accordion, but is included here to clear up common confusion with the related term *tremolo* which in contrast refers to a modulation in volume."
     },
     {
-        "term": "Grille",
+        "term": "Grill",
         "definition": "The part on the right side of the accordion above the keyboard where the sound from the right hand *reed+s* comes out."
     },
     {
@@ -236,51 +236,51 @@
         "definition": "The interval fourteen semitones (or an octave plus two semitones) above the root."
     },
     {
-        "term": "",
+        "term": "Key Arm",
+        "definition": "The metal rod that connects the key or button to the *pad* controlling air flow to the *reed block*."
+    },
+    {
+        "term": "Key",
         "definition": ""
     },
     {
-        "term": "",
+        "term": "Scale",
         "definition": ""
     },
     {
-        "term": "",
+        "term": "Major Scale",
         "definition": ""
     },
     {
-        "term": "",
+        "term": "Minor Scale",
         "definition": ""
     },
     {
-        "term": "",
-        "definition": ""
-    },
-    {
-        "term": "",
-        "definition": ""
+        "term": "Fingering",
+        "definition": "The way the accordionist uses their fingers to press the different buttons on the instrument. Different sequences of notes may require different fingering for each note, especially when playing *legato*."
     },
     {
         "term": "Enharmonic",
-        "definition": "Two notes or chords which play all the same pitches but are spelled differently. For example, C# and Db are enharmonic."
+        "definition": "Two notes or chords which play the same pitches but are spelled differently. For example, C# and Db are enharmonic."
     },
     {
-        "term": "",
+        "term": "Legato",
+        "definition": "A playing style where little to no gap is left between playing notes. This playing style requires careful *fingering*. Different fingers are required for subsequent notes as moving a finger from one button to another leaves too much of a gap."
+    },
+    {
+        "term": "Staccato",
+        "definition": "A playing style of leaving gaps between notes. This provides an extra sharpness to the rhythm."
+    },
+    {
+        "term": "Pad",
         "definition": ""
     },
     {
-        "term": "",
+        "term": "Reed Block",
         "definition": ""
     },
     {
-        "term": "",
-        "definition": ""
-    },
-    {
-        "term": "",
-        "definition": ""
-    },
-    {
-        "term": "",
+        "term": "Reed Plate",
         "definition": ""
     },
     {

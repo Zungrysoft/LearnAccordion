@@ -17,6 +17,7 @@ import { exerciseFrequencyMap, useExerciseSettings } from '../context/ExerciseSe
 import IdentifyNoteOnButtonBoard from '../exerciseFeatures/IdentifyNoteOnButtonBoard.jsx';
 import FindNoteOnButtonBoard from '../exerciseFeatures/FindNoteOnButtonBoard.jsx';
 import { Navigate } from 'react-router-dom';
+import IdentifyIntervalBetweenNotes from '../exerciseFeatures/IdentifyIntervalBetweenNotes.jsx';
 
 const EXERCISE_ENTRY_WIDTH_PX = 410;
 const EXERCISE_SETTINGS_WIDTH_PX = 290;
@@ -174,6 +175,9 @@ export default function ExercisesPage() {
                             )}
                             {exerciseData[selectedExerciseId].feature === 'find_note_on_button_board' && (
                                 <FindNoteOnButtonBoard />
+                            )}
+                            {exerciseData[selectedExerciseId].feature === 'identify_interval_between_notes' && (
+                                <IdentifyIntervalBetweenNotes />
                             )}
                         </>
                     )}

@@ -41,12 +41,16 @@ export default function QuestionAndAnswer({
             <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center', justifyContent: 'center', marginTop: '16px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center', justifyContent: 'center' }}>
                     {[...Array(answerRows)].map((_, i) => (
-                        <div style={{ display: 'flex', flexDirection: 'row', gap: '8px', alignItems: 'center', justifyContent: 'center' }}>
-                            {answers.slice(i * answersPerRow, (i + 1) * answersPerRow).map((answer) => 
+                        <div key={i} style={{ display: 'flex', flexDirection: 'row', gap: '8px', alignItems: 'center', justifyContent: 'center' }}>
+                            {answers.slice(i * answersPerRow, (i + 1) * answersPerRow).map((answer, j) => 
                                 answer.value == null ? (
-                                    <div style={{ width: answerWidth, height: answerHeight }} />
+                                    <div
+                                        key={`${i}-${j}`}
+                                        style={{ width: answerWidth, height: answerHeight }}
+                                    />
                                 ) : (
                                     <BasicButton
+                                        key={`${i}-${j}`}
                                         text={answer.text}
                                         onClick={() => {onSubmit(answer.value)}}
                                         width={answerWidth}

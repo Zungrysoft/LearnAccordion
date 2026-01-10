@@ -32,7 +32,7 @@ export default function IdentifyNoteOnButtonBoard() {
             submittedAnswer: null,
         }
 
-    }, [setQuestionState, difficulty]);
+    }, [difficulty]);
 
     const answers = [null, 1, 3, null, 6, 8, 10, null, 0, 2, 4, 5, 7, 9, 11].map((n) => {
         if (n == null) {

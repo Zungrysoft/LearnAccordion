@@ -1977,6 +1977,20 @@
     "is_hidden": true,
     "requirements": []
   },
+  "eye_in_the_sky": {
+    "title": "Eye in the Sky",
+    "artist": "The Alan Parsons Project",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
 
 
 
@@ -4275,6 +4289,20 @@
     "artist": "Roller Coaster Tycoon 3",
     "is_title_inspecific": false,
     "search_text": "RCT3",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "pizza_theme": {
+    "title": "Pizza Delivery",
+    "artist": "Spider-Man 2",
+    "is_title_inspecific": true,
+    "search_text": "Spiderman Song",
     "video_url": "",
     "sheet_music_file": "",
     "points": 0,
