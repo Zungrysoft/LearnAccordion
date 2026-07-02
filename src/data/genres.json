@@ -77,17 +77,23 @@
         "icon": "clap",
         "priority": 154
     },
+    "italian": {
+        "display": "Italian",
+        "search_text": "Folk",
+        "icon": "clap",
+        "priority": 155
+    },
     "polka": {
         "display": "Polka",
         "search_text": "Folk",
         "icon": "clap",
-        "priority": 155
+        "priority": 156
     },
     "finnish_polkka": {
         "display": "Finnish Polkka",
         "search_text": "Polka",
         "icon": "clap",
-        "priority": 156
+        "priority": 159
     },
     "folk_balkan": {
         "display": "Balkan Folk",

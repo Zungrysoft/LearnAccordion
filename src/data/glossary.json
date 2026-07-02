@@ -237,7 +237,7 @@
     },
     {
         "term": "Key Arm",
-        "definition": "The metal rod that connects the key or button to the *pad* controlling air flow to the *reed block*."
+        "definition": "The metal rod that connects the key or button to the *pallet* controlling air flow to the *reed block*."
     },
     {
         "term": "Key",
@@ -272,20 +272,20 @@
         "definition": "A playing style of leaving gaps between notes. This provides an extra sharpness to the rhythm."
     },
     {
-        "term": "Pad",
-        "definition": ""
+        "term": "Pallet",
+        "definition": "The soft pad at the end of the *key arm* that controls air flow into the *reed block*."
     },
     {
         "term": "Reed Block",
-        "definition": ""
+        "definition": "A removable wooden block on the inside of the accordion containing a row of *reed plate+s*."
     },
     {
         "term": "Reed Plate",
-        "definition": ""
+        "definition": "A metal plate containing two *reed+s* (one for opening the *bellows* and one for closing the bellows). The two reeds will be tuned to the same pitch on a *unisonoric* instrument, but are oriented in opposite directions. On a *bisonoric* instrument, the two reeds may have different pitches. Reed plates are attached to the *reed block* using *reed wax*."
     },
     {
-        "term": "",
-        "definition": ""
+        "term": "Reed Wax",
+        "definition": "Reed wax (which is made of beeswax, rosin, and often lindseed oil) is used in many places on the inside of the accordion to glue components together in an easily reversable way. It is used to hold the *reed plate+s* to the *reed block* and to seal cracks in the woodworking to ensure a perfect air seal."
     },
     {
         "term": "",

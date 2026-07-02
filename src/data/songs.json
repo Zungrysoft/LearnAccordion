@@ -508,6 +508,20 @@
     "is_hidden": true,
     "requirements": []
   },
+  "pizza_theme": {
+    "title": "Funiculi, Funicula",
+    "artist": "Luciano Pavarotti",
+    "is_title_inspecific": true,
+    "search_text": "Spiderman Spider-Man 2 Song Pizza Delivery",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "italian",
+    "is_hidden": true,
+    "requirements": []
+  },
   
 
   
@@ -658,6 +672,20 @@
     "artist": "Alestorm",
     "is_title_inspecific": false,
     "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "metal",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "ruumiinmultaa": {
+    "title": "Ruumiinmultaa",
+    "artist": "Korpiklaani",
+    "is_title_inspecific": false,
+    "search_text": "Soil of the Corpse",
     "video_url": "",
     "sheet_music_file": "",
     "points": 0,
@@ -853,6 +881,20 @@
     "is_hidden": true,
     "requirements": []
   },
+  "her_and_i": {
+    "title": "Her and I",
+    "artist": "King Gizzard and the Lizard Wizard",
+    "is_title_inspecific": false,
+    "search_text": "(Slow Jam 2)",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
   "april_part_1": {
     "title": "April - Part 1",
     "artist": "Deep Purple",
@@ -883,6 +925,48 @@
   },
   "april_part_3": {
     "title": "April - Part 3",
+    "artist": "Deep Purple",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "burn": {
+    "title": "Burn",
+    "artist": "Deep Purple",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "gypsys_kiss": {
+    "title": "A Gypsy's Kiss",
+    "artist": "Deep Purple",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": false,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "maybe_im_a_leo": {
+    "title": "Maybe I'm a Leo",
     "artist": "Deep Purple",
     "is_title_inspecific": false,
     "search_text": "",
@@ -1423,6 +1507,34 @@
     "is_hidden": true,
     "requirements": []
   },
+  "stop_draggin_my_car_around": {
+    "title": "Stop Draggin' My Car Around",
+    "artist": "Weird Al Yankovic",
+    "is_title_inspecific": false,
+    "search_text": "Dragging Heart",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "my_bologna": {
+    "title": "My Bologna",
+    "artist": "Weird Al Yankovic",
+    "is_title_inspecific": false,
+    "search_text": "Sharona",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "alternative",
+    "is_hidden": true,
+    "requirements": []
+  },
   "gone_daddy_gone": {
     "title": "Gone Daddy Gone",
     "artist": "Violent Femmes",
@@ -1813,7 +1925,7 @@
     "title": "Mrs. Robinson",
     "artist": "Simon & Garfunkel",
     "is_title_inspecific": false,
-    "search_text": "",
+    "search_text": "Paul Art",
     "video_url": "",
     "sheet_music_file": "",
     "points": 0,
@@ -1822,6 +1934,24 @@
     "genre": "rock",
     "is_hidden": true,
     "requirements": []
+  },
+  "duncan": {
+    "title": "Duncan",
+    "artist": "Paul Simon",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": false,
+    "requirements": [
+      ["major_scale_in_thirds"],
+      ["bass_buttons_4"],
+      ["two_handed_playing_3"]
+    ]
   },
   "we_aint_got_nothin_yet": {
     "title": "(We Ain't Got) Nothin' Yet",
@@ -1980,6 +2110,34 @@
   "eye_in_the_sky": {
     "title": "Eye in the Sky",
     "artist": "The Alan Parsons Project",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "yin": {
+    "title": "Yin",
+    "artist": "Warlords For Hire",
+    "is_title_inspecific": false,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "rock",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "checkers": {
+    "title": "Checkers",
+    "artist": "Warlords For Hire",
     "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
@@ -2597,19 +2755,23 @@
     "is_hidden": true,
     "requirements": []
   },
-  "temptation_sensation": {
-    "title": "Temptation Sensation",
-    "artist": "Heinz Kiessling",
-    "is_title_inspecific": true,
-    "search_text": "Haute Couture It's Always Sunny in Philadelphia",
+  "bridal_chorus": {
+    "title": "Bridal Chorus",
+    "artist": "March Here Comes The Bride",
+    "is_title_inspecific": false,
+    "search_text": "",
     "video_url": "",
     "sheet_music_file": "",
     "points": 0,
     "has_vocals": false,
     "is_two_handed": true,
-    "genre": "orchestra",
-    "is_hidden": true,
-    "requirements": []
+    "genre": "classical",
+    "is_hidden": false,
+    "requirements": [
+      ["two_handed_playing_3"],
+      ["bass_buttons_3"],
+      ["major_scale"]
+    ]
   },
 
 
@@ -2729,6 +2891,20 @@
     "is_hidden": true,
     "requirements": []
   },
+  "temptation_sensation": {
+    "title": "Main Theme",
+    "artist": "It's Always Sunny in Philadelphia",
+    "is_title_inspecific": true,
+    "search_text": "Haute Couture Temptation Sensation Heinz Kiessling",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
+  },
   "paddys_pub_theme": {
     "title": "I Like Life at Paddy's Pub",
     "artist": "It's Always Sunny in Philadelphia",
@@ -2807,6 +2983,20 @@
     "title": "Main Theme",
     "artist": "The Office",
     "is_title_inspecific": true,
+    "search_text": "",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": true,
+    "is_two_handed": true,
+    "genre": "television",
+    "is_hidden": true,
+    "requirements": []
+  },
+  "toss_a_coin_to_your_witcher": {
+    "title": "Toss a Coin to Your Witcher",
+    "artist": "The Witcher",
+    "is_title_inspecific": false,
     "search_text": "",
     "video_url": "",
     "sheet_music_file": "",
@@ -3441,6 +3631,20 @@
     "is_hidden": true,
     "requirements": []
   },
+  "sonic_3_big_arms": {
+    "title": "Final Boss",
+    "artist": "Sonic the Hedgehog 3",
+    "is_title_inspecific": true,
+    "search_text": "Big Arms Bigarms",
+    "video_url": "",
+    "sheet_music_file": "",
+    "points": 0,
+    "has_vocals": false,
+    "is_two_handed": true,
+    "genre": "video_game",
+    "is_hidden": true,
+    "requirements": []
+  },
   "green_hill_zone": {
     "title": "Green Hill Zone",
     "artist": "Sonic the Hedgehog",
@@ -3844,7 +4048,11 @@
     "is_two_handed": true,
     "genre": "video_game",
     "is_hidden": true,
-    "requirements": []
+    "requirements": [
+      ["dynamics"],
+      ["minor_scale"],
+      ["two_handed_playing_2"]
+    ]
   },
   "lower_norfair": {
     "title": "Lower Norfair",
@@ -4289,20 +4497,6 @@
     "artist": "Roller Coaster Tycoon 3",
     "is_title_inspecific": false,
     "search_text": "RCT3",
-    "video_url": "",
-    "sheet_music_file": "",
-    "points": 0,
-    "has_vocals": false,
-    "is_two_handed": true,
-    "genre": "video_game",
-    "is_hidden": true,
-    "requirements": []
-  },
-  "pizza_theme": {
-    "title": "Pizza Delivery",
-    "artist": "Spider-Man 2",
-    "is_title_inspecific": true,
-    "search_text": "Spiderman Song",
     "video_url": "",
     "sheet_music_file": "",
     "points": 0,
